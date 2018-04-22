@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <color name="colorPrimary">@color/color_co</color>
+        <color name="colorPrimaryDark">@color/color_co</color>
+        <color name="colorAccent">@color/color_co</color>
+
+        <!--品牌色（主色橘色）-->
+        <color name="color_co">#FF7429</color>
+        <!--press颜色（深橘色）-->
+        <color name="color_cod">#E0674F</color>
+        <!--整个程序背景主色-->
+        <color name="common_main_bg_color">#F5F5F5</color>
+
+        <!--c5 disable不可用状态 c6 描边-->
+        <color name="color_c1">#3D3E4D</color>
+        <color name="color_c2">#474959</color>
+        <color name="color_c3">#8A8E99</color>
+        <color name="color_c4">#9FA5B4</color>
+        <color name="color_c5">#C2C5CC</color>
+        <color name="color_c6">#F3F4F6</color>
+        <color name="color_c7">@color/white</color>
+        <color name="black">#000000</color>
+        <color name="white">#FFFFFF</color>
+
+
+        <!-- 全透明 -->
+        <color name="tran">#00000000</color>
+        <color name="tran_00_8">#14000000</color>
+        <color name="tran_00_10">#1A000000</color>
+        <color name="tran_c7_10">#1AFFFFFF</color>
+        <color name="tran_c7_50">#80FFFFFF</color>
+        <color name="trans_40">#66FFFFFF</color>
+        <color name="trans_60">#99FFFFFF</color>
+        <color name="tran_cr_15">#26E03B38</color>
+        <color name="tran_co_15">#26FF7429</color>
+        <color name="tran_gray_8a_60">#998A8E99</color>
+        <color name="tran_gray_8a_80">#CC8A8E99</color>
+        <color name="tran_ff_15">#26FF7429</color>
+        <color name="tran_e0_15">#26E0BB62</color>
+        <color name="tran_c2_15">#26C2C5CC</color>
+        <color name="tran_00_40">#66000000</color>
+        <color name="tran_00_20">#33000000</color>
+        <color name="tran_ff_20">#33FFFFFF</color>
+        <!-- 线 -->
+        <color name="line_color">@color/color_c6</color>
+        <color name="tran_white_80">#CCFFFFFF</color>
+
+        <color name="gray_e1">#E1E2E6</color>
+        <color name="color_cr">#E03B38</color>
+        <color name="color_crd">#C73432</color>
+        <color name="color_crl">#E67573</color>
+        <color name="color_cg">#D1AE54</color>
+        <color name="color_cr_percent_10">#1AE03B38</color>
+        <color name="color_gray_percent_10">#1A8A8E99</color>
+        <color name="color_write_percent_10">#1AFFFFFF</color>
+        <color name="color_write_percent_60">#99FFFFFF</color>
+        <color name="color_write_percent_20">#33FFFFFF</color>
+        <color name="color_red_f5">#F54952</color>
+        <color name="red_ff">#FF4C5B</color>
+        <color name="gray_8a">#8A8E99</color>
+        <color name="yellow_e0">#E0BB62</color>
+        <color name="black_001">#001f00</color>
+        <color name="green">#3BD399</color>
+
+
+        <!--mine assets layout-->
+        <color name="color_yellow">#F4CB2D</color>
+        <color name="color_red">#F56E53</color>
+        <color name="color_brue">#5197EA</color>
+        <color name="color_green">#3BD399</color>
+
+    </resources>
+
+</resources>

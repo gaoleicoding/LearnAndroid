@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_height_width"
+    android:background="@color/common_main_bg_color">
+
+    <LinearLayout
+        android:id="@+id/base_title_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:orientation="horizontal"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_base_error_content"
+        style="@style/match_height_width"
+        android:layout_below="@id/base_title_top"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/base_content"
+        style="@style/match_height_width"
+        android:layout_below="@id/base_title_top"
+        android:background="@color/tran" />
+
+    <RelativeLayout
+        android:id="@+id/ll_loading"
+        style="@style/match_height_width"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ImageView
+            style="@style/wrap_height_width"
+            android:layout_centerInParent="true"
+            android:background="@drawable/common_bg_loading" />
+
+        <!--<ProgressBar-->
+            <!--android:layout_width="@dimen/loading_image_width_height"-->
+            <!--android:layout_height="@dimen/loading_image_width_height"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:indeterminateDrawable="@anim/request_progress_loading" />-->
+
+    </RelativeLayout>
+
+</RelativeLayout>
