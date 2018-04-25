@@ -1,10 +1,12 @@
 package com.gaolei.famousfameproject.mpresenter;
 
-import com.weiyankeji.fujindai.api.RestService;
-import com.weiyankeji.fujindai.application.FJDApplication;
-import com.weiyankeji.fujindai.utils.net.SignInterceptor;
-import com.weiyankeji.library.net.client.BaseServerResponse;
-import com.weiyankeji.library.net.client.RestApiProvider;
+
+
+import com.gaolei.famousfameproject.api.RestService;
+import com.gaolei.famousfameproject.application.FJDApplication;
+import com.gaolei.famousfameproject.net.client.BaseServerResponse;
+import com.gaolei.famousfameproject.net.client.RestApiProvider;
+import com.gaolei.famousfameproject.net.interceptor.SignInterceptor;
 
 import retrofit2.Call;
 

@@ -1,4 +1,4 @@
-package com.gaolei.famousfameproject;
+package com.gaolei.famousfameproject.activity;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -7,7 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
-import com.weiyankeji.library.utils.StatusBarUtil;
+
+import com.gaolei.famousfameproject.utils.StatusBarUtil;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -23,11 +24,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(setContentLayout());
         getWindow().setBackgroundDrawable(null);
         mBinder = ButterKnife.bind(this);
-        getIntentData();
-        initData(savedInstanceState);
+
         setStatusBarColor(Color.WHITE);
     }
 
@@ -52,7 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param res
      */
     public void setStatusBarColor(int res) {
-//        StatusBarUtil.setWindowStatusBarColor(this, res, true);
+        StatusBarUtil.setWindowStatusBarColor(this, res, true);
     }
 
     /**

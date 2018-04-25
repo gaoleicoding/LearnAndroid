@@ -1,3 +1,491 @@
 <resources>
-    <string name="app_name">FamousFameProject</string>
+    <string name="app_name">福金贷</string>
+
+    <string name="common_rmb">¥</string>
+    <string name="common_yuan">%1$s元</string>
+    <string name="common_double_text">%1$s%2$s</string>
+    <string name="common_loading">加载中</string>
+    <string name="common_ok">确定</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_password_error">支付密码错误</string>
+    <string name="common_again">重试</string>
+    <string name="common_forget_password">忘记密码</string>
+    <string name="common_launch_tip">中国百亿级产业集团旗下的定制理财平台</string>
+    <string name="common_login">登录</string>
+    <string name="common_withdrawals">提现</string>
+    <string name="common_recharge">充值</string>
+    <string name="common_invest">理财</string>
+    <string name="common_unit_day">日</string>
+    <string name="common_unit_time_month">月</string>
+    <string name="common_unit_time_day">天</string>
+    <string name="common_unit_time_hour">小时</string>
+    <string name="common_unit_time_minute">分钟</string>
+    <string name="common_project_time_limit">项目期限</string>
+    <string name="common_default_money">0.00元</string>
+
+    <!--金钱规则格式化-->
+    <string name="unit_rule_format">#,###.##</string>
+
+    <string name="loading">加载中...</string>
+    <string name="refresh">刷新</string>
+
+    <string name="bottomview_main_home">首页</string>
+    <string name="bottomview_main_invest">理财</string>
+    <string name="bottomview_main_mine">我的</string>
+    <string name="bottomview_main_help">帮助</string>
+
+    <string name="click_again_exit">再按一次退出</string>
+
+    <string name="server_somewhere_please_try_again">服务器开小差了，请重试</string>
+    <string name="net_not_force_please_try_refresh">网络不给力，刷新一下试试？</string>
+
+    <string name="wechat_noinstall">请先安装微信</string>
+    <string name="wechat_update">请先更新微信</string>
+    <string name="wechat_share_success">分享成功</string>
+    <string name="wechat_share_cancle">分享取消</string>
+    <string name="wechat_share_failure">分享失败</string>
+
+    <!--提示语-->
+    <string name="toast_mobile_erro_rule">手机号输入错误</string>
+    <string name="toast_vercode_erro_rule">验证码输入错误</string>
+    <string name="toast_password_erro_rule">密码设置不符合规则</string>
+    <string name="toast_agree_erro_rule">请先同意平台服务协议</string>
+    <string name="toast_login_mobile_pass_rule">账户或密码输入错误</string>
+    <string name="toast_regist_success">注册成功</string>
+    <string name="toast_password_erro_rule_login">密码输入错误</string>
+    <string name="register_welcome">欢迎使用福金贷</string>
+    <string name="register_welcome_user_mobile">使用手机号注册账户</string>
+    <string name="register_pass_rule">请设置8-20位字母、数字组合的登录密码</string>
+    <string name="change_pw_hint">请设置8-20位字母、数字组合新密码</string>
+    <string name="toast_invite_pass_erro">邀请人手机号输入错误</string>
+    <string name="request_error">验证码发送失败，请重试</string>
+    <string name="request_code_success">验证码发送成功</string>
+    <string name="pw_change_successful">密码修改成功</string>
+    <string name="empty_error">暂无内容</string>
+    <string name="pw_error">密码输入有误</string>
+    <string name="vercode_sended">验证码已发送</string>
+    <string name="pay_pw_six_length">支付密码为6位数字</string>
+
+    <!--刷新加载-->
+    <string name="refresh_header_on_refresh">正在刷新</string>>
+    <string name="refresh_header_on_prepare">松开刷新</string>>
+    <string name="refresh_header_on_complete">刷新成功</string>>
+
+    <!--金钱单位-->
+    <string name="hundred_million">亿</string>
+    <string name="ten_thousand_yuan">万元</string>
+    <string name="ten_thousand">万</string>
+    <string name="yuan">元</string>
+
+    <!--首页-->
+    <string name="about_us">关于我们</string>
+    <string name="today_recommend">今日推荐</string>
+    <string name="hot_attention">热点关注</string>
+    <string name="see_more">查看更多</string>
+    <string name="more_invest">更多定制</string>
+    <string name="investing">正在投资</string>
+    <string name="about_to_begin">即将开始</string>
+    <string name="sold_out">抢光了</string>
+    <string name="invest_list_tab_limit">期限</string>
+    <string name="good">优选</string>
+    <string name="invest_home_period_costom">定制</string>
+    <string name="start_invest_money">起投金额</string>
+    <string name="immediate_investment">立即投资</string>
+    <string name="start_invest">起投</string>
+    <string name="guodan_invest">国担理财</string>
+    <string name="debt_assign">债权转让</string>
+    <string name="subtitle_demo">这是一个小标题</string>
+
+    <!--资产默认值-->
+    <string name="default_percentage_zero">0.00%</string>
+    <string name="default_numerical_value">0.00</string>
+
+    <!--公用-->
+    <string name="click_get">点击获取</string>
+    <string name="msg_code_length">6</string>
+    <string name="mobile_length">11</string>
+    <string name="password_length">20</string>
+    <string name="id_card_length">18</string>
+    <string name="card_no_length">24</string>
+    <string name="sigle_line">1</string>
+    <string name="text_space_1.5">1.5</string>
+    <string name="next_step">下一步</string>
+    <string name="submit">提交</string>
+    <string name="after_re_obtain">s后重新获取</string>
+    <string name="after_re_obtain_rule">%1$ds后重新获取</string>
+
+    <!--账户设置-->
+    <string name="pay_setting">支付设置</string>
+    <string name="pay_account">支付账户</string>
+    <string name="no_openhas_been_opened">已开通</string>
+    <string name="no_open">未开通</string>
+    <string name="name_auth">实名认证</string>
+    <string name="pay_password">支付密码</string>
+    <string name="account_safe">账户安全</string>
+    <string name="change_login_pw">修改登录密码</string>
+    <string name="id_crad_number">身份证号</string>
+    <string name="please_input_id_card_number">请输入身份证号</string>
+    <string name="please_account_valida">请先进行账户验证</string>
+    <string name="please_user_auth">请先进行用户验证</string>
+    <string name="please_input_real_name">请输入真实姓名</string>
+    <string name="phone_code">短信验证码</string>
+    <string name="please_input_message_code">请输入短信验证码</string>
+    <string name="real_name">真实姓名</string>
+    <string name="real_auth_successful">实名认证成功</string>
+    <string name="real_name_not_null">真实姓名不可为空</string>
+    <string name="id_card_number_not_null">身份证号不可为空</string>
+    <string name="please_input_valid_idcard">请输入有效身份证</string>
+    <string name="please_reset_login_pw">请设置新的登录密码</string>
+    <string name="old_pw">原密码</string>
+    <string name="please_input_old_pw">请输入原密码</string>
+    <string name="new_pw">新密码</string>
+    <string name="please_new_pw">请输入新密码</string>
+    <string name="to_phone_number">至手机号：</string>
+    <string name="please_input_bank_card_info">请输入银行卡信息</string>
+    <string name="phone_format_error">电话号码格式不正确</string>
+    <string name="please_input_correct_message_code">请输入正确的短信验证码</string>
+    <string name="please_input_valid_bank_card_number">请输入有效的银行卡号</string>
+    <string name="change_bind_phone_successful">绑定手机修改成功</string>
+    <string name="bank_card_change_successful">银行卡修改成功</string>
+    <string name="bank_bind_successful">银行卡绑定成功</string>
+    <string name="pay_pw_setting">支付密码设置</string>
+    <string name="please_input_pay_pw_again">请再次输入支付密码</string>
+    <string name="bank_account_select">开户银行选择</string>
+    <string name="bank_money">单笔限额%1$s万,日限额%2$s万</string>
+    <string name="please_select_bank_account">请选择储蓄卡开户行</string>
+    <string name="more_banks_to_continue_to_access">更多银行持续接入中…</string>
+    <string name="invert_to_make_money">即可投资赚收益</string>
+    <string name="pay_account_activated">支付账户已开通</string>
+
+    <!--标的相关-->
+    <string name="expected_annual_yield">预期年化收益</string>
+    <string name="home_remain">| 剩余</string>
+
+    <!--webview错误-->
+    <string name="webview_http_error">找不到网页</string>
+    <string name="webview_common_error">页面找不到了</string>
+
+    <string name="feek_back_help">帮助</string>
+    <string name="feek_back_next">反馈</string>
+
+    <!--format-->
+    <string name="format_percent">%1$s%%</string>
+
+    <!--平台公告-->
+    <string name="platform_notice_tile">平台公告</string>
+    <string name="platform_notice_detail_tile">公告详情</string>
+
+    <!--我的-->
+    <string name="available_amount_assets_yuan">可用余额(元)</string>
+    <string name="mine_investment">我的投资</string>
+    <string name="mine_bank_card">我的银行卡</string>
+    <string name="mine_trans_record">交易记录</string>
+    <string name="mine_security_center">安全中心</string>
+    <string name="mine_security_high">高</string>
+    <string name="mine_security_middle">中</string>
+    <string name="mine_security_low">高</string>
+    <string name="mine_customer_service">客户服务</string>
+    <string name="mine_unregist_title">资金托管更安全</string>
+    <string name="mine_unregist_professional">专业 快捷 可靠</string>
+    <string name="mine_unregistered">登录/注册</string>
+    <string name="mine_desensitization_result">****</string>
+    <string name="mine_open_count">立即开通支付账户</string>
+    <string name="mine_total_assets">总资产(元)</string>
+    <string name="mine_interest_received">待收利息(元)</string>
+    <string name="mine_interest_normal">待收本金(元)</string>
+
+    <!--我的资产-->
+    <string name="assets_title">我的资产</string>
+    <string name="assets_interest_normal">待收本金</string>
+    <string name="assets_interest_received">待收利息</string>
+    <string name="assets_available_amount">可用余额</string>
+    <string name="assets_freezing_amount">冻结金额</string>
+
+    <!--登录与注册-->
+    <string name="please_input_phone_number_second">请输入手机号／用户名</string>
+    <string name="login_account_name">账号</string>
+    <string name="login_passowrd">密码</string>
+    <string name="login_pass_check">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="login_user_name_check">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_</string>
+    <string name="please_input_login_pass">请输入密码</string>
+    <string name="login">确认提交</string>
+
+    <!--意见反馈-->
+    <string name="feek_back_title">意见反馈</string>
+    <string name="feek_back_edit_advice">请写下您宝贵建议</string>
+    <string name="feek_back_successful">您的意见已成功提交</string>
+    <string name="feek_back_text_number">250字以内</string>
+    <string name="feek_back_max_length">250</string>
+    <string name="login_quick_registration">快速注册</string>
+    <string name="login_forget_pass">忘记密码?</string>
+    <string name="regist_user_name">用户名</string>
+    <string name="regitst_user_rule_hint">用户名需大于等于6位，且不能用中文</string>
+    <string name="regist_password_rule_hint">6-20位含有字母、数字、符号组合密码</string>
+    <string name="regist_mobile_rule_hint">请输入您的手机号</string>
+    <string name="regist_user_mobile">手机号</string>
+    <string name="regist_mobile_check_code">手机验证码</string>
+    <string name="regist_mobile_check_code_hint">请输入短信验证码</string>
+    <string name="regist_invate_user">邀请人</string>
+    <string name="regist_invate_hint">请输入邀请人编号/手机号/用户名</string>
+    <string name="regist_getcode">获取验证码</string>
+    <string name="re_obtain">重新获取</string>
+
+    <!--客户服务-->
+    <string name="customer_service_title">客户服务</string>
+    <string name="customer_service_describe_phone">客服电话</string>
+    <string name="customer_service_phone">0771-2096576</string>
+    <string name="customer_service_working_time">工作日 09:00-18:00</string>
+    <string name="customer_service_describe_email">客服邮箱</string>
+    <string name="customer_service_email">kf@XXX.com"</string>
+    <string name="customer_service_describe_wx">微信公众号</string>
+    <string name="customer_service_wx">福金贷</string>
+    <string name="customer_service_positivebtn">呼叫</string>
+    <string name="customer_service_negativebtn">取消</string>
+    <!--新闻热点-->
+    <string name="hot_new_title">新闻</string>>
+    <string name="news">新闻动态</string>>
+
+    <!-- 交易记录 -->
+    <string name="no_transact_record">暂无交易记录</string>
+    <string name="transact_record">交易记录</string>
+    <string name="transact_id">交易号:</string>
+
+
+    <!--用户信息-->
+    <string name="change_bind_phone">修改绑定手机</string>
+    <string name="user_info_user_name">我的用户名</string>
+    <string name="mine_information_icon">我的头像</string>
+    <string name="mine_information_logout">退出登录</string>
+    <string name="mine_information">我的信息</string>
+
+    <!--修改绑定手机-->
+    <string name="bind_mobile">已绑定手机</string>
+    <string name="bind_new_mobile">绑定新手机</string>
+    <string name="mine_password_forget">忘记支付密码</string>
+    <string name="set_pay_pw">设置支付密码</string>
+    <string name="please_input_new_phone_no">请输入新的手机号码</string>
+    <string name="change_pay_pw">修改支付密码</string>
+
+    <!--关于-->
+    <string name="is_the_latest_version">已经是最新版</string>
+    <string name="check_update">检查更新</string>
+    <string name="app_about">广西福地担保有限公司成立于2006年1月，注册资本5.3亿元，为广西福地金融投资集团有限公司全资控股的国有独资企业。公司围绕百色市委、市人民政府经济发展目标任务，帮助中小企业提升信用，解决中小企业融资困难，构建中小企业与金融机构合作的桥梁和纽带。十年来公司先后为百色市800多个中小企业提供优质服务，累计融资担保额达92.5亿元（银行贷款担保77.82亿、互联网融资担保12.24亿、贸易履约担保2.44亿）。</string>
+
+
+    <!-- 充值 提现 -->
+    <string name="mine_withdraw_all">全部提现</string>
+    <string name="mine_withdraw_money">提现金额</string>
+    <string name="mine_recharge_money">充值金额</string>
+    <string name="mine_recharge_success">充值成功</string>
+    <string name="mine_recharge_num">充值&#160;%1$s元</string>
+    <string name="mine_withdraw_num">提现&#160;%1$s元</string>
+    <string name="mine_withdraw_hint">0.00元</string>
+    <string name="mine_withdraw_expect">预计2小时内到账</string>
+    <string name="mine_account_available">当前账号余额%1$s元</string>
+    <string name="mine_withdraw_available">可用余额： %1$s元</string>
+    <string name="mine_withdraw_current_max">当前最多可提现%1$s</string>
+    <string name="mine_withdraw_overmax">金额已超过可提现余额</string>
+    <string name="mine_recharge_limit">单笔限额%1$s元,日限额%2$s元</string>
+    <string name="mine_recharge_overmax">单笔限额%1$s元</string>
+    <string name="mine_withdraw_bank_info">%1$s\n%2$s</string>
+    <string name="mine_recharge_end_number">尾号</string>
+    <string name="mine_recharge_submit">充值申请已提交</string>
+    <string name="mine_withdraw_finish">完成</string>
+
+    <!--投资首页-->
+    <string name="bond_transfer">债券转让</string>
+    <string name="state_owned_guarantee_product">国担产品</string>
+    <string name="default_sort">默认排序</string>
+    <string name="income_preferred">收益优先</string>
+    <string name="tab_borrow_amount">借款金额</string>
+    <string name="tab_bond_amount">转让金额</string>
+    <string name="project_time_limit">项目期限&#160;%1$1s</string>
+    <string name="borrow_amount">借款金额&#160;%1$1s</string>
+    <string name="bond_amount">转让金额&#160;%1$1s</string>
+
+    <!--项目详情-->
+    <string name="invest_detail_title">项目详情</string>
+    <string name="invest_detail_start_time">起投时间</string>
+    <string name="invest_detail_end_time">截止时间</string>
+    <string name="invest_detail_time_year">%1$s年</string>
+    <string name="invest_detail_rule">投资规则</string>
+    <string name="invest_detail_certificate">相关证件</string>
+    <string name="invest_detail_info">项目信息</string>
+    <string name="invest_detail_guarantee">担保信息</string>
+    <string name="invest_detail_borrower">借款人信息</string>
+    <string name="invest_detail_note">投资记录(%1$s)</string>
+    <string name="invest_detail_repay_type">还款方式</string>
+    <string name="invest_detail_money">项目金额(%1$s)</string>
+    <string name="invest_detail_start_money">起投金额(元)</string>
+    <string name="invest_detail_start_time_key">起息时间</string>
+    <string name="invest_detail_start_time_value">投资当日计息</string>
+    <string name="invest_last_money_tip">剩余可投</string>
+    <string name="invest_detail_sellout">抢光了</string>
+    <string name="invest_detail_project_time_limit">项目期限(月)</string>
+    <string name="invest_detail_borrow_amount">借款金额(万)</string>
+    <string name="invest_detail_remain_amount">剩余金额(万)</string>
+    <string name="invest_detail_invest_number">已投笔数(笔)</string>
+    <string name="invest_detail_bond_amount">转让金额(万)</string>
+    <string name="invest_detail_original_amount">原始金额(万)</string>
+    <string name="invest_detail_earnings_thousand">预期收益(万)</string>
+    <string name="invest_detail_remain_time">剩余期限(天)</string>
+    <string name="invest_detail_invest_end_time">投资截止时间</string>
+    <string name="invest_detail_bond_info">转让信息</string>
+    <string name="invest_detail_bond_object">转让人</string>
+    <string name="invest_detail_bond_amount2">转让金额</string>
+    <string name="invest_detail_bond_time">转让时间</string>
+    <string name="invest_detail_bond_notice">转让须知</string>
+    <string name="invest_detail_commitment_info">承诺信息</string>
+
+    <!-- 投资记录 -->
+    <string name="invest_record_empty_tip">还没有人投资，快去投资吧~</string>
+    <string name="invest_record_go">去投资</string>
+    <string name="invest_record_note">投资记录</string>
+
+    <!--我的投资-->
+    <string name="custom_principal_investment">在投本金(元)</string>
+    <string name="custom_accumulatedl_income">累计收益(元)</string>
+    <string name="you_not_have_available_custom">暂无该类型项目</string>
+    <string name="invest_money">投资金额</string>
+    <string name="custom_start_time">起息时间</string>
+    <string name="custom_start_time_end">止息时间</string>
+    <string name="custom_original_invest">投资本金</string>
+    <string name="custom_must_invert">应回款</string>
+    <string name="custom_invert_style">回款方式</string>
+    <string name="mine_customization">我的定制</string>
+    <string name="mine_regular">我的定期</string>
+    <string name="mine_invest">我的投资</string>
+    <string name="custom_in_custom">投资中</string>
+    <string name="custom_is_over">已结束</string>
+    <string name="custom_prin_inter_received">待收本息</string>
+    <string name="mine_interest_received_assets">待收利息</string>
+    <string name="custom_net_prin_inter_received">实收本息</string>
+    <string name="custom_net_original_invest">实收利息</string>
+    <string name="custom_prin_inter_received_blanck">待收本息(元)</string>
+    <string name="custom_original_invest_blanck">投资本金(元)</string>
+    <string name="custom_details_rate_return">预期年化收益率</string>
+    <string name="custom_details_invest_time">投资时间</string>
+    <string name="custom_details_begin_interset">开始计息</string>
+    <string name="custom_details_over_interset">结束计息</string>
+    <string name="custom_details_back_account">回款到账</string>
+    <string name="custom_details_back_plan">回款计划</string>
+    <string name="product_description_href">产品说明</string>
+    <string name="custom_details_immediately">查看</string>
+    <string name="custom_net_prin_inter_received_blanck">实收本息(元)</string>
+    <string name="custom_net_original_invest_blanck">实收利息(元)</string>
+    <string name="custom_details_xpected_return">预期收益(元)</string>
+    <string name="custom_details_rule_period">第%1$s期</string>
+    <string name="custom_details_rule_amount">回款金额</string>
+    <string name="invest_detail_transfer_amount">转让金额</string>
+    <string name="invest_original_amount">原始金额</string>
+    <string name="my_invest_time_limit">项目期限</string>
+    <string name="invest_detail_transfer">转让</string>
+    <string name="invest_detail_transfer_ammount_hint">转让金额1000～100000</string>
+    <string name="invest_detail_transfer_success_hint">转让成功将收取1%服务费</string>
+    <string name="invest_detail_confirm_transfer">确认转让</string>
+    <string name="invest_detail_asingnee">受让人</string>
+    <string name="invest_detail_remain_days">剩余天数(天)</string>
+    <string name="transfer_ammount_error">请输入正确的金额</string>
+    <string name="transfer_confirm_hint">点击确认转让即视为同意</string>
+    <string name="transfer_confirm_protocol">《福金贷债权转让协议》</string>
+    <string name="my_invest_should_back_sum">应回总额(元)</string>
+    <string name="my_invest_should_back_principal">应回本金(元)</string>
+    <string name="my_invest_should_back_intrest">应回利息(元)</string>
+    <string name="my_invest_should_back_time">回款时间</string>
+    <string name="my_invest_contract_module">合同模块</string>
+    <string name="my_invest_project_contract">项目合同</string>
+    <string name="my_invest_back">已回款</string>
+    <string name="my_invest_have_transfered">已转让</string>
+    <string name="my_invest_have_invested">已投资</string>
+    <string name="my_invest_backing">回款中</string>
+    <string name="my_invest_transferring">转让中</string>
+    <string name="my_invest_cancel_transfer">取消转让</string>
+    <string name="my_invest_failure">投资失败</string>
+    <string name="my_invest_project_failure">项目未成立</string>
+
+    <string name="money_seat">——</string>
+    <string name="time_invalid">——</string>
+
+    <!--立即投资-->
+    <string name="invest_home_invest_rightnow">立即投资</string>
+    <string name="invest_ment_ramin_to_invest">剩余可投 </string>
+    <string name="available_amount_assets">可用余额</string>
+    <string name="invest_amount_earnings_yuan">预期收益(元)</string>
+    <string name="invest_detail_earnings">预期收益</string>
+    <string name="invest_all">全部买入</string>
+    <string name="invest_agreement_tip">点击立即投资即视为您同意</string>
+    <string name="invest_agreement_value">《福金贷投资理财协议》</string>
+    <string name="invest_start_money_hint">%1$s元起投，%2$s元递增</string>
+    <string name="invest_shortage_toast">可用余额不足，请先充值</string>
+    <string name="invest_money_toast">投资金额需要大于%1$d元</string>
+    <string name="invest_beyond_toast">您的投资金额已超过项目剩余可投金额</string>
+    <string name="invest_raise_toast">投资金额只能以%1$s元递增</string>
+    <string name="invest_lastonce_tip">当前投资金额仅可为%1$d元</string>
+    <string name="custom_details_invest_agreement">投资协议</string>
+
+    <!--安全中心-->
+    <string name="account_title">安全中心</string>
+    <string name="account_pay_account">支付账户</string>
+    <string name="account_real_name_authen">实名认证</string>
+    <string name="account_reset_pay_pass">重置支付密码</string>
+    <string name="account_change_login_pass">修改登录密码</string>
+    <string name="account_pay_notoppened">未开通</string>
+    <string name="account_pay_active">已激活</string>
+    <string name="account_real_name_notauto">未认证</string>
+    <string name="account_real_name_oppened">已认证</string>
+
+    <!--忘记密码-->
+    <string name="forget_pw_title">找回登录密码</string>
+    <string name="please_input_phone_number">请输入您要找回密码的账号</string>
+    <string name="forget_change_pw_hint">6-20位数字、字母组合</string>
+    <string name="forget_pw_new">输入新密码</string>
+    <string name="forget_pw_verification_phone">请输入正确的手机号码</string>
+
+    <!--修改登陆密码-->
+    <string name="change_login_pw_old">旧密码</string>
+    <string name="change_login_pw_new">请输入新的登陆密码</string>
+    <string name="change_login_pw_new_c">确认新密码</string>
+    <string name="change_login_pw_new_c_hint">请再次输入新密码</string>
+    <string name="comfirm_password_error">两次支付密码输入不一致</string>
+    <!--交易密码-->
+    <string name="set_payment_title">设置交易密码</string>
+    <string name="set_payment_hint">请输入交易密码</string>
+    <string name="set_payment_confirm">确认交易密码</string>
+    <string name="set_payment_confirm_hint">再次输入交易密码</string>
+    <string name="pw_reset_successful">密码设置成功</string>
+    <string name="forget_payment_title">忘记交易密码</string>
+    <string name="change_old_pay">原支付密码</string>
+    <string name="change_new_pay">新支付密码</string>
+    <string name="change_new_pay_c">确认新交易密码</string>
+    <string name="change_old_pay_hint">请输入原交易密码</string>
+    <string name="change_new_pay_hint">输入新交易密码</string>
+    <string name="change_new_pay_c_hint">再次输入交易密码</string>
+    <string name="old_password_error">原密码输入错误</string>
+    <!--投资结果页-->
+    <string name="invest_successfull">投资成功</string>
+
+    <!--支付账户开通结果页-->
+    <string name="pay_account_open">支付账户</string>
+    <string name="pay_account_open_title">支付账户已开通</string>
+
+    <!--实名认证-->
+    <string name="auto_title">实名认证</string>
+    <string name="auto_name">用户：%1$s</string>
+    <string name="auto_real_name">真实姓名</string>
+    <string name="auto_real_name_hint">请输入姓名</string>
+    <string name="auto_id_card">身份证号</string>
+    <string name="auto_id_card_hint">请输入身份证号</string>
+    <string name="auto_card_rule">0123456789xyzXYZ</string>
+
+    <!--绑定银行卡-->
+    <string name="cardholder">持卡人：%1$s</string>
+    <string name="change_bank_card">更换银行卡</string>
+    <string name="bind_bank_card">绑定银行卡</string>
+    <string name="bank_card_no">银行卡号</string>
+    <string name="please_input_bank_card_no">请输入银行卡卡号</string>
+    <string name="bank_account">开户行</string>
+    <string name="please_select_account">请选择开户行</string>
+    <string name="phone_number">手机号</string>
+    <string name="bank_link_mobile">请输入银行卡预留手机号</string>
+    <string name="bank_card_checkcode">验证码</string>
 </resources>

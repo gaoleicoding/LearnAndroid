@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.gaolei.famousfameproject"
         minSdkVersion 15
-        targetSdkVersion 27
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,7 +25,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:26+'
+    implementation 'com.android.support:recyclerview-v7:26+'
+
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
@@ -33,9 +35,9 @@ dependencies {
 
     //注解
     implementation rootProject.ext.dependencies["butterknife"]
-    api rootProject.ext.dependencies["retrofit"]
-    api rootProject.ext.dependencies["retrofit-converter-gson"]
-    api rootProject.ext.dependencies["okhttp3"]
-    api rootProject.ext.dependencies["okio"]
-    api rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["retrofit"]
+    implementation rootProject.ext.dependencies["retrofit-converter-gson"]
+    implementation rootProject.ext.dependencies["okhttp3"]
+    implementation rootProject.ext.dependencies["okio"]
+    implementation rootProject.ext.dependencies["glide"]
 }

@@ -8,6 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <!--底部弹出dialog样式-->
+    <style name="BottomDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--宽高包裹内容根模版-->
     <style name="wrap_height_width">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
