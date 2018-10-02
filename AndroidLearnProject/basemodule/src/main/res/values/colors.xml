@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="app_color">#79be37</color>
+    <color name="color_tab_unselect">#9b9b9b</color>
+    <color name="white">#FFFFFF</color>
+    <color name="color_5b5d5c">#5b5d5c</color>
+    <color name="color_c3">#8A8E99</color>
+    <color name="color_co">#FF7429</color>
+    <color name="color_c5">#C2C5CC</color>
+
+</resources>

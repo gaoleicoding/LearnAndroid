@@ -1,0 +1,213 @@
+apply plugin: 'com.android.application'
+
+ext.getCNName = {
+    java.util.HashMap<String, String> map = new HashMap<>();
+    map.put("xiaomi", "xiaomi-小米.apk");
+    map.put("xueba", "xueba-学霸推广.apk");
+    map.put("Baidu", "Baidu-百度.apk");
+    map.put("Tencent", "Tencent-腾讯应用宝.apk");
+    map.put("XuetangX", "XuetangX-学堂主站.apk");
+    map.put("Wandoujia", "Wandoujia-豌豆荚.apk");
+    map.put("huawei", "huawei-华为.apk");
+    map.put("Qihoo", "Qihoo-360手机助手.apk");
+    map.put("meizu", "meizu-魅族.apk");
+    map.put("Anzhi", "Anzhi-安智.apk");
+    map.put("taobao", "taobao-淘宝.apk");
+    map.put("oppo", "oppo-oppo手机.apk");
+    map.put("lenovo", "lenovo-联想手机.apk");
+    map.put("google", "google-谷歌Play.apk");
+    map.put("ppzhushou", "ppzhushou-pp助手.apk");
+    map.put("sep_9", "sep_9-某推广渠道.apk");
+    map.put("letv", "letv-乐视手机.apk");
+    map.put("yingyonghui", "yingyonghui-应用汇.apk");
+    map.put("gfan", "gfan-机锋.apk");
+    map.put("sougou", "sougou-搜狗.apk");
+    map.put("jlyyh", "jlyyh-金立.apk");
+    map.put("offline_event", "offline_event-线下活动.apk");
+    map.put("vivo", "vivo-vivo手机.apk");
+    map.put("qingning", "qingning-青柠.apk");
+    map.put("duomeng", "duomeng-多盟.apk");
+    map.put("TencentTg", "Tencent-yyytg-应用宝推广.apk");
+    map.put("BaiduTg", "Baidu-bdtg-百度推广.apk");
+
+    return map;
+}
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'mvpmodel'
+            keyPassword 'android1201'
+            storeFile file('mvpmodel.jks')
+            storePassword 'android1201'
+        }
+    }
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        applicationId "com.android.learn"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false //是否启用Proguard
+            shrinkResources false //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled false //是否启用zipAlign压缩
+            signingConfig signingConfigs.release
+        }
+        //执行lint检查，有任何的错误或者警告提示，都会终止构建
+//        lintOptions {
+//            abortOnError false
+//        }
+        release {
+            minifyEnabled true //是否启用Proguard
+            shrinkResources true //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled true //是否启用zipAlign压缩
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            //def date = new Date().format('yy-MM-dd-HH');
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为XuetangXRelease-3.1.0(3100)_Baidu-百度.apk
+                        def channel = variant.productFlavors[0].name
+                        def releaseFileName = "build/outputs/MVPModel－${variant.buildType.name}-V${variant.versionName}(${variant.versionCode})_${getCNName().get(channel)}"
+                        outputFileName = releaseFileName
+                    }
+                }
+            }
+        }
+
+    }
+
+    flavorDimensions("dimension1")
+    productFlavors {
+        xiaomi {
+            dimension "dimension1"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi", SPAM_VALUE: "xiaomi"];
+        }
+        xueba {
+            dimension "dimension1"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xueba", SPAM_VALUE: "xueba"];
+        }
+        Baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Baidu", SPAM_VALUE: "Baidu"];
+            dimension "dimension1"
+        }
+        Tencent {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Tencent", SPAM_VALUE: "Tencent"];
+            dimension "dimension1"
+        }
+        XuetangX {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "XuetangX", SPAM_VALUE: "XuetangX"];
+            dimension "dimension1"
+        }
+        Wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Wandoujia", SPAM_VALUE: "Wandoujia"];
+            dimension "dimension1"
+        }
+        huawei {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei", SPAM_VALUE: "huawei"];
+            dimension "dimension1"
+        }
+        Qihoo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Qihoo", SPAM_VALUE: "Qihoo"];
+            dimension "dimension1"
+        }
+        meizu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "meizhu", SPAM_VALUE: "meizhu"];
+            dimension "dimension1"
+        }
+        Anzhi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Anzhi", SPAM_VALUE: "Anzhi"];
+            dimension "dimension1"
+        }
+        taobao {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "taobao", SPAM_VALUE: "taobao"];
+            dimension "dimension1"
+        }
+        oppo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "oppo", SPAM_VALUE: "oppo"];
+            dimension "dimension1"
+        }
+        lenovo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "lenovo", SPAM_VALUE: "lenovo"];
+            dimension "dimension1"
+        }
+        google {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "google", SPAM_VALUE: "google"];
+            dimension "dimension1"
+        }
+        ppzhushou {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "ppzhushou", SPAM_VALUE: "ppzhushou"];
+            dimension "dimension1"
+        }
+
+        sep_9 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sep_9", SPAM_VALUE: "sep_9"];
+            dimension "dimension1"
+        }
+        letv {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "letv", SPAM_VALUE: "letv"];
+            dimension "dimension1"
+        }
+        yingyonghui {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyonghui", SPAM_VALUE: "yingyonghui"];
+            dimension "dimension1"
+        }
+        gfan {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "gfan", SPAM_VALUE: "gfan"];
+            dimension "dimension1"
+        }
+        sougou {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sougou", SPAM_VALUE: "sougou"];
+            dimension "dimension1"
+        }
+        jlyyh {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "jlyyh", SPAM_VALUE: "jlyyh"];
+            dimension "dimension1"
+        }
+        offline_event {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "offline_event", SPAM_VALUE: "offline_event"];
+            dimension "dimension1"
+        }
+        vivo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "vivo", SPAM_VALUE: "vivo"];
+            dimension "dimension1"
+        }
+        qingning {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "qingning", SPAM_VALUE: "qingning"];
+            dimension "dimension1"
+        }
+        duomeng {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "duomeng", SPAM_VALUE: "duomeng"];
+            //duomeng被市场当做推广来用了。
+            dimension "dimension1"
+        }
+        TencentTg {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Tencent", SPAM_VALUE: "yyytg"];
+            dimension "dimension1"
+        }
+        BaiduTg {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Baidu", SPAM_VALUE: "bdtg"];
+            dimension "dimension1"
+        }
+
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+//    api rootProject.ext.dependencies.appcompatV7
+//    api rootProject.ext.dependencies.design
+//    testImplementation 'junit:junit:4.12'
+//    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    api project(':basemodule')
+}

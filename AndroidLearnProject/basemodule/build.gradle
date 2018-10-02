@@ -1,0 +1,87 @@
+apply plugin: 'com.android.library'
+//使用greendao
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [eventBusIndex: 'com.android.learn.MyEventBusIndex']
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //执行lint检查，有任何的错误或者警告提示，都会终止构建
+    lintOptions {
+        abortOnError false
+    }
+//    sourceSets {
+//        main {
+//            //jni库的调用会到资源文件夹下libs里面找so文件,对于so文件，android studio理论上是要求放置在一个jniLibs文件夹下的，这样程序才能够找到要所依赖的so文件
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+
+    dependencies {
+        api fileTree(include: ['*.jar'], dir: 'libs')
+        api rootProject.ext.dependencies.appcompatV7
+        api rootProject.ext.dependencies.design
+        api rootProject.ext.dependencies["constraint-layout"]
+        testImplementation 'junit:junit:4.12'
+
+        api fileTree(include: ['*.jar'], dir: 'libs')
+        //okhttp retrofit
+        api rootProject.ext.dependencies["okhttp3"]
+        api rootProject.ext.dependencies["retrofit"]
+        api rootProject.ext.dependencies["retrofit-converter-gson"]
+        //butterknife
+        api rootProject.ext.dependencies["butterknife"]
+        annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+        // glide
+        api rootProject.ext.dependencies["glide"]
+        annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+        // banner
+        api rootProject.ext.dependencies["banner"]
+        // rxjava
+        api rootProject.ext.dependencies["rxjava"]
+        api rootProject.ext.dependencies["rxandroid"]
+        api rootProject.ext.dependencies["retrofit2:adapter-rxjava2"]
+        // dagger2
+        api rootProject.ext.dependencies["dagger"]
+        annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+        // eventbus
+        api rootProject.ext.dependencies["event-bus"]
+        annotationProcessor rootProject.ext.dependencies["eventbus-annotation-processor"]
+        // BlockCanary进行卡顿监控和提示
+        debugImplementation rootProject.ext.dependencies["blockcanary-android"]
+        releaseImplementation rootProject.ext.dependencies["blockcanary-no-op"]
+        //LeakCanary
+        debugImplementation rootProject.ext.dependencies["leakcanary-android"]
+        releaseImplementation rootProject.ext.dependencies["leakcanary-android-no-op"]
+        // Optional, if you use support library fragments:
+        debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.1'
+        //okhttp保存cookie
+        api rootProject.ext.dependencies["PersistentCookieJar"]
+        //下拉刷新框架
+        api rootProject.ext.dependencies["SmartRefreshLayout"]
+        api rootProject.ext.dependencies["SmartRefreshHeader"]
+
+        //友盟统计
+        api rootProject.ext.dependencies["umeng-common"]
+        api rootProject.ext.dependencies["umeng-analytics"]
+
+    }
+}

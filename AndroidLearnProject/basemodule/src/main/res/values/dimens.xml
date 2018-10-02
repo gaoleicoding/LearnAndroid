@@ -1,0 +1,8 @@
+<resources>
+
+
+    <dimen name="tab_icon_size">25dp</dimen>
+    <dimen name="tab_text_size">14sp</dimen>
+
+
+</resources>

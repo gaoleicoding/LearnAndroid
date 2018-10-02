@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">MVPModel</string>
+
+    <string name="net_not_force_please_try_refresh">网络不给力，刷新一下试试？</string>
+    <string name="loading">加载中...</string>
+    <string name="refresh">刷新</string>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/base_title_top"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="44dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:visibility="gone" />-->
+
+    <!--<com.android.learn.base.view.ErrorPageView-->
+    <!--android:id="@+id/ll_base_error_content"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical"-->
+    <!--android:visibility="gone" />-->
+
+
+    <FrameLayout
+        android:id="@+id/base_fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        layout="@layout/layout_error_page"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/ll_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/common_bg_loading" />
+
+        <ProgressBar
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@anim/anim_progress_load" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
