@@ -8,7 +8,7 @@ import com.android.learn.base.mpresenter.BasePresenter;
 
 
 
-public abstract class BaseMvpActivity<V, P extends BasePresenter<V>> extends BaseActivity {
+public abstract class BaseMvpActivity<V, P extends BasePresenter> extends BaseActivity {
 
     public P mPresenter;
 
@@ -16,7 +16,7 @@ public abstract class BaseMvpActivity<V, P extends BasePresenter<V>> extends Bas
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = initPresenter();
-        mPresenter.attach((V) this);
+        mPresenter.attach(this);
     }
 
     @Override

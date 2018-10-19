@@ -31,8 +31,8 @@ public class CustomApplication extends Application {
 
         LeakCanary.install(this);
         BlockCanary.install(this, new AppContext()).start();
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(getApplicationContext());
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(getApplicationContext());
 
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE,"");
         MobclickAgent.onEvent(this, "enter","CustomApplication");//前统计的事件ID

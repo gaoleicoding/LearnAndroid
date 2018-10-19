@@ -82,6 +82,6 @@ android {
         //友盟统计
         api rootProject.ext.dependencies["umeng-common"]
         api rootProject.ext.dependencies["umeng-analytics"]
-
+        api 'cat.ereza:customactivityoncrash:2.2.0'
     }
 }
