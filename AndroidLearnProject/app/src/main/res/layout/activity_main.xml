@@ -7,7 +7,7 @@
 
     <com.android.learn.base.view.TitleView
         android:layout_width="match_parent"
-        android:layout_height="45dp" />
+        android:layout_height="42dp" />
 
     <com.android.learn.view.CustomViewPager
         android:id="@+id/viewPager"
