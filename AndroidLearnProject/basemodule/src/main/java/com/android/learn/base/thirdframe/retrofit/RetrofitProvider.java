@@ -1,16 +1,15 @@
-package com.android.learn.thirdframe.retrofit;
+package com.android.learn.base.thirdframe.retrofit;
 
 
+import com.android.learn.base.api.ApiService;
+import com.android.learn.base.application.CustomApplication;
+import com.android.learn.base.thirdframe.retrofit.interceptor.HttpLoggingInterceptor;
+import com.android.learn.base.thirdframe.retrofit.interceptor.OfflineCacheInterceptor;
+import com.android.learn.base.thirdframe.retrofit.interceptor.OnlineCacheInterceptor;
+import com.android.learn.base.thirdframe.retrofit.interceptor.RetryIntercepter;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
-import com.android.learn.base.api.ApiService;
-import com.android.learn.base.application.CustomApplication;
-import com.android.learn.thirdframe.retrofit.interceptor.GzipRequestInterceptor;
-import com.android.learn.thirdframe.retrofit.interceptor.HttpLoggingInterceptor;
-import com.android.learn.thirdframe.retrofit.interceptor.OfflineCacheInterceptor;
-import com.android.learn.thirdframe.retrofit.interceptor.OnlineCacheInterceptor;
-import com.android.learn.thirdframe.retrofit.interceptor.RetryIntercepter;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -29,7 +28,7 @@ public final class RetrofitProvider {
     private static volatile RetrofitProvider sInstance;
     private ApiService restService;
     public static String netCachePath;
-
+    public  final String BASE_URL = "http://www.wanandroid.com/";
     private RetrofitProvider() {
     }
 
@@ -43,14 +42,14 @@ public final class RetrofitProvider {
                     .addInterceptor(new OfflineCacheInterceptor())//无网缓存拦截器
                     .cache(new Cache(new File(netCachePath), 50 * 10240 * 1024))//缓存路径和空间设置
                     .addInterceptor(new RetryIntercepter(4))//重试
-                    .addInterceptor(new GzipRequestInterceptor())//开启Gzip压缩
+//                    .addInterceptor(new GzipRequestInterceptor())//开启Gzip压缩
 
 //                    .addInterceptor(new DefaultHeaderInterceptor())//请求连接中添加头信息
 //                    .addInterceptor(new ProgressInterceptor())//请求url的进度
 //                    .addInterceptor(new TokenInterceptor())//token过期，自动刷新Token
 //                    .addInterceptor(new SignInterceptor())//所有的接口，默认需要带上sign,timestamp2个参数
 //                    .addNetworkInterceptor(new ParamsEncryptInterceptor())//参数加密,一般针对表单中的字段和值进行加密，防止中途第三方进行窥探和篡改
-.cookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(CustomApplication.context)))
+                    .cookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(CustomApplication.context)))
                     .connectTimeout(5, TimeUnit.SECONDS)
                     .readTimeout(5, TimeUnit.SECONDS)
                     .writeTimeout(5, TimeUnit.SECONDS)
@@ -60,7 +59,7 @@ public final class RetrofitProvider {
         if (mRetrofit == null) {
             mRetrofit = new Retrofit.Builder()
                     .client(mOkHttpClient)
-                    .baseUrl(com.android.learn.thirdframe.retrofit.UrlConfig.BASE_URL)
+                    .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();

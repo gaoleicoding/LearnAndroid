@@ -1,4 +1,4 @@
-package com.android.learn.thirdframe.rxjava;
+package com.android.learn.base.thirdframe.rxjava;
 
 import android.app.Dialog;
 import android.content.Context;

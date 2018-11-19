@@ -1,8 +1,8 @@
-package com.android.learn.thirdframe.retrofit.interceptor.util;
+package com.android.learn.base.thirdframe.retrofit.interceptor.util;
 
 import android.util.Log;
 
-import com.android.learn.thirdframe.retrofit.interceptor.ProgressInterceptor;
+import com.android.learn.base.thirdframe.retrofit.interceptor.ProgressInterceptor;
 
 import java.io.IOException;
 

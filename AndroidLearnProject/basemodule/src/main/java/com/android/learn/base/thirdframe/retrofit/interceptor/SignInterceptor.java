@@ -1,4 +1,4 @@
-package com.android.learn.thirdframe.retrofit.interceptor;
+package com.android.learn.base.thirdframe.retrofit.interceptor;
 
 import android.content.Context;
 import android.support.v4.util.ArrayMap;

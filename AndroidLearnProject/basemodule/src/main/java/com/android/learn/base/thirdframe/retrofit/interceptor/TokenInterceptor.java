@@ -1,4 +1,4 @@
-package com.android.learn.thirdframe.retrofit.interceptor;
+package com.android.learn.base.thirdframe.retrofit.interceptor;
 
 import com.android.learn.base.utils.LogUtil;
 

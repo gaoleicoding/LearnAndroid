@@ -1,4 +1,4 @@
-package com.android.learn.thirdframe.retrofit.interceptor.util;
+package com.android.learn.base.thirdframe.retrofit.interceptor.util;
 
 /**
  * @author guolin

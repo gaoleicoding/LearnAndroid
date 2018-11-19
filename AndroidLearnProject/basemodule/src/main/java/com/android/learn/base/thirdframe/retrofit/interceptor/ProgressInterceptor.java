@@ -1,7 +1,7 @@
-package com.android.learn.thirdframe.retrofit.interceptor;
+package com.android.learn.base.thirdframe.retrofit.interceptor;
 
-import com.android.learn.thirdframe.retrofit.interceptor.util.ProgressListener;
-import com.android.learn.thirdframe.retrofit.interceptor.util.ProgressResponseBody;
+import com.android.learn.base.thirdframe.retrofit.interceptor.util.ProgressListener;
+import com.android.learn.base.thirdframe.retrofit.interceptor.util.ProgressResponseBody;
 
 import java.io.IOException;
 import java.util.HashMap;
