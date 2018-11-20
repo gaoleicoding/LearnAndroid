@@ -3,8 +3,8 @@ package com.android.learn.mpresenter;
 
 import com.android.learn.base.mmodel.ProjectListData;
 import com.android.learn.base.mpresenter.BasePresenter;
+import com.android.learn.base.thirdframe.rxjava.BaseObserver;
 import com.android.learn.mcontract.ProjectContract;
-import com.android.learn.thirdframe.rxjava.BaseObserver;
 
 import io.reactivex.Observable;
 

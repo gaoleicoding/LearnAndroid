@@ -4,8 +4,8 @@ package com.android.learn.mpresenter;
 import com.android.learn.base.mmodel.BannerListData;
 import com.android.learn.base.mmodel.ArticleListData;
 import com.android.learn.base.mpresenter.BasePresenter;
+import com.android.learn.base.thirdframe.rxjava.BaseObserver;
 import com.android.learn.mcontract.HomeContract;
-import com.android.learn.thirdframe.rxjava.BaseObserver;
 
 import io.reactivex.Observable;
 

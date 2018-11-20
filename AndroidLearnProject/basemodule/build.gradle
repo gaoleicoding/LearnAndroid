@@ -78,10 +78,13 @@ android {
         //下拉刷新框架
         api rootProject.ext.dependencies["SmartRefreshLayout"]
         api rootProject.ext.dependencies["SmartRefreshHeader"]
+        //RecyclerView万能适配器
+        compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.7'
 
         //友盟统计
         api rootProject.ext.dependencies["umeng-common"]
         api rootProject.ext.dependencies["umeng-analytics"]
+        //崩溃自定义跳转界面
         api 'cat.ereza:customactivityoncrash:2.2.0'
     }
 }

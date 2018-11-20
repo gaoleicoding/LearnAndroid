@@ -9,11 +9,12 @@ import android.view.View;
 import com.android.learn.R;
 import com.android.learn.activity.ArticleDetailActivity;
 import com.android.learn.adapter.DividerItemDecoration;
-import com.android.learn.adapter.ProjectListAdapter;
+import com.android.learn.adapter.ProjectQuickAdapter;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.ProjectListData;
 import com.android.learn.mcontract.ProjectContract;
 import com.android.learn.mpresenter.ProjectPresenter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
@@ -35,7 +36,7 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
     RecyclerView project_recyclerview;
     @BindView(R.id.smartRefreshLayout_home)
     SmartRefreshLayout smartRefreshLayout;
-    ProjectListAdapter projectAdapter;
+    ProjectQuickAdapter projectAdapter;
     private List<ProjectListData.ProjectData> projectDataList;
 
     @Override
@@ -87,9 +88,10 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
             smartRefreshLayout.finishLoadMore();
         }
 
-        projectAdapter.setOnItemClickListener(new ProjectListAdapter.OnItemClickListener() {
+
+        projectAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
             @Override
-            public void onItemClick(View v, int position) {
+            public void onItemClick(View view, int position) {
                 Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("url", projectDataList.get(position).getLink());
@@ -97,11 +99,12 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
                 startActivity(intent);
             }
         });
+
     }
 
     private void initRecyclerView() {
         projectDataList = new ArrayList<>();
-        projectAdapter = new ProjectListAdapter(getActivity(), projectDataList);
+        projectAdapter = new ProjectQuickAdapter(getActivity(), projectDataList);
         project_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL_LIST));
         project_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));

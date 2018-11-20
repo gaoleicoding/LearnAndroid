@@ -8,18 +8,20 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.android.learn.adapter.ArticleQuickAdapter;
 import com.bumptech.glide.Glide;
 import com.android.learn.R;
 import com.android.learn.activity.ArticleDetailActivity;
 import com.android.learn.adapter.DividerItemDecoration;
-import com.android.learn.adapter.ArticleListAdapter;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.BannerListData;
 import com.android.learn.base.mmodel.ArticleListData;
 import com.android.learn.base.mmodel.ArticleListData.FeedArticleData;
 import com.android.learn.mcontract.HomeContract;
 import com.android.learn.mpresenter.HomePresenter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
@@ -48,7 +50,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     @BindView(R.id.smartRefreshLayout_home)
     SmartRefreshLayout smartRefreshLayout;
     private List<FeedArticleData> articleDataList;
-    private ArticleListAdapter feedArticleAdapter;
+    private ArticleQuickAdapter feedArticleAdapter;
 
     @Override
     public void initData(Bundle bundle) {
@@ -100,10 +102,9 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
             feedArticleAdapter.notifyDataSetChanged();
             smartRefreshLayout.finishLoadMore();
         }
-
-        feedArticleAdapter.setOnItemClickListener(new ArticleListAdapter.OnItemClickListener() {
+        feedArticleAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
             @Override
-            public void onItemClick(View v, int position) {
+            public void onItemClick(View view, int position) {
                 Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("url", articleDataList.get(position).getLink());
@@ -111,6 +112,13 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
                 startActivity(intent);
             }
         });
+//上拉加载（设置这个监听就表示有上拉加载功能了）
+        feedArticleAdapter.setOnLoadMoreListener(10,new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override public void onLoadMoreRequested() {
+
+            }
+        });
+
     }
 
     @Override
@@ -169,7 +177,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 
     private void initRecyclerView() {
         articleDataList = new ArrayList<>();
-        feedArticleAdapter = new ArticleListAdapter(getActivity(), articleDataList);
+        feedArticleAdapter = new ArticleQuickAdapter(getActivity(), articleDataList);
         project_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL_LIST));
         project_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
