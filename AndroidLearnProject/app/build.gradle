@@ -77,7 +77,7 @@ android {
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
                         // 输出apk名称为XuetangXRelease-3.1.0(3100)_Baidu-百度.apk
                         def channel = variant.productFlavors[0].name
-                        def releaseFileName = "build/outputs/MVPModel－${variant.buildType.name}-V${variant.versionName}(${variant.versionCode})_${getCNName().get(channel)}"
+                        def releaseFileName = "build/outputs/LearnAndroid－${variant.buildType.name}-V${variant.versionName}(${variant.versionCode})_${getCNName().get(channel)}"
                         outputFileName = releaseFileName
                     }
                 }

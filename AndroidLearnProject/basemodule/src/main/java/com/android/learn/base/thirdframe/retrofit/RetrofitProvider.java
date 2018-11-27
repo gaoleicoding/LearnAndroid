@@ -1,7 +1,6 @@
 package com.android.learn.base.thirdframe.retrofit;
 
 
-import com.android.learn.base.api.ApiService;
 import com.android.learn.base.application.CustomApplication;
 import com.android.learn.base.thirdframe.retrofit.interceptor.HttpLoggingInterceptor;
 import com.android.learn.base.thirdframe.retrofit.interceptor.OfflineCacheInterceptor;

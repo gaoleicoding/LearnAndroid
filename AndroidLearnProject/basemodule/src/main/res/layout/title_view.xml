@@ -3,7 +3,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/header_layout"
     android:layout_width="match_parent"
-    android:layout_height="45dp"
+    android:layout_height="42dp"
     android:background="@color/app_color">
 
     <ImageView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
-        android:src="@mipmap/icon_comn_back"
+        android:src="@mipmap/icon_back"
         android:visibility="gone" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_centerInParent="true"
         android:text="首页"
         android:textColor="#ffffff"
-        android:textSize="14sp" />
+        android:textSize="16sp" />
 </RelativeLayout>
 
 

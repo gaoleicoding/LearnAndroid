@@ -154,7 +154,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 //        Transformer.DepthPage
 //        Transformer.FlipHorizontal
 //        Transformer.FlipVertical
-        banner.setBannerAnimation(Transformer.FlipHorizontal);
+//        banner.setBannerAnimation(Transformer.FlipHorizontal);
         banner.setIndicatorGravity(BannerConfig.CENTER);//设置指示器位置
         banner.setDelayTime(3000);//设置轮播时间
         banner.setImages(imageList);//设置图片源

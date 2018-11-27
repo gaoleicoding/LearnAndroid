@@ -1,6 +1,6 @@
 package com.android.learn.base.mpresenter;
 
-import com.android.learn.base.api.ApiService;
+import com.android.learn.base.thirdframe.retrofit.ApiService;
 import com.android.learn.base.thirdframe.retrofit.RetrofitProvider;
 import com.android.learn.base.thirdframe.rxjava.BaseObserver;
 import io.reactivex.Observable;
