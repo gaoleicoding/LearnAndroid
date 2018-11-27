@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">MVPModel</string>
-
+    <string name="mine">我的</string>
+    <string name="knowledge">知识点</string>
+    <string name="home">首页</string>
+    <string name="navigation">导航</string>
+    <string name="project">项目</string>
+    <string name="article_detail">文章详情</string>
+    <string name="author">作者：</string>
     <string name="net_not_force_please_try_refresh">网络不给力，刷新一下试试？</string>
     <string name="loading">加载中...</string>
     <string name="refresh">刷新</string>
+    <string name="login_register">点击头像登录/注册</string>
+    <string name="my_setting">设置</string>
+    <string name="my_logout">退出登录</string>
+    <string name="login">登录</string>
+    <string name="phone_num">手机号</string>
+    <string name="phone_num_input">请输入手机号</string>
+    <string name="password">密码&#160;&#160;&#160;&#160;</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="register">注册</string>
 
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">程序出错了，抱歉给您带来不便\n为了尽快解决此问题，您可以点击错误详情，并复制错误代码或截图，发邮件反馈到技术支持邮箱：gaoleiandroid@163.com</string>
     <string name="customactivityoncrash_error_activity_restart_app">重启</string>

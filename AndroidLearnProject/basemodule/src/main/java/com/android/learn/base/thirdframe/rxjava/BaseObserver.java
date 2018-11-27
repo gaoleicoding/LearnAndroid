@@ -55,7 +55,7 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
             errMsg = "服务器访问异常(IOException)";
         }
 
-            Utils.showToast(errMsg);
+            Utils.showToast(errMsg,true);
 
     }
 

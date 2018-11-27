@@ -53,6 +53,6 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:contentDescription="@null"
-            android:src="@drawable/icon_like_article_unselect" />
+            android:src="@drawable/icon_collect_unselect" />
     </RelativeLayout>
 </LinearLayout>

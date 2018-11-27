@@ -21,10 +21,8 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData> {
     @Override
     protected void convert(BaseViewHolder helper, FeedArticleData projectInfo) {
         helper.setText(R.id.item_project_list_title_tv, projectInfo.getTitle())
-//                .setText(R.id.item_project_list_content_tv, projectInfo.getDesc())
                 .setText(R.id.item_project_list_time_tv, projectInfo.getNiceDate())
                 .setText(R.id.item_project_list_author_tv, projectInfo.getAuthor());
 
-//        ImageLoader.getInstance().load(context,projectInfo.getEnvelopePic(),(ImageView) helper.getView(R.id.item_project_list_iv));
     }
 }

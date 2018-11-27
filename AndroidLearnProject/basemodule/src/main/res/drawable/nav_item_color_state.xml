@@ -3,5 +3,5 @@
 
     <item android:color="@color/app_color" android:state_checked="true" />
 
-    <item android:color="@color/color_tab_unselect" android:state_checked="false" />
+    <item android:color="@color/color_9b9b9b" android:state_checked="false" />
 </selector>

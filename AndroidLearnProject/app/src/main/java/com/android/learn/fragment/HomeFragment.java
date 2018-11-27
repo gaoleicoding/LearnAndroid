@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Debug;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -113,8 +114,9 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
             }
         });
 //上拉加载（设置这个监听就表示有上拉加载功能了）
-        feedArticleAdapter.setOnLoadMoreListener(10,new BaseQuickAdapter.RequestLoadMoreListener() {
-            @Override public void onLoadMoreRequested() {
+        feedArticleAdapter.setOnLoadMoreListener(10, new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
 
             }
         });
@@ -181,6 +183,18 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
         project_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL_LIST));
         project_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        project_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()) {
+            public boolean canScrollVertically() {
+                //解决ScrollView里存在多个RecyclerView时滑动卡顿的问题
+                //如果你的RecyclerView是水平滑动的话可以重写canScrollHorizontally方法
+                return false;
+            }
+        });
+        //解决数据加载不完的问题
+//        project_recyclerview.setNestedScrollingEnabled(false);
+//        project_recyclerview.setHasFixedSize(true);
+//        //解决数据加载完成后, 没有停留在顶部的问题
+        project_recyclerview.setFocusable(false);
         project_recyclerview.setAdapter(feedArticleAdapter);
     }
 
@@ -202,7 +216,8 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
             }
         });
     }
-    public void scrollToTop(){
+
+    public void scrollToTop() {
         project_recyclerview.scrollToPosition(0);
     }
 

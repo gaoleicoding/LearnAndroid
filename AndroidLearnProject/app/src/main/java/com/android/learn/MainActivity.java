@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.learn.adapter.MainTabAdapter;
@@ -13,6 +14,7 @@ import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.PermissionUtil;
 import com.android.learn.base.utils.Utils;
+import com.android.learn.base.view.TitleView;
 import com.android.learn.fragment.HomeFragment;
 import com.android.learn.fragment.KnowledgeFragment;
 import com.android.learn.fragment.NavigationFragment;
@@ -36,6 +38,8 @@ public class MainActivity extends BaseActivity {
     TabLayout tabLayout;
     @BindView(R.id.title)
     TextView title;
+    @BindView(R.id.header_layout)
+    TitleView header_layout;
     HomeFragment homeFragment;
     ProjectFragment projectFragment;
 
@@ -50,7 +54,8 @@ public class MainActivity extends BaseActivity {
         requestPermission();
 
     }
-    protected void initView(){
+
+    protected void initView() {
         mFragments = new ArrayList<Fragment>();
         homeFragment = new HomeFragment();
         projectFragment = new ProjectFragment();
@@ -94,7 +99,10 @@ public class MainActivity extends BaseActivity {
             //标签选中之后执行的方法
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                title.setText(titles.get(tab.getPosition()));
+                int position = tab.getPosition();
+                title.setText(titles.get(position));
+                if (position == 4) header_layout.setVisibility(View.GONE);
+                else header_layout.setVisibility(View.VISIBLE);
             }
 
             //标签没选中

@@ -5,8 +5,11 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="app_color">#79be37</color>
-    <color name="color_tab_unselect">#9b9b9b</color>
+    <color name="color_9b9b9b">#9b9b9b</color>
+    <color name="color_d0d0d0">#d0d0d0</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="color_5b5d5c">#5b5d5c</color>
     <color name="color_c3">#8A8E99</color>
     <color name="color_co">#FF7429</color>

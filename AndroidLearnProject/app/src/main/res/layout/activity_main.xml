@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <com.android.learn.base.view.TitleView
+        android:id="@+id/header_layout"
         android:layout_width="match_parent"
         android:layout_height="42dp" />
 
