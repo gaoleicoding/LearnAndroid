@@ -14,11 +14,17 @@
     <string name="my_setting">设置</string>
     <string name="my_logout">退出登录</string>
     <string name="login">登录</string>
+    <string name="account">账号&#160;&#160;</string>
     <string name="phone_num">手机号</string>
     <string name="phone_num_input">请输入手机号</string>
-    <string name="password">密码&#160;&#160;&#160;&#160;</string>
+    <string name="password">密码&#160;&#160;</string>
     <string name="confirm_password">确认密码</string>
     <string name="register">注册</string>
+    <string name="register_failure">注册失败，请重试</string>
+    <string name="register_password_too_short">密码不能少于6位，请重新设置</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_failure">登录失败，请重试</string>
+    <string name="user_not_login">你还没有登录,请登录</string>
 
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">程序出错了，抱歉给您带来不便\n为了尽快解决此问题，您可以点击错误详情，并复制错误代码或截图，发邮件反馈到技术支持邮箱：gaoleiandroid@163.com</string>
     <string name="customactivityoncrash_error_activity_restart_app">重启</string>

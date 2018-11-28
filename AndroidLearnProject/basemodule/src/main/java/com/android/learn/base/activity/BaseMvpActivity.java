@@ -8,7 +8,7 @@ import com.android.learn.base.mpresenter.BasePresenter;
 
 
 
-public abstract class BaseMvpActivity<V, P extends BasePresenter> extends BaseActivity {
+public abstract class BaseMvpActivity< P extends BasePresenter> extends BaseActivity {
 
     public P mPresenter;
 
@@ -18,6 +18,7 @@ public abstract class BaseMvpActivity<V, P extends BasePresenter> extends BaseAc
         mPresenter = initPresenter();
         if(mPresenter!=null)
         mPresenter.attach(this);
+        loadData();
     }
 
     @Override
@@ -29,4 +30,6 @@ public abstract class BaseMvpActivity<V, P extends BasePresenter> extends BaseAc
 
     //实例presenter
     public abstract P initPresenter();
+    //加载数据
+    protected abstract void loadData();
 }

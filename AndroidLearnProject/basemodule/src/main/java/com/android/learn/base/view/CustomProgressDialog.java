@@ -13,10 +13,10 @@ import android.widget.TextView;
 import com.gaolei.basemodule.R;
 
 
-public class CustomProgressDialog{
+public class CustomProgressDialog {
 
     public static Dialog createLoadingDialog(Context context) {
-
+        if (context == null) return null;
         LayoutInflater inflater = LayoutInflater.from(context);
         View v = inflater.inflate(R.layout.dialog_loading, null);// 得到加载view
         LinearLayout layout = (LinearLayout) v.findViewById(R.id.dialog_view);// 加载布局

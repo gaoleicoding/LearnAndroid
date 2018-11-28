@@ -17,8 +17,8 @@
 
         <com.android.learn.base.view.CircleImageView
             android:id="@+id/iv_user_photo"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/user_default_photo" />
 
@@ -28,7 +28,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:text="@string/login_register"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -45,8 +46,6 @@
             style="@style/user_info_txt"
             android:text="收藏" />
     </LinearLayout>
-
-
 
 
     <LinearLayout

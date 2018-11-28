@@ -19,14 +19,16 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
-            android:theme=" @style/FullScreenStyle" >
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/FullScreenStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".activity.ArticleDetailActivity"></activity>
         <activity android:name=".activity.SettingActivity"></activity>

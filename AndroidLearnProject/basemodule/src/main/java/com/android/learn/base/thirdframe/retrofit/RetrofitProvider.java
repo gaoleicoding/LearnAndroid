@@ -27,13 +27,14 @@ public final class RetrofitProvider {
     private static volatile RetrofitProvider sInstance;
     private ApiService restService;
     public static String netCachePath;
-    public  final String BASE_URL = "http://www.wanandroid.com/";
+    public final String BASE_URL = "http://www.wanandroid.com/";
+
     private RetrofitProvider() {
     }
 
 
     public RetrofitProvider builder() {
-        netCachePath= CustomApplication.context.getExternalFilesDir("net_cache").getAbsolutePath();
+        netCachePath = CustomApplication.context.getExternalFilesDir("net_cache").getAbsolutePath();
         if (mOkHttpClient == null) {
             mOkHttpClient = new OkHttpClient.Builder()
                     .addNetworkInterceptor(new HttpLoggingInterceptor())
@@ -75,6 +76,10 @@ public final class RetrofitProvider {
             }
         }
         return sInstance;
+    }
+
+    public <T> T createService(Class<T> tClass) {
+        return mRetrofit.create(tClass);
     }
 
     public ApiService getApiService() {

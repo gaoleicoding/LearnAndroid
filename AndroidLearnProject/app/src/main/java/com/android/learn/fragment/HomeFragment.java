@@ -132,9 +132,9 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
         int size = itemBeans.data.size();
 
         for (int i = 0; i < size; i++) {
-            imageList.add(itemBeans.data.get(i).getImagePath());
-            titleList.add(itemBeans.data.get(i).getTitle());
-            linkList.add(itemBeans.data.get(i).getUrl());
+            imageList.add(itemBeans.data.get(i).imagePath);
+            titleList.add(itemBeans.data.get(i).title);
+            linkList.add(itemBeans.data.get(i).url);
         }
         banner.setImageLoader(new com.youth.banner.loader.ImageLoader() {
             @Override

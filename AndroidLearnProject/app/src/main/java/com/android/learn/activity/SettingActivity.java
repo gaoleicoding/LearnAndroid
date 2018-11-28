@@ -9,9 +9,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.learn.R;
+import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.activity.BaseMvpActivity;
+import com.android.learn.base.event.LogoutEvent;
 import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.utils.Utils;
+import com.android.learn.base.utils.account.UserUtil;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -21,7 +26,7 @@ import butterknife.OnClick;
  * author: zlm
  * date: 2017/3/17 16:01
  */
-public class SettingActivity extends BaseMvpActivity {
+public class SettingActivity extends BaseActivity {
     @BindView(R.id.iv_back)
     ImageView iv_back;
     @BindView(R.id.title)
@@ -52,30 +57,26 @@ public class SettingActivity extends BaseMvpActivity {
         tv_versionName.setText(Utils.getVersionName(this));
     }
 
-    @Override
-    public BasePresenter initPresenter() {
-        return null;
-    }
 
     @OnClick({R.id.help_feedback_layout, R.id.version_update_layout, R.id.my_logout_layout})
     public void click(View view) {
-//        if (!UserUtil.isLogined()) {
-//            RegisterLoginActivity.startActivity(this);
-//            Utils.showToast(getString(R.string.user_not_login), true);
-//            return;
-//        }
-//        switch (view.getId()) {
+        if (!UserUtil.isLogined()) {
+            RegisterLoginActivity.startActivity(this);
+            Utils.showToast(getString(R.string.user_not_login), true);
+            return;
+        }
+        switch (view.getId()) {
 //            case R.id.help_feedback_layout:
 //                HelpFeedbackActivity.startActivity(SettingActivity.this);
 //                break;
 //            case R.id.version_update_layout:
 //                checkUpdate();
 //                break;
-//            case R.id.my_logout_layout:
-//                EventBus.getDefault().post(new LogoutEvent());
-//                finish();
-//                break;
-//        }
+            case R.id.my_logout_layout:
+                EventBus.getDefault().post(new LogoutEvent());
+                finish();
+                break;
+        }
     }
 
 

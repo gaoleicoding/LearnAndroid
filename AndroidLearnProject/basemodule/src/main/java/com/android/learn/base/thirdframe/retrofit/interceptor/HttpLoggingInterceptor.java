@@ -3,6 +3,8 @@ package com.android.learn.base.thirdframe.retrofit.interceptor;
 import android.util.Log;
 
 
+import com.android.learn.base.utils.LogUtil;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -17,7 +19,7 @@ public class HttpLoggingInterceptor implements Interceptor {
         Request request = chain.request();
 
         long t1 = System.nanoTime();//请求发起的时间
-        Log.d("gaolei",String.format("发送请求 %s on %s%n%s",
+        LogUtil.d("HttpLoggingInterceptor",String.format("发送请求 %s on %s%n%s",
                 request.url(), chain.connection(), request.headers()));
 
         Response response = chain.proceed(request);
@@ -29,7 +31,7 @@ public class HttpLoggingInterceptor implements Interceptor {
         //个新的response给应用层处理
         ResponseBody responseBody = response.peekBody(1024 * 1024);
 
-        Log.d("gaolei",String.format("接收响应: [%s] %n返回json:【%s】 %.1fms%n%s",
+        LogUtil.d("HttpLoggingInterceptor",String.format("接收响应: [%s] %n返回json:【%s】 %.1fms%n%s",
                 response.request().url(),
                 responseBody.string(),
                 (t2 - t1) / 1e6d,

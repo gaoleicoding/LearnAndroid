@@ -27,8 +27,10 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
         this.context=context;
         if(isShowDialog) {
             prgressDialog = CustomProgressDialog.createLoadingDialog(BaseActivity.context);
-            prgressDialog.setCancelable(true);//允许返回
-            prgressDialog.show();//显示
+            if(prgressDialog!=null) {
+                prgressDialog.setCancelable(true);//允许返回
+                prgressDialog.show();//显示
+            }
         }
     }
     protected BaseObserver(BaseView view, boolean isShowError){

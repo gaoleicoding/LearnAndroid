@@ -12,13 +12,13 @@ public class ArticleListData {
     public ListData data;
 
     public class ListData {
-        private int curPage;
+        public int curPage;
         public List<FeedArticleData> datas;
-        private int offset;
-        private boolean over;
-        private int pageCount;
-        private int size;
-        private int total;
+        public int offset;
+        public boolean over;
+        public int pageCount;
+        public int size;
+        public int total;
 
         public int getCurPage() {
             return curPage;
@@ -80,25 +80,25 @@ public class ArticleListData {
     }
         public class FeedArticleData implements Serializable {
 
-            private String apkLink;
-            private String author;
-            private int chapterId;
-            private String chapterName;
-            private boolean collect;
-            private int courseId;
-            private String desc;
-            private String envelopePic;
-            private int id;
-            private String link;
-            private String niceDate;
-            private String origin;
-            private String projectLink;
-            private int superChapterId;
-            private String superChapterName;
-            private long publishTime;
-            private String title;
-            private int visible;
-            private int zan;
+            public String apkLink;
+            public String author;
+            public int chapterId;
+            public String chapterName;
+            public boolean collect;
+            public int courseId;
+            public String desc;
+            public String envelopePic;
+            public int id;
+            public String link;
+            public String niceDate;
+            public String origin;
+            public String projectLink;
+            public int superChapterId;
+            public String superChapterName;
+            public long publishTime;
+            public String title;
+            public int visible;
+            public int zan;
 
             public String getApkLink() {
                 return apkLink;
