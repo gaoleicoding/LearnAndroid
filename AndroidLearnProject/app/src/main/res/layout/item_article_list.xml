@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/item_project_list_title_tv"
+        android:id="@+id/tv_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -24,7 +24,7 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/item_project_list_author_tv"
+            android:id="@+id/tv_item_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -36,17 +36,17 @@
             tools:text="GcsSloop" />
 
         <TextView
-            android:id="@+id/item_project_list_time_tv"
+            android:id="@+id/tv_item_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/item_project_list_author_tv"
+            android:layout_toRightOf="@id/tv_item_author"
             android:gravity="center"
             android:textColor="@color/color_5b5d5c" />
 
 
         <ImageView
-            android:id="@+id/item_search_pager_like_iv"
+            android:id="@+id/iv_item_collect"
             android:layout_width="25dp"
             android:layout_height="15dp"
             android:layout_alignParentRight="true"

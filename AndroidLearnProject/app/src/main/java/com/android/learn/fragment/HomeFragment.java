@@ -4,22 +4,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Debug;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.android.learn.adapter.ArticleQuickAdapter;
+import com.android.learn.base.event.CancelCollectEvent;
+import com.android.learn.base.event.LogoutEvent;
+import com.android.learn.base.mmodel.FeedArticleListData;
 import com.bumptech.glide.Glide;
 import com.android.learn.R;
 import com.android.learn.activity.ArticleDetailActivity;
 import com.android.learn.adapter.DividerItemDecoration;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.BannerListData;
-import com.android.learn.base.mmodel.ArticleListData;
-import com.android.learn.base.mmodel.ArticleListData.FeedArticleData;
+import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.mcontract.HomeContract;
 import com.android.learn.mpresenter.HomePresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -28,8 +28,11 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
-import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerListener;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,8 +47,8 @@ import butterknife.BindView;
 
 public class HomeFragment extends BaseMvpFragment<HomePresenter> implements HomeContract.View {
 
-    @BindView(R.id.project_recyclerview)
-    RecyclerView project_recyclerview;
+    @BindView(R.id.article_recyclerview)
+    RecyclerView article_recyclerview;
     @BindView(R.id.banner)
     Banner banner;
     @BindView(R.id.smartRefreshLayout_home)
@@ -56,9 +59,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     @Override
     public void initData(Bundle bundle) {
 
-        Debug.startMethodTracing("traceview");
-
-        Debug.stopMethodTracing();
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -92,8 +93,8 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 
 
     @Override
-    public void showArticleList(ArticleListData listData, boolean isRefresh) {
-        final List<FeedArticleData> newDataList = listData.data.getDatas();
+    public void showArticleList(FeedArticleListData listData, boolean isRefresh) {
+        final List<FeedArticleData> newDataList = listData.getDatas();
         if (isRefresh) {
 //            mAdapter.replaceData(feedArticleListData.getDatas());
             smartRefreshLayout.finishRefresh(true);
@@ -103,24 +104,27 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
             feedArticleAdapter.notifyDataSetChanged();
             smartRefreshLayout.finishLoadMore();
         }
-        feedArticleAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+        feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("url", articleDataList.get(position).getLink());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
-        });
-//上拉加载（设置这个监听就表示有上拉加载功能了）
-        feedArticleAdapter.setOnLoadMoreListener(10, new BaseQuickAdapter.RequestLoadMoreListener() {
-            @Override
-            public void onLoadMoreRequested() {
 
+        });
+        feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                if (feedArticleAdapter.getData().get(position).isCollect()) {
+                    mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
+                } else {
+                    mPresenter.addCollectArticle(position, feedArticleAdapter.getData().get(position));
+                }
             }
         });
-
     }
 
     @Override
@@ -158,7 +162,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 //        Transformer.FlipVertical
 //        banner.setBannerAnimation(Transformer.FlipHorizontal);
         banner.setIndicatorGravity(BannerConfig.CENTER);//设置指示器位置
-        banner.setDelayTime(3000);//设置轮播时间
+        banner.setDelayTime(4000);//设置轮播时间
         banner.setImages(imageList);//设置图片源
         banner.setBannerTitles(titleList);//设置标题源
 
@@ -177,13 +181,14 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
         });
     }
 
+
     private void initRecyclerView() {
         articleDataList = new ArrayList<>();
-        feedArticleAdapter = new ArticleQuickAdapter(getActivity(), articleDataList);
-        project_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
+        feedArticleAdapter = new ArticleQuickAdapter(getActivity(), articleDataList,"HomeFragment");
+        article_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL_LIST));
-        project_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        project_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()) {
+        article_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        article_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()) {
             public boolean canScrollVertically() {
                 //解决ScrollView里存在多个RecyclerView时滑动卡顿的问题
                 //如果你的RecyclerView是水平滑动的话可以重写canScrollHorizontally方法
@@ -194,8 +199,8 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 //        project_recyclerview.setNestedScrollingEnabled(false);
 //        project_recyclerview.setHasFixedSize(true);
 //        //解决数据加载完成后, 没有停留在顶部的问题
-        project_recyclerview.setFocusable(false);
-        project_recyclerview.setAdapter(feedArticleAdapter);
+        article_recyclerview.setFocusable(false);
+        article_recyclerview.setAdapter(feedArticleAdapter);
     }
 
     //初始化下拉刷新控件
@@ -218,7 +223,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     }
 
     public void scrollToTop() {
-        project_recyclerview.scrollToPosition(0);
+        article_recyclerview.scrollToPosition(0);
     }
 
     public void onResume() {
@@ -226,7 +231,31 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 
     }
 
+    @Override
+    public void showCollectArticleData(int position, FeedArticleData feedArticleData) {
+        feedArticleAdapter.setData(position, feedArticleData);
+    }
+
+    @Override
+    public void showCancelCollectArticleData(int position, FeedArticleData feedArticleData) {
+        feedArticleAdapter.setData(position, feedArticleData);
+    }
+
+    @Override
+    public void showCancelCollectArticleData(int id) {
+        int position=feedArticleAdapter.getPosById(id);
+        FeedArticleData feedArticleData=articleDataList.get(position);
+        feedArticleData.setCollect(false);
+        feedArticleAdapter.setData(position, feedArticleData);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(CancelCollectEvent event) {
+        mPresenter.cancelCollectArticle(event.id);
+    }
+
     public void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

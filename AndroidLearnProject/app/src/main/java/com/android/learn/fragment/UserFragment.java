@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.learn.R;
+import com.android.learn.activity.MyCollectActivity;
 import com.android.learn.activity.RegisterLoginActivity;
 import com.android.learn.activity.SettingActivity;
 import com.android.learn.base.event.LoginEvent;
@@ -50,9 +51,17 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
 
     }
 
-    @OnClick({R.id.iv_user_photo, R.id.my_setting_layout})
+    @OnClick({R.id.iv_user_photo, R.id.my_setting_layout, R.id.my_collect_layout})
     public void click(View view) {
         switch (view.getId()) {
+            case R.id.my_collect_layout:
+                if (!UserUtil.isLogined()) {
+                    RegisterLoginActivity.startActivity(getActivity());
+                    Utils.showToast(getString(R.string.user_not_login), true);
+                    return;
+                }
+                MyCollectActivity.startActivity(getActivity());
+                break;
             case R.id.my_setting_layout:
                 SettingActivity.startActivity(getActivity());
                 break;

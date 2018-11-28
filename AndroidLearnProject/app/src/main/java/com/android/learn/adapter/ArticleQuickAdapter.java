@@ -4,25 +4,50 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.android.learn.R;
-import com.android.learn.base.mmodel.ArticleListData.FeedArticleData;
+import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.thirdframe.glide.ImageLoader;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
-public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData> {
+public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseViewHolder> {
+
     Context context;
-    public ArticleQuickAdapter(Context context, List<FeedArticleData> list) {
+    List<FeedArticleData> list;
+    String fromWhere;
+
+    public ArticleQuickAdapter(Context context, List<FeedArticleData> list, String fromWhere) {
         super(R.layout.item_article_list, list);
-        this.context=context;
+        this.context = context;
+        this.list = list;
+        this.fromWhere = fromWhere;
+    }
+
+    public int getPosById(int id) {
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            if (id == list.get(i).id)
+                return i;
+        }
+        return 0;
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, FeedArticleData projectInfo) {
-        helper.setText(R.id.item_project_list_title_tv, projectInfo.getTitle())
-                .setText(R.id.item_project_list_time_tv, projectInfo.getNiceDate())
-                .setText(R.id.item_project_list_author_tv, projectInfo.getAuthor());
-
+    protected void convert(BaseViewHolder helper, FeedArticleData articleData) {
+        helper.setText(R.id.tv_item_title, articleData.getTitle())
+                .setText(R.id.tv_item_time, articleData.getNiceDate())
+                .setText(R.id.tv_item_author, articleData.getAuthor());
+        helper.addOnClickListener(R.id.iv_item_collect);
+        if ("HomeFragment".equals(fromWhere)) {
+            if (articleData.isCollect()) {
+                helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select);
+            } else {
+                helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_unselect);
+            }
+        }
+        if ("MyCollectActivity".equals(fromWhere)) {
+            helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select);
+        }
     }
 }

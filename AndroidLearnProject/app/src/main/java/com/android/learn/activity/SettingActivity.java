@@ -10,9 +10,7 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
-import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.LogoutEvent;
-import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.base.utils.account.UserUtil;
 
@@ -66,9 +64,9 @@ public class SettingActivity extends BaseActivity {
             return;
         }
         switch (view.getId()) {
-//            case R.id.help_feedback_layout:
-//                HelpFeedbackActivity.startActivity(SettingActivity.this);
-//                break;
+            case R.id.help_feedback_layout:
+                FeedbackActivity.startActivity(SettingActivity.this);
+                break;
 //            case R.id.version_update_layout:
 //                checkUpdate();
 //                break;

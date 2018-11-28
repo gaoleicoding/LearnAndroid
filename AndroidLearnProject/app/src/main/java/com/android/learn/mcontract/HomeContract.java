@@ -1,7 +1,8 @@
 package com.android.learn.mcontract;
 
 import com.android.learn.base.mmodel.BannerListData;
-import com.android.learn.base.mmodel.ArticleListData;
+import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.learn.base.mmodel.FeedArticleListData;
 
 /**
  * Created by gaolei on 2018/6/18.
@@ -21,12 +22,21 @@ public class HomeContract {
         void onRefreshMore();
 
         void onLoadMore();
+
+        void addCollectArticle(int position, FeedArticleData feedArticleData);
+
+        void cancelCollectArticle(int position, FeedArticleData feedArticleData);
     }
 
     public interface View {
 
-        void showArticleList(ArticleListData itemBeans, boolean isRefresh);
+        void showArticleList(FeedArticleListData itemBeans, boolean isRefresh);
 
         void showBannerList(BannerListData itemBeans);
+
+        void showCollectArticleData(int position, FeedArticleData feedArticleData);
+
+        void showCancelCollectArticleData(int position, FeedArticleData feedArticleData);
+        void showCancelCollectArticleData(int id);
     }
 }

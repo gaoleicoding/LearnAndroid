@@ -34,7 +34,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/help_feedback_layout"
+        android:id="@+id/my_collect_layout"
         style="@style/user_info_layout"
         android:layout_marginTop="5dp">
 

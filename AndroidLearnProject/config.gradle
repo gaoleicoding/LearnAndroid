@@ -5,8 +5,8 @@ ext {
             buildToolsVersion: "26.0.2",
             minSdkVersion    : 14,
             targetSdkVersion : 26,
-            versionCode      : 100,
-            versionName      : "1.0.0"
+            versionCode      : 101,
+            versionName      : "1.0.1"
     ]
 
     version = [
@@ -47,6 +47,8 @@ ext {
             "eventbus-annotation-processor": "org.greenrobot:eventbus-annotation-processor:3.1.1",
 
             "greendao"                     : "org.greenrobot:greendao:3.2.0",
+            "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",
+            "customactivityoncrash"        : "cat.ereza:customactivityoncrash:2.2.0",
 
 
             "leakcanary"                   : "com.squareup.leakcanary:leakcanary-android:1.3",

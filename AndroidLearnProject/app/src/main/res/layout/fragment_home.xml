@@ -55,7 +55,7 @@
                     android:background="@color/color_f2f2f2" />
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/project_recyclerview"
+                    android:id="@+id/article_recyclerview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@id/title"

@@ -2,8 +2,9 @@ package com.android.learn.base.thirdframe.retrofit;
 
 
 import com.android.learn.base.mmodel.BannerListData;
-import com.android.learn.base.mmodel.ArticleListData;
 import com.android.learn.base.mmodel.BaseData;
+import com.android.learn.base.mmodel.BaseResponse;
+import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.RegisterLoginData;
 import com.android.learn.base.mmodel.ProjectListData;
 
@@ -26,18 +27,27 @@ public interface ApiService {
     Observable<BannerListData> getBannerListData();
 
     @GET("article/list/{num}/json")
-    Observable<ArticleListData> getFeedArticleList(@Path("num") int num);
+    Observable<BaseResponse<FeedArticleListData>> getFeedArticleList(@Path("num") int num);
 
     @POST("user/login")
     @FormUrlEncoded
     Observable<RegisterLoginData> login(@Field("username") String username, @Field("password") String password);
 
-    @POST("user/logout")
-    @FormUrlEncoded
+    @GET("user/logout/json")
     Observable<BaseData> logout();
 
     @POST("user/register")
     @FormUrlEncoded
     Observable<RegisterLoginData> register(@Field("username") String username, @Field("password") String password, @Field("repassword") String repassword);
+
+    @POST("lg/collect/{id}/json")
+    Observable<BaseData> addCollectArticle(@Path("id") int id);
+
+    @GET("lg/collect/list/{page}/json")
+    Observable<BaseResponse<FeedArticleListData>> getCollectList(@Path("page") int page);
+
+    @POST("lg/uncollect_originId/{id}/json")
+    @FormUrlEncoded
+    Observable<BaseData> cancelCollectArticle(@Path("id") int id, @Field("originId") int originId);
 
 }

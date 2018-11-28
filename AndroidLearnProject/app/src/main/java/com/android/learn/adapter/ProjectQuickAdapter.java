@@ -13,7 +13,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
-public class ProjectQuickAdapter extends BaseQuickAdapter<ProjectData> {
+public class ProjectQuickAdapter extends BaseQuickAdapter<ProjectData,BaseViewHolder> {
     Context context;
     public ProjectQuickAdapter(Context context, List<ProjectData> list) {
         super(R.layout.item_project_list, list);

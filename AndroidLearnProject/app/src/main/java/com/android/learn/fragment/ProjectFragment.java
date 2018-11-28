@@ -89,15 +89,16 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
         }
 
 
-        projectAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+        projectAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("url", projectDataList.get(position).getLink());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
+
         });
 
     }
@@ -129,7 +130,8 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
             }
         });
     }
-    public void scrollToTop(){
+
+    public void scrollToTop() {
         project_recyclerview.scrollToPosition(0);
     }
 }

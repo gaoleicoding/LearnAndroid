@@ -84,6 +84,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:contentDescription="@null"
+                android:visibility="gone"
                 android:src="@drawable/icon_collect_unselect" />
         </RelativeLayout>
 
