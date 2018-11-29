@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="app_color">#79be37</color>
-    <color name="app_color_dd">#dd79be37</color>
+    <color name="app_color">#000000</color>
+    <color name="app_color_dd">#dd000000</color>
     <color name="color_9b9b9b">#9b9b9b</color>
     <color name="color_d0d0d0">#d0d0d0</color>
     <color name="color_f5f5f5">#f5f5f5</color>
@@ -18,18 +18,20 @@
     <color name="color_co">#FF7429</color>
     <color name="color_c5">#C2C5CC</color>
     <color name="color_f2f2f2">#f2f2f2</color>
-    <color name="ui_color">#fafafa</color>
+    <color name="ui_color">#000000</color>
+
 
 
 
     <color name="primary">#2196F3</color>
-    <color name="primary_dark">#1976D2</color>
+    <color name="primary_dark">#191A1E</color>
     <color name="accent">@color/primary</color>
-    <color name="text_color_topleft">#333333</color>
-    <color name="text_color_topcenter">#4e4e4e</color>
-    <color name="line_color_top">#d8d8d8</color>
-    <color name="text_color_noimg">#aaaaaa</color>
-    <color name="listview_item_color1">#FFFFFF</color>
-    <color name="listview_item_color2">#eeeeee</color>
+    <color name="frament_usercenter_bgcolor">#191A1E</color>
+    <color name="topbar_bg">#191A1E</color>
+    <color name="text_color_topleft">#8E8F91</color>
+    <color name="text_color_topcenter">#8E8F91</color>
+    <color name="line_color_top">#07080A</color>
+    <color name="listview_item_color1">#07080A</color>
+    <color name="listview_item_color2">#191A1E</color>
 
 </resources>

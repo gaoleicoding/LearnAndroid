@@ -43,6 +43,27 @@
             android:textColor="@color/color_9b9b9b" />
     </LinearLayout>
 
+    <LinearLayout
+        style="@style/user_info_layout"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/user_info_icon"
+            android:src="@drawable/icon_night_mode" />
+
+        <TextView
+            style="@style/user_info_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="夜间模式" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/cb_setting_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/abc_btn_check_material"
+            android:buttonTint="@color/colorAccent" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/my_logout_layout"

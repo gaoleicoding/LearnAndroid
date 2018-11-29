@@ -3,7 +3,9 @@ package com.android.learn.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.event.LogoutEvent;
+import com.android.learn.base.utils.SharedPreferencesUtils;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.base.utils.account.UserUtil;
 
@@ -37,6 +40,8 @@ public class SettingActivity extends BaseActivity {
     LinearLayout version_update_layout;
     @BindView(R.id.my_logout_layout)
     LinearLayout my_logout_layout;
+    @BindView(R.id.cb_setting_night)
+    AppCompatCheckBox cb_setting_night;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, SettingActivity.class);
@@ -49,10 +54,31 @@ public class SettingActivity extends BaseActivity {
     }
 
     @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
     protected void initData(Bundle bundle) {
         title.setText(getString(R.string.my_setting));
         iv_back.setVisibility(View.VISIBLE);
         tv_versionName.setText(Utils.getVersionName(this));
+        Boolean isNightMode= (Boolean) SharedPreferencesUtils.getParam(this,"nightMode",new Boolean(false));
+        if (isNightMode) {
+            cb_setting_night.setChecked(true);
+        } else {
+            cb_setting_night.setChecked(false);
+        }
+        cb_setting_night.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                SharedPreferencesUtils.setParam(SettingActivity.this,"nightMode",new Boolean(true));
+                else SharedPreferencesUtils.setParam(SettingActivity.this,"nightMode",new Boolean(false));
+                useNightMode(isChecked);
+            }
+        });
     }
 
 
