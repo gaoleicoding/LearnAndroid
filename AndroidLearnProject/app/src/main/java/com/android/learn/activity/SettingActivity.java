@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.colorful.Colorful;
+import com.android.learn.base.colorful.setter.ViewGroupSetter;
 import com.android.learn.base.event.LogoutEvent;
 import com.android.learn.base.utils.SharedPreferencesUtils;
 import com.android.learn.base.utils.Utils;
@@ -42,6 +44,7 @@ public class SettingActivity extends BaseActivity {
     LinearLayout my_logout_layout;
     @BindView(R.id.cb_setting_night)
     AppCompatCheckBox cb_setting_night;
+
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, SettingActivity.class);
@@ -102,6 +105,7 @@ public class SettingActivity extends BaseActivity {
                 break;
         }
     }
+
 
 
 //    private void checkUpdate() {

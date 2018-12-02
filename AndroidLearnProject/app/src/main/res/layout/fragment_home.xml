@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:skin="http://schemas.android.com/android/skin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/activity_bg_color"
+    skin:enable="true">
 
     <!--下拉刷新组件-->
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
@@ -38,28 +41,32 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@color/color_f2f2f2" />
+                    android:background="@color/divider_color"
+                    skin:enable="true"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:background="@color/activity_bg_color"
+                    android:textColor="@color/text_color"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="-推荐文章-"
+                    skin:enable="true"
                     android:textSize="14sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@color/color_f2f2f2" />
+                    android:background="@color/divider_color"
+                    skin:enable="true" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/article_recyclerview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@id/title"
-                    android:background="#ffffff" />
+                     />
 
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>

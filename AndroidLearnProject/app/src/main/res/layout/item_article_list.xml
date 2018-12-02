@@ -2,19 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:skin="http://schemas.android.com/android/skin"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="15dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="15dp">
 
 
     <TextView
         android:id="@+id/tv_item_title"
+        skin:enable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="@color/color_5b5d5c"
+        android:textColor="@color/text_color"
         android:textSize="16sp" />
 
 
@@ -25,6 +27,7 @@
 
         <TextView
             android:id="@+id/tv_item_author"
+            skin:enable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -32,17 +35,18 @@
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
-            android:textColor="@color/color_5b5d5c"
+            android:textColor="@color/text_color"
             tools:text="GcsSloop" />
 
         <TextView
             android:id="@+id/tv_item_time"
+            skin:enable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/tv_item_author"
             android:gravity="center"
-            android:textColor="@color/color_5b5d5c" />
+            android:textColor="@color/text_color" />
 
 
         <ImageView
@@ -51,9 +55,9 @@
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:contentDescription="@null"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:contentDescription="@null"
             android:src="@drawable/icon_collect_unselect" />
     </RelativeLayout>
 </LinearLayout>

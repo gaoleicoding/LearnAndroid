@@ -204,10 +204,10 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-//    api rootProject.ext.dependencies.appcompatV7
-//    api rootProject.ext.dependencies.design
-//    testImplementation 'junit:junit:4.12'
-//    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    //    api rootProject.ext.dependencies.appcompatV7
+    //    api rootProject.ext.dependencies.design
+    //    testImplementation 'junit:junit:4.12'
+    //    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
     api project(':basemodule')
 }

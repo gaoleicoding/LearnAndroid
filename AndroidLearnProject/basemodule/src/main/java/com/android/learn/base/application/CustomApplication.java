@@ -5,18 +5,17 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Environment;
 import android.util.Log;
+import android.view.LayoutInflater;
 
-
-import com.android.learn.base.utils.CrashHandler;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.github.moduth.blockcanary.BlockCanaryContext;
 import com.github.moduth.blockcanary.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
+import com.wind.me.xskinloader.SkinInflaterFactory;
+import com.wind.me.xskinloader.SkinManager;
 
 
 public class CustomApplication extends Application {
@@ -36,6 +35,9 @@ public class CustomApplication extends Application {
 
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE,"");
         MobclickAgent.onEvent(this, "enter","CustomApplication");//前统计的事件ID
+//        initSkinLoader();
+        SkinInflaterFactory.setFactory(LayoutInflater.from(this));  // for skin change
+        SkinManager.get().init(this);
     }
 
     public class AppContext extends BlockCanaryContext {
@@ -69,6 +71,15 @@ public class CustomApplication extends Application {
             return false;
         }
     }
-
+    /**
+     * Must call init first
+     */
+//    private void initSkinLoader() {
+//        Settings.createInstance(this);
+//        // 初始化皮肤框架
+//        SkinChangeHelper.getInstance().init(this);
+//        //初始化上次缓存的皮肤
+//        SkinChangeHelper.getInstance().refreshSkin(null);
+//    }
 
     }

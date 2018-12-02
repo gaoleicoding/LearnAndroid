@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:skin="http://schemas.android.com/android/skin"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -19,30 +19,29 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp"
-        >
+        android:layout_marginLeft="10dp">
 
         <TextView
             android:id="@+id/item_project_list_title_tv"
+            skin:enable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
-            android:textColor="@color/color_5b5d5c"
-            android:textSize="16sp"
-            tools:text="【开源完整项目】diycode客户端" />
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/item_project_list_content_tv"
+            skin:enable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/item_project_list_title_tv"
             android:layout_marginTop="10dp"
             android:ellipsize="end"
             android:maxLines="3"
-            android:textColor="@color/color_5b5d5c"
-            tools:text="Diycode 社区客户端，可以更方便的在手机上查看社区信息。应用采用了数据多级缓存，并且实现了离线浏览(访问过一次的页面会被缓存下来，没有网络也可查看)，相比于网页版，在一定程度上可以" />
+            android:textColor="@color/text_color" />
 
 
         <RelativeLayout
@@ -54,6 +53,7 @@
 
             <TextView
                 android:id="@+id/item_project_list_author_tv"
+                skin:enable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -61,18 +61,17 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                android:textColor="@color/color_5b5d5c"
-                tools:text="GcsSloop" />
+                android:textColor="@color/text_color" />
 
             <TextView
                 android:id="@+id/item_project_list_time_tv"
+                skin:enable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/item_project_list_author_tv"
                 android:gravity="center"
-                android:textColor="@color/color_5b5d5c"
-                tools:text="2018-01-29" />
+                android:textColor="@color/text_color" />
 
 
             <ImageView
@@ -81,11 +80,11 @@
                 android:layout_height="15dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:contentDescription="@null"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:contentDescription="@null"
-                android:visibility="gone"
-                android:src="@drawable/icon_collect_unselect" />
+                android:src="@drawable/icon_collect_unselect"
+                android:visibility="gone" />
         </RelativeLayout>
 
 

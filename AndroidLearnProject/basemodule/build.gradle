@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 //使用greendao
 apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.jakewharton.butterknife'
-
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -87,4 +86,7 @@ android {
         //崩溃自定义跳转界面
         api rootProject.ext.dependencies["customactivityoncrash"]
     }
+}
+dependencies {
+    implementation project(':xskinloader-lib')
 }
