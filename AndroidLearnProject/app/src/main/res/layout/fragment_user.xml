@@ -39,8 +39,8 @@
 
     <LinearLayout
         android:id="@+id/my_collect_layout"
-        style="@style/user_info_layout"
-        android:layout_marginTop="5dp">
+        skin:enable="true"
+        style="@style/user_info_layout">
 
         <ImageView
             style="@style/user_info_icon"
@@ -52,11 +52,15 @@
             skin:enable="true" />
     </LinearLayout>
 
+    <View
+        style="@style/horizontal_divider_setting"
+        android:layout_height="10dp"
+        skin:enable="true" />
 
     <LinearLayout
         android:id="@+id/my_setting_layout"
         style="@style/user_info_layout"
-        android:layout_marginTop="10dp">
+        skin:enable="true">
 
         <ImageView
             style="@style/user_info_icon"
@@ -67,4 +71,8 @@
             android:text="@string/my_setting"
             skin:enable="true" />
     </LinearLayout>
+
+    <View
+        style="@style/horizontal_divider_setting"
+        skin:enable="true" />
 </LinearLayout>

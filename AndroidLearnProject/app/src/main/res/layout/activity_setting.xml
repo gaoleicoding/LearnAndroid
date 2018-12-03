@@ -3,8 +3,8 @@
     xmlns:skin="http://schemas.android.com/android/skin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/activity_bg_color"
+    android:orientation="vertical"
     skin:enable="true">
 
     <com.android.learn.base.view.TitleView
@@ -24,13 +24,12 @@
         <TextView
             style="@style/user_info_txt"
             android:text="反馈与建议"
-
             skin:enable="true" />
     </LinearLayout>
 
-    <View style="@style/horizontal_divider_setting"
-        android:background="@color/divider_color"
-        skin:enable="true"/>
+    <View
+        style="@style/horizontal_divider_setting"
+        skin:enable="true" />
 
     <LinearLayout
         android:id="@+id/version_update_layout"
@@ -45,19 +44,19 @@
             style="@style/user_info_txt"
             android:layout_width="0dp"
             android:layout_weight="1"
-            skin:enable="true"
-            android:text="版本更新" />
+            android:text="版本更新"
+            skin:enable="true" />
 
         <TextView
             android:id="@+id/tv_versionName"
             style="@style/user_info_txt"
-            skin:enable="true"
-            android:textColor="@color/color_9b9b9b" />
+            android:textColor="@color/color_9b9b9b"
+            skin:enable="true" />
     </LinearLayout>
 
-    <View style="@style/horizontal_divider_setting"
-        android:background="@color/divider_color"
-        skin:enable="true"/>
+    <View
+        style="@style/horizontal_divider_setting"
+        skin:enable="true" />
 
     <LinearLayout
         style="@style/user_info_layout"
@@ -72,8 +71,8 @@
             style="@style/user_info_txt"
             android:layout_width="0dp"
             android:layout_weight="1"
-            skin:enable="true"
-            android:text="夜间模式" />
+            android:text="夜间模式"
+            skin:enable="true" />
 
         <android.support.v7.widget.AppCompatCheckBox
             android:id="@+id/cb_setting_night"
@@ -83,10 +82,10 @@
             android:buttonTint="@color/colorAccent" />
     </LinearLayout>
 
-    <TextView
+    <View
         style="@style/horizontal_divider_setting"
         android:layout_height="10dp"
-        skin:enable="true"/>
+        skin:enable="true" />
 
     <LinearLayout
         android:id="@+id/my_logout_layout"
@@ -99,10 +98,12 @@
 
         <TextView
             style="@style/user_info_txt"
-            skin:enable="true"
-            android:text="@string/my_logout" />
+            android:text="@string/my_logout"
+            skin:enable="true" />
     </LinearLayout>
-    <View style="@style/horizontal_divider_setting"
+
+    <View
+        style="@style/horizontal_divider_setting"
         android:background="@color/divider_color"
-        skin:enable="true"/>
+        skin:enable="true" />
 </LinearLayout>

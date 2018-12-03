@@ -8,6 +8,7 @@ import android.net.ConnectivityManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 
+import com.android.learn.base.xskin.ExtraAttrRegister;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.github.moduth.blockcanary.BlockCanaryContext;
 import com.github.moduth.blockcanary.BuildConfig;
@@ -36,6 +37,7 @@ public class CustomApplication extends Application {
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE,"");
         MobclickAgent.onEvent(this, "enter","CustomApplication");//前统计的事件ID
 //        initSkinLoader();
+        ExtraAttrRegister.init();
         SkinInflaterFactory.setFactory(LayoutInflater.from(this));  // for skin change
         SkinManager.get().init(this);
     }
