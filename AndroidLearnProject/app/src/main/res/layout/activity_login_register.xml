@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:skin="http://schemas.android.com/android/skin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/activity_bg_color"
+    android:orientation="vertical"
+    skin:enable="true">
 
     <com.android.learn.base.view.TitleView
         android:id="@+id/layout_title"
@@ -30,13 +33,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="@string/account"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                skin:enable="true" />
 
             <EditText
                 android:id="@+id/et_login_phone_num"
                 style="@style/code_edit_num_style"
-                android:inputType="number" />
+                android:inputType="number"
+                skin:enable="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,19 +57,22 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="@string/password"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                skin:enable="true" />
 
             <EditText
                 android:id="@+id/et_login_password"
                 style="@style/code_edit_num_letter_style"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                skin:enable="true" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_login"
             style="@style/btn_selector_match_style"
-            android:text="@string/login" />
+            android:text="@string/login"
+            skin:enable="true" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -80,8 +88,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="@string/register"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                skin:enable="true" />
 
         </RelativeLayout>
     </LinearLayout>
@@ -91,32 +100,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/layout_title"
-        android:background="@color/white"
+        android:background="@color/activity_bg_color"
         android:orientation="vertical"
+        skin:enable="true"
         android:visibility="gone">
 
         <EditText
             android:id="@+id/et_register_phone_num"
             style="@style/edit_match_style"
             android:hint="手机号/邮箱"
-            android:inputType="number" />
+            android:inputType="number"
+            skin:enable="true"/>
 
         <EditText
             android:id="@+id/et_register_password"
             style="@style/edit_match_style"
             android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            skin:enable="true"/>
 
         <EditText
             android:id="@+id/et_register_confirm_password"
             style="@style/edit_match_style"
             android:hint="@string/confirm_password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            skin:enable="true"/>
 
         <TextView
             android:id="@+id/tv_register"
             style="@style/btn_selector_match_style"
-            android:text="@string/register" />
+            android:text="@string/register"
+            skin:enable="true"/>
 
     </LinearLayout>
 

@@ -31,8 +31,8 @@ import butterknife.OnClick;
 
 public class FeedbackActivity extends BaseMvpActivity {
     private final int FILECHOOSER_RESULTCODE = 1;
-    private String sendEmail = "tuohuangnongke@163.com";//发送方邮件
-    private String sendEmaiPassword = "jindao2018";//发送方邮箱密码(或授权码)
+    private String sendEmail = "gaoleiemail@163.com";//发送方邮件
+    private String sendEmaiPassword = "gl1201";//发送方邮箱密码(或授权码)
     private String receiveEmail ="gaoleiandroid@163.com";//接收方邮件
     private String file_path = null;
     @BindView(R.id.send_btn)
