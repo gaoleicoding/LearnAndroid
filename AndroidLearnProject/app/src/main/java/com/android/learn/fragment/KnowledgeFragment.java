@@ -17,6 +17,8 @@ import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 
 import java.util.List;
 
+import butterknife.BindView;
+
 
 /**
  * @author quchao
@@ -24,7 +26,7 @@ import java.util.List;
  */
 
 public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> implements KnowledgeContract.View {
-    //    @BindView(R.id.hicvp)
+    @BindView(R.id.hicvp)
     HorizontalInfiniteCycleViewPager horizontalInfiniteCycleViewPager;
     private HorizontalPagerAdapter mPagerAdapter;
 
@@ -34,10 +36,6 @@ public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> imple
 
     @Override
     public void initView(View view) {
-        horizontalInfiniteCycleViewPager = view.findViewById(R.id.hicvp);
-
-
-//        horizontalInfiniteCycleViewPager.setMaxPageScale(0.9f);
     }
 
     @Override
