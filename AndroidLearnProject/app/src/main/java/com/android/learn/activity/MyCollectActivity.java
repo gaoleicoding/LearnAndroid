@@ -81,13 +81,6 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
         article_collect_recyclerview.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL_LIST));
         article_collect_recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        article_collect_recyclerview.setLayoutManager(new LinearLayoutManager(this) {
-            public boolean canScrollVertically() {
-                //解决ScrollView里存在多个RecyclerView时滑动卡顿的问题
-                //如果你的RecyclerView是水平滑动的话可以重写canScrollHorizontally方法
-                return false;
-            }
-        });
         //解决数据加载不完的问题
 //        project_recyclerview.setNestedScrollingEnabled(false);
 //        project_recyclerview.setHasFixedSize(true);

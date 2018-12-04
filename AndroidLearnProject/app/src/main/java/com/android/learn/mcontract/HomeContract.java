@@ -12,12 +12,9 @@ public class HomeContract {
 
     public interface Presenter {
 
-        /**
-         * Get feed article list
-         */
-        void getFeedArticleList(int num);
-
         void getBannerInfo();
+
+        void getFeedArticleList(int num);
 
         void onRefreshMore();
 

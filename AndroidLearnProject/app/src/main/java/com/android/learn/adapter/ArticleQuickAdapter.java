@@ -23,6 +23,9 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseV
         this.list = list;
         this.fromWhere = fromWhere;
     }
+    public void setList(List<FeedArticleData> list){
+        this.list=list;
+    }
 
     public int getPosById(int id) {
         int size = list.size();
@@ -39,7 +42,7 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseV
                 .setText(R.id.tv_item_time, articleData.getNiceDate())
                 .setText(R.id.tv_item_author, articleData.getAuthor());
         helper.addOnClickListener(R.id.iv_item_collect);
-        if ("HomeFragment".equals(fromWhere)) {
+        if ("HomeFragment".equals(fromWhere)||"KnowledgeChildActivity".equals(fromWhere)) {
             if (articleData.isCollect()) {
                 helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select);
             } else {

@@ -63,7 +63,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     }
 
     @Override
-    public void initView() {
+    public void initView(View view) {
         initSmartRefreshLayout();
         initRecyclerView();
     }

@@ -1,5 +1,6 @@
 package com.android.learn.base.thirdframe.rxjava;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 
@@ -20,23 +21,19 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
     protected String errMsg = "";
     private boolean isShowError = true;
     private Context context;
-    Dialog prgressDialog;
+    public static Dialog prgressDialog;
 
-    protected BaseObserver(boolean isShowDialog){
+    protected BaseObserver(boolean isShowDialog) {
         // context在CustomProgressDialog中用到
-        this.context=context;
-        if(isShowDialog) {
-            prgressDialog = CustomProgressDialog.createLoadingDialog(BaseActivity.context);
-            if(prgressDialog!=null) {
-                prgressDialog.setCancelable(true);//允许返回
-                prgressDialog.show();//显示
-            }
+        this.context = context;
+        if (isShowDialog) {
+            createProgressDialog(BaseActivity.context);
         }
     }
-    protected BaseObserver(BaseView view, boolean isShowError){
+
+    protected BaseObserver(BaseView view, boolean isShowError) {
         this.isShowError = isShowError;
     }
-
 
 
     @Override
@@ -46,8 +43,8 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
 
     @Override
     public void onError(Throwable e) {
-        if(prgressDialog!=null)
-      prgressDialog.cancel();
+        if (prgressDialog != null)
+            prgressDialog.cancel();
         if (!NetUtils.isConnected()) {
             errMsg = "网络连接出错,请检查网络";
 
@@ -57,14 +54,22 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
             errMsg = "服务器访问异常(IOException)";
         }
 
-            Utils.showToast(errMsg,true);
+        Utils.showToast(errMsg, true);
 
     }
 
     @Override
     public void onComplete() {
-        if(prgressDialog!=null)
-        prgressDialog.cancel();
+        if (prgressDialog != null)
+            prgressDialog.cancel();
     }
 
+    public static void createProgressDialog(Activity context) {
+        if (prgressDialog != null && prgressDialog.isShowing()) return;
+        prgressDialog = CustomProgressDialog.createLoadingDialog(context);
+        if (prgressDialog != null) {
+            prgressDialog.setCancelable(true);//允许返回
+            prgressDialog.show();//显示
+        }
+    }
 }

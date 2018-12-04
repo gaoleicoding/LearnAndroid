@@ -30,25 +30,27 @@ import butterknife.OnClick;
 
 
 public class FeedbackActivity extends BaseMvpActivity {
-    private final int FILECHOOSER_RESULTCODE = 1;
-    private String sendEmail = "gaoleiemail@163.com";//发送方邮件
-    private String sendEmaiPassword = "gl1201";//发送方邮箱密码(或授权码)
-    private String receiveEmail ="gaoleiandroid@163.com";//接收方邮件
-    private String file_path = null;
+
+    @BindView(R.id.iv_back)
+    ImageView iv_back;
+    @BindView(R.id.title)
+    TextView title;
     @BindView(R.id.send_btn)
     TextView send_btn;
     @BindView(R.id.add_attachment)
     TextView add_attachment;
     @BindView(R.id.file_dir)
     TextView file_dir;
-    @BindView(R.id.iv_back)
-    ImageView iv_back;
-    @BindView(R.id.title)
-    TextView title;
+
     @BindView(R.id.et_email_title)
     EditText et_email_title;
     @BindView(R.id.et_email_content)
     EditText et_email_content;
+    private final int FILECHOOSER_RESULTCODE = 1;
+    private String sendEmail = "gaoleiemail@163.com";//发送方邮件
+    private String sendEmaiPassword = "gl1201";//发送方邮箱密码(或授权码)
+    private String receiveEmail = "gaoleiandroid@163.com";//接收方邮件
+    private String file_path = null;
 
 
     public static void startActivity(Context context) {
@@ -173,7 +175,7 @@ public class FeedbackActivity extends BaseMvpActivity {
                 if (e.getMessage() != null)
                     Utils.showToast("反馈发送失败，请稍后再试", false);
                 e.printStackTrace();
-            }finally {
+            } finally {
                 finish();
             }
         }
@@ -272,7 +274,7 @@ public class FeedbackActivity extends BaseMvpActivity {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 
-    private void sendEmail(){
+    private void sendEmail() {
         Intent email = new Intent(Intent.ACTION_SENDTO);
         /*不带附件发送邮件*/
 //        email.setType("plain/text");

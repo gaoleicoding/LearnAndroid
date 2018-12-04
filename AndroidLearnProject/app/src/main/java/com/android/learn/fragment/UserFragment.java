@@ -47,7 +47,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
     }
 
     @Override
-    public void initView() {
+    public void initView(View view) {
 
     }
 

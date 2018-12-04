@@ -7,6 +7,9 @@ import com.android.learn.base.mmodel.BaseResponse;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.RegisterLoginData;
 import com.android.learn.base.mmodel.ProjectListData;
+import com.android.learn.base.mmodel.TreeBean;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
@@ -28,7 +31,8 @@ public interface ApiService {
 
     @GET("article/list/{num}/json")
     Observable<BaseResponse<FeedArticleListData>> getFeedArticleList(@Path("num") int num);
-
+    @GET("article/list/{num}/json")
+    Observable<BaseResponse<FeedArticleListData>> getKnowledgeArticleList(@Path("num") int num, @Query("cid") int cid);
     @POST("user/login")
     @FormUrlEncoded
     Observable<RegisterLoginData> login(@Field("username") String username, @Field("password") String password);
@@ -50,4 +54,6 @@ public interface ApiService {
     @FormUrlEncoded
     Observable<BaseData> cancelCollectArticle(@Path("id") int id, @Field("originId") int originId);
 
+    @GET("tree/json")
+    Observable<BaseResponse<List<TreeBean>>> getKnowledgeTree();
 }

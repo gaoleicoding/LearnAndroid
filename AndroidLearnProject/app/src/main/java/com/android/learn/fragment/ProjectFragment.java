@@ -48,7 +48,7 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
     }
 
     @Override
-    public void initView() {
+    public void initView(View view) {
         initSmartRefreshLayout();
         initRecyclerView();
     }

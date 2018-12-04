@@ -6,140 +6,148 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="KnowledgeChildActivity" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ba17dfa-cd3b-4d2f-be72-2f7c3e47349d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/basemodule/src/main/res/drawable/code_edit_bg.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_26_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_devlight_infinitecycleviewpager_1_0_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/HorizontalPagerAdapter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/KnowledgeChildContract.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/KnowledgeContract.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgeChildPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_knowledge_article.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_tree.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_tree_children.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/pic_android.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/TreeBean.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ScreenUtils.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_markzhai_blockcanary_analyzer_1_5_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_markzhai_blockcanary_android_1_5_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_haha_haha_2_0_4_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_analyzer_1_6_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_android_1_6_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_watcher_1_6_1_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_trove4j_trove4j_20160824_jar.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/skins/xskinloader-skin-apk-debug.apk" afterPath="$PROJECT_DIR$/app/src/main/assets/skins/xskinloader-skin-apk-debug.apk" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/build.gradle" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/proguard-rules.pro" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/AndroidManifest.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/IActivitySkinEventHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/ILoadSkinListener.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/IResourceLoader.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/IResourceManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/ISkinActivity.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/ISkinAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/ISkinAttributeParser.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/ISkinManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/ISkinViewHelper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/IViewCreateListener.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/IWindowViewManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/SkinManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/BackgroundAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/DividerAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/DrawableLeftAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/ListSelectorAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/RecyclerViewClearSubAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/ShadowAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/SkinAttrFactory.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/SkinAttrUtils.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/SrcAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/TextColorAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/attrhandler/TextColorHintAttrHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/observable/INotifyUpdate.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/observable/IObservable.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/observable/Observable.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/utils/CollectionUtils.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/utils/HashMapCache.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/utils/Logging.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/utils/ReflectUtils.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/utils/StringUtils.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/base/utils/WeakReferenceHelper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/entity/DynamicAttr.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/entity/SkinAttr.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/entity/SkinAttrName.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/entity/SkinAttrSet.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/entity/SkinConstant.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/impl/ActivitySkinEventHandlerImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/impl/SkinAttributeParser.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/impl/SkinInflaterFactoryImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/impl/SkinManagerImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/impl/SkinViewHelperImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/impl/ViewSkinTagHelper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/impl/WindowViewManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/resourceloader/ILoadResourceCallback.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/resourceloader/ResourceManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/resourceloader/impl/APKResourceLoader.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/resourceloader/impl/APKResourceManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/resourceloader/impl/ConfigChangeResourceLoader.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/resourceloader/impl/ConfigChangeResourceManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/resourceloader/impl/SuffixResourceLoader.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/resourceloader/impl/SuffixResourceManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/java/org/qcode/qskinloader/view/ShadowImageView.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/res/values/skin_attrs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/res/values/skin_ids.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/QSkinLoaderlib/src/main/res/values/strings.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_collect.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_collect.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_help_feedback.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_help_feedback.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_register.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_register.xml" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/bt_refresh_selector.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/button_corner_bg2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/common_bg_loading.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/ic_launcher_background.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/nav_item_color_state.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/selected_radius.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/shape_stroke_state_normal.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/shape_stroke_state_press.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-night/unselected_radius.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/background_color_selector.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/code_edit_bg.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/selector_btn_bg.xml" afterPath="$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_selector.xml" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/shape_recharge_btn_bg_select.xml" afterPath="$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_select.xml" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/shape_recharge_btn_bg_unselect.xml" afterPath="$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_unselect.xml" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/shape_rectangle_bg_state_normal.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/shape_rectangle_bg_state_press.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values-night/colors_night.xml" afterPath="$PROJECT_DIR$/basemodule/src/main/res/values-night/colors_night.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/NavigationFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/NavigationFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/HomeContract.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/HomeContract.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_knowledge.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_knowledge.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_icon.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_icon.png" />
+      <change beforePath="$PROJECT_DIR$/basemodule/build.gradle" afterPath="$PROJECT_DIR$/basemodule/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseFragment.java" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseFragment.java" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/SignInterceptor.java" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/SignInterceptor.java" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java" />
       <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-10-46-43-731.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-10-46-43-731.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-12-49-02-660.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-12-49-02-660.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-11-15-267.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-11-15-267.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-17-16-720.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-17-16-720.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-24-14-904.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-24-14-904.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-30-57-519.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-30-57-519.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-34-46-415.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-34-46-415.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-45-28-450.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-14-45-28-450.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-06-05-820.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-06-05-820.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-07-59-478.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-07-59-478.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-09-27-910.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-09-27-910.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-11-00-716.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-11-00-716.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-12-49-357.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-12-49-357.rawproto" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/build.gradle" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/proguard-rules.pro" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/androidTest/java/com/gaolei/famousfameproject/ExampleInstrumentedTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/activity/BaseActivity.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/activity/BaseMvpActivity.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/activity/FragmentContainerActivity.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/activity/MainActivity.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/api/RestService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/api/UrlConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/application/FJDApplication.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/customview/ErrorPageView.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/customview/StatusBarView.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/customview/TitleBarView.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/fragment/BankListFragment.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/fragment/BaseFragment.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/fragment/BaseMvpFragment.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/mmodel/BankInfoResponse.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/mmodel/BaseRequest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/mpresenter/BasePresenter.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/mview/BankListView.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/mview/BaseView.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/HttpLoggingInterceptor.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/client/BankListPresenter.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/client/BaseServerResponse.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/client/RestApiProvider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/client/RestApiProviderBase.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/client/RestBaseCallBack.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/interceptor/HttpLoggingInterceptor.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/interceptor/SignInterceptor.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/net/url/UrlFactory.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/utils/JsonUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/utils/LogUtils.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/utils/StatusBarUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/utils/StringUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/gaolei/famousfameproject/utils/ToastUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/anim/request_progress_loading.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/common_bg_loading.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/common_icon_loading.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/common_stoke_states.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/ic_launcher_background.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/navagation_icon_back_black.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/shape_stroke_state_disable.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/shape_stroke_state_normal.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/shape_stroke_state_press.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_fragment_container.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/costom_recyclerview.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/fragment_base.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/layout_error_page.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/layout_title_bar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/default_page_network.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/colors.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/strings.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/styles.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../app/src/test/java/com/gaolei/famousfameproject/ExampleUnitTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../build.gradle" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../config.gradle" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../gradle.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../gradlew" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../gradlew.bat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../settings.gradle" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-25-40-890.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-25-40-890.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-27-58-464.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-27-58-464.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-43-51-946.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-43-51-946.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-46-20-484.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-46-20-484.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-51-42-773.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-51-42-773.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-52-13-186.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-52-13-186.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-59-28-240.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-15-59-28-240.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-01-37-502.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-01-37-502.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-19-25-040.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-19-25-040.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-21-39-632.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-21-39-632.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-24-18-729.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-24-18-729.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-28-46-906.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-28-46-906.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-37-31-186.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-37-31-186.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-38-43-036.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-38-43-036.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-39-57-659.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-39-57-659.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-40-52-445.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-40-52-445.rawproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-42-43-726.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-03-16-42-43-726.rawproto" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -193,12 +201,105 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java">
+      <file leaf-file-name="KnowledgeFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="241" column="0" lean-forward="false" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+            <state relative-caret-position="4">
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <folding>
+                <element signature="e#1176#1177#0" expanded="true" />
+                <element signature="e#1226#1227#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HorizontalPagerAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/HorizontalPagerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="86" column="38" lean-forward="false" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_tree.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_tree.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pic_android.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/pic_android.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_tree_children.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_tree_children.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KnowledgeChildActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1618">
+              <caret line="144" column="44" lean-forward="false" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2779#2780#0" expanded="true" />
+                <element signature="e#2831#2832#0" expanded="true" />
+                <element signature="e#2878#2879#0" expanded="true" />
+                <element signature="e#2936#2937#0" expanded="true" />
+                <element signature="e#4126#4630#0" expanded="true" />
+                <element signature="e#4629#4630#0" expanded="true" />
+                <element signature="e#4688#5209#0" expanded="true" />
+                <element signature="e#5208#5209#0" expanded="true" />
+                <element signature="e#6510#6511#0" expanded="true" />
+                <element signature="e#6568#6569#0" expanded="true" />
+                <element signature="e#6656#6657#0" expanded="true" />
+                <element signature="e#6717#6718#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseObserver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding>
+                <element signature="e#1011#1012#0" expanded="true" />
+                <element signature="e#1057#1058#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,14 +308,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>@drawable/shape_rectangle_bg_state_normal</find>
-      <find>shape_rectangle_bg_state_normal</find>
-      <find>background_color_sele</find>
-      <find>LoginEvent</find>
-      <find>ProjectData</find>
-      <find>class</find>
-      <find>tv_user_profile_not_login</find>
-      <find>ignored</find>
       <find>private</find>
       <find>adapterhel</find>
       <find>ArticleListData</find>
@@ -237,6 +330,14 @@
       <find>@mipmap/app_icon</find>
       <find>bg_stat</find>
       <find>drawable/se</find>
+      <find>T</find>
+      <find>dp2</find>
+      <find>new BaseObserver</find>
+      <find>refresh</find>
+      <find>show</find>
+      <find>getFeedArticleList</find>
+      <find>articleDataList</find>
+      <find>initve</find>
     </findStrings>
     <replaceStrings>
       <replace>com.android.learn</replace>
@@ -244,6 +345,7 @@
       <replace>com.android.learn.base.thirdframe</replace>
       <replace>public</replace>
       <replace>FeedArticleData</replace>
+      <replace>getKnowledgeArticleList</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe</dir>
@@ -31326,47 +31428,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/colorful/setter/ViewSetter.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/colorful/Colorful.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java" />
-        <option value="$PROJECT_DIR$/QSkinLoaderlib/build.gradle" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/skin/utils/UIUtil.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/skin/SkinConfigHelper.java" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/xskinloader-lib/build.gradle" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/skin/base/Settings.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/skin/SkinChangeHelper.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/skin/SkinUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-night/colors_night.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/shape_rectangle_bg_state_normal.xml" />
-        <option value="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAnzhiDebugResources/merged.dir/values/values.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_knowledge.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_project.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_project_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_article_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/ViewBackgroundStyleParser.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/ExtraAttrRegister.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/CustomViewTextColorResDeployer.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/CustomTitleView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/setting_rectangle_state_normal.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/setting_item_selector.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/setting_rectangle_state_press.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_rectangle_state_normal.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_rectangle_state_press.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_item_selector.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/drawable/shape_recharge_btn_bg_unselect.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/drawable/shape_recharge_btn_bg_select.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" />
@@ -31374,15 +31438,53 @@
         <option value="$PROJECT_DIR$/basemodule/src/main/res/values-night/colors_night.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_selector.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login_register.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_help_feedback.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_collect.xml" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ScreenUtils.java" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/SignInterceptor.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/TreeContract.java" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/TreeBean.java" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ChildrenAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/TitleView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/TreePresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KonwledgeTreeView.java" />
+        <option value="$PROJECT_DIR$/basemodule/build.gradle" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeClassifyFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/NavigationFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_tree_chid.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/TreeChildrenActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/HomeContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/HorizontalPagerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/KnowledgeContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_knowledge.xml" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/HomePresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgePresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgeChildPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/KnowledgeChildContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_knowledge_article.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_tree_children.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_tree.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="-132" />
+    <option name="x" value="1697" />
+    <option name="y" value="-98" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
   </component>
@@ -31404,10 +31506,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -31439,7 +31539,7 @@
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
@@ -31447,13 +31547,95 @@
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="skins" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+              <item name="adapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+              <item name="mcontract" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+              <item name="mpresenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="mipmap-xhdpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -31461,8 +31643,8 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.0.1" />
-    <property name="device.picker.selection" value="c8fdc26f" />
-    <property name="SearchEverywhereHistoryKey" value="userf&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/fragment/UserFragment.java&#10;settinga&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;sett&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/res/layout/activity_setting.xml&#10;base&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java&#10;setting&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;home&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/res/layout/fragment_home.xml&#10;asea&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java&#10;basea&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java&#10;cus&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java&#10;se&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;settingac&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;spla&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SplashActivity.java&#10;setti&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;api&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java&#10;collectp&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/mpresenter/CollectPresenter.java&#10;servi&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java&#10;baseOb&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java&#10;custompr&#9;PSI&#9;JAVA://com.android.learn.base.view.CustomProgressDialog&#10;projectfr&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/fragment/ProjectFragment.java&#10;problemde&#9;PSI&#9;JAVA://com.sun.xml.internal.ws.addressing.WsaTubeHelper#getProblemActionDetail&#10;eventbus&#9;PSI&#9;JAVA://org.greenrobot.eventbus.EventBus&#10;utils&#9;PSI&#9;JAVA://com.android.learn.base.utils.Utils" />
+    <property name="device.picker.selection" value="f0fac9fa" />
+    <property name="SearchEverywhereHistoryKey" value="baseo&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java&#10;apis&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java&#10;base&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java&#10;cust&#9;PSI&#9;JAVA://com.android.learn.base.application.CustomApplication&#10;userf&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/fragment/UserFragment.java&#10;settinga&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;sett&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/res/layout/activity_setting.xml&#10;setting&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;home&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/res/layout/fragment_home.xml&#10;asea&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java&#10;basea&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java&#10;cus&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java&#10;se&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;settingac&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;spla&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SplashActivity.java&#10;setti&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/activity/SettingActivity.java&#10;api&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java&#10;collectp&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/mpresenter/CollectPresenter.java&#10;servi&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java&#10;baseOb&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java&#10;custompr&#9;PSI&#9;JAVA://com.android.learn.base.view.CustomProgressDialog&#10;projectfr&#9;FILE&#9;file:///Users/GaoLei/gaolei/Android/Github/AndroidLearnProject/AndroidLearnProject/app/src/main/java/com/android/learn/fragment/ProjectFragment.java&#10;problemde&#9;PSI&#9;JAVA://com.sun.xml.internal.ws.addressing.WsaTubeHelper#getProblemActionDetail&#10;eventbus&#9;PSI&#9;JAVA://org.greenrobot.eventbus.EventBus&#10;utils&#9;PSI&#9;JAVA://com.android.learn.base.utils.Utils" />
     <property name="DEBUGGABLE_DEVICE" value="samsung-sm_c7000-c8fdc26f" />
     <property name="DEBUGGABLE_PROCESS" value="com.android.learn" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -31472,18 +31654,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/assets/skins" />
       <recent name="$PROJECT_DIR$/basemodule/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
-      <recent name="$PROJECT_DIR$/basemodule/src/main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.android.learn.base.xskin" />
-      <recent name="com.android.learn.base.skin.base" />
-      <recent name="com.android.learn.base.event" />
-      <recent name="com.android.learn.activity" />
+      <recent name="com.android.learn.mcontract" />
       <recent name="com.android.learn.mpresenter" />
+      <recent name="com.android.learn.activity" />
+      <recent name="com.android.learn.adapter" />
+      <recent name="com.android.learn.fragment" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
@@ -31728,32 +31910,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-132" width="1920" height="1057" extended-state="6" />
+    <frame x="1697" y="-98" width="1920" height="1057" extended-state="0" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44991922" sideWeight="0.3248731" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51544195" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23667206" sideWeight="0.53637904" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17918314" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44991922" sideWeight="0.3248731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20766774" sideWeight="0.08945687" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38445154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10969116" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20766774" sideWeight="0.91054314" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26783812" sideWeight="0.6751269" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08413205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19914803" sideWeight="0.6751269" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08626198" sideWeight="0.49361023" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31759655" sideWeight="0.463621" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23667206" sideWeight="0.53637904" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17891374" sideWeight="0.49574015" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -31762,6 +31943,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08413205" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -31823,7 +32005,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java</url>
-          <line>48</line>
+          <line>44</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -31841,21 +32023,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java</url>
-          <line>118</line>
+          <line>111</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java</url>
-          <line>127</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/widget/CompoundButton.java</url>
@@ -31895,21 +32071,45 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java</url>
-          <line>154</line>
+          <line>110</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java</url>
-          <line>163</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java</url>
+          <line>99</line>
           <properties />
-          <option name="timeStamp" value="25" />
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java</url>
-          <line>170</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java</url>
+          <line>26</line>
           <properties />
-          <option name="timeStamp" value="26" />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java</url>
+          <line>150</line>
+          <properties />
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/RegisterLoginData.java</url>
@@ -31918,180 +32118,196 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/leakcanary-android-1.6.1.aar/4d19472766ef4a2380ffa5cc7b572d89/res/values/values.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/CollectPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
+        <state relative-caret-position="90">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2662">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/tab_selector_project.xml">
+    <entry file="file://$PROJECT_DIR$/basemodule/proguard-rules.pro">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/cardview-v7/26.1.0/c77de78f36d149b36821993adbb3e11667dca382/cardview-v7-26.1.0-sources.jar!/android/support/v7/widget/CardView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/BaseResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/ProjectListData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/TreeBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dalong/carrousellayout/1.0.0/41ef8e07dceac17194077a9fbc305096a5392e88/carrousellayout-1.0.0-sources.jar!/com/dalong/carrousellayout/CarrouselLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1497">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="88" column="62" lean-forward="false" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseMvpFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="74" lean-forward="false" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/layout/fragment_base.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_stroke_state_normal.xml">
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="412">
+          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeClassifyFragment.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/NavigationFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/tab_selector_mine.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/unselected_radius.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_stroke_state_press.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KonwledgeTreeView.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.devlight/infinitecycleviewpager/1.0.2/14a7b19962fb75179bc62e764b2063635335c856/infinitecycleviewpager-1.0.2-sources.jar!/com/gigamole/infinitecycleviewpager/HorizontalInfiniteCycleViewPager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="261">
+          <caret line="214" column="16" lean-forward="false" selection-start-line="214" selection-start-column="16" selection-end-line="214" selection-end-column="16" />
+          <folding>
+            <element signature="e#7724#7725#0" expanded="false" />
+            <element signature="e#7766#7767#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/setting_rectangle_state_normal.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/setting_item_selector.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/setting_rectangle_state_press.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/KnowledgeChildAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/HomeContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="36" column="50" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="36" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        <state relative-caret-position="543">
+          <caret line="68" column="44" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="68" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_icon2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/HeaderView.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/KnowledgeContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_color_selector.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_knowledge.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_rectangle_bg_state_normal.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_rectangle_bg_state_press.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/shape_rectangle_bg_state_normal.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_rectangle_state_normal.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/background_color_selector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="76" column="32" lean-forward="false" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
+        <state relative-caret-position="225">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
-            <element signature="e#2374#2375#0" expanded="false" />
-            <element signature="e#2419#2420#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="62" column="26" lean-forward="false" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
-          <folding>
-            <element signature="e#1300#1324#0" expanded="false" />
-            <element signature="e#2284#2304#0" expanded="false" />
+            <marker date="1543914553000" expanded="false" signature="2613:2632" ph="&quot;知识点&quot;" />
           </folding>
         </state>
       </provider>
@@ -32099,18 +32315,85 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_rectangle_state_press.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/HomePresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="300">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_item_selector.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgePresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="58" lean-forward="false" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+        <state relative-caret-position="225">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/KnowledgeChildContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgeChildPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/FeedArticleListData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-254">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="68" column="23" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="68" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/Anzhi/debug/com/android/learn/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#885950#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_article_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -32120,237 +32403,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/selector_btn_bg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/shape_recharge_btn_bg_unselect.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/background_color_selector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/background_color_selector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_unselect.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/build/intermediates/bundles/debug/res/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/code_edit_bg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values-night/colors_night.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_selector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_select.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="48" lean-forward="false" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login_register.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="129" column="40" lean-forward="true" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/TitleView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_article_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/code_edit_bg.xml">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_project.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_help_feedback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="e#801#826#0" expanded="true" />
-            <element signature="e#1363#1384#0" expanded="true" />
-            <element signature="e#2180#2203#0" expanded="true" />
-            <element signature="e#3112#3136#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="78" column="17" lean-forward="false" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_collect.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -32358,12 +32420,134 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_knowledge_article.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="241" column="0" lean-forward="false" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="e#863#864#0" expanded="false" />
+            <element signature="e#893#894#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="98" column="30" lean-forward="false" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1057#1058#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1618">
+          <caret line="144" column="44" lean-forward="false" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2779#2780#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+            <element signature="e#2878#2879#0" expanded="true" />
+            <element signature="e#2936#2937#0" expanded="true" />
+            <element signature="e#4126#4630#0" expanded="true" />
+            <element signature="e#4629#4630#0" expanded="true" />
+            <element signature="e#4688#5209#0" expanded="true" />
+            <element signature="e#5208#5209#0" expanded="true" />
+            <element signature="e#6510#6511#0" expanded="true" />
+            <element signature="e#6568#6569#0" expanded="true" />
+            <element signature="e#6656#6657#0" expanded="true" />
+            <element signature="e#6717#6718#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/HorizontalPagerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="86" column="38" lean-forward="false" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_tree_children.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_tree.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/pic_android.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>

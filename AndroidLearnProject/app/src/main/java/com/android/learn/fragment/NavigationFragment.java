@@ -1,6 +1,7 @@
 package com.android.learn.fragment;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.android.learn.R;
 import com.android.learn.base.fragment.BaseMvpFragment;
@@ -24,7 +25,7 @@ public class NavigationFragment extends BaseMvpFragment {
     }
 
     @Override
-    public void initView() {
+    public void initView(View view) {
 
     }
 

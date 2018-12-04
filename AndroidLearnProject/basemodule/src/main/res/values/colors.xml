@@ -30,6 +30,7 @@
     <color name="text_color_noimg">#aaaaaa</color>
     <color name="listview_item_color1">#FFFFFF</color>
     <color name="listview_item_color2">#eeeeee</color>
+    <color name="colorBlue">#33aaff</color>
 
 
     <!-- 日间模式 -->

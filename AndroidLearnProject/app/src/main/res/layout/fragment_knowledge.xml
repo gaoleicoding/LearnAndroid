@@ -5,15 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activity_bg_color"
+    android:clickable="true"
     skin:enable="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_centerInParent="true"
-        android:text="@string/knowledge" />
+    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+        android:id="@+id/hicvp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activity_bg_color"
+        skin:enable="true"
+        app:icvp_center_page_scale_offset="50dp"
+        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
+        app:icvp_max_page_scale="0.85"
+        app:icvp_medium_scaled="false"
+        app:icvp_min_page_scale="0.55"
+        app:icvp_min_page_scale_offset="5dp"
+        app:icvp_scroll_duration="250" />
 
+    <!--<com.dalong.carrousellayout.CarrouselLayout-->
+    <!--android:id="@+id/carrousel"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginBottom="50dp"-->
+    <!--android:gravity="center"-->
+    <!--app:r="200dp"-->
+    <!--app:rotateDirection="anticlockwise"-->
+    <!--app:rotationTime="3000">-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/splash" />-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/splash" />-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/splash" />-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/splash" />-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/splash" />-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/splash" />-->
+
+
+    <!--</com.dalong.carrousellayout.CarrouselLayout>-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:text="@string/knowledge"-->
+    <!--android:visibility="gone"-->
+    <!--android:textSize="18sp" />-->
 
 
 </RelativeLayout>
