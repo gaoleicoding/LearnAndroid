@@ -19,6 +19,7 @@
             android:layout_height="wrap_content" />
 
         <android.support.v4.widget.NestedScrollView
+            android:id="@+id/scrollview_nested"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

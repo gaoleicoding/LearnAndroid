@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Debug;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -49,6 +50,8 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 
     @BindView(R.id.article_recyclerview)
     RecyclerView article_recyclerview;
+    @BindView(R.id.scrollview_nested)
+    NestedScrollView scrollview_nested;
     @BindView(R.id.banner)
     Banner banner;
     @BindView(R.id.smartRefreshLayout_home)
@@ -99,9 +102,10 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 //            mAdapter.replaceData(feedArticleListData.getDatas());
             smartRefreshLayout.finishRefresh(true);
         } else {
-            articleDataList.addAll(newDataList);
-            feedArticleAdapter.notifyItemRangeInserted(articleDataList.size() - newDataList.size(), newDataList.size());
-            feedArticleAdapter.notifyDataSetChanged();
+//            articleDataList.addAll(newDataList);
+//            feedArticleAdapter.notifyItemRangeInserted(articleDataList.size() - newDataList.size(), newDataList.size());
+//            feedArticleAdapter.notifyDataSetChanged();
+            feedArticleAdapter.addData(newDataList);
             smartRefreshLayout.finishLoadMore();
         }
         feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
@@ -181,10 +185,9 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
         });
     }
 
-
     private void initRecyclerView() {
         articleDataList = new ArrayList<>();
-        feedArticleAdapter = new ArticleQuickAdapter(getActivity(), articleDataList,"HomeFragment");
+        feedArticleAdapter = new ArticleQuickAdapter(getActivity(), articleDataList, "HomeFragment");
         article_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL_LIST));
         article_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -223,7 +226,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     }
 
     public void scrollToTop() {
-        article_recyclerview.scrollToPosition(0);
+        scrollview_nested.scrollTo(0, 0);
     }
 
     public void onResume() {
@@ -243,8 +246,8 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 
     @Override
     public void showCancelCollectArticleData(int id) {
-        int position=feedArticleAdapter.getPosById(id);
-        FeedArticleData feedArticleData=articleDataList.get(position);
+        int position = feedArticleAdapter.getPosById(id);
+        FeedArticleData feedArticleData = articleDataList.get(position);
         feedArticleData.setCollect(false);
         feedArticleAdapter.setData(position, feedArticleData);
     }

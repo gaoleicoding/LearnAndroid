@@ -1,5 +1,6 @@
 package com.android.learn.base.view;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import com.gaolei.basemodule.R;
 
 
 public class CustomProgressDialog {
+    public static Dialog loadingDialog;
 
     public static Dialog createLoadingDialog(Context context) {
         if (context == null) return null;
@@ -29,9 +31,9 @@ public class CustomProgressDialog {
         // 使用ImageView显示动画
         spaceshipImage.startAnimation(hyperspaceJumpAnimation);
 
-        Dialog loadingDialog = new Dialog(context, R.style.loading_dialog);// 创建自定义样式dialog
+        loadingDialog = new Dialog(context, R.style.loading_dialog);// 创建自定义样式dialog
 
-        loadingDialog.setCancelable(false);// 不可以用“返回键”取消
+        loadingDialog.setCancelable(true);// 不可以用“返回键”取消
         loadingDialog.setContentView(layout, new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT));// 设置布局
@@ -39,5 +41,20 @@ public class CustomProgressDialog {
 
     }
 
+    public static void show(Activity activity) {
+        if (loadingDialog != null) return;
+        if (loadingDialog != null && loadingDialog.isShowing()) return;
+        loadingDialog = CustomProgressDialog.createLoadingDialog(activity);
+        if (loadingDialog != null) {
+            loadingDialog.show();//显示
+        }
+    }
+
+    public static void cancel() {
+        if (loadingDialog != null) {
+            loadingDialog.cancel();
+            loadingDialog = null;
+        }
+    }
 }
 

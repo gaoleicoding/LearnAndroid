@@ -21,13 +21,13 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
     protected String errMsg = "";
     private boolean isShowError = true;
     private Context context;
-    public static Dialog prgressDialog;
+//    public static Dialog prgressDialog;
 
     protected BaseObserver(boolean isShowDialog) {
         // context在CustomProgressDialog中用到
         this.context = context;
         if (isShowDialog) {
-            createProgressDialog(BaseActivity.context);
+            CustomProgressDialog.show(BaseActivity.context);
         }
     }
 
@@ -43,8 +43,7 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
 
     @Override
     public void onError(Throwable e) {
-        if (prgressDialog != null)
-            prgressDialog.cancel();
+        CustomProgressDialog.cancel();
         if (!NetUtils.isConnected()) {
             errMsg = "网络连接出错,请检查网络";
 
@@ -60,16 +59,15 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
 
     @Override
     public void onComplete() {
-        if (prgressDialog != null)
-            prgressDialog.cancel();
+        CustomProgressDialog.cancel();
     }
 
-    public static void createProgressDialog(Activity context) {
-        if (prgressDialog != null && prgressDialog.isShowing()) return;
-        prgressDialog = CustomProgressDialog.createLoadingDialog(context);
-        if (prgressDialog != null) {
-            prgressDialog.setCancelable(true);//允许返回
-            prgressDialog.show();//显示
-        }
-    }
+//    public static void createProgressDialog(Activity context) {
+//        if (prgressDialog != null && prgressDialog.isShowing()) return;
+//        prgressDialog = CustomProgressDialog.createLoadingDialog(context);
+//        if (prgressDialog != null) {
+//            prgressDialog.setCancelable(true);//允许返回
+//            prgressDialog.show();//显示
+//        }
+//    }
 }

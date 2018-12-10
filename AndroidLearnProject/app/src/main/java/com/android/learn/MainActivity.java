@@ -1,10 +1,20 @@
 package com.android.learn;
 
 import android.Manifest;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.style.ForegroundColorSpan;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -23,11 +33,27 @@ import com.android.learn.fragment.NavigationFragment;
 import com.android.learn.fragment.ProjectFragment;
 import com.android.learn.fragment.UserFragment;
 import com.android.learn.view.CustomViewPager;
+import com.opensource.svgaplayer.SVGADrawable;
+import com.opensource.svgaplayer.SVGADynamicEntity;
+import com.opensource.svgaplayer.SVGAImageView;
+import com.opensource.svgaplayer.SVGAParser;
+import com.opensource.svgaplayer.SVGAVideoEntity;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends BaseActivity {
 
@@ -42,6 +68,10 @@ public class MainActivity extends BaseActivity {
     TextView title;
     @BindView(R.id.header_layout)
     TitleView header_layout;
+
+    @BindView(R.id.iv_svga)
+    SVGAImageView iv_svga;
+
     HomeFragment homeFragment;
     ProjectFragment projectFragment;
 
@@ -82,6 +112,7 @@ public class MainActivity extends BaseActivity {
         //将TabLayout和ViewPager关联起来
         tabLayout.setupWithViewPager(viewPager);
         initTab();
+        loadAnimation();
     }
 
 
@@ -122,14 +153,22 @@ public class MainActivity extends BaseActivity {
         tabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
 
-    @OnClick({R.id.title})
-    public void onClick() {
-        int index = viewPager.getCurrentItem();
-        if (index == 0)
-            homeFragment.scrollToTop();
-        if (index == 1)
-            projectFragment.scrollToTop();
+    @OnClick({R.id.title, R.id.iv_svga})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.title:
+                int index = viewPager.getCurrentItem();
+                if (index == 0)
+                    homeFragment.scrollToTop();
+                if (index == 1)
+                    projectFragment.scrollToTop();
+                break;
 
+            case R.id.iv_svga:
+                iv_svga.stopAnimation();
+                iv_svga.setVisibility(View.GONE);
+                break;
+        }
 
     }
 
@@ -172,5 +211,117 @@ public class MainActivity extends BaseActivity {
         }
 
         return super.onKeyDown(keyCode, event);
+    }
+
+
+    private void loadAnimation() {
+        SVGAParser parser = new SVGAParser(this);
+        resetDownloader(parser);
+        try {
+            parser.parse(new URL("https://github.com/yyued/SVGA-Samples/blob/master/kingset.svga?raw=true"), new SVGAParser.ParseCompletion() {
+                @Override
+                public void onComplete(@NotNull SVGAVideoEntity videoItem) {
+                    SVGADrawable drawable = new SVGADrawable(videoItem, requestDynamicItemWithSpannableText());
+                    iv_svga.setImageDrawable(drawable);
+                    iv_svga.startAnimation();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            /**
+                             *要执行的操作
+                             */
+                            iv_svga.stopAnimation();
+                            iv_svga.setVisibility(View.GONE);
+                        }
+                    }, 5000);
+
+                }
+
+                @Override
+                public void onError() {
+
+                }
+            });
+        } catch (Exception e) {
+            System.out.print(true);
+        }
+    }
+
+    /**
+     * 进行简单的文本替换
+     *
+     * @return
+     */
+    private SVGADynamicEntity requestDynamicItem() {
+        SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
+        TextPaint textPaint = new TextPaint();
+        textPaint.setColor(Color.WHITE);
+        textPaint.setTextSize(28);
+        dynamicEntity.setDynamicText("欢迎来到学Android", textPaint, "banner");
+        return dynamicEntity;
+    }
+
+    /**
+     * 你可以设置富文本到 ImageKey 相关的元素上
+     * 富文本是会自动换行的，不要设置过长的文本
+     *
+     * @return
+     */
+    private SVGADynamicEntity requestDynamicItemWithSpannableText() {
+        SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("欢迎来到 学Android");
+        spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        TextPaint textPaint = new TextPaint();
+        textPaint.setColor(Color.WHITE);
+        textPaint.setTextSize(28);
+        dynamicEntity.setDynamicText(new StaticLayout(
+                spannableStringBuilder,
+                0,
+                spannableStringBuilder.length(),
+                textPaint,
+                0,
+                Layout.Alignment.ALIGN_CENTER,
+                1.0f,
+                0.0f,
+                false
+        ), "banner");
+        dynamicEntity.setDynamicDrawer(new Function2<Canvas, Integer, Boolean>() {
+            @Override
+            public Boolean invoke(Canvas canvas, Integer frameIndex) {
+                Paint aPaint = new Paint();
+                aPaint.setColor(Color.WHITE);
+                canvas.drawCircle(50, 54, frameIndex % 5, aPaint);
+                return false;
+            }
+        }, "banner");
+        return dynamicEntity;
+    }
+
+    /**
+     * 设置下载器，这是一个可选的配置项。
+     *
+     * @param parser
+     */
+    private void resetDownloader(SVGAParser parser) {
+        parser.setFileDownloader(new SVGAParser.FileDownloader() {
+            @Override
+            public void resume(final URL url, final Function1<? super InputStream, Unit> complete, final Function1<? super Exception, Unit> failure) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        OkHttpClient client = new OkHttpClient();
+                        Request request = new Request.Builder().url(url).get().build();
+                        try {
+                            Response response = client.newCall(request).execute();
+                            complete.invoke(response.body().byteStream());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            failure.invoke(e);
+                        }
+                    }
+                }).start();
+            }
+        });
     }
 }

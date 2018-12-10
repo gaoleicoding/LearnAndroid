@@ -98,7 +98,7 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
         } else {
             articleDataList.addAll(newDataList);
             feedArticleAdapter.setList(articleDataList);
-            feedArticleAdapter.notifyDataSetChanged();
+//            feedArticleAdapter.notifyDataSetChanged();
 //            feedArticleAdapter.notifyItemRangeInserted(articleDataList.size() - newDataList.size(), newDataList.size());
 //            feedArticleAdapter.notifyDataSetChanged();
             if (listData.getCurPage() == 1) {

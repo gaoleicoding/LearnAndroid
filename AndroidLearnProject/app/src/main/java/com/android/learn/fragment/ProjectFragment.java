@@ -43,7 +43,7 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
     public void initData(Bundle bundle) {
 
 
-        mPresenter.getProjectInfo(1, 294);
+//        mPresenter.getProjectInfo(1, 294);
 
     }
 
@@ -82,9 +82,10 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
 //            mAdapter.replaceData(feedArticleListData.getDatas());
             smartRefreshLayout.finishRefresh(true);
         } else {
-            projectDataList.addAll(newDataList);
-            projectAdapter.notifyItemRangeInserted(projectDataList.size() - newDataList.size(), newDataList.size());
-            projectAdapter.notifyDataSetChanged();
+//            projectDataList.addAll(newDataList);
+//            projectAdapter.notifyItemRangeInserted(projectDataList.size() - newDataList.size(), newDataList.size());
+//            projectAdapter.notifyDataSetChanged();
+            projectAdapter.addData(newDataList);
             smartRefreshLayout.finishLoadMore();
         }
 

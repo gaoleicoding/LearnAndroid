@@ -54,7 +54,7 @@ public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> imple
 
     @Override
     protected void loadData() {
-        BaseObserver.createProgressDialog(getActivity());
+        CustomProgressDialog.show(getActivity());
 
         mPresenter.getKnowledge();
     }
@@ -65,5 +65,6 @@ public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> imple
         horizontalInfiniteCycleViewPager.setAdapter(mPagerAdapter);
         if (horizontalInfiniteCycleViewPager != null && datas.size() > 1)
             horizontalInfiniteCycleViewPager.setCurrentItem(1);
+        CustomProgressDialog.cancel();
     }
 }

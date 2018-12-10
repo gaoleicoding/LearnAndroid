@@ -92,9 +92,10 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
     @Override
     public void showCollectList(FeedArticleListData feedArticleListData) {
         final List<FeedArticleData> newDataList = feedArticleListData.getDatas();
-        articleDataList.addAll(newDataList);
-        feedArticleAdapter.notifyItemRangeInserted(articleDataList.size() - newDataList.size(), newDataList.size());
-        feedArticleAdapter.notifyDataSetChanged();
+//        articleDataList.addAll(newDataList);
+//        feedArticleAdapter.notifyItemRangeInserted(articleDataList.size() - newDataList.size(), newDataList.size());
+//        feedArticleAdapter.notifyDataSetChanged();
+        feedArticleAdapter.addData(newDataList);
         feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

@@ -81,6 +81,42 @@
             android:button="@drawable/abc_btn_check_material"
             android:buttonTint="@color/colorAccent" />
     </LinearLayout>
+    <LinearLayout
+        style="@style/user_info_layout"
+        android:orientation="horizontal"
+        skin:enable="true">
+
+        <ImageView
+            style="@style/user_info_icon"
+            android:src="@drawable/icon_language_switch" />
+
+        <TextView
+            style="@style/user_info_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="语言设置"
+            skin:enable="true" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/user_info_layout"
+        android:orientation="horizontal"
+        skin:enable="true">
+
+        <ImageView
+            style="@style/user_info_icon"
+            android:src="@drawable/icon_font_switch" />
+
+        <TextView
+            style="@style/user_info_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="字体大小"
+            skin:enable="true" />
+
+
+    </LinearLayout>
 
     <View
         style="@style/horizontal_divider_setting"
