@@ -12,8 +12,7 @@ import com.android.learn.activity.SettingActivity;
 import com.android.learn.base.event.LoginEvent;
 import com.android.learn.base.event.LogoutEvent;
 import com.android.learn.base.fragment.BaseMvpFragment;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.utils.SharedPreferencesUtils;
+import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.base.utils.account.UserUtil;
 import com.android.learn.mcontract.UserInfoContract;
@@ -124,8 +123,8 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
 
         tv_user_profile_not_login.setText(getString(R.string.login_register));
         iv_user_photo.setImageResource(R.drawable.user_default_photo);
-        SharedPreferencesUtils.clear(getActivity(), "phone_num");
-        SharedPreferencesUtils.clear(getActivity(), "password");
+        SPUtils.clear(getActivity(), "phone_num");
+        SPUtils.clear(getActivity(), "password");
         mPresenter.getLogoutData();
         RegisterLoginActivity.startActivity(getActivity());
         UserUtil.setUserInfo(null);

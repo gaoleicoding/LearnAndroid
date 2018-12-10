@@ -31,6 +31,7 @@
     <string name="email_info_hint">请输入你要发送的邮件信息</string>
     <string name="help_feedback">反馈与建议</string>
     <string name="add_attachment">添加附件</string>
+    <string name="font_size">字体大小</string>
 
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">程序出错了，抱歉给您带来不便\n为了尽快解决此问题，您可以点击错误详情，并复制错误代码或截图，发邮件反馈到技术支持邮箱：gaoleiandroid@163.com</string>
     <string name="customactivityoncrash_error_activity_restart_app">重启</string>

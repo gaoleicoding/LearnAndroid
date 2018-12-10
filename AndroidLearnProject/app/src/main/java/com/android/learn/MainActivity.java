@@ -1,6 +1,7 @@
 package com.android.learn;
 
 import android.Manifest;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -23,6 +24,8 @@ import android.widget.Toast;
 
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.event.FontSizeEvent;
+import com.android.learn.base.event.LoginEvent;
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.PermissionUtil;
 import com.android.learn.base.utils.Utils;
@@ -39,6 +42,9 @@ import com.opensource.svgaplayer.SVGAImageView;
 import com.opensource.svgaplayer.SVGAParser;
 import com.opensource.svgaplayer.SVGAVideoEntity;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -84,7 +90,7 @@ public class MainActivity extends BaseActivity {
     protected void initData(Bundle bundle) {
         initView();
         requestPermission();
-
+        EventBus.getDefault().register(this);
     }
 
     protected void initView() {
@@ -323,5 +329,20 @@ public class MainActivity extends BaseActivity {
                 }).start();
             }
         });
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(FontSizeEvent fontSizeEvent) {
+        Intent intent = getIntent();
+        overridePendingTransition(0, 0);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(intent);
+    }
+
+    public void onDestroy(){
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

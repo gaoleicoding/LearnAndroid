@@ -12,10 +12,8 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
-import com.android.learn.base.colorful.Colorful;
-import com.android.learn.base.colorful.setter.ViewGroupSetter;
 import com.android.learn.base.event.LogoutEvent;
-import com.android.learn.base.utils.SharedPreferencesUtils;
+import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.base.utils.account.UserUtil;
 
@@ -40,6 +38,10 @@ public class SettingActivity extends BaseActivity {
     LinearLayout help_feedback_layout;
     @BindView(R.id.version_update_layout)
     LinearLayout version_update_layout;
+    @BindView(R.id.language_switch_layout)
+    LinearLayout language_switch_layout;
+    @BindView(R.id.font_size_layout)
+    LinearLayout font_size_layout;
     @BindView(R.id.my_logout_layout)
     LinearLayout my_logout_layout;
     @BindView(R.id.cb_setting_night)
@@ -66,26 +68,26 @@ public class SettingActivity extends BaseActivity {
         title.setText(getString(R.string.my_setting));
         iv_back.setVisibility(View.VISIBLE);
         tv_versionName.setText(Utils.getVersionName(this));
-        Boolean isNightMode= (Boolean) SharedPreferencesUtils.getParam(this,"nightMode",new Boolean(false));
+        Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
         if (isNightMode) {
             cb_setting_night.setChecked(true);
         } else {
             cb_setting_night.setChecked(false);
         }
-        cb_setting_night.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+        cb_setting_night.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked)
-                SharedPreferencesUtils.setParam(SettingActivity.this,"nightMode",new Boolean(true));
-                else SharedPreferencesUtils.setParam(SettingActivity.this,"nightMode",new Boolean(false));
+                if (isChecked)
+                    SPUtils.setParam(SettingActivity.this, "nightMode", new Boolean(true));
+                else SPUtils.setParam(SettingActivity.this, "nightMode", new Boolean(false));
                 useNightMode(isChecked);
             }
         });
     }
 
 
-    @OnClick({R.id.help_feedback_layout, R.id.version_update_layout, R.id.my_logout_layout})
+    @OnClick({R.id.help_feedback_layout, R.id.version_update_layout, R.id.language_switch_layout, R.id.font_size_layout, R.id.my_logout_layout})
     public void click(View view) {
         if (!UserUtil.isLogined()) {
             RegisterLoginActivity.startActivity(this);
@@ -96,16 +98,18 @@ public class SettingActivity extends BaseActivity {
             case R.id.help_feedback_layout:
                 FeedbackActivity.startActivity(SettingActivity.this);
                 break;
-//            case R.id.version_update_layout:
-//                checkUpdate();
-//                break;
+            case R.id.language_switch_layout:
+
+                break;
+            case R.id.font_size_layout:
+                FontSizeActivity.startActivity(SettingActivity.this);
+                break;
             case R.id.my_logout_layout:
                 EventBus.getDefault().post(new LogoutEvent());
                 finish();
                 break;
         }
     }
-
 
 
 //    private void checkUpdate() {

@@ -10,19 +10,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.learn.MainActivity;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.RegisterLoginData;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.utils.LogUtil;
-import com.android.learn.base.utils.SharedPreferencesUtils;
+import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.base.utils.account.UserUtil;
 import com.android.learn.mcontract.RegisterLoginContract;
 import com.android.learn.mpresenter.RegisterLoginPresenter;
-
-import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -205,8 +200,8 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
     @Override
     public void showLoginResData(RegisterLoginData data) {
         UserUtil.setUserInfo(data);
-        SharedPreferencesUtils.setParam(RegisterLoginActivity.this, "username", et_login_phone_num.getText().toString());
-        SharedPreferencesUtils.setParam(RegisterLoginActivity.this, "password", et_login_password.getText().toString());
+        SPUtils.setParam(RegisterLoginActivity.this, "username", et_login_phone_num.getText().toString());
+        SPUtils.setParam(RegisterLoginActivity.this, "password", et_login_password.getText().toString());
         finish();
     }
 }

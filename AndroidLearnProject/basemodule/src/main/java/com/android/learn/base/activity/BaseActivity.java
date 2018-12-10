@@ -1,14 +1,16 @@
 package com.android.learn.base.activity;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.android.learn.base.application.CustomApplication;
 import com.android.learn.base.utils.ExitAppUtils;
-import com.android.learn.base.utils.LogUtil;
-import com.android.learn.base.utils.PermissionUtil;
-import com.android.learn.base.utils.SharedPreferencesUtils;
 import com.android.learn.base.utils.StatusBarUtil;
 import com.gaolei.basemodule.R;
 import com.umeng.analytics.MobclickAgent;
@@ -133,4 +135,30 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
     private void restoreDefaultSkin() {
         SkinManager.get().restoreToDefaultSkin();
     }
+
+    //重写字体缩放比例 api<25
+    @Override
+    public Resources getResources() {
+        Resources res =super.getResources();
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+            Configuration config = res.getConfiguration();
+            config.fontScale= CustomApplication.getInstance().getFontScale();//1 设置正常字体大小的倍数
+            res.updateConfiguration(config,res.getDisplayMetrics());
+        }
+        return res;
+    }
+    //重写字体缩放比例  api>25
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        if(Build.VERSION.SDK_INT>Build.VERSION_CODES.N){
+            final Resources res = newBase.getResources();
+            final Configuration config = res.getConfiguration();
+            config.fontScale=CustomApplication.getInstance().getFontScale();//1 设置正常字体大小的倍数
+            final Context newContext = newBase.createConfigurationContext(config);
+            super.attachBaseContext(newContext);
+        }else{
+            super.attachBaseContext(newBase);
+        }
+    }
+
 }

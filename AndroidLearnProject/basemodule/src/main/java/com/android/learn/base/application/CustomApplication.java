@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.view.LayoutInflater;
 
+import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.xskin.ExtraAttrRegister;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
@@ -15,24 +16,27 @@ import com.wind.me.xskinloader.SkinManager;
 public class CustomApplication extends Application {
     public static ConnectivityManager connectivityManager;
     public static Context context;
+    private static CustomApplication instance;
     @Override
     public void onCreate() {
         super.onCreate();
-        connectivityManager= (ConnectivityManager) getApplicationContext()
+        connectivityManager = (ConnectivityManager) getApplicationContext()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
-        context=this;
-
+        context = this;
+        instance=this;
 //        LeakCanary.install(this);
 //        BlockCanary.install(this, new AppContext()).start();
 
 
-        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE,"");
-        MobclickAgent.onEvent(this, "enter","CustomApplication");//前统计的事件ID
+        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "");
+        MobclickAgent.onEvent(this, "enter", "CustomApplication");//前统计的事件ID
         ExtraAttrRegister.init();
         SkinInflaterFactory.setFactory(LayoutInflater.from(this));  // for skin change
         SkinManager.get().init(this);
     }
-
+    public static CustomApplication getInstance() {
+        return instance;
+    }
 //    public class AppContext extends BlockCanaryContext {
 //        private static final String TAG = "AppContext";
 //
@@ -65,4 +69,11 @@ public class CustomApplication extends Application {
 //        }
 //    }
 
+    /**
+     * @return 获取字体缩放比例
+     */
+    public  float getFontScale() {
+        int currentIndex = (Integer) SPUtils.getParam(this, "currentIndex", 1);
+        return 1 + currentIndex * 0.1f;
     }
+}

@@ -11,7 +11,7 @@ import com.android.learn.MainActivity;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.RegisterLoginData;
-import com.android.learn.base.utils.SharedPreferencesUtils;
+import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.account.UserUtil;
 import com.android.learn.mcontract.SplashLoginContract;
 import com.android.learn.mpresenter.SplashLoginPresenter;
@@ -48,8 +48,8 @@ public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter> implem
 
     @Override
     protected void loadData() {
-        String phone_num = (String) SharedPreferencesUtils.getParam(this, "username", "");
-        String password = (String) SharedPreferencesUtils.getParam(this, "password", "");
+        String phone_num = (String) SPUtils.getParam(this, "username", "");
+        String password = (String) SPUtils.getParam(this, "password", "");
         if (phone_num.length() > 0 && password.length() > 0) {
             mPresenter.login(phone_num, password);
         } else handler.sendEmptyMessageDelayed(0, 2000);
