@@ -2,9 +2,11 @@ package com.android.learn.base.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.view.LayoutInflater;
 
+import com.android.learn.base.utils.LocalManageUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.xskin.ExtraAttrRegister;
 import com.umeng.analytics.MobclickAgent;
@@ -26,7 +28,7 @@ public class CustomApplication extends Application {
         instance=this;
 //        LeakCanary.install(this);
 //        BlockCanary.install(this, new AppContext()).start();
-
+        LocalManageUtil.setApplicationLanguage(this);
 
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "");
         MobclickAgent.onEvent(this, "enter", "CustomApplication");//前统计的事件ID
@@ -76,4 +78,19 @@ public class CustomApplication extends Application {
         int currentIndex = (Integer) SPUtils.getParam(this, "currentIndex", 1);
         return 1 + currentIndex * 0.1f;
     }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        //保存系统选择语言
+        LocalManageUtil.saveSystemCurrentLanguage(base);
+        super.attachBaseContext(LocalManageUtil.setLocal(base));
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        //保存系统选择语言
+        LocalManageUtil.onConfigurationChanged(getApplicationContext());
+    }
+
 }

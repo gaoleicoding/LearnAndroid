@@ -1,6 +1,8 @@
 package com.android.learn.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatCheckBox;
@@ -99,7 +101,7 @@ public class SettingActivity extends BaseActivity {
                 FeedbackActivity.startActivity(SettingActivity.this);
                 break;
             case R.id.language_switch_layout:
-
+                LanguageActivity.startActivity(SettingActivity.this);
                 break;
             case R.id.font_size_layout:
                 FontSizeActivity.startActivity(SettingActivity.this);
@@ -112,7 +114,7 @@ public class SettingActivity extends BaseActivity {
     }
 
 
-//    private void checkUpdate() {
+    //    private void checkUpdate() {
 //
 //        if (OnlineParamUtil.getParamResData() != null && OnlineParamUtil.getParamResData().rspBody != null) {
 //            String android_versionCode = OnlineParamUtil.getParamResData().rspBody.android_versionCode.content.trim();
@@ -149,5 +151,29 @@ public class SettingActivity extends BaseActivity {
 //            builder.show();
 //        }
 //    }
+    int yourChoice;
 
+    private void showSingleChoiceDialog() {
+        final String[] items = {"跟随系统", "简体中文", "English"};
+        yourChoice = -1;
+        AlertDialog.Builder singleChoiceDialog =
+                new AlertDialog.Builder(SettingActivity.this);
+        singleChoiceDialog.setTitle("选择语言");
+        // 第二个参数是默认选项，此处设置为0
+        singleChoiceDialog.setSingleChoiceItems(items, 0,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        yourChoice = which;
+                    }
+                });
+        singleChoiceDialog.setPositiveButton("确定",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SPUtils.setParam(SettingActivity.this, "languageIndex", which);
+                    }
+                });
+        singleChoiceDialog.show();
+    }
 }

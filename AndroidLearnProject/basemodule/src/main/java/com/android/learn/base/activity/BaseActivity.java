@@ -1,6 +1,7 @@
 package com.android.learn.base.activity;
 
 import android.app.Activity;
+import android.app.LauncherActivity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -11,7 +12,9 @@ import android.view.View;
 
 import com.android.learn.base.application.CustomApplication;
 import com.android.learn.base.utils.ExitAppUtils;
+import com.android.learn.base.utils.LocalManageUtil;
 import com.android.learn.base.utils.StatusBarUtil;
+import com.android.learn.base.utils.Utils;
 import com.gaolei.basemodule.R;
 import com.umeng.analytics.MobclickAgent;
 import com.wind.me.xskinloader.SkinInflaterFactory;
@@ -54,7 +57,24 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         initData(bundle);
 
     }
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+//        if(Utils.getTopActivity(newBase).equals("LanguageActivity"))
+        //语言切换
+        super.attachBaseContext(LocalManageUtil.setLocal(newBase));
+//        if(Utils.getTopActivity(newBase).equals("FontSizeActivity")) {
+//            //重写字体缩放比例  api>25
+//            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
+//                final Resources res = newBase.getResources();
+//                final Configuration config = res.getConfiguration();
+//                config.fontScale = CustomApplication.getInstance().getFontScale();//1 设置正常字体大小的倍数
+//                final Context newContext = newBase.createConfigurationContext(config);
+//                super.attachBaseContext(newContext);
+//            } else {
+//                super.attachBaseContext(newBase);
+//            }
+//        }
+    }
 
     protected abstract int getLayoutId();
 
@@ -146,19 +166,6 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
             res.updateConfiguration(config,res.getDisplayMetrics());
         }
         return res;
-    }
-    //重写字体缩放比例  api>25
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        if(Build.VERSION.SDK_INT>Build.VERSION_CODES.N){
-            final Resources res = newBase.getResources();
-            final Configuration config = res.getConfiguration();
-            config.fontScale=CustomApplication.getInstance().getFontScale();//1 设置正常字体大小的倍数
-            final Context newContext = newBase.createConfigurationContext(config);
-            super.attachBaseContext(newContext);
-        }else{
-            super.attachBaseContext(newBase);
-        }
     }
 
 }

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/android/skin"
+    android:background="@color/activity_bg_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    skin:enable="true">
 
     <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
         <!--android:id="@+id/main_top"-->
@@ -142,7 +145,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@android:color/white">
+        android:background="@color/activity_bg_color"
+        skin:enable="true">
 
         <com.android.learn.view.fontsliderbar.FontSliderBar
             android:id="@+id/fontSliderBar"

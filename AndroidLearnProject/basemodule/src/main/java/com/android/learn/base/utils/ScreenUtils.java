@@ -137,5 +137,9 @@ public class ScreenUtils
         float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / fontScale + 0.5f);
     }
-
+    //转换dip为px
+    public static int dp2px(Context context, int dip) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dip * scale + 0.5f * (dip >= 0 ? 1 : -1));
+    }
 }  

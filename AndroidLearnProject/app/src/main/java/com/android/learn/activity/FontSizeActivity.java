@@ -79,9 +79,9 @@ public class FontSizeActivity extends BaseActivity {
         textsize1 = size1 / textSizef;
         textsize2 = size2 / textSizef;
         textsize3 = size3 / textSizef;
-        fontSliderBar.setTickCount(6).setTickHeight(ScreenUtils.px2sp(FontSizeActivity.this, 15)).setBarColor(Color.GRAY)
-                .setTextColor(Color.BLACK).setTextPadding(ScreenUtils.px2sp(FontSizeActivity.this, 10)).setTextSize(ScreenUtils.px2sp(FontSizeActivity.this, 14))
-                .setThumbRadius(ScreenUtils.px2sp(FontSizeActivity.this, 10)).setThumbColorNormal(Color.GRAY).setThumbColorPressed(Color.GRAY)
+        fontSliderBar.setTickCount(6).setTickHeight(ScreenUtils.dp2px(FontSizeActivity.this, 15)).setBarColor(Color.GRAY)
+                .setTextColor(Color.BLACK).setTextPadding(ScreenUtils.dp2px(FontSizeActivity.this, 10)).setTextSize(ScreenUtils.dp2px(FontSizeActivity.this, 14))
+                .setThumbRadius(ScreenUtils.dp2px(FontSizeActivity.this, 10)).setThumbColorNormal(Color.GRAY).setThumbColorPressed(Color.GRAY)
                 .setOnSliderBarChangeListener(new FontSliderBar.OnSliderBarChangeListener() {
                     @Override
                     public void onIndexChanged(FontSliderBar rangeBar, int index) {
