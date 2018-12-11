@@ -56,7 +56,7 @@ public class Bar {
 
     public void draw(Canvas canvas) {
         drawLine(canvas);
-        drawTicks(canvas);
+        drawTicks(canvas,context);
     }
 
     public float getLeftX() {
@@ -94,7 +94,7 @@ public class Bar {
         canvas.drawLine(mLeftX, mY, mRightX, mY, mBarPaint);
     }
 
-    private void drawTicks(Canvas canvas) {
+    private void drawTicks(Canvas canvas,Context context) {
         for (int i = 0; i <= mSegments; i++) {
             final float x = i * mTickDistance + mLeftX;
             canvas.drawLine(x, mTickStartY, x, mTickEndY, mBarPaint);
@@ -105,7 +105,8 @@ public class Bar {
                 mTextPaint.setTextSize(mtextSize * 0.9f);
             }
             if (i == 1) {
-                text = context.getResources().getString(R.string.standrd);
+                if (context != null)
+                    text = context.getResources().getString(R.string.standrd);
                 mTextPaint.setTextSize(mtextSize);
             }
             if (i == mSegments) {

@@ -66,8 +66,9 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
                 break;
 
             case R.id.iv_user_photo:
-                RegisterLoginActivity.startActivity(getActivity());
-
+                if (!UserUtil.isLogined()) {
+                    RegisterLoginActivity.startActivity(getActivity());
+                }
         }
     }
 

@@ -46,7 +46,7 @@
     <string name="send">发送</string>
     <string name="language_follow_system">跟随系统</string>
     <string name="language_chinese">简体中文</string>
-    <string name="language_english">英语</string>
+    <string name="language_english">English</string>
     <string name="skip">跳过</string>
 
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">程序出错了，抱歉给您带来不便\n为了尽快解决此问题，您可以点击错误详情，并复制错误代码或截图，发邮件反馈到技术支持邮箱：gaoleiandroid@163.com</string>

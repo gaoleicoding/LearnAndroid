@@ -61,15 +61,16 @@ public class FontSliderBar extends View {
 
     public FontSliderBar(Context context) {
         super(context);
-        this.context=context;
     }
 
     public FontSliderBar(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.context=context;
     }
 
     public FontSliderBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+
     }
 
     @Override
@@ -109,6 +110,7 @@ public class FontSliderBar extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
+
         createBar(context);
         createThumbs();
     }

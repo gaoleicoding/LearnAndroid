@@ -95,5 +95,20 @@ public class LanguageUtil {
         return locale;
     }
 
+//    public static void saveSystemCurrentLanguage(Context context) {
+//        Locale locale;
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            locale = LocaleList.getDefault().get(0);
+//        } else {
+//            locale = Locale.getDefault();
+//        }
+//        Log.d(TAG, locale.getLanguage());
+//        SPUtil.getInstance(context).setSystemCurrentLocal(locale);
+//    }
 
+//    public static void onConfigurationChanged(Context context){
+////        saveSystemCurrentLanguage(context);
+//        setLocal(context);
+//        setApplicationLanguage(context);
+//    }
 }
