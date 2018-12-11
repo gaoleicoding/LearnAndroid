@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources >
-    <string name="app_name">学Android</string>
+    <!--<string name="app_name">学Android</string>-->
     <string name="mine">我的</string>
     <string name="knowledge">知识点</string>
     <string name="home">首页</string>
@@ -18,7 +18,7 @@
     <string name="account">账号&#160;&#160;</string>
     <string name="phone_num">手机号</string>
     <string name="phone_num_input">请输入手机号</string>
-    <string name="password">密码&#160;&#160;</string>
+    <string name="password">密码</string>
     <string name="confirm_password">确认密码</string>
     <string name="register">注册</string>
     <string name="register_password_too_short">密码不能少于6位，请重新设置</string>

@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:clickable="true"
         android:onClick="jumpToMainActivity"
-        android:text="跳过" />
+        android:text="@string/skip" />
 
 
 </RelativeLayout>

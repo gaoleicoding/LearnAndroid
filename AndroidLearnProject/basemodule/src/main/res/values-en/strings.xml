@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Learn Android</string>
+    <!--<string name="app_name">Learn Android</string>-->
     <string name="mine">Me</string>
     <string name="knowledge">Point</string>
     <string name="home">Home</string>
@@ -18,7 +18,7 @@
     <string name="account">Account&#160;&#160;</string>
     <string name="phone_num">Phone</string>
     <string name="phone_num_input">please input phone num</string>
-    <string name="password">Password&#160;&#160;</string>
+    <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="register">Register</string>
     <string name="register_password_too_short">no less than 6 digits，please reset</string>
@@ -45,6 +45,7 @@
     <string name="feedback_send_fail">Feedback failed to send</string>
     <string name="send">Send</string>
     <string name="skip">Skip</string>
+
 
 
 </resources>
