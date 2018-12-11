@@ -23,6 +23,7 @@ import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.email.MailSender;
 import com.android.learn.base.mpresenter.BasePresenter;
+import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.Utils;
 
 import butterknife.BindView;
@@ -87,11 +88,11 @@ public class FeedbackActivity extends BaseMvpActivity {
                 String sendTitle = et_email_title.getText().toString();
                 String sendContent = et_email_content.getText().toString();
                 if ("".equals(sendTitle.trim())) {
-                    Utils.showToast("请输入联系方式", true);
+                    Utils.showToast(getResources().getString(R.string.please_input_contact), true);
                     return;
                 }
                 if ("".equals(sendContent.trim())) {
-                    Utils.showToast("请输入反馈内容", true);
+                    Utils.showToast(getResources().getString(R.string.please_input_content), true);
                     return;
                 }
                 senderRunnable.setMail(sendTitle, sendContent,
@@ -163,7 +164,7 @@ public class FeedbackActivity extends BaseMvpActivity {
             // TODO Auto-generated method stub
             try {
                 sender.sendMail(subject, body, user, receiver, attachment);
-                Utils.showToast("您的反馈我们已经收到", false);
+                Utils.showToast(getResources().getString(R.string.feedback_send_success), false);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -173,7 +174,7 @@ public class FeedbackActivity extends BaseMvpActivity {
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 if (e.getMessage() != null)
-                    Utils.showToast("反馈发送失败，请稍后再试", false);
+                    Utils.showToast(getResources().getString(R.string.feedback_send_fail), false);
                 e.printStackTrace();
             } finally {
                 finish();
@@ -290,6 +291,13 @@ public class FeedbackActivity extends BaseMvpActivity {
         email.putExtra(Intent.EXTRA_TEXT, et_email_content.getText().toString());
 //调用系统的邮件系统
         startActivity(Intent.createChooser(email, "请选择邮件发送软件"));
+
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
     }
 }

@@ -16,6 +16,7 @@ import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.email.ToastUtils;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.mcontract.KnowledgeChildContract;
@@ -168,5 +169,10 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
             }
         });
     }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
+    }
 }

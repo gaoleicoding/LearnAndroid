@@ -57,9 +57,11 @@ public class FontSliderBar extends View {
 
     private ValueAnimator mAnimator;
     private OnSliderBarChangeListener mListener;
+    Context context;
 
     public FontSliderBar(Context context) {
         super(context);
+        this.context=context;
     }
 
     public FontSliderBar(Context context, AttributeSet attrs) {
@@ -107,7 +109,7 @@ public class FontSliderBar extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        createBar();
+        createBar(context);
         createThumbs();
     }
 
@@ -240,9 +242,9 @@ public class FontSliderBar extends View {
         return FontSliderBar.this;
     }
 
-    public void applay() {
+    public void applay(Context context) {
         createThumbs();
-        createBar();
+        createBar(context);
         requestLayout();
         invalidate();
     }
@@ -254,8 +256,8 @@ public class FontSliderBar extends View {
         return mCurrentIndex;
     }
 
-    private void createBar() {
-        mBar = new Bar(getXCoordinate(), getYCoordinate(), getBarLength(), mTickCount, mTickHeight, mBarWidth,
+    private void createBar(Context context) {
+        mBar = new Bar(context,getXCoordinate(), getYCoordinate(), getBarLength(), mTickCount, mTickHeight, mBarWidth,
                 mBarColor, mTextColor, mTextSize, mTextPadding);
     }
 

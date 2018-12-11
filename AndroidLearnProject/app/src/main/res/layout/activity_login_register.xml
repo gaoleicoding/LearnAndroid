@@ -108,7 +108,7 @@
         <EditText
             android:id="@+id/et_register_phone_num"
             style="@style/edit_match_style"
-            android:hint="手机号/邮箱"
+            android:hint="@string/phone_account"
             android:inputType="number"
             skin:enable="true"/>
 

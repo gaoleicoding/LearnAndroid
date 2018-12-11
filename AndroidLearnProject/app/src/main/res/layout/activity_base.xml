@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="首页"
+            android:text="@string/home"
             android:textColor="#ffffff"
             android:textSize="18sp" />
     </RelativeLayout>

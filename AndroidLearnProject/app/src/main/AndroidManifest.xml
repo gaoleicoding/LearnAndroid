@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" ></activity>
         <activity android:name=".activity.ArticleDetailActivity"></activity>
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.MyCollectActivity"></activity>

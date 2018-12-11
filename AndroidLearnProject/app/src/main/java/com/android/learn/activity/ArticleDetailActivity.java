@@ -1,5 +1,6 @@
 package com.android.learn.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.view.Html5Webview;
 
 import butterknife.BindView;
@@ -33,5 +35,10 @@ public class ArticleDetailActivity extends BaseActivity {
         String url = bundle.getString("url");
         webview_article.loadUrl(url);
     }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
+    }
 }

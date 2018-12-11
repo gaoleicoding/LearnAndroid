@@ -15,11 +15,15 @@ import android.widget.TextView;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.event.LogoutEvent;
+import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.base.utils.account.UserUtil;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -86,16 +90,13 @@ public class SettingActivity extends BaseActivity {
                 useNightMode(isChecked);
             }
         });
+        EventBus.getDefault().register(this);
     }
 
 
     @OnClick({R.id.help_feedback_layout, R.id.version_update_layout, R.id.language_switch_layout, R.id.font_size_layout, R.id.my_logout_layout})
     public void click(View view) {
-        if (!UserUtil.isLogined()) {
-            RegisterLoginActivity.startActivity(this);
-            Utils.showToast(getString(R.string.user_not_login), true);
-            return;
-        }
+
         switch (view.getId()) {
             case R.id.help_feedback_layout:
                 FeedbackActivity.startActivity(SettingActivity.this);
@@ -107,12 +108,22 @@ public class SettingActivity extends BaseActivity {
                 FontSizeActivity.startActivity(SettingActivity.this);
                 break;
             case R.id.my_logout_layout:
+                if (!UserUtil.isLogined()) {
+                    RegisterLoginActivity.startActivity(this);
+                    return;
+                }
                 EventBus.getDefault().post(new LogoutEvent());
                 finish();
                 break;
         }
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
+
+    }
 
     //    private void checkUpdate() {
 //
@@ -175,5 +186,14 @@ public class SettingActivity extends BaseActivity {
                     }
                 });
         singleChoiceDialog.show();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(RestartMainEvent event) {
+        finish();
+    }
+    public void onDestroy(){
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

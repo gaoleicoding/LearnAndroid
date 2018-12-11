@@ -23,7 +23,7 @@
 
         <TextView
             style="@style/user_info_txt"
-            android:text="反馈与建议"
+            android:text="@string/help_feedback"
             skin:enable="true" />
     </LinearLayout>
 
@@ -44,7 +44,7 @@
             style="@style/user_info_txt"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="版本更新"
+            android:text="@string/version_update"
             skin:enable="true" />
 
         <TextView
@@ -71,7 +71,7 @@
             style="@style/user_info_txt"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="夜间模式"
+            android:text="@string/night_mode"
             skin:enable="true" />
 
         <android.support.v7.widget.AppCompatCheckBox
@@ -81,9 +81,11 @@
             android:button="@drawable/abc_btn_check_material"
             android:buttonTint="@color/colorAccent" />
     </LinearLayout>
+
     <View
         style="@style/horizontal_divider_setting"
         skin:enable="true" />
+
     <LinearLayout
         android:id="@+id/language_switch_layout"
         style="@style/user_info_layout"
@@ -98,14 +100,16 @@
             style="@style/user_info_txt"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="语言设置"
+            android:text="@string/language_set"
             skin:enable="true" />
 
 
     </LinearLayout>
+
     <View
         style="@style/horizontal_divider_setting"
         skin:enable="true" />
+
     <LinearLayout
         android:id="@+id/font_size_layout"
         style="@style/user_info_layout"
@@ -120,7 +124,7 @@
             style="@style/user_info_txt"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="字体大小"
+            android:text="@string/font_size"
             skin:enable="true" />
 
 

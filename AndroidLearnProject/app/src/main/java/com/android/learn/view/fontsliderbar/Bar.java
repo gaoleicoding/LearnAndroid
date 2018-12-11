@@ -1,8 +1,11 @@
 package com.android.learn.view.fontsliderbar;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.TextUtils;
+
+import com.android.learn.R;
 
 /**
  * Created by Administrator on 2017/9/6 0006.
@@ -22,16 +25,17 @@ public class Bar {
     private final float mTickHeight;
     private final float mTickStartY;
     private final float mTickEndY;
-    private  int mtextSize;
+    private int mtextSize;
+    Context context;
 
-    public Bar(float x, float y, float width, int tickCount, float tickHeight,
-               float barWidth, int barColor,int textColor, int textSize, int padding) {
-
+    public Bar(Context context, float x, float y, float width, int tickCount, float tickHeight,
+               float barWidth, int barColor, int textColor, int textSize, int padding) {
+        this.context = context;
         mLeftX = x;
         mRightX = x + width;
         mY = y;
         mPadding = padding;
-        mtextSize=textSize;
+        mtextSize = textSize;
 
         mSegments = tickCount - 1;
         mTickDistance = width / mSegments;
@@ -62,6 +66,7 @@ public class Bar {
     public float getRightX() {
         return mRightX;
     }
+
     //获取标尺最近的刻度 通过圆所在的位置
     public float getNearestTickCoordinate(Thumb thumb) {
         final int nearestTickIndex = getNearestTickIndex(thumb);
@@ -94,20 +99,20 @@ public class Bar {
             final float x = i * mTickDistance + mLeftX;
             canvas.drawLine(x, mTickStartY, x, mTickEndY, mBarPaint);
             //绘制头尾 A 以及标准
-            String text="";
-           if(i==0){
-               text="A";
-               mTextPaint.setTextSize(mtextSize*0.9f);
-           }
-            if(i==1){
-                text="标准";
+            String text = "";
+            if (i == 0) {
+                text = "A";
+                mTextPaint.setTextSize(mtextSize * 0.9f);
+            }
+            if (i == 1) {
+                text = context.getResources().getString(R.string.standrd);
                 mTextPaint.setTextSize(mtextSize);
             }
-            if(i==mSegments){
-                 text="A";
-                 mTextPaint.setTextSize(mtextSize*1.4f);
+            if (i == mSegments) {
+                text = "A";
+                mTextPaint.setTextSize(mtextSize * 1.4f);
             }
-            if(!TextUtils.isEmpty(text)) {
+            if (!TextUtils.isEmpty(text)) {
                 canvas.drawText(text, x - getTextWidth(text) / 2, mTickStartY - mPadding, mTextPaint);
             }
         }
@@ -118,10 +123,10 @@ public class Bar {
     }
 
     public void destroyResources() {
-        if(null != mBarPaint) {
+        if (null != mBarPaint) {
             mBarPaint = null;
         }
-        if(null != mTextPaint) {
+        if (null != mTextPaint) {
             mTextPaint = null;
         }
     }

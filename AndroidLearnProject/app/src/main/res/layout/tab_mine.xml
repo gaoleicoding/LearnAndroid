@@ -13,10 +13,7 @@
         android:src="@drawable/tab_selector_mine" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mine"
-        android:textColor="@color/selector_tab_text"
-        android:textSize="14sp" />
+        style="@style/main_bottom_tab_txt"
+        android:text="@string/mine" />
 
 </LinearLayout>

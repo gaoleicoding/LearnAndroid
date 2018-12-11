@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.RegisterLoginData;
+import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.base.utils.account.UserUtil;
@@ -98,36 +99,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
                 title.setText(getString(R.string.register));
                 isInRegister = true;
                 break;
-//            case R.id.tv_forget_password:
-//                layout_forget_password.setVisibility(View.VISIBLE);
-//                title.setText(getString(R.string.forget_password));
-//                isInForgetPwd = true;
-//                break;
-//
-//            case R.id.tv_register_get_verify_code:
-//
-//                phoneNum = et_register_phone_num.getText().toString();
-//                if (Utils.isMobileNO(phoneNum)) {
-//                    if (tv_register_get_verify_code.isFinish()) {
-//                        //发送验证码请求成功后调用
-//                        tv_register_get_verify_code.start();
-//                    }
-//                    mPresenter.getMessageCode(phoneNum, 1);
-//                }
-//
-//                break;
-//
-//            case R.id.tv_forget_pwd_get_verify_code:
-//                phoneNum = et_forget_pwd_phone_num.getText().toString();
-//                if (Utils.isMobileNO(phoneNum)) {
-//                    if (tv_forget_pwd_get_verify_code.isFinish()) {
-//                        //发送验证码请求成功后调用
-//                        tv_forget_pwd_get_verify_code.start();
-//                    }
-//                    mPresenter.getMessageCode(phoneNum, 2);
-//                }
-//
-//                break;
+
             case R.id.tv_register:
                 registerFlag = "tv_register";
 
@@ -136,7 +108,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
                 String confirmPassword = et_register_confirm_password.getText().toString().trim();
 
                 if ("".equals(username)) {
-                    Utils.showToast("请输入账号", true);
+                    Utils.showToast(getResources().getString(R.string.please_input_account), true);
                     return;
                 }
                 if (password.length() < 6) {
@@ -144,7 +116,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
                     return;
                 }
                 if (!password.equals(confirmPassword)) {
-                    Utils.showToast("两次密码输入不一致", true);
+                    Utils.showToast(getResources().getString(R.string.password_dismatch), true);
                     return;
                 }
 
@@ -176,7 +148,12 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
 
         }
     }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
+    }
 
     public void onDestroy() {
         super.onDestroy();

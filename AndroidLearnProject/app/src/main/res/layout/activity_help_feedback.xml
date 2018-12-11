@@ -111,7 +111,7 @@
         android:background="@drawable/btn_bg_selector"
         skin:enable="true"
         android:gravity="center"
-        android:text="发送"
+        android:text="@string/send"
         android:textColor="#ffffff"
         android:textSize="18sp" />
 </LinearLayout>

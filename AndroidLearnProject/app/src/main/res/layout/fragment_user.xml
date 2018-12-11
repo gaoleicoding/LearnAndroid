@@ -36,7 +36,9 @@
             android:textSize="18sp" />
 
     </LinearLayout>
-
+    <View
+        style="@style/horizontal_divider_setting"
+        skin:enable="true" />
     <LinearLayout
         android:id="@+id/my_collect_layout"
         skin:enable="true"
@@ -48,7 +50,7 @@
 
         <TextView
             style="@style/user_info_txt"
-            android:text="收藏"
+            android:text="@string/collect"
             skin:enable="true" />
     </LinearLayout>
 

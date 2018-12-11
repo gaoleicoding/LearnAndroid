@@ -1,24 +1,43 @@
 package com.android.learn.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.os.Handler;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.learn.MainActivity;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
-import com.android.learn.base.event.FontSizeEvent;
-import com.android.learn.base.utils.LocalManageUtil;
+import com.android.learn.base.event.LogoutEvent;
+import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.utils.LanguageUtil;
+import com.android.learn.base.utils.LogUtil;
+import com.android.learn.base.utils.SPUtils;
+import com.android.learn.base.utils.account.UserUtil;
 
 import org.greenrobot.eventbus.EventBus;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 
 public class LanguageActivity extends BaseActivity {
-    private TextView mUserSelect;
+    @BindView(R.id.iv_back)
+    ImageView iv_back;
+    @BindView(R.id.title)
+    TextView title;
+    @BindView(R.id.cb_system)
+    AppCompatCheckBox cb_system;
+    @BindView(R.id.cb_chinese)
+    AppCompatCheckBox cb_chinese;
+    @BindView(R.id.cb_english)
+    AppCompatCheckBox cb_english;
+    String TAG = "LanguageActivity";
+
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, LanguageActivity.class);
         context.startActivity(intent);
@@ -31,40 +50,55 @@ public class LanguageActivity extends BaseActivity {
 
     @Override
     protected void initData(Bundle bundle) {
-        setClick();
+        title.setText(getString(R.string.language_set));
+        iv_back.setVisibility(View.VISIBLE);
+
+        int language = (Integer) SPUtils.getParam(context, "language", 0);
+        if (language == 0) {
+            cb_system.setChecked(true);
+        } else if (language == 1) {
+            cb_chinese.setChecked(true);
+        } else if (language == 2) {
+            cb_english.setChecked(true);
+        }
+
     }
 
-    public static void enter(Context context) {
-        Intent intent = new Intent(context, SettingActivity.class);
-        context.startActivity(intent);
-    }
 
     private void selectLanguage(int select) {
-        LocalManageUtil.saveSelectLanguage(this, select);
-        EventBus.getDefault().post(new FontSizeEvent());
+        LanguageUtil.saveSelectLanguage(this, select);
+        EventBus.getDefault().post(new RestartMainEvent(this));
     }
 
-    private void setClick() {
-        //跟随系统
-        findViewById(R.id.btn_auto).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+    @OnClick({R.id.cb_system, R.id.cb_chinese, R.id.cb_english})
+    public void click(View view) {
+        cb_system.setChecked(false);
+        cb_chinese.setChecked(false);
+        cb_english.setChecked(false);
+        switch (view.getId()) {
+            case R.id.cb_system:
                 selectLanguage(0);
-            }
-        });
-        //简体中文
-        findViewById(R.id.btn_cn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.cb_chinese:
                 selectLanguage(1);
-            }
-        });
-        //english
-        findViewById(R.id.btn_en).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.cb_english:
                 selectLanguage(2);
-            }
-        });
+                break;
+
+        }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
+
+    }
+
+    public void onDestroy() {
+        super.onDestroy();
+        LogUtil.d(TAG, TAG + "   onDestroy--------");
     }
 }

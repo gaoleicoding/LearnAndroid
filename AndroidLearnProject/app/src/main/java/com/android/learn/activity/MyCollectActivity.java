@@ -17,6 +17,7 @@ import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.CancelCollectEvent;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.mcontract.CollectContract;
 import com.android.learn.mpresenter.CollectPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -121,5 +122,11 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
     public void showCancelCollectArticle(int position, FeedArticleData feedArticleData) {
         feedArticleAdapter.remove(position);
         EventBus.getDefault().post(new CancelCollectEvent(feedArticleData.id));
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
+
     }
 }

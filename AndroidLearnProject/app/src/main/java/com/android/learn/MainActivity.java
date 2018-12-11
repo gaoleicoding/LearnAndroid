@@ -1,16 +1,15 @@
 package com.android.learn;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
@@ -18,17 +17,14 @@ import android.text.TextPaint;
 import android.text.style.ForegroundColorSpan;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.base.activity.BaseActivity;
-import com.android.learn.base.event.FontSizeEvent;
-import com.android.learn.base.event.LoginEvent;
-import com.android.learn.base.utils.LogUtil;
+import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.PermissionUtil;
-import com.android.learn.base.utils.Utils;
 import com.android.learn.base.view.TitleView;
 import com.android.learn.fragment.HomeFragment;
 import com.android.learn.fragment.KnowledgeFragment;
@@ -104,11 +100,11 @@ public class MainActivity extends BaseActivity {
         mFragments.add(new UserFragment());
 
         titles = new ArrayList<String>();
-        titles.add(getString(R.string.home));
-        titles.add(getString(R.string.project));
-        titles.add(getString(R.string.knowledge));
-        titles.add(getString(R.string.navigation));
-        titles.add(getString(R.string.mine));
+        titles.add(getResources().getString(R.string.home));
+        titles.add(getResources().getString(R.string.project));
+        titles.add(getResources().getString(R.string.knowledge));
+        titles.add(getResources().getString(R.string.navigation));
+        titles.add(getResources().getString(R.string.mine));
 
         MainTabAdapter adapter = new MainTabAdapter(getSupportFragmentManager(), mFragments);
         viewPager.setOffscreenPageLimit(mFragments.size());
@@ -287,7 +283,7 @@ public class MainActivity extends BaseActivity {
                 spannableStringBuilder.length(),
                 textPaint,
                 0,
-                Layout.Alignment.ALIGN_CENTER,
+                android.text.Layout.Alignment.ALIGN_CENTER,
                 1.0f,
                 0.0f,
                 false
@@ -331,19 +327,25 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(FontSizeEvent fontSizeEvent) {
-        Intent intent = getIntent();
-//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(RestartMainEvent event) {
+        Intent intent = getIntent();
         overridePendingTransition(0, 0);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         finish();
         overridePendingTransition(0, 0);
         startActivity(intent);
+        event.activity.finish();
     }
 
-    public void onDestroy(){
+    public void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }

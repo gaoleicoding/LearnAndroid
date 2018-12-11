@@ -12,19 +12,16 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
-import com.android.learn.base.application.CustomApplication;
-import com.android.learn.base.event.FontSizeEvent;
-import com.android.learn.base.event.LogoutEvent;
+import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.utils.LanguageUtil;
+import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.ScreenUtils;
-import com.android.learn.base.utils.Utils;
-import com.android.learn.base.utils.account.UserUtil;
 import com.android.learn.view.fontsliderbar.FontSliderBar;
 
 import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -44,14 +41,13 @@ public class FontSizeActivity extends BaseActivity {
     TextView tvContent1;
     @BindView(R.id.tv_chatcontent)
     TextView tvContent2;
-    @BindView(R.id.tv_chatcontent3)
-    TextView tvContent3;
     @BindView(R.id.iv_userhead)
     ImageView ivUserhead;
     private float textsize1, textsize2, textsize3;
     private float textSizef;//缩放比例
     private boolean isClickable = true;
     int currentIndex;
+    String TAG="FontSizeActivity";
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, FontSizeActivity.class);
@@ -60,7 +56,7 @@ public class FontSizeActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_textsizeshow;
+        return R.layout.activity_fontsizes;
     }
 
     @Override
@@ -75,10 +71,8 @@ public class FontSizeActivity extends BaseActivity {
         textSizef = 1 + currentIndex * 0.1f;
         float size1 = tvContent1.getTextSize();
         float size2 = tvContent2.getTextSize();
-        float size3 = tvContent3.getTextSize();
         textsize1 = size1 / textSizef;
         textsize2 = size2 / textSizef;
-        textsize3 = size3 / textSizef;
         fontSliderBar.setTickCount(6).setTickHeight(ScreenUtils.dp2px(FontSizeActivity.this, 15)).setBarColor(Color.GRAY)
                 .setTextColor(Color.BLACK).setTextPadding(ScreenUtils.dp2px(FontSizeActivity.this, 10)).setTextSize(ScreenUtils.dp2px(FontSizeActivity.this, 14))
                 .setThumbRadius(ScreenUtils.dp2px(FontSizeActivity.this, 10)).setThumbColorNormal(Color.GRAY).setThumbColorPressed(Color.GRAY)
@@ -92,7 +86,7 @@ public class FontSizeActivity extends BaseActivity {
                         float textSizef = 1 + index * 0.1f;
                         setTextSize(textSizef);
                     }
-                }).setThumbIndex(currentIndex).withAnimation(false).applay();
+                }).setThumbIndex(currentIndex).withAnimation(false).applay(this);
 
     }
 
@@ -121,7 +115,6 @@ public class FontSizeActivity extends BaseActivity {
         float size3 = textsize3 * textSize;
         tvContent1.setTextSize(ScreenUtils.px2sp(FontSizeActivity.this, size1));
         tvContent2.setTextSize(ScreenUtils.px2sp(FontSizeActivity.this, size2));
-        tvContent3.setTextSize(ScreenUtils.px2sp(FontSizeActivity.this, size3));
     }
 
     @Override
@@ -143,18 +136,19 @@ public class FontSizeActivity extends BaseActivity {
     private void refresh() {
         //存储标尺的下标
         SPUtils.setParam(this, "currentIndex", fontSliderBar.getCurrentIndex());
-//        MyApplication.getMyInstance().getPreferencesHelper().setValue("currentIndex", fontSliderBar.getCurrentIndex());
         //通知主页面重启
-        EventBus.getDefault().post(new FontSizeEvent());
-        //2s后关闭  延迟执行任务 重启完主页
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-//                hideMyDialog();
-                finish();
-            }
-        }, 2000);
+        EventBus.getDefault().post(new RestartMainEvent(this));
+
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
+    }
+    public void onDestroy(){
+        super.onDestroy();
+        LogUtil.d(TAG,TAG+"   onDestroy--------");
+    }
 }

@@ -28,7 +28,7 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:gravity="center"
-            android:text="首页"
+            android:text="@string/home"
             android:textColor="#ffffff"
             android:textSize="18sp" />
     </RelativeLayout>
