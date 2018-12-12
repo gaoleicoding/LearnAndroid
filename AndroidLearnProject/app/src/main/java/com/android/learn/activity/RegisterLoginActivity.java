@@ -112,7 +112,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
                     return;
                 }
                 if (password.length() < 6) {
-                    Utils.showToast(getString(R.string.register_password_too_short), true);
+                    Utils.showToast(getResources().getString(R.string.register_password_too_short), true);
                     return;
                 }
                 if (!password.equals(confirmPassword)) {
@@ -141,7 +141,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
     private void back() {
         if (isInRegister) {
             layout_register.setVisibility(View.GONE);
-            title.setText(getString(R.string.login));
+            title.setText(getResources().getString(R.string.login));
             isInRegister = false;
         } else {
             finish();

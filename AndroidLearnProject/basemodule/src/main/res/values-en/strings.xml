@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<string name="app_name">Learn Android</string>-->
     <string name="mine">Me</string>
     <string name="knowledge">Point</string>
     <string name="home">Home</string>
@@ -44,7 +43,7 @@
     <string name="feedback_send_success">Have received your feedback</string>
     <string name="feedback_send_fail">Feedback failed to send</string>
     <string name="send">Send</string>
-    <string name="skip">Skip</string>
+    <string name="tiaoguo">Skip</string>
 
 
 

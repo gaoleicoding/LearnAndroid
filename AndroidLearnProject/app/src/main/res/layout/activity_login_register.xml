@@ -26,7 +26,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -39,7 +39,10 @@
 
             <EditText
                 android:id="@+id/et_login_phone_num"
-                style="@style/code_edit_num_style"
+                style="@style/edit_match_style"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="10dp"
                 android:inputType="number"
                 skin:enable="true" />
         </LinearLayout>
@@ -50,7 +53,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,8 +66,11 @@
 
             <EditText
                 android:id="@+id/et_login_password"
-                style="@style/code_edit_num_letter_style"
+                style="@style/edit_match_style"
                 android:inputType="textPassword"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="10dp"
                 skin:enable="true" />
         </LinearLayout>
 

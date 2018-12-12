@@ -1,5 +1,6 @@
 package com.android.learn.activity;
 
+import android.app.LauncherActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -53,7 +54,7 @@ public class LanguageActivity extends BaseActivity {
         title.setText(getString(R.string.language_set));
         iv_back.setVisibility(View.VISIBLE);
 
-        int language = (Integer) SPUtils.getParam(context, "language", 0);
+        int language = (Integer) SPUtils.getParam(this, "language", 0);
         if (language == 0) {
             cb_system.setChecked(true);
         } else if (language == 1) {

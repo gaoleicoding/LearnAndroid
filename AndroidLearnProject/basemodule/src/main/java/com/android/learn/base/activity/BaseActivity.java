@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends BasePermisssionActivity implements View.OnClickListener {
 
-    public static Activity context;
+//    public static Activity context;
     Boolean isNightMode;
 
     String TAG = "BaseActivity";
@@ -44,7 +44,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
 
         ExitAppUtils.getInstance().addActivity(this);
 
-        context = this;
+//        context = this;
 //        setStatusBarColor(R.color.status_bar_color);
         SkinManager.get().setWindowStatusBarColor(this.getWindow(), R.color.status_bar_color);
 
@@ -118,7 +118,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
 
     protected void onDestroy() {
         super.onDestroy();
-        context = null;
+//        context = null;
         ExitAppUtils.getInstance().delActivity(this);
 
     }

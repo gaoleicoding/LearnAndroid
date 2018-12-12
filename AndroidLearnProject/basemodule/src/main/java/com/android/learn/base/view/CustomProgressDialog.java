@@ -45,9 +45,7 @@ public class CustomProgressDialog {
         if (loadingDialog != null) return;
         if (loadingDialog != null && loadingDialog.isShowing()) return;
         loadingDialog = CustomProgressDialog.createLoadingDialog(activity);
-        if (loadingDialog != null) {
-            loadingDialog.show();//显示
-        }
+        loadingDialog.show();//显示
     }
 
     public static void cancel() {
