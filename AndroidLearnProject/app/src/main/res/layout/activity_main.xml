@@ -43,7 +43,74 @@
         android:id="@+id/iv_svga"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00000000"
         android:scaleType="fitCenter"
         app:antiAlias="true" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="gone"
+        app:cardBackgroundColor="#55000000"
+        app:cardCornerRadius="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/activity_bg_color"
+            skin:enable="true">
+
+            <LinearLayout
+                android:id="@+id/search_layout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <ImageView
+                    android:id="@+id/iv_search_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:src="@drawable/icon_back"
+                    android:tint="@color/colorAccent" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/et_search_bg"
+                    android:gravity="center_vertical"
+                    android:hint="请输入内容"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textCapWords"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="8dp"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    skin:enable="true" />
+
+                <ImageView
+                    android:id="@+id/clearSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="true"
+                    android:padding="12dp"
+                    android:src="@drawable/icon_speech"
+                    android:tint="@color/colorAccent" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/history_recycleview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search_layout"
+                android:divider="@color/color_d0d0d0" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </RelativeLayout>

@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
@@ -17,14 +20,18 @@ import android.text.TextPaint;
 import android.text.style.ForegroundColorSpan;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.learn.adapter.MainTabAdapter;
+import com.android.learn.adapter.RvAdapter;
 import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.event.RestartMainEvent;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.PermissionUtil;
+import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.view.TitleView;
 import com.android.learn.fragment.HomeFragment;
 import com.android.learn.fragment.KnowledgeFragment;
@@ -32,11 +39,13 @@ import com.android.learn.fragment.NavigationFragment;
 import com.android.learn.fragment.ProjectFragment;
 import com.android.learn.fragment.UserFragment;
 import com.android.learn.view.CustomViewPager;
+import com.android.learn.view.SearchViewUtils;
 import com.opensource.svgaplayer.SVGADrawable;
 import com.opensource.svgaplayer.SVGADynamicEntity;
 import com.opensource.svgaplayer.SVGAImageView;
 import com.opensource.svgaplayer.SVGAParser;
 import com.opensource.svgaplayer.SVGAVideoEntity;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -73,9 +82,22 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.iv_svga)
     SVGAImageView iv_svga;
+    @BindView(R.id.cardview_search)
+    CardView cardview_search;
+    @BindView(R.id.et_search)
+    EditText et_search;
+    @BindView(R.id.iv_search)
+    ImageView iv_search;
+    @BindView(R.id.iv_search_back)
+    ImageView iv_search_back;
+    @BindView(R.id.history_recycleview)
+    RecyclerView history_recycleview;
+    @BindView(R.id.title_view_divider)
+    View title_view_divider;
 
     HomeFragment homeFragment;
     ProjectFragment projectFragment;
+    boolean isSearching;
 
     @Override
     protected int getLayoutId() {
@@ -115,6 +137,9 @@ public class MainActivity extends BaseActivity {
         tabLayout.setupWithViewPager(viewPager);
         initTab();
         loadAnimation();
+        initResultItem();
+        iv_search.setVisibility(View.VISIBLE);
+
     }
 
 
@@ -136,6 +161,7 @@ public class MainActivity extends BaseActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
                 title.setText(titles.get(position));
+
                 if (position == 4) header_layout.setVisibility(View.GONE);
                 else header_layout.setVisibility(View.VISIBLE);
             }
@@ -155,7 +181,7 @@ public class MainActivity extends BaseActivity {
         tabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
 
-    @OnClick({R.id.title, R.id.iv_svga})
+    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.title:
@@ -169,6 +195,13 @@ public class MainActivity extends BaseActivity {
             case R.id.iv_svga:
                 iv_svga.stopAnimation();
                 iv_svga.setVisibility(View.GONE);
+                break;
+            case R.id.iv_search_back:
+                SearchViewUtils.handleToolBar(getApplicationContext(), cardview_search, et_search);
+                break;
+            case R.id.iv_search:
+                SearchViewUtils.handleToolBar(getApplicationContext(), cardview_search, et_search);
+                isSearching = true;
                 break;
         }
 
@@ -201,10 +234,14 @@ public class MainActivity extends BaseActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK
                 && event.getAction() == KeyEvent.ACTION_DOWN) {
-
+            if (isSearching) {
+                SearchViewUtils.handleToolBar(getApplicationContext(), cardview_search, et_search);
+                isSearching = false;
+                return false;
+            }
             if ((System.currentTimeMillis() - exitTime) > 2000) {
                 //弹出提示，可以有多种方式
-                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.press_exit), Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {
                 finish();
@@ -251,20 +288,6 @@ public class MainActivity extends BaseActivity {
     }
 
     /**
-     * 进行简单的文本替换
-     *
-     * @return
-     */
-    private SVGADynamicEntity requestDynamicItem() {
-        SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
-        TextPaint textPaint = new TextPaint();
-        textPaint.setColor(Color.WHITE);
-        textPaint.setTextSize(28);
-        dynamicEntity.setDynamicText("欢迎来到学Android", textPaint, "banner");
-        return dynamicEntity;
-    }
-
-    /**
      * 你可以设置富文本到 ImageKey 相关的元素上
      * 富文本是会自动换行的，不要设置过长的文本
      *
@@ -272,7 +295,7 @@ public class MainActivity extends BaseActivity {
      */
     private SVGADynamicEntity requestDynamicItemWithSpannableText() {
         SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("欢迎来到 学Android");
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getResources().getString(R.string.welcome_learn_android));
         spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         TextPaint textPaint = new TextPaint();
         textPaint.setColor(Color.WHITE);
@@ -343,10 +366,42 @@ public class MainActivity extends BaseActivity {
         overridePendingTransition(0, 0);
         startActivity(intent);
         event.activity.finish();
+        Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
+        if (isNightMode) {
+            title_view_divider.setVisibility(View.VISIBLE);
+        } else {
+            title_view_divider.setVisibility(View.GONE);
+        }
     }
 
     public void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }
+
+    private void initResultItem() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("优酷");
+        list.add("土豆");
+        list.add("爱奇艺");
+        list.add("哔哩哔哩");
+        list.add("youtube");
+        list.add("斗鱼");
+        list.add("熊猫");
+        RvAdapter adapter = new RvAdapter(list, new RvAdapter.IListener() {
+            @Override
+            public void normalItemClick(String s) {
+                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void clearItemClick() {
+                Toast.makeText(MainActivity.this, "清除历史记录", Toast.LENGTH_SHORT).show();
+            }
+        });
+        history_recycleview.setAdapter(adapter);
+        history_recycleview.setLayoutManager(new LinearLayoutManager(this));
+        adapter.notifyDataSetChanged();
+    }
+
 }

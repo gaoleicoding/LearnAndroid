@@ -56,6 +56,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     Banner banner;
     @BindView(R.id.smartRefreshLayout_home)
     SmartRefreshLayout smartRefreshLayout;
+
     private List<FeedArticleData> articleDataList;
     private ArticleQuickAdapter feedArticleAdapter;
 

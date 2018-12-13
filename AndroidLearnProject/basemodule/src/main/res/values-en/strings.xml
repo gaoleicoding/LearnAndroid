@@ -44,7 +44,7 @@
     <string name="feedback_send_fail">Feedback failed to send</string>
     <string name="send">Send</string>
     <string name="tiaoguo">Skip</string>
-
-
+    <string name="welcome_learn_android">Welcome learn android</string>
+    <string name="press_exit">Press again to exit the program</string>
 
 </resources>
