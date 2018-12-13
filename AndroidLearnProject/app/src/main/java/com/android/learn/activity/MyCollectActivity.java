@@ -17,9 +17,12 @@ import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.CancelCollectEvent;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.mcontract.CollectContract;
+import com.android.learn.mcontract.MainActivityContract;
 import com.android.learn.mpresenter.CollectPresenter;
+import com.android.learn.mpresenter.MainActivityPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
@@ -36,7 +39,7 @@ import butterknife.BindView;
  * author: zlm
  * date: 2017/3/17 16:01
  */
-public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> implements CollectContract.View {
+public class MyCollectActivity extends BaseMvpActivity<MainActivityPresenter> implements MainActivityContract.View {
 
 
     @BindView(R.id.iv_back)
@@ -67,8 +70,8 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
 
 
     @Override
-    public CollectPresenter initPresenter() {
-        return new CollectPresenter();
+    public MainActivityPresenter initPresenter() {
+        return new MainActivityPresenter();
     }
 
     @Override
@@ -127,6 +130,11 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
     protected void attachBaseContext(Context newBase) {
         //语言切换
         super.attachBaseContext(LanguageUtil.setLocal(newBase));
+
+    }
+
+    @Override
+    public void showHotKey(List<HotKeyData> list) {
 
     }
 }

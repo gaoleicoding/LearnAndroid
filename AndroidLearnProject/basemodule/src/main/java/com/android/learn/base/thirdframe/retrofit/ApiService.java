@@ -5,6 +5,7 @@ import com.android.learn.base.mmodel.BannerListData;
 import com.android.learn.base.mmodel.BaseData;
 import com.android.learn.base.mmodel.BaseResponse;
 import com.android.learn.base.mmodel.FeedArticleListData;
+import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.mmodel.RegisterLoginData;
 import com.android.learn.base.mmodel.ProjectListData;
 import com.android.learn.base.mmodel.TreeBean;
@@ -56,4 +57,7 @@ public interface ApiService {
 
     @GET("tree/json")
     Observable<BaseResponse<List<TreeBean>>> getKnowledgeTree();
+
+    @GET("hotkey/json")
+    Observable<BaseResponse<List<HotKeyData>>> getHotKey();
 }

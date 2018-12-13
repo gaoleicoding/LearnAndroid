@@ -39,6 +39,8 @@ import com.android.learn.fragment.KnowledgeFragment;
 import com.android.learn.fragment.NavigationFragment;
 import com.android.learn.fragment.ProjectFragment;
 import com.android.learn.fragment.UserFragment;
+import com.android.learn.mcontract.CollectContract;
+import com.android.learn.mpresenter.CollectPresenter;
 import com.android.learn.view.CustomViewPager;
 import com.android.learn.view.SearchViewUtils;
 import com.opensource.svgaplayer.SVGADrawable;
@@ -67,7 +69,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity<CollectPresenter> implements CollectContract.View  {
 
     private ArrayList<Fragment> mFragments;
     private ArrayList<String> titles;
