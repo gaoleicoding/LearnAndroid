@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.adapter.RvAdapter;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.event.ChangeNightEvent;
 import com.android.learn.base.event.RestartMainEvent;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.PermissionUtil;
@@ -372,6 +373,16 @@ public class MainActivity extends BaseActivity {
         startActivity(intent);
         event.activity.finish();
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(ChangeNightEvent event) {
+        Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
+        if (isNightMode) {
+            title_view_divider.setVisibility(View.VISIBLE);
+        } else {
+            title_view_divider.setVisibility(View.GONE);
+        }
     }
 
     public void onDestroy() {

@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.event.ChangeNightEvent;
 import com.android.learn.base.event.LogoutEvent;
 import com.android.learn.base.event.RestartMainEvent;
 import com.android.learn.base.utils.LanguageUtil;
@@ -88,6 +89,7 @@ public class SettingActivity extends BaseActivity {
                     SPUtils.setParam(SettingActivity.this, "nightMode", new Boolean(true));
                 else SPUtils.setParam(SettingActivity.this, "nightMode", new Boolean(false));
                 useNightMode(isChecked);
+                EventBus.getDefault().post(new ChangeNightEvent());
             }
         });
         EventBus.getDefault().register(this);
