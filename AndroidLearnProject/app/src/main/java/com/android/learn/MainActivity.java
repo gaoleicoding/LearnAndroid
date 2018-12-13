@@ -139,7 +139,12 @@ public class MainActivity extends BaseActivity {
         loadAnimation();
         initResultItem();
         iv_search.setVisibility(View.VISIBLE);
-
+        Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
+        if (isNightMode) {
+            title_view_divider.setVisibility(View.VISIBLE);
+        } else {
+            title_view_divider.setVisibility(View.GONE);
+        }
     }
 
 
@@ -366,12 +371,7 @@ public class MainActivity extends BaseActivity {
         overridePendingTransition(0, 0);
         startActivity(intent);
         event.activity.finish();
-        Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
-        if (isNightMode) {
-            title_view_divider.setVisibility(View.VISIBLE);
-        } else {
-            title_view_divider.setVisibility(View.GONE);
-        }
+
     }
 
     public void onDestroy() {
