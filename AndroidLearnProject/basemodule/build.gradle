@@ -87,7 +87,9 @@ android {
         //崩溃自定义跳转界面
         api rootProject.ext.dependencies["customactivityoncrash"]
         api 'com.github.devlight:infinitecycleviewpager:1.0.2'
-        compile 'com.github.yyued:SVGAPlayer-Android:2.3.0'
+
+
+//        api 'cn.lankton:flowlayout:latest version'
     }
 }
 dependencies {

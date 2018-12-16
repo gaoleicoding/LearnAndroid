@@ -28,8 +28,10 @@ import android.widget.Toast;
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.adapter.RvAdapter;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.ChangeNightEvent;
 import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.PermissionUtil;
 import com.android.learn.base.utils.SPUtils;
@@ -40,7 +42,9 @@ import com.android.learn.fragment.NavigationFragment;
 import com.android.learn.fragment.ProjectFragment;
 import com.android.learn.fragment.UserFragment;
 import com.android.learn.mcontract.CollectContract;
+import com.android.learn.mcontract.MainActivityContract;
 import com.android.learn.mpresenter.CollectPresenter;
+import com.android.learn.mpresenter.MainActivityPresenter;
 import com.android.learn.view.CustomViewPager;
 import com.android.learn.view.SearchViewUtils;
 import com.opensource.svgaplayer.SVGADrawable;
@@ -59,6 +63,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -69,7 +74,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MainActivity extends BaseActivity<CollectPresenter> implements CollectContract.View  {
+public class MainActivity extends BaseMvpActivity<MainActivityPresenter> implements MainActivityContract.View  {
 
     private ArrayList<Fragment> mFragments;
     private ArrayList<String> titles;
@@ -392,6 +397,16 @@ public class MainActivity extends BaseActivity<CollectPresenter> implements Coll
         EventBus.getDefault().unregister(this);
     }
 
+    @Override
+    public MainActivityPresenter initPresenter() {
+        return new MainActivityPresenter();
+    }
+
+    @Override
+    protected void loadData() {
+mPresenter.getHotKey();
+    }
+
     private void initResultItem() {
         ArrayList<String> list = new ArrayList<>();
         list.add("优酷");
@@ -417,4 +432,8 @@ public class MainActivity extends BaseActivity<CollectPresenter> implements Coll
         adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void showHotKey(List<HotKeyData> list) {
+
+    }
 }
