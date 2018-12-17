@@ -17,66 +17,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ba17dfa-cd3b-4d2f-be72-2f7c3e47349d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SearchResultActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/SearchContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/SearchPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/KeyboardUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_greenrobot_greendao_3_2_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_greenrobot_greendao_api_3_2_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/DBManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/SearchRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_GaoLei_gaolei_Android_Github_AndroidLearnProject_AndroidLearnProject_basemodule_libs_activation_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_gl_gaolei_Android_GitHub_AndroidLearnProject_AndroidLearnProject_basemodule_libs_activation_jar_unspecified_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_GaoLei_gaolei_Android_Github_AndroidLearnProject_AndroidLearnProject_basemodule_libs_additionnal_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_gl_gaolei_Android_GitHub_AndroidLearnProject_AndroidLearnProject_basemodule_libs_additionnal_jar_unspecified_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_GaoLei_gaolei_Android_Github_AndroidLearnProject_AndroidLearnProject_basemodule_libs_mail_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_gl_gaolei_Android_GitHub_AndroidLearnProject_AndroidLearnProject_basemodule_libs_mail_jar_unspecified_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__cat_ereza_customactivityoncrash_2_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__cat_ereza_customactivityoncrash_2_2_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__cn_lankton_flowlayout_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__cn_lankton_flowlayout_1_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_26_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_26_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_CymChad_BaseRecyclerViewAdapterHelper_2_9_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_CymChad_BaseRecyclerViewAdapterHelper_2_9_30.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_6_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_6_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_6_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_6_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_devlight_infinitecycleviewpager_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_devlight_infinitecycleviewpager_1_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_franmontiel_PersistentCookieJar_v1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_franmontiel_PersistentCookieJar_v1_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_yyued_SVGAPlayer_Android_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_yyued_SVGAPlayer_Android_2_3_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_scwang_smartrefresh_SmartRefreshHeader_1_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_scwang_smartrefresh_SmartRefreshHeader_1_0_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_scwang_smartrefresh_SmartRefreshLayout_1_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_scwang_smartrefresh_SmartRefreshLayout_1_0_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_youth_banner_banner_1_4_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_youth_banner_banner_1_4_10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_0_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/RvAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/SearchRecordAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/HomeContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/HomeContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/MainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/MainActivityPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_rv_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_search_record.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basemodule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values-cn/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/res/values-cn/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values-en/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/res/values-en/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -133,11 +93,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="181" column="56" selection-start-line="181" selection-start-column="56" selection-end-line="181" selection-end-column="56" />
+            <state relative-caret-position="100">
+              <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5116#5155#0" expanded="true" />
+                <element signature="e#5177#5219#0" expanded="true" />
+                <element signature="e#5241#5285#0" expanded="true" />
+                <element signature="e#5307#5352#0" expanded="true" />
+                <element signature="e#5374#5413#0" expanded="true" />
+                <element signature="e#6326#7410#0" expanded="true" />
+                <element signature="e#6713#6765#0" expanded="true" />
+                <element signature="e#7409#7410#0" expanded="true" />
+                <element signature="e#11483#11528#0" expanded="true" />
+                <element signature="e#12406#12764#0" expanded="true" />
+                <element signature="e#12763#12764#0" expanded="true" />
+                <element signature="e#13298#13354#0" expanded="true" />
+                <element signature="e#13997#14344#0" expanded="true" />
+                <element signature="e#14343#14344#0" expanded="true" />
+                <element signature="e#14550#15458#0" expanded="true" />
+                <element signature="e#14784#15424#0" expanded="true" />
+                <element signature="e#15423#15424#0" expanded="true" />
+                <element signature="e#15457#15458#0" expanded="true" />
+                <element signature="e#17830#18499#0" expanded="true" />
+                <element signature="e#18498#18499#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1667">
+              <caret line="164" column="8" selection-start-line="66" selection-start-column="31" selection-end-line="164" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/DBManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1440">
+              <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,23 +149,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchViewUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/view/SearchViewUtils.java">
+      <file leaf-file-name="SearchRecordAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/SearchRecordAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="88" column="28" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+            <state relative-caret-position="195">
+              <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KeyboardUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/KeyboardUtils.java">
+      <file leaf-file-name="item_search_record.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_search_record.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LanguageActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/LanguageActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -177,10 +190,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>首页</find>
-      <find>attachBaseContext</find>
-      <find>attach</find>
-      <find>isClickable</find>
       <find>system_language</find>
       <find>getParam</find>
       <find>getSystemLocale</find>
@@ -207,6 +216,10 @@
       <find>iv_svga</find>
       <find>soft</find>
       <find>InputMethodManager</find>
+      <find>UserDao</find>
+      <find>user</find>
+      <find>initSearchRecord</find>
+      <find>onstart</find>
     </findStrings>
     <replaceStrings>
       <replace>com.android.learn</replace>
@@ -216,6 +229,8 @@
       <replace>FeedArticleData</replace>
       <replace>getKnowledgeArticleList</replace>
       <replace>px2sp</replace>
+      <replace>SearchRecordDao</replace>
+      <replace>searchRecord</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe</dir>
@@ -30212,14 +30227,14 @@
                           <list>
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.0.1/5b8378c8598ad0c3efba5c687706d7ffff52628c/gradle-3.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.0.1/cfa107d4db0c11c11f445a11e768adf61c72ce06/gradle-3.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.1/5c827dc84a48c27d0f42f2655c071c7f24f617c5/greendao-gradle-plugin-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.1/f8ccd4b62dbbaf88c897c304e5244826ac906fb9/greendao-gradle-plugin-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/66d8eba1cf853aaf607043e8965350a3b020adf0/greendao-gradle-plugin-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/db4da9243ef0d65ffb94cd48445da259e696d90b/greendao-gradle-plugin-3.2.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-gradle-plugin/8.4.0/afc876adfd35b2afd53bbbb30d09ad44e567b6c3/butterknife-gradle-plugin-8.4.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-gradle-plugin/8.4.0/c43cfe9c63ae732bdab3a2fbd474d43126dae4aa/butterknife-gradle-plugin-8.4.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.0.1/a6742310417e48f759321d7c685ae81300fcba0b/gradle-core-3.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.0.1/c2945119335b491ca56e4042f7c8c55dccf5c9c2/gradle-core-3.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.1/54e53a6371d02c3fb4ea021171ce7801418fb029/greendao-code-modifier-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.1/3d33590f3e43170dfcfb17ec2ab9adf52d4f628a/greendao-code-modifier-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/8852525e8ba779b0ff34ab27113737354c7cde2c/greendao-code-modifier-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/e8c030500864d74dc46a3b4f100c05e3382b9b02/greendao-code-modifier-3.2.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.7.0/514d3c57164e54d51fc41388bf6b5a95b748b88f/javapoet-1.7.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.7.0/4fdcf1fc27c1a8f55d1109df986c923152f07759/javapoet-1.7.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.javaparser/javaparser-core/2.4.0/30a6561d88c5dfe4d5699aa8651c691aebf13a64/javaparser-core-2.4.0-sources.jar" />
@@ -30258,36 +30273,12 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.0.0/6d325aa7c921661d84577c0a93d82da4df9fa4c8/protobuf-java-3.0.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.3-2/c177cdc01cb72daf352c8ca94d56c3e8ed7c1eee/kotlin-reflect-1.1.3-2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.3-2/2104f139db2a2d230c529b004c34a0993c4c2f19/kotlin-reflect-1.1.3-2.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.commands/3.7.0.v20150422-0725/4a1f9b2d22628ebef434e770d84852835ed44fbe/org.eclipse.core.commands-3.7.0.v20150422-0725-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.commands/3.7.0.v20150422-0725/780ddc878644c2e5c9a6a350d474fd81b7e63448/org.eclipse.core.commands-3.7.0.v20150422-0725.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.contenttype/3.5.0.v20150421-2214/e35d66f051bf6a4d3dc410a080df6297dbccd396/org.eclipse.core.contenttype-3.5.0.v20150421-2214-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.contenttype/3.5.0.v20150421-2214/b60e8a50bf037ff53a3b3d7ae75740d7165ce17f/org.eclipse.core.contenttype-3.5.0.v20150421-2214.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.expressions/3.5.0.v20150421-2214/3d0a95720b1031a76fa300902f511a4bdaefbb19/org.eclipse.core.expressions-3.5.0.v20150421-2214-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.expressions/3.5.0.v20150421-2214/1ea8d6a7ab1551ab36b51e93d151c8dcbfd6ff18/org.eclipse.core.expressions-3.5.0.v20150421-2214.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.jobs/3.7.0.v20150330-2103/3c50329db1f6d425b294386255a5f21da3d6257a/org.eclipse.core.jobs-3.7.0.v20150330-2103-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.jobs/3.7.0.v20150330-2103/aa5732d583aaae75bfb12e2857f1bbc2cf41bbd4/org.eclipse.core.jobs-3.7.0.v20150330-2103.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.filesystem/1.5.0.v20150421-0713/ec24d0759c6292062a16afd8a046d2214bd8bc6c/org.eclipse.core.filesystem-1.5.0.v20150421-0713-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.filesystem/1.5.0.v20150421-0713/24f2296d9287a96f4769c48fdfd59df0da7973ef/org.eclipse.core.filesystem-1.5.0.v20150421-0713.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.resources/3.10.0.v20150423-0755/4b2ad03022332c6d540eca2789c0f6b0841cd9a8/org.eclipse.core.resources-3.10.0.v20150423-0755-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.resources/3.10.0.v20150423-0755/7eafeb68ef6c43df123380b59d20cce47ad4ef0d/org.eclipse.core.resources-3.10.0.v20150423-0755.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.runtime/3.11.0.v20150405-1723/3eb117a348995f891eb3a2c7d7029d8d84966f48/org.eclipse.core.runtime-3.11.0.v20150405-1723-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.runtime/3.11.0.v20150405-1723/2ce8288b5ec3d63812b9361908e083a8ab3ad8e9/org.eclipse.core.runtime-3.11.0.v20150405-1723.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.common/3.7.0.v20150402-1709/4ad6e46a31e42b3723bf9c2b8c2bcfc5e4b7e5c5/org.eclipse.equinox.common-3.7.0.v20150402-1709-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.common/3.7.0.v20150402-1709/9202bcd635550b05f56f3d95476ec0a48e7a53bd/org.eclipse.equinox.common-3.7.0.v20150402-1709.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.registry/3.6.0.v20150318-1503/48d1ca189106adcbf844b26fd8719cb539f24d6f/org.eclipse.equinox.registry-3.6.0.v20150318-1503-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.registry/3.6.0.v20150318-1503/21d599d2526dba5b98e927f89f211910af6f0e7c/org.eclipse.equinox.registry-3.6.0.v20150318-1503.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.preferences/3.5.300.v20150408-1437/6d8b7283762d1273d49dd379a1c0128b5445aab/org.eclipse.equinox.preferences-3.5.300.v20150408-1437-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.preferences/3.5.300.v20150408-1437/38d16f900d406f008002208efc4bda9d48b3da1a/org.eclipse.equinox.preferences-3.5.300.v20150408-1437.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.osgi/3.10.100.v20150529-1857/d9cc035deedbe169c6250163693d3482fc240ea7/org.eclipse.osgi-3.10.100.v20150529-1857-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.osgi/3.10.100.v20150529-1857/9d0dedfe08d117d383e8af6959f1b9aab45717e7/org.eclipse.osgi-3.10.100.v20150529-1857.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.text/3.5.400.v20150505-1044/bcd3e4c53e56120c8fa02d082d6de8bd254b1eba/org.eclipse.text-3.5.400.v20150505-1044-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.text/3.5.400.v20150505-1044/fb0044984fdedcd993484fd17a1403c073b20cad/org.eclipse.text-3.5.400.v20150505-1044.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.jdt.core/3.11.0.v20150602-1242/35c1f70e7376d8010503a1e2edad983ee3d87a5f/org.eclipse.jdt.core-3.11.0.v20150602-1242-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.jdt.core/3.11.0.v20150602-1242/ba2aa4b638a0f696a0f00535dfa2a0f5f4e735a/org.eclipse.jdt.core-3.11.0.v20150602-1242.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/82de7a8ce53fdcecc04fab6fbad3ec8f5fd4564a/greendao-api-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/c6d610abe1d75d758431c9234917a349abc0a0ac/greendao-api-3.2.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.0/64410cd07b3cac45a11b75547dc82f6e2874b682/greendao-generator-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.0/2abf1fce074717ff7abcb4fbfe8dad30d5ec3a8f/greendao-generator-3.2.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/559f8c279e3270402cde9e284092231db788d657/greendao-api-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/e9bbf7a184b0b4914a10d8179c993cc9aa9b1b33/greendao-api-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/3aa6fdc100162491467c548786d69a8fc8cedf04/greendao-generator-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/c1d222f0f518f6d32150c566ef378e0dcba8de1e/greendao-generator-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/2e4c9a6a2b6b13737114cdb204764bc22fcd7290/greenrobot-jdt-3.12.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/56bbe5ebf141455ca196fa6fa668930daa6e6dc/greenrobot-jdt-3.12.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/eea524c7b7db9702a2dddd12e431882f3055e991/essentials-3.0.0-RC1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/dfc6cd070e196e63df53c90abd2c3e1e02ee40e9/essentials-3.0.0-RC1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/3.0.1/2df2d192438c89fd4f0cf2fcb51dff071ae629f7/builder-model-3.0.1-sources.jar" />
@@ -30586,14 +30577,14 @@
                           <list>
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.0.1/5b8378c8598ad0c3efba5c687706d7ffff52628c/gradle-3.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.0.1/cfa107d4db0c11c11f445a11e768adf61c72ce06/gradle-3.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.1/5c827dc84a48c27d0f42f2655c071c7f24f617c5/greendao-gradle-plugin-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.1/f8ccd4b62dbbaf88c897c304e5244826ac906fb9/greendao-gradle-plugin-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/66d8eba1cf853aaf607043e8965350a3b020adf0/greendao-gradle-plugin-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/db4da9243ef0d65ffb94cd48445da259e696d90b/greendao-gradle-plugin-3.2.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-gradle-plugin/8.4.0/afc876adfd35b2afd53bbbb30d09ad44e567b6c3/butterknife-gradle-plugin-8.4.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-gradle-plugin/8.4.0/c43cfe9c63ae732bdab3a2fbd474d43126dae4aa/butterknife-gradle-plugin-8.4.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.0.1/a6742310417e48f759321d7c685ae81300fcba0b/gradle-core-3.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.0.1/c2945119335b491ca56e4042f7c8c55dccf5c9c2/gradle-core-3.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.1/54e53a6371d02c3fb4ea021171ce7801418fb029/greendao-code-modifier-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.1/3d33590f3e43170dfcfb17ec2ab9adf52d4f628a/greendao-code-modifier-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/8852525e8ba779b0ff34ab27113737354c7cde2c/greendao-code-modifier-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/e8c030500864d74dc46a3b4f100c05e3382b9b02/greendao-code-modifier-3.2.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.7.0/514d3c57164e54d51fc41388bf6b5a95b748b88f/javapoet-1.7.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.7.0/4fdcf1fc27c1a8f55d1109df986c923152f07759/javapoet-1.7.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.javaparser/javaparser-core/2.4.0/30a6561d88c5dfe4d5699aa8651c691aebf13a64/javaparser-core-2.4.0-sources.jar" />
@@ -30632,36 +30623,12 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.0.0/6d325aa7c921661d84577c0a93d82da4df9fa4c8/protobuf-java-3.0.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.3-2/c177cdc01cb72daf352c8ca94d56c3e8ed7c1eee/kotlin-reflect-1.1.3-2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.3-2/2104f139db2a2d230c529b004c34a0993c4c2f19/kotlin-reflect-1.1.3-2.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.commands/3.7.0.v20150422-0725/4a1f9b2d22628ebef434e770d84852835ed44fbe/org.eclipse.core.commands-3.7.0.v20150422-0725-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.commands/3.7.0.v20150422-0725/780ddc878644c2e5c9a6a350d474fd81b7e63448/org.eclipse.core.commands-3.7.0.v20150422-0725.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.contenttype/3.5.0.v20150421-2214/e35d66f051bf6a4d3dc410a080df6297dbccd396/org.eclipse.core.contenttype-3.5.0.v20150421-2214-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.contenttype/3.5.0.v20150421-2214/b60e8a50bf037ff53a3b3d7ae75740d7165ce17f/org.eclipse.core.contenttype-3.5.0.v20150421-2214.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.expressions/3.5.0.v20150421-2214/3d0a95720b1031a76fa300902f511a4bdaefbb19/org.eclipse.core.expressions-3.5.0.v20150421-2214-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.expressions/3.5.0.v20150421-2214/1ea8d6a7ab1551ab36b51e93d151c8dcbfd6ff18/org.eclipse.core.expressions-3.5.0.v20150421-2214.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.jobs/3.7.0.v20150330-2103/3c50329db1f6d425b294386255a5f21da3d6257a/org.eclipse.core.jobs-3.7.0.v20150330-2103-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.jobs/3.7.0.v20150330-2103/aa5732d583aaae75bfb12e2857f1bbc2cf41bbd4/org.eclipse.core.jobs-3.7.0.v20150330-2103.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.filesystem/1.5.0.v20150421-0713/ec24d0759c6292062a16afd8a046d2214bd8bc6c/org.eclipse.core.filesystem-1.5.0.v20150421-0713-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.filesystem/1.5.0.v20150421-0713/24f2296d9287a96f4769c48fdfd59df0da7973ef/org.eclipse.core.filesystem-1.5.0.v20150421-0713.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.resources/3.10.0.v20150423-0755/4b2ad03022332c6d540eca2789c0f6b0841cd9a8/org.eclipse.core.resources-3.10.0.v20150423-0755-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.resources/3.10.0.v20150423-0755/7eafeb68ef6c43df123380b59d20cce47ad4ef0d/org.eclipse.core.resources-3.10.0.v20150423-0755.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.runtime/3.11.0.v20150405-1723/3eb117a348995f891eb3a2c7d7029d8d84966f48/org.eclipse.core.runtime-3.11.0.v20150405-1723-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.runtime/3.11.0.v20150405-1723/2ce8288b5ec3d63812b9361908e083a8ab3ad8e9/org.eclipse.core.runtime-3.11.0.v20150405-1723.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.common/3.7.0.v20150402-1709/4ad6e46a31e42b3723bf9c2b8c2bcfc5e4b7e5c5/org.eclipse.equinox.common-3.7.0.v20150402-1709-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.common/3.7.0.v20150402-1709/9202bcd635550b05f56f3d95476ec0a48e7a53bd/org.eclipse.equinox.common-3.7.0.v20150402-1709.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.registry/3.6.0.v20150318-1503/48d1ca189106adcbf844b26fd8719cb539f24d6f/org.eclipse.equinox.registry-3.6.0.v20150318-1503-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.registry/3.6.0.v20150318-1503/21d599d2526dba5b98e927f89f211910af6f0e7c/org.eclipse.equinox.registry-3.6.0.v20150318-1503.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.preferences/3.5.300.v20150408-1437/6d8b7283762d1273d49dd379a1c0128b5445aab/org.eclipse.equinox.preferences-3.5.300.v20150408-1437-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.preferences/3.5.300.v20150408-1437/38d16f900d406f008002208efc4bda9d48b3da1a/org.eclipse.equinox.preferences-3.5.300.v20150408-1437.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.osgi/3.10.100.v20150529-1857/d9cc035deedbe169c6250163693d3482fc240ea7/org.eclipse.osgi-3.10.100.v20150529-1857-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.osgi/3.10.100.v20150529-1857/9d0dedfe08d117d383e8af6959f1b9aab45717e7/org.eclipse.osgi-3.10.100.v20150529-1857.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.text/3.5.400.v20150505-1044/bcd3e4c53e56120c8fa02d082d6de8bd254b1eba/org.eclipse.text-3.5.400.v20150505-1044-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.text/3.5.400.v20150505-1044/fb0044984fdedcd993484fd17a1403c073b20cad/org.eclipse.text-3.5.400.v20150505-1044.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.jdt.core/3.11.0.v20150602-1242/35c1f70e7376d8010503a1e2edad983ee3d87a5f/org.eclipse.jdt.core-3.11.0.v20150602-1242-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.jdt.core/3.11.0.v20150602-1242/ba2aa4b638a0f696a0f00535dfa2a0f5f4e735a/org.eclipse.jdt.core-3.11.0.v20150602-1242.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/82de7a8ce53fdcecc04fab6fbad3ec8f5fd4564a/greendao-api-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/c6d610abe1d75d758431c9234917a349abc0a0ac/greendao-api-3.2.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.0/64410cd07b3cac45a11b75547dc82f6e2874b682/greendao-generator-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.0/2abf1fce074717ff7abcb4fbfe8dad30d5ec3a8f/greendao-generator-3.2.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/559f8c279e3270402cde9e284092231db788d657/greendao-api-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/e9bbf7a184b0b4914a10d8179c993cc9aa9b1b33/greendao-api-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/3aa6fdc100162491467c548786d69a8fc8cedf04/greendao-generator-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/c1d222f0f518f6d32150c566ef378e0dcba8de1e/greendao-generator-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/2e4c9a6a2b6b13737114cdb204764bc22fcd7290/greenrobot-jdt-3.12.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/56bbe5ebf141455ca196fa6fa668930daa6e6dc/greenrobot-jdt-3.12.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/eea524c7b7db9702a2dddd12e431882f3055e991/essentials-3.0.0-RC1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/dfc6cd070e196e63df53c90abd2c3e1e02ee40e9/essentials-3.0.0-RC1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/3.0.1/2df2d192438c89fd4f0cf2fcb51dff071ae629f7/builder-model-3.0.1-sources.jar" />
@@ -30773,14 +30740,14 @@
                           <list>
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.0.1/5b8378c8598ad0c3efba5c687706d7ffff52628c/gradle-3.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.0.1/cfa107d4db0c11c11f445a11e768adf61c72ce06/gradle-3.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.1/5c827dc84a48c27d0f42f2655c071c7f24f617c5/greendao-gradle-plugin-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.1/f8ccd4b62dbbaf88c897c304e5244826ac906fb9/greendao-gradle-plugin-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/66d8eba1cf853aaf607043e8965350a3b020adf0/greendao-gradle-plugin-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/db4da9243ef0d65ffb94cd48445da259e696d90b/greendao-gradle-plugin-3.2.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-gradle-plugin/8.4.0/afc876adfd35b2afd53bbbb30d09ad44e567b6c3/butterknife-gradle-plugin-8.4.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-gradle-plugin/8.4.0/c43cfe9c63ae732bdab3a2fbd474d43126dae4aa/butterknife-gradle-plugin-8.4.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.0.1/a6742310417e48f759321d7c685ae81300fcba0b/gradle-core-3.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.0.1/c2945119335b491ca56e4042f7c8c55dccf5c9c2/gradle-core-3.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.1/54e53a6371d02c3fb4ea021171ce7801418fb029/greendao-code-modifier-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.1/3d33590f3e43170dfcfb17ec2ab9adf52d4f628a/greendao-code-modifier-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/8852525e8ba779b0ff34ab27113737354c7cde2c/greendao-code-modifier-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/e8c030500864d74dc46a3b4f100c05e3382b9b02/greendao-code-modifier-3.2.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.7.0/514d3c57164e54d51fc41388bf6b5a95b748b88f/javapoet-1.7.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.7.0/4fdcf1fc27c1a8f55d1109df986c923152f07759/javapoet-1.7.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.javaparser/javaparser-core/2.4.0/30a6561d88c5dfe4d5699aa8651c691aebf13a64/javaparser-core-2.4.0-sources.jar" />
@@ -30819,36 +30786,12 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.0.0/6d325aa7c921661d84577c0a93d82da4df9fa4c8/protobuf-java-3.0.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.3-2/c177cdc01cb72daf352c8ca94d56c3e8ed7c1eee/kotlin-reflect-1.1.3-2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.3-2/2104f139db2a2d230c529b004c34a0993c4c2f19/kotlin-reflect-1.1.3-2.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.commands/3.7.0.v20150422-0725/4a1f9b2d22628ebef434e770d84852835ed44fbe/org.eclipse.core.commands-3.7.0.v20150422-0725-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.commands/3.7.0.v20150422-0725/780ddc878644c2e5c9a6a350d474fd81b7e63448/org.eclipse.core.commands-3.7.0.v20150422-0725.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.contenttype/3.5.0.v20150421-2214/e35d66f051bf6a4d3dc410a080df6297dbccd396/org.eclipse.core.contenttype-3.5.0.v20150421-2214-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.contenttype/3.5.0.v20150421-2214/b60e8a50bf037ff53a3b3d7ae75740d7165ce17f/org.eclipse.core.contenttype-3.5.0.v20150421-2214.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.expressions/3.5.0.v20150421-2214/3d0a95720b1031a76fa300902f511a4bdaefbb19/org.eclipse.core.expressions-3.5.0.v20150421-2214-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.expressions/3.5.0.v20150421-2214/1ea8d6a7ab1551ab36b51e93d151c8dcbfd6ff18/org.eclipse.core.expressions-3.5.0.v20150421-2214.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.jobs/3.7.0.v20150330-2103/3c50329db1f6d425b294386255a5f21da3d6257a/org.eclipse.core.jobs-3.7.0.v20150330-2103-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.jobs/3.7.0.v20150330-2103/aa5732d583aaae75bfb12e2857f1bbc2cf41bbd4/org.eclipse.core.jobs-3.7.0.v20150330-2103.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.filesystem/1.5.0.v20150421-0713/ec24d0759c6292062a16afd8a046d2214bd8bc6c/org.eclipse.core.filesystem-1.5.0.v20150421-0713-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.filesystem/1.5.0.v20150421-0713/24f2296d9287a96f4769c48fdfd59df0da7973ef/org.eclipse.core.filesystem-1.5.0.v20150421-0713.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.resources/3.10.0.v20150423-0755/4b2ad03022332c6d540eca2789c0f6b0841cd9a8/org.eclipse.core.resources-3.10.0.v20150423-0755-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.resources/3.10.0.v20150423-0755/7eafeb68ef6c43df123380b59d20cce47ad4ef0d/org.eclipse.core.resources-3.10.0.v20150423-0755.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.runtime/3.11.0.v20150405-1723/3eb117a348995f891eb3a2c7d7029d8d84966f48/org.eclipse.core.runtime-3.11.0.v20150405-1723-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.runtime/3.11.0.v20150405-1723/2ce8288b5ec3d63812b9361908e083a8ab3ad8e9/org.eclipse.core.runtime-3.11.0.v20150405-1723.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.common/3.7.0.v20150402-1709/4ad6e46a31e42b3723bf9c2b8c2bcfc5e4b7e5c5/org.eclipse.equinox.common-3.7.0.v20150402-1709-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.common/3.7.0.v20150402-1709/9202bcd635550b05f56f3d95476ec0a48e7a53bd/org.eclipse.equinox.common-3.7.0.v20150402-1709.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.registry/3.6.0.v20150318-1503/48d1ca189106adcbf844b26fd8719cb539f24d6f/org.eclipse.equinox.registry-3.6.0.v20150318-1503-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.registry/3.6.0.v20150318-1503/21d599d2526dba5b98e927f89f211910af6f0e7c/org.eclipse.equinox.registry-3.6.0.v20150318-1503.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.preferences/3.5.300.v20150408-1437/6d8b7283762d1273d49dd379a1c0128b5445aab/org.eclipse.equinox.preferences-3.5.300.v20150408-1437-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.preferences/3.5.300.v20150408-1437/38d16f900d406f008002208efc4bda9d48b3da1a/org.eclipse.equinox.preferences-3.5.300.v20150408-1437.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.osgi/3.10.100.v20150529-1857/d9cc035deedbe169c6250163693d3482fc240ea7/org.eclipse.osgi-3.10.100.v20150529-1857-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.osgi/3.10.100.v20150529-1857/9d0dedfe08d117d383e8af6959f1b9aab45717e7/org.eclipse.osgi-3.10.100.v20150529-1857.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.text/3.5.400.v20150505-1044/bcd3e4c53e56120c8fa02d082d6de8bd254b1eba/org.eclipse.text-3.5.400.v20150505-1044-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.text/3.5.400.v20150505-1044/fb0044984fdedcd993484fd17a1403c073b20cad/org.eclipse.text-3.5.400.v20150505-1044.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.jdt.core/3.11.0.v20150602-1242/35c1f70e7376d8010503a1e2edad983ee3d87a5f/org.eclipse.jdt.core-3.11.0.v20150602-1242-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.jdt.core/3.11.0.v20150602-1242/ba2aa4b638a0f696a0f00535dfa2a0f5f4e735a/org.eclipse.jdt.core-3.11.0.v20150602-1242.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/82de7a8ce53fdcecc04fab6fbad3ec8f5fd4564a/greendao-api-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/c6d610abe1d75d758431c9234917a349abc0a0ac/greendao-api-3.2.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.0/64410cd07b3cac45a11b75547dc82f6e2874b682/greendao-generator-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.0/2abf1fce074717ff7abcb4fbfe8dad30d5ec3a8f/greendao-generator-3.2.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/559f8c279e3270402cde9e284092231db788d657/greendao-api-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/e9bbf7a184b0b4914a10d8179c993cc9aa9b1b33/greendao-api-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/3aa6fdc100162491467c548786d69a8fc8cedf04/greendao-generator-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/c1d222f0f518f6d32150c566ef378e0dcba8de1e/greendao-generator-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/2e4c9a6a2b6b13737114cdb204764bc22fcd7290/greenrobot-jdt-3.12.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/56bbe5ebf141455ca196fa6fa668930daa6e6dc/greenrobot-jdt-3.12.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/eea524c7b7db9702a2dddd12e431882f3055e991/essentials-3.0.0-RC1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/dfc6cd070e196e63df53c90abd2c3e1e02ee40e9/essentials-3.0.0-RC1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/3.0.1/2df2d192438c89fd4f0cf2fcb51dff071ae629f7/builder-model-3.0.1-sources.jar" />
@@ -30960,14 +30903,14 @@
                           <list>
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.0.1/5b8378c8598ad0c3efba5c687706d7ffff52628c/gradle-3.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.0.1/cfa107d4db0c11c11f445a11e768adf61c72ce06/gradle-3.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.1/5c827dc84a48c27d0f42f2655c071c7f24f617c5/greendao-gradle-plugin-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.1/f8ccd4b62dbbaf88c897c304e5244826ac906fb9/greendao-gradle-plugin-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/66d8eba1cf853aaf607043e8965350a3b020adf0/greendao-gradle-plugin-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/db4da9243ef0d65ffb94cd48445da259e696d90b/greendao-gradle-plugin-3.2.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-gradle-plugin/8.4.0/afc876adfd35b2afd53bbbb30d09ad44e567b6c3/butterknife-gradle-plugin-8.4.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-gradle-plugin/8.4.0/c43cfe9c63ae732bdab3a2fbd474d43126dae4aa/butterknife-gradle-plugin-8.4.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.0.1/a6742310417e48f759321d7c685ae81300fcba0b/gradle-core-3.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.0.1/c2945119335b491ca56e4042f7c8c55dccf5c9c2/gradle-core-3.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.1/54e53a6371d02c3fb4ea021171ce7801418fb029/greendao-code-modifier-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.1/3d33590f3e43170dfcfb17ec2ab9adf52d4f628a/greendao-code-modifier-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/8852525e8ba779b0ff34ab27113737354c7cde2c/greendao-code-modifier-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/e8c030500864d74dc46a3b4f100c05e3382b9b02/greendao-code-modifier-3.2.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.7.0/514d3c57164e54d51fc41388bf6b5a95b748b88f/javapoet-1.7.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.7.0/4fdcf1fc27c1a8f55d1109df986c923152f07759/javapoet-1.7.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.javaparser/javaparser-core/2.4.0/30a6561d88c5dfe4d5699aa8651c691aebf13a64/javaparser-core-2.4.0-sources.jar" />
@@ -31006,36 +30949,12 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.0.0/6d325aa7c921661d84577c0a93d82da4df9fa4c8/protobuf-java-3.0.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.3-2/c177cdc01cb72daf352c8ca94d56c3e8ed7c1eee/kotlin-reflect-1.1.3-2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.3-2/2104f139db2a2d230c529b004c34a0993c4c2f19/kotlin-reflect-1.1.3-2.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.commands/3.7.0.v20150422-0725/4a1f9b2d22628ebef434e770d84852835ed44fbe/org.eclipse.core.commands-3.7.0.v20150422-0725-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.commands/3.7.0.v20150422-0725/780ddc878644c2e5c9a6a350d474fd81b7e63448/org.eclipse.core.commands-3.7.0.v20150422-0725.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.contenttype/3.5.0.v20150421-2214/e35d66f051bf6a4d3dc410a080df6297dbccd396/org.eclipse.core.contenttype-3.5.0.v20150421-2214-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.contenttype/3.5.0.v20150421-2214/b60e8a50bf037ff53a3b3d7ae75740d7165ce17f/org.eclipse.core.contenttype-3.5.0.v20150421-2214.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.expressions/3.5.0.v20150421-2214/3d0a95720b1031a76fa300902f511a4bdaefbb19/org.eclipse.core.expressions-3.5.0.v20150421-2214-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.expressions/3.5.0.v20150421-2214/1ea8d6a7ab1551ab36b51e93d151c8dcbfd6ff18/org.eclipse.core.expressions-3.5.0.v20150421-2214.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.jobs/3.7.0.v20150330-2103/3c50329db1f6d425b294386255a5f21da3d6257a/org.eclipse.core.jobs-3.7.0.v20150330-2103-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.jobs/3.7.0.v20150330-2103/aa5732d583aaae75bfb12e2857f1bbc2cf41bbd4/org.eclipse.core.jobs-3.7.0.v20150330-2103.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.filesystem/1.5.0.v20150421-0713/ec24d0759c6292062a16afd8a046d2214bd8bc6c/org.eclipse.core.filesystem-1.5.0.v20150421-0713-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.filesystem/1.5.0.v20150421-0713/24f2296d9287a96f4769c48fdfd59df0da7973ef/org.eclipse.core.filesystem-1.5.0.v20150421-0713.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.resources/3.10.0.v20150423-0755/4b2ad03022332c6d540eca2789c0f6b0841cd9a8/org.eclipse.core.resources-3.10.0.v20150423-0755-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.resources/3.10.0.v20150423-0755/7eafeb68ef6c43df123380b59d20cce47ad4ef0d/org.eclipse.core.resources-3.10.0.v20150423-0755.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.runtime/3.11.0.v20150405-1723/3eb117a348995f891eb3a2c7d7029d8d84966f48/org.eclipse.core.runtime-3.11.0.v20150405-1723-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.core.runtime/3.11.0.v20150405-1723/2ce8288b5ec3d63812b9361908e083a8ab3ad8e9/org.eclipse.core.runtime-3.11.0.v20150405-1723.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.common/3.7.0.v20150402-1709/4ad6e46a31e42b3723bf9c2b8c2bcfc5e4b7e5c5/org.eclipse.equinox.common-3.7.0.v20150402-1709-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.common/3.7.0.v20150402-1709/9202bcd635550b05f56f3d95476ec0a48e7a53bd/org.eclipse.equinox.common-3.7.0.v20150402-1709.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.registry/3.6.0.v20150318-1503/48d1ca189106adcbf844b26fd8719cb539f24d6f/org.eclipse.equinox.registry-3.6.0.v20150318-1503-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.registry/3.6.0.v20150318-1503/21d599d2526dba5b98e927f89f211910af6f0e7c/org.eclipse.equinox.registry-3.6.0.v20150318-1503.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.preferences/3.5.300.v20150408-1437/6d8b7283762d1273d49dd379a1c0128b5445aab/org.eclipse.equinox.preferences-3.5.300.v20150408-1437-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.equinox.preferences/3.5.300.v20150408-1437/38d16f900d406f008002208efc4bda9d48b3da1a/org.eclipse.equinox.preferences-3.5.300.v20150408-1437.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.osgi/3.10.100.v20150529-1857/d9cc035deedbe169c6250163693d3482fc240ea7/org.eclipse.osgi-3.10.100.v20150529-1857-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.osgi/3.10.100.v20150529-1857/9d0dedfe08d117d383e8af6959f1b9aab45717e7/org.eclipse.osgi-3.10.100.v20150529-1857.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.text/3.5.400.v20150505-1044/bcd3e4c53e56120c8fa02d082d6de8bd254b1eba/org.eclipse.text-3.5.400.v20150505-1044-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.text/3.5.400.v20150505-1044/fb0044984fdedcd993484fd17a1403c073b20cad/org.eclipse.text-3.5.400.v20150505-1044.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.jdt.core/3.11.0.v20150602-1242/35c1f70e7376d8010503a1e2edad983ee3d87a5f/org.eclipse.jdt.core-3.11.0.v20150602-1242-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.scout.sdk.deps/org.eclipse.jdt.core/3.11.0.v20150602-1242/ba2aa4b638a0f696a0f00535dfa2a0f5f4e735a/org.eclipse.jdt.core-3.11.0.v20150602-1242.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/82de7a8ce53fdcecc04fab6fbad3ec8f5fd4564a/greendao-api-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/c6d610abe1d75d758431c9234917a349abc0a0ac/greendao-api-3.2.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.0/64410cd07b3cac45a11b75547dc82f6e2874b682/greendao-generator-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.0/2abf1fce074717ff7abcb4fbfe8dad30d5ec3a8f/greendao-generator-3.2.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/559f8c279e3270402cde9e284092231db788d657/greendao-api-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/e9bbf7a184b0b4914a10d8179c993cc9aa9b1b33/greendao-api-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/3aa6fdc100162491467c548786d69a8fc8cedf04/greendao-generator-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/c1d222f0f518f6d32150c566ef378e0dcba8de1e/greendao-generator-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/2e4c9a6a2b6b13737114cdb204764bc22fcd7290/greenrobot-jdt-3.12.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/56bbe5ebf141455ca196fa6fa668930daa6e6dc/greenrobot-jdt-3.12.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/eea524c7b7db9702a2dddd12e431882f3055e991/essentials-3.0.0-RC1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/dfc6cd070e196e63df53c90abd2c3e1e02ee40e9/essentials-3.0.0-RC1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/3.0.1/2df2d192438c89fd4f0cf2fcb51dff071ae629f7/builder-model-3.0.1-sources.jar" />
@@ -31295,28 +31214,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_mine.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login_register.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fontsizes.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_help_feedback.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/LanguageActivity.java" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/layout/activity_language.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/LanguageUtil.java" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/view/fontsliderbar/Bar.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/view/fontsliderbar/FontSliderBar.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-cn/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-en/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ProjectQuickAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/view_rv_item.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/drawable/et_search_bg.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-cn/values.xml" />
@@ -31325,13 +31234,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/view/SearchViewUtils.java" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/ChangeNightEvent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/RvAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/basemodule/build.gradle" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/values-en/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/HomeContract.java" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java" />
@@ -31340,12 +31245,26 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/MainActivityPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/SearchPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/SearchContract.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SearchResultActivity.java" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/res/values-cn/strings.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/User.java" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/KeyboardUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SearchResultActivity.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/basemodule/build.gradle" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/User.java" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/SearchRecord.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/SearchRecordAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/DBManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_search_record.xml" />
       </list>
     </option>
   </component>
@@ -31362,7 +31281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -31441,26 +31360,6 @@
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="mcontract" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="mpresenter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -31470,7 +31369,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="values" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
@@ -31524,7 +31423,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="mmodel" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="basemodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="gen" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
@@ -31542,9 +31451,7 @@
               <item name="basemodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
@@ -31553,6 +31460,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
@@ -31590,7 +31498,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -31836,16 +31744,16 @@
       <window_info id="Build Variants" order="2" sideWeight="0.3248731" side_tool="true" weight="0.44991922" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5202343" side_tool="true" weight="0.39829606" />
+      <window_info anchor="right" id="Preview" order="4" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.38445154" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48303714" weight="0.20895523" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48303714" weight="0.106351554" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.91054314" weight="0.14483494" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6751269" visible="true" weight="0.24177396" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4914803" weight="0.3293944" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49434572" weight="0.060702875" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6751269" visible="true" weight="0.25178826" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4914803" visible="true" weight="0.010339734" />
       <window_info anchor="right" id="Gradle" order="3" sideWeight="0.463621" weight="0.31759655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" sideWeight="0.53637904" side_tool="true" weight="0.23667206" />
@@ -31854,13 +31762,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="9" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Preview" order="4" />
       <window_info anchor="bottom" id="Statistic" order="8" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49434572" weight="0.060702875" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="10" sideWeight="0.4914803" weight="0.0" />
@@ -31905,19 +31813,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.java</url>
-          <line>178</line>
+          <line>174</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java</url>
-          <line>116</line>
+          <line>105</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java</url>
-          <line>125</line>
+          <line>114</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -31929,7 +31837,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java</url>
-          <line>90</line>
+          <line>86</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
@@ -31965,43 +31873,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java</url>
-          <line>100</line>
+          <line>98</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java</url>
-          <line>53</line>
+          <line>51</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java</url>
-          <line>66</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java</url>
-          <line>151</line>
+          <line>149</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java</url>
-          <line>232</line>
+          <line>245</line>
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java</url>
-          <line>67</line>
+          <line>63</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java</url>
-          <line>104</line>
+          <line>100</line>
           <properties />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
@@ -32055,19 +31963,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java</url>
-          <line>244</line>
+          <line>257</line>
           <properties />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java</url>
-          <line>161</line>
+          <line>162</line>
           <properties />
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java</url>
-          <line>406</line>
+          <line>432</line>
           <properties />
           <option name="timeStamp" value="70" />
         </line-breakpoint>
@@ -32088,89 +31996,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/TitleView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/layout/activity_language.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ProjectQuickAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2814" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/DividerItemDecoration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="43" column="56" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable/bg_tag.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/icon_speech.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" selection-start-line="38" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -32191,50 +32016,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/RvAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xhdpi/icon_back.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#2005#2006#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="13" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="19" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/HotKeyData.java">
@@ -32265,13 +32049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -32283,41 +32060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="60" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -32360,13 +32102,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="34" column="79" lean-forward="true" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgeChildPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -32378,13 +32113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -32426,34 +32154,209 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#146#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SearchResultActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="77" column="38" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/view/SearchViewUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
+        <state relative-caret-position="1215">
           <caret line="88" column="28" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/KeyboardUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="105">
           <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/greendao/gen/DaoMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-754">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/greendao/gen/DaoSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#878#879#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/greendao/gen/SearchRecordDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" selection-start-line="15" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/SearchRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_history_black_24dp.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#2005#2006#0" expanded="true" />
+            <element signature="e#3193#3670#0" expanded="true" />
+            <element signature="e#3669#3670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-880">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1610">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SearchResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-880">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/LanguageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/SearchRecordAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/DBManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -32462,11 +32365,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="181" column="56" selection-start-line="181" selection-start-column="56" selection-end-line="181" selection-end-column="56" />
+        <state relative-caret-position="100">
+          <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5116#5155#0" expanded="true" />
+            <element signature="e#5177#5219#0" expanded="true" />
+            <element signature="e#5241#5285#0" expanded="true" />
+            <element signature="e#5307#5352#0" expanded="true" />
+            <element signature="e#5374#5413#0" expanded="true" />
+            <element signature="e#6326#7410#0" expanded="true" />
+            <element signature="e#6713#6765#0" expanded="true" />
+            <element signature="e#7409#7410#0" expanded="true" />
+            <element signature="e#11483#11528#0" expanded="true" />
+            <element signature="e#12406#12764#0" expanded="true" />
+            <element signature="e#12763#12764#0" expanded="true" />
+            <element signature="e#13298#13354#0" expanded="true" />
+            <element signature="e#13997#14344#0" expanded="true" />
+            <element signature="e#14343#14344#0" expanded="true" />
+            <element signature="e#14550#15458#0" expanded="true" />
+            <element signature="e#14784#15424#0" expanded="true" />
+            <element signature="e#15423#15424#0" expanded="true" />
+            <element signature="e#15457#15458#0" expanded="true" />
+            <element signature="e#17830#18499#0" expanded="true" />
+            <element signature="e#18498#18499#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1667">
+          <caret line="164" column="8" selection-start-line="66" selection-start-column="31" selection-end-line="164" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_search_record.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>

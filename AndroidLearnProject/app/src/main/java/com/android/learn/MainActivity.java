@@ -31,13 +31,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.learn.activity.SearchResultActivity;
-import com.android.learn.adapter.ArticleQuickAdapter;
 import com.android.learn.adapter.MainTabAdapter;
-import com.android.learn.adapter.RvAdapter;
+import com.android.learn.adapter.SearchRecordAdapter;
 import com.android.learn.base.activity.BaseMvpActivity;
+import com.android.learn.base.db.DBManager;
+import com.android.learn.base.db.SearchRecord;
 import com.android.learn.base.event.ChangeNightEvent;
 import com.android.learn.base.event.RestartMainEvent;
-import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.utils.KeyboardUtils;
 import com.android.learn.base.utils.LanguageUtil;
@@ -55,6 +55,7 @@ import com.android.learn.mcontract.MainActivityContract;
 import com.android.learn.mpresenter.MainActivityPresenter;
 import com.android.learn.view.CustomViewPager;
 import com.android.learn.view.SearchViewUtils;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.opensource.svgaplayer.SVGADrawable;
 import com.opensource.svgaplayer.SVGADynamicEntity;
 import com.opensource.svgaplayer.SVGAImageView;
@@ -111,12 +112,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     View title_view_divider;
     @BindView(R.id.flowlayout)
     FlowLayout flowlayout;
-    private List<FeedArticleListData.FeedArticleData> articleDataList;
-    private ArticleQuickAdapter feedArticleAdapter;
     HomeFragment homeFragment;
     ProjectFragment projectFragment;
     boolean isSearching;
-
+    SearchRecordAdapter searchRecordAdapter;
 
     @Override
     protected int getLayoutId() {
@@ -156,7 +155,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         tabLayout.setupWithViewPager(viewPager);
         initTab();
         loadAnimation();
-        initResultItem();
+        initSearchRecord();
         iv_search.setVisibility(View.VISIBLE);
         Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
         if (isNightMode) {
@@ -171,13 +170,18 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {//搜索按键action
                     String content = et_search.getText().toString();
                     if (TextUtils.isEmpty(content)) {
-                        Utils.showToast(getResources().getString(R.string.search_content_no),true);
+                        Utils.showToast(getResources().getString(R.string.search_content_no), true);
                         return true;
                     }
 
-                    Bundle bundle=new Bundle();
-                    bundle.putString("key",content);
-                    SearchResultActivity.startActivity(MainActivity.this,bundle);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("key", content);
+                    SearchResultActivity.startActivity(MainActivity.this, bundle);
+                    DBManager dbManager = DBManager.getInstance(MainActivity.this);
+                    SearchRecord searchRecord = new SearchRecord();
+                    searchRecord.setName(content);
+                    dbManager.insertUser(searchRecord);
+                    et_search.setText("");
                     KeyboardUtils.hideKeyboard(et_search);
                 }
                 return false;
@@ -186,6 +190,21 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
     }
 
+
+    private void initSearchRecord() {
+        ArrayList<SearchRecord> list = new ArrayList<>();
+        searchRecordAdapter = new SearchRecordAdapter(this, list);
+        history_recycleview.setLayoutManager(new LinearLayoutManager(this));
+        history_recycleview.setAdapter(searchRecordAdapter);
+        searchRecordAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Bundle bundle = new Bundle();
+                bundle.putString("key", searchRecordAdapter.getData().get(position).getName());
+                SearchResultActivity.startActivity(MainActivity.this, bundle);
+            }
+        });
+    }
 
     /**
      * 设置添加Tab
@@ -225,7 +244,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         tabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
 
-    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search})
+    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search, R.id.tv_search_clear})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.title:
@@ -246,6 +265,11 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             case R.id.iv_search:
                 SearchViewUtils.handleToolBar(getApplicationContext(), cardview_search, et_search);
                 isSearching = true;
+                break;
+            case R.id.tv_search_clear:
+                searchRecordAdapter.getData().clear();
+                searchRecordAdapter.notifyDataSetChanged();
+                DBManager.getInstance(this).deleteAll();
                 break;
         }
 
@@ -269,6 +293,14 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         super.onRestart();
         //跳转到设置界面后返回，重新检查权限
         requestPermission();
+    }
+
+    public void onStart() {
+        super.onStart();
+        List<SearchRecord> recordList = DBManager.getInstance(this).queryUserList();
+        searchRecordAdapter.getData().clear();
+        searchRecordAdapter.addData(recordList);
+
     }
 
     // 用来计算返回键的点击间隔时间
@@ -438,30 +470,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         mPresenter.getHotKey();
     }
 
-    private void initResultItem() {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("优酷");
-        list.add("土豆");
-        list.add("爱奇艺");
-        list.add("哔哩哔哩");
-        list.add("youtube");
-        list.add("斗鱼");
-        list.add("熊猫");
-        RvAdapter adapter = new RvAdapter(list, new RvAdapter.IListener() {
-            @Override
-            public void normalItemClick(String s) {
-                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void clearItemClick() {
-                Toast.makeText(MainActivity.this, "清除历史记录", Toast.LENGTH_SHORT).show();
-            }
-        });
-        history_recycleview.setAdapter(adapter);
-        history_recycleview.setLayoutManager(new LinearLayoutManager(this));
-        adapter.notifyDataSetChanged();
-    }
 
     @Override
     public void showHotKey(List<HotKeyData> list) {
@@ -489,9 +497,13 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Bundle bundle=new Bundle();
-                    bundle.putString("key",tv.getText().toString());
-                    SearchResultActivity.startActivity(MainActivity.this,bundle);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("key", tv.getText().toString());
+                    SearchResultActivity.startActivity(MainActivity.this, bundle);
+                    DBManager dbManager = DBManager.getInstance(MainActivity.this);
+                    SearchRecord searchRecord = new SearchRecord();
+                    searchRecord.setName(tv.getText().toString());
+                    dbManager.insertUser(searchRecord);
                     KeyboardUtils.hideKeyboard(et_search);
                 }
             });

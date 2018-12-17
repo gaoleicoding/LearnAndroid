@@ -28,10 +28,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-/**
- * @author quchao
- * @date 2018/2/11
- */
+
 
 public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements UserInfoContract.View {
 

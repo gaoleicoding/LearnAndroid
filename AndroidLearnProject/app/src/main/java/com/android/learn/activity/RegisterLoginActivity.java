@@ -23,11 +23,7 @@ import com.android.learn.mpresenter.RegisterLoginPresenter;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-/**
- * description: test
- * author: zlm
- * date: 2017/3/17 16:01
- */
+
 public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresenter> implements RegisterLoginContract.View {
     @BindView(R.id.iv_back)
     ImageView iv_back;

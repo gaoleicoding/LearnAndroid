@@ -20,10 +20,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-/**
- * @author quchao
- * @date 2018/2/11
- */
+
 
 public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> implements KnowledgeContract.View {
     @BindView(R.id.hicvp)

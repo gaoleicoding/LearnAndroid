@@ -25,10 +25,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-/**
- * Created by zsj on 2017/9/11.
- * 字体设置展示
- */
 
 public class FontSizeActivity extends BaseActivity {
     @BindView(R.id.iv_back)

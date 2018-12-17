@@ -28,11 +28,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-/**
- * description: test
- * author: zlm
- * date: 2017/3/17 16:01
- */
+
 public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> implements CollectContract.View {
 
 
@@ -80,7 +76,6 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
                 DividerItemDecoration.VERTICAL_LIST));
         article_collect_recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
-//        //解决数据加载完成后, 没有停留在顶部的问题
         article_collect_recyclerview.setFocusable(false);
         article_collect_recyclerview.setAdapter(feedArticleAdapter);
         feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {

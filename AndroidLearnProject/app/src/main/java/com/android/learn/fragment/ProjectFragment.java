@@ -25,10 +25,6 @@ import java.util.List;
 import butterknife.BindView;
 
 
-/**
- * @author quchao
- * @date 2018/2/11
- */
 
 public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implements ProjectContract.View {
 
@@ -41,9 +37,6 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
 
     @Override
     public void initData(Bundle bundle) {
-
-
-//        mPresenter.getProjectInfo(1, 294);
 
     }
 
@@ -79,16 +72,23 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
         final List<ProjectListData.ProjectData> newDataList = listData.data.getDatas();
 
         if (isRefresh) {
-//            mAdapter.replaceData(feedArticleListData.getDatas());
             smartRefreshLayout.finishRefresh(true);
         } else {
-//            projectDataList.addAll(newDataList);
-//            projectAdapter.notifyItemRangeInserted(projectDataList.size() - newDataList.size(), newDataList.size());
-//            projectAdapter.notifyDataSetChanged();
             projectAdapter.addData(newDataList);
             smartRefreshLayout.finishLoadMore();
         }
 
+
+
+    }
+
+    private void initRecyclerView() {
+        projectDataList = new ArrayList<>();
+        projectAdapter = new ProjectQuickAdapter(getActivity(), projectDataList);
+        project_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
+                DividerItemDecoration.VERTICAL_LIST));
+        project_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        project_recyclerview.setAdapter(projectAdapter);
 
         projectAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -101,22 +101,10 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
             }
 
         });
-
-    }
-
-    private void initRecyclerView() {
-        projectDataList = new ArrayList<>();
-        projectAdapter = new ProjectQuickAdapter(getActivity(), projectDataList);
-        project_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
-                DividerItemDecoration.VERTICAL_LIST));
-        project_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        project_recyclerview.setAdapter(projectAdapter);
     }
 
     //初始化下拉刷新控件
     private void initSmartRefreshLayout() {
-//        smartRefreshLayout.setRefreshHeader(new MaterialHeader(getActivity()).setShowBezierWave(true));
-//        smartRefreshLayout.setRefreshFooter(new BallPulseFooter(getActivity()).setSpinnerStyle(SpinnerStyle.Scale));
         smartRefreshLayout.setEnableScrollContentWhenLoaded(true);//是否在加载完成时滚动列表显示新的内容
         smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true);
         smartRefreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
