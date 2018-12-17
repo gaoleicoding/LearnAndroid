@@ -17,38 +17,41 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.learn.activity.ArticleDetailActivity;
+import com.android.learn.activity.SearchResultActivity;
+import com.android.learn.adapter.ArticleQuickAdapter;
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.adapter.RvAdapter;
-import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.ChangeNightEvent;
 import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.HotKeyData;
+import com.android.learn.base.utils.KeyboardUtils;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.PermissionUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.ScreenUtils;
+import com.android.learn.base.utils.Utils;
 import com.android.learn.base.view.TitleView;
 import com.android.learn.fragment.HomeFragment;
 import com.android.learn.fragment.KnowledgeFragment;
 import com.android.learn.fragment.NavigationFragment;
 import com.android.learn.fragment.ProjectFragment;
 import com.android.learn.fragment.UserFragment;
-import com.android.learn.mcontract.CollectContract;
 import com.android.learn.mcontract.MainActivityContract;
-import com.android.learn.mpresenter.CollectPresenter;
 import com.android.learn.mpresenter.MainActivityPresenter;
 import com.android.learn.view.CustomViewPager;
 import com.android.learn.view.SearchViewUtils;
@@ -57,7 +60,6 @@ import com.opensource.svgaplayer.SVGADynamicEntity;
 import com.opensource.svgaplayer.SVGAImageView;
 import com.opensource.svgaplayer.SVGAParser;
 import com.opensource.svgaplayer.SVGAVideoEntity;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -93,7 +95,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     TextView title;
     @BindView(R.id.header_layout)
     TitleView header_layout;
-
     @BindView(R.id.iv_svga)
     SVGAImageView iv_svga;
     @BindView(R.id.cardview_search)
@@ -110,10 +111,12 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     View title_view_divider;
     @BindView(R.id.flowlayout)
     FlowLayout flowlayout;
-
+    private List<FeedArticleListData.FeedArticleData> articleDataList;
+    private ArticleQuickAdapter feedArticleAdapter;
     HomeFragment homeFragment;
     ProjectFragment projectFragment;
     boolean isSearching;
+
 
     @Override
     protected int getLayoutId() {
@@ -161,6 +164,26 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         } else {
             title_view_divider.setVisibility(View.GONE);
         }
+
+        et_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {//搜索按键action
+                    String content = et_search.getText().toString();
+                    if (TextUtils.isEmpty(content)) {
+                        Utils.showToast(getResources().getString(R.string.search_content_no),true);
+                        return true;
+                    }
+
+                    Bundle bundle=new Bundle();
+                    bundle.putString("key",content);
+                    SearchResultActivity.startActivity(MainActivity.this,bundle);
+                    KeyboardUtils.hideKeyboard(et_search);
+                }
+                return false;
+            }
+        });
+
     }
 
 
@@ -453,7 +476,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             int ranHeight = ScreenUtils.dp2px(this, 30);
             ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ranHeight);
             lp.setMargins(ScreenUtils.dp2px(this, 10), 0, ScreenUtils.dp2px(this, 10), 0);
-            TextView tv = new TextView(this);
+            final TextView tv = new TextView(this);
             tv.setPadding(ScreenUtils.dp2px(this, 15), 0, ScreenUtils.dp2px(this, 15), 0);
             tv.setTextColor(Color.parseColor("#FF3030"));
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
@@ -466,13 +489,13 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("url", hotKeyData.getLink());
-                    ArticleDetailActivity.startActivity(MainActivity.this, bundle);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("key",tv.getText().toString());
+                    SearchResultActivity.startActivity(MainActivity.this,bundle);
+                    KeyboardUtils.hideKeyboard(et_search);
                 }
             });
         }
-//            flowlayout.relayoutToCompress();
         flowlayout.relayoutToAlign();
     }
 }

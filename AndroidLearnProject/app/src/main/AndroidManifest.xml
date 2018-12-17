@@ -40,6 +40,7 @@
         <activity android:name=".activity.KnowledgeChildActivity"></activity>
         <activity android:name=".activity.FontSizeActivity"></activity>
         <activity android:name=".activity.LanguageActivity"></activity>
+        <activity android:name=".activity.SearchResultActivity"></activity>
         <!--value的值填写你在友盟后台申请的应用Appkey-->
         <meta-data android:value="5b856a95b27b0a712f0000fb" android:name="UMENG_APPKEY"/>
         <!--value的值填写渠道名称，例如yingyongbao。这里设置动态渠道名称变量-->

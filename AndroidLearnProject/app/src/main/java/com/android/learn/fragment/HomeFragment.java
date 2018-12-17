@@ -100,36 +100,12 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     public void showArticleList(FeedArticleListData listData, boolean isRefresh) {
         final List<FeedArticleData> newDataList = listData.getDatas();
         if (isRefresh) {
-//            mAdapter.replaceData(feedArticleListData.getDatas());
             smartRefreshLayout.finishRefresh(true);
         } else {
-//            articleDataList.addAll(newDataList);
-//            feedArticleAdapter.notifyItemRangeInserted(articleDataList.size() - newDataList.size(), newDataList.size());
-//            feedArticleAdapter.notifyDataSetChanged();
             feedArticleAdapter.addData(newDataList);
             smartRefreshLayout.finishLoadMore();
         }
-        feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("url", articleDataList.get(position).getLink());
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
 
-        });
-        feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                if (feedArticleAdapter.getData().get(position).isCollect()) {
-                    mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
-                } else {
-                    mPresenter.addCollectArticle(position, feedArticleAdapter.getData().get(position));
-                }
-            }
-        });
     }
 
     @Override
@@ -205,6 +181,27 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 //        //解决数据加载完成后, 没有停留在顶部的问题
         article_recyclerview.setFocusable(false);
         article_recyclerview.setAdapter(feedArticleAdapter);
+        feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("url", articleDataList.get(position).getLink());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+
+        });
+        feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                if (feedArticleAdapter.getData().get(position).isCollect()) {
+                    mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
+                } else {
+                    mPresenter.addCollectArticle(position, feedArticleAdapter.getData().get(position));
+                }
+            }
+        });
     }
 
     //初始化下拉刷新控件

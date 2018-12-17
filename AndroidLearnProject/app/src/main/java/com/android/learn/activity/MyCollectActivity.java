@@ -12,20 +12,14 @@ import android.widget.TextView;
 import com.android.learn.R;
 import com.android.learn.adapter.ArticleQuickAdapter;
 import com.android.learn.adapter.DividerItemDecoration;
-import com.android.learn.adapter.ProjectQuickAdapter;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.CancelCollectEvent;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
-import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.mcontract.CollectContract;
-import com.android.learn.mcontract.MainActivityContract;
 import com.android.learn.mpresenter.CollectPresenter;
-import com.android.learn.mpresenter.MainActivityPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -81,24 +75,26 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
 
     private void initRecyclerView() {
         articleDataList = new ArrayList<>();
-        feedArticleAdapter = new ArticleQuickAdapter(this, articleDataList,"MyCollectActivity");
+        feedArticleAdapter = new ArticleQuickAdapter(this, articleDataList, "MyCollectActivity");
         article_collect_recyclerview.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL_LIST));
         article_collect_recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        //解决数据加载不完的问题
-//        project_recyclerview.setNestedScrollingEnabled(false);
-//        project_recyclerview.setHasFixedSize(true);
+
 //        //解决数据加载完成后, 没有停留在顶部的问题
         article_collect_recyclerview.setFocusable(false);
         article_collect_recyclerview.setAdapter(feedArticleAdapter);
+        feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
+            }
+        });
     }
 
     @Override
     public void showCollectList(FeedArticleListData feedArticleListData) {
         final List<FeedArticleData> newDataList = feedArticleListData.getDatas();
-//        articleDataList.addAll(newDataList);
-//        feedArticleAdapter.notifyItemRangeInserted(articleDataList.size() - newDataList.size(), newDataList.size());
-//        feedArticleAdapter.notifyDataSetChanged();
+
         feedArticleAdapter.addData(newDataList);
         feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -111,14 +107,7 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
             }
 
         });
-        feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-//                if (feedArticleAdapter.getData().get(position).isCollect()) {
-                mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
-//                }
-            }
-        });
+
     }
 
     @Override
@@ -126,6 +115,7 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
         feedArticleAdapter.remove(position);
         EventBus.getDefault().post(new CancelCollectEvent(feedArticleData.id));
     }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         //语言切换

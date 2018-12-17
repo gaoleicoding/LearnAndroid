@@ -16,9 +16,9 @@ public class HomeContract {
 
         void getFeedArticleList(int num);
 
-        void onRefreshMore();
-
         void onLoadMore();
+
+        void onRefreshMore();
 
         void addCollectArticle(int position, FeedArticleData feedArticleData);
 

@@ -20,6 +20,7 @@ import io.reactivex.Observable;
 
 public class MainActivityPresenter extends BasePresenter<MainActivityContract.View> implements MainActivityContract.Presenter {
 
+    private int mCurrentPage = 0;
 
     @Override
     public void getHotKey() {

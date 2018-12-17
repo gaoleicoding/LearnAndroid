@@ -23,6 +23,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    greendao{
+        schemaVersion 1                         //数据库版本号，如果数据库需要升级，直接在此修改版本号即可
+//        daoPackage 'com.anye.greendao.gen'      //dao包名，默认是entity所在的包
+        targetGenDir 'src/main/java'            //数据库文件的目录
+    }
+
     //执行lint检查，有任何的错误或者警告提示，都会终止构建
     lintOptions {
         abortOnError false
@@ -90,6 +96,7 @@ android {
 
         api 'com.github.yyued:SVGAPlayer-Android:2.3.0'
         api 'cn.lankton:flowlayout:1.0.1'
+
     }
 }
 dependencies {

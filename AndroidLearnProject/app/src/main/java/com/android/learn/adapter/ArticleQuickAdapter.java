@@ -23,9 +23,6 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseV
         this.list = list;
         this.fromWhere = fromWhere;
     }
-    public void setList(List<FeedArticleData> list){
-        this.list=list;
-    }
 
     public int getPosById(int id) {
         int size = list.size();

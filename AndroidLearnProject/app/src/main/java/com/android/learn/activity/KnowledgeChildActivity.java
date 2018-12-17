@@ -13,7 +13,6 @@ import com.android.learn.R;
 import com.android.learn.adapter.ArticleQuickAdapter;
 import com.android.learn.adapter.DividerItemDecoration;
 import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.email.ToastUtils;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.utils.LanguageUtil;
@@ -30,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import io.reactivex.disposables.Disposable;
 
 public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresenter> implements KnowledgeChildContract.View {
     @BindView(R.id.iv_back)
@@ -98,37 +96,13 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
             smartRefreshLayout.finishRefresh(true);
         } else {
             articleDataList.addAll(newDataList);
-            feedArticleAdapter.setList(articleDataList);
-//            feedArticleAdapter.notifyDataSetChanged();
-//            feedArticleAdapter.notifyItemRangeInserted(articleDataList.size() - newDataList.size(), newDataList.size());
-//            feedArticleAdapter.notifyDataSetChanged();
             if (listData.getCurPage() == 1) {
                 feedArticleAdapter.setNewData(listData.getDatas());
             } else
                 feedArticleAdapter.addData(newDataList);
             smartRefreshLayout.finishLoadMore();
         }
-        feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Intent intent = new Intent(KnowledgeChildActivity.this, ArticleDetailActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("url", feedArticleAdapter.getData().get(position).getLink());
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
 
-        });
-        feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                if (feedArticleAdapter.getData().get(position).isCollect()) {
-                    mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
-                } else {
-                    mPresenter.addCollectArticle(position, feedArticleAdapter.getData().get(position));
-                }
-            }
-        });
     }
 
     @Override
@@ -151,6 +125,28 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
      //解决数据加载完成后, 没有停留在顶部的问题
         article_recyclerview.setFocusable(false);
         article_recyclerview.setAdapter(feedArticleAdapter);
+
+        feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(KnowledgeChildActivity.this, ArticleDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("url", feedArticleAdapter.getData().get(position).getLink());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+
+        });
+        feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                if (feedArticleAdapter.getData().get(position).isCollect()) {
+                    mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
+                } else {
+                    mPresenter.addCollectArticle(position, feedArticleAdapter.getData().get(position));
+                }
+            }
+        });
     }
 
     //初始化下拉刷新控件

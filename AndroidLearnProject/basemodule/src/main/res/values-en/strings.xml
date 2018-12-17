@@ -43,8 +43,11 @@
     <string name="feedback_send_success">Have received your feedback</string>
     <string name="feedback_send_fail">Feedback failed to send</string>
     <string name="send">Send</string>
+    <string name="language_follow_system">跟随系统</string>
+    <string name="language_chinese">简体中文</string>
+    <string name="language_english">English</string>
     <string name="tiaoguo">Skip</string>
     <string name="welcome_learn_android">Welcome learn android</string>
     <string name="press_exit">Press again to exit the program</string>
-
+    <string name="search_content_no">no search key word</string>
 </resources>

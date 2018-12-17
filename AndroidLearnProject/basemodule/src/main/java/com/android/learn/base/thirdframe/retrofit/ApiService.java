@@ -32,8 +32,10 @@ public interface ApiService {
 
     @GET("article/list/{num}/json")
     Observable<BaseResponse<FeedArticleListData>> getFeedArticleList(@Path("num") int num);
+
     @GET("article/list/{num}/json")
     Observable<BaseResponse<FeedArticleListData>> getKnowledgeArticleList(@Path("num") int num, @Query("cid") int cid);
+
     @POST("user/login")
     @FormUrlEncoded
     Observable<RegisterLoginData> login(@Field("username") String username, @Field("password") String password);
@@ -60,4 +62,8 @@ public interface ApiService {
 
     @GET("hotkey/json")
     Observable<BaseResponse<List<HotKeyData>>> getHotKey();
+
+    @POST("article/query/{num}/json")
+    @FormUrlEncoded
+    Observable<BaseResponse<FeedArticleListData>> search(@Path("num") int num, @Field("k") String key);
 }
