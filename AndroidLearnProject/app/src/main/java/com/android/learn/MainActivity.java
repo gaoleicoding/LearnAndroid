@@ -18,13 +18,17 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.style.ForegroundColorSpan;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.learn.activity.ArticleDetailActivity;
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.adapter.RvAdapter;
 import com.android.learn.base.activity.BaseActivity;
@@ -35,6 +39,7 @@ import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.PermissionUtil;
 import com.android.learn.base.utils.SPUtils;
+import com.android.learn.base.utils.ScreenUtils;
 import com.android.learn.base.view.TitleView;
 import com.android.learn.fragment.HomeFragment;
 import com.android.learn.fragment.KnowledgeFragment;
@@ -67,6 +72,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.lankton.flowlayout.FlowLayout;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
@@ -74,7 +80,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MainActivity extends BaseMvpActivity<MainActivityPresenter> implements MainActivityContract.View  {
+public class MainActivity extends BaseMvpActivity<MainActivityPresenter> implements MainActivityContract.View {
 
     private ArrayList<Fragment> mFragments;
     private ArrayList<String> titles;
@@ -102,6 +108,8 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     RecyclerView history_recycleview;
     @BindView(R.id.title_view_divider)
     View title_view_divider;
+    @BindView(R.id.flowlayout)
+    FlowLayout flowlayout;
 
     HomeFragment homeFragment;
     ProjectFragment projectFragment;
@@ -404,7 +412,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
     @Override
     protected void loadData() {
-mPresenter.getHotKey();
+        mPresenter.getHotKey();
     }
 
     private void initResultItem() {
@@ -434,6 +442,37 @@ mPresenter.getHotKey();
 
     @Override
     public void showHotKey(List<HotKeyData> list) {
+        addFolowLayoutView(list);
 
+    }
+
+    private void addFolowLayoutView(List<HotKeyData> list) {
+        int length = list.size();
+        for (int i = 0; i < list.size(); i++) {
+            final HotKeyData hotKeyData = list.get(i);
+            int ranHeight = ScreenUtils.dp2px(this, 30);
+            ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ranHeight);
+            lp.setMargins(ScreenUtils.dp2px(this, 10), 0, ScreenUtils.dp2px(this, 10), 0);
+            TextView tv = new TextView(this);
+            tv.setPadding(ScreenUtils.dp2px(this, 15), 0, ScreenUtils.dp2px(this, 15), 0);
+            tv.setTextColor(Color.parseColor("#FF3030"));
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+            int index = (int) (Math.random() * length);
+            tv.setText(hotKeyData.getName());
+            tv.setGravity(Gravity.CENTER_VERTICAL);
+            tv.setLines(1);
+            tv.setBackgroundResource(R.drawable.bg_tag);
+            flowlayout.addView(tv, lp);
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("url", hotKeyData.getLink());
+                    ArticleDetailActivity.startActivity(MainActivity.this, bundle);
+                }
+            });
+        }
+//            flowlayout.relayoutToCompress();
+        flowlayout.relayoutToAlign();
     }
 }

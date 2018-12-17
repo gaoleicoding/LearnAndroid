@@ -35,11 +35,11 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View normal_views = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.view_rv_item, parent, false);
-        View foot_view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.view_item_clear_history, parent, false);
-
-        if (viewType == FOOT_TYPE)
-            return new ViewHolder(foot_view, FOOT_TYPE);
+//        View foot_view = LayoutInflater.from(parent.getContext()).inflate(
+//                R.layout.view_item_clear_history, parent, false);
+//
+//        if (viewType == FOOT_TYPE)
+//            return new ViewHolder(foot_view, FOOT_TYPE);
         return new ViewHolder(normal_views, NORMAL_TYPE);
     }
     @Override

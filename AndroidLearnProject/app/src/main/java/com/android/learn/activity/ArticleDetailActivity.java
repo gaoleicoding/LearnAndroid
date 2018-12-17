@@ -27,7 +27,13 @@ public class ArticleDetailActivity extends BaseActivity {
     @BindView(R.id.iv_search)
     ImageView iv_search;
     String url;
+    public static void startActivity(Context context, Bundle bundle) {
+        Intent intent = new Intent(context, ArticleDetailActivity.class);
 
+        if (bundle != null)
+            intent.putExtras(bundle);
+        context.startActivity(intent);
+    }
     @Override
     protected int getLayoutId() {
         return R.layout.activity_article_detail;

@@ -88,8 +88,8 @@ android {
         api rootProject.ext.dependencies["customactivityoncrash"]
         api 'com.github.devlight:infinitecycleviewpager:1.0.2'
 
-
-//        api 'cn.lankton:flowlayout:latest version'
+        api 'com.github.yyued:SVGAPlayer-Android:2.3.0'
+        api 'cn.lankton:flowlayout:1.0.1'
     }
 }
 dependencies {

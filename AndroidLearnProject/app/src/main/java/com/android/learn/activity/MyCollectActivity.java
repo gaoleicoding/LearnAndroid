@@ -39,7 +39,7 @@ import butterknife.BindView;
  * author: zlm
  * date: 2017/3/17 16:01
  */
-public class MyCollectActivity extends BaseMvpActivity<MainActivityPresenter> implements MainActivityContract.View {
+public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> implements CollectContract.View {
 
 
     @BindView(R.id.iv_back)
@@ -70,8 +70,8 @@ public class MyCollectActivity extends BaseMvpActivity<MainActivityPresenter> im
 
 
     @Override
-    public MainActivityPresenter initPresenter() {
-        return new MainActivityPresenter();
+    public CollectPresenter initPresenter() {
+        return new CollectPresenter();
     }
 
     @Override
@@ -133,8 +133,4 @@ public class MyCollectActivity extends BaseMvpActivity<MainActivityPresenter> im
 
     }
 
-    @Override
-    public void showHotKey(List<HotKeyData> list) {
-
-    }
 }
