@@ -17,9 +17,13 @@ import com.android.learn.base.event.CancelCollectEvent;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.utils.LanguageUtil;
+import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.CollectContract;
 import com.android.learn.mpresenter.CollectPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -38,6 +42,8 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
     TextView title;
     @BindView(R.id.article_collect_recyclerview)
     RecyclerView article_collect_recyclerview;
+    @BindView(R.id.smartRefreshLayout)
+    SmartRefreshLayout smartRefreshLayout;
     private List<FeedArticleData> articleDataList;
     private ArticleQuickAdapter feedArticleAdapter;
 
@@ -56,6 +62,8 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
         title.setText(getString(R.string.collect));
         iv_back.setVisibility(View.VISIBLE);
         initRecyclerView();
+        initSmartRefreshLayout();
+
     }
 
 
@@ -66,6 +74,7 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
 
     @Override
     protected void loadData() {
+        CustomProgressDialog.show(this);
         mPresenter.getCollectList();
     }
 
@@ -81,7 +90,7 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
         feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
+                mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position).originId);
             }
         });
     }
@@ -106,9 +115,23 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
     }
 
     @Override
-    public void showCancelCollectArticle(int position, FeedArticleData feedArticleData) {
+    public void showCancelCollectArticle(int position, int id) {
         feedArticleAdapter.remove(position);
-        EventBus.getDefault().post(new CancelCollectEvent(feedArticleData.id));
+        feedArticleAdapter.getData().remove(position);
+        EventBus.getDefault().post(new CancelCollectEvent(id));
+    }
+
+    private void initSmartRefreshLayout() {
+        smartRefreshLayout.setEnableScrollContentWhenLoaded(true);//是否在加载完成时滚动列表显示新的内容
+        smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true);
+        smartRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(RefreshLayout refreshLayout) {
+                mPresenter.getCollectList();
+            }
+
+
+        });
     }
 
     @Override
@@ -117,5 +140,6 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
         super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
     }
+
 
 }

@@ -24,7 +24,8 @@
         android:layout_centerInParent="true"
         android:gravity="center"
         android:text="@string/home"
-        android:textColor="#ffffff"
+        skin:enable="true"
+        android:textColor="@color/text_color_white"
         android:textSize="16sp" />
 
     <ImageView
@@ -41,7 +42,7 @@
     <View
         android:id="@+id/title_view_divider"
         style="@style/horizontal_divider_setting"
-        android:layout_height="0.5dp"
+        android:layout_height="1dp"
         android:layout_alignParentBottom="true"
         skin:enable="true" />
 </RelativeLayout>

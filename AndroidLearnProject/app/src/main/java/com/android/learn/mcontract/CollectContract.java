@@ -14,13 +14,13 @@ public class CollectContract {
 
         void getCollectList();
 
-        void cancelCollectArticle(int position, FeedArticleData feedArticleData);
+        void cancelCollectArticle(int position, int id);
     }
 
     public interface View {
 
         void showCollectList(FeedArticleListData feedArticleListData);
 
-        void showCancelCollectArticle(int position, FeedArticleData feedArticleData);
+        void showCancelCollectArticle(int position, int id);
     }
 }

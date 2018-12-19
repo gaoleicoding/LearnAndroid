@@ -30,7 +30,7 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseV
             if (id == list.get(i).id)
                 return i;
         }
-        return 0;
+        return -1;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseV
                 .setText(R.id.tv_item_time, articleData.getNiceDate())
                 .setText(R.id.tv_item_author, articleData.getAuthor());
         helper.addOnClickListener(R.id.iv_item_collect);
-        if ("HomeFragment".equals(fromWhere)||"KnowledgeChildActivity".equals(fromWhere)) {
+        if ("HomeFragment".equals(fromWhere)||"KnowledgeChildActivity".equals(fromWhere)||"WechatSubFragment".equals(fromWhere)) {
             if (articleData.isCollect()) {
                 helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select);
             } else {

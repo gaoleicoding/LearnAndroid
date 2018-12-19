@@ -89,7 +89,7 @@ public class FeedArticleListData {
         public long publishTime;
         public String title;
         public int visible;
-        public int zan;
+        public int zan,originId;
 
         public String getApkLink() {
             return apkLink;

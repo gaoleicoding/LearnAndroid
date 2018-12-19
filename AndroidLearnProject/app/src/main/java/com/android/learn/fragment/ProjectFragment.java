@@ -12,6 +12,7 @@ import com.android.learn.adapter.DividerItemDecoration;
 import com.android.learn.adapter.ProjectQuickAdapter;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.ProjectListData;
+import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.ProjectContract;
 import com.android.learn.mpresenter.ProjectPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -63,6 +64,7 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
 
     @Override
     protected void loadData() {
+        CustomProgressDialog.show(getActivity());
         mPresenter.getProjectInfo(1, 294);
     }
 

@@ -19,6 +19,7 @@ import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.BannerListData;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.HomeContract;
 import com.android.learn.mpresenter.HomePresenter;
 import com.bumptech.glide.Glide;
@@ -85,6 +86,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 
     @Override
     protected void loadData() {
+        CustomProgressDialog.show(getActivity());
         mPresenter.getFeedArticleList(0);
         mPresenter.getBannerInfo();
 

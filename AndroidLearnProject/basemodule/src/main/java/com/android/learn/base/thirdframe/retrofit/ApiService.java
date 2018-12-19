@@ -9,6 +9,7 @@ import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.mmodel.RegisterLoginData;
 import com.android.learn.base.mmodel.ProjectListData;
 import com.android.learn.base.mmodel.TreeBean;
+import com.android.learn.base.mmodel.WxArticle;
 
 import java.util.List;
 
@@ -62,6 +63,12 @@ public interface ApiService {
 
     @GET("hotkey/json")
     Observable<BaseResponse<List<HotKeyData>>> getHotKey();
+
+    @GET("wxarticle/chapters/json")
+    Observable<BaseResponse<List<WxArticle>>> getWxArticle();
+
+    @GET("wxarticle/list/{id}/{num}/json")
+    Observable<BaseResponse<FeedArticleListData>> getWxArtileById(@Path("id") int id, @Path("num") int num);
 
     @POST("article/query/{num}/json")
     @FormUrlEncoded

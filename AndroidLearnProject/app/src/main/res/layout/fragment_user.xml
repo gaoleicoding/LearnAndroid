@@ -32,7 +32,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:text="@string/login_register"
-            android:textColor="@color/white"
+            skin:enable="true"
+            android:textColor="@color/text_color_white"
             android:textSize="18sp" />
 
     </LinearLayout>

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content" />
     <!--下拉刷新组件-->
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/smartRefreshLayout_home"
+        android:id="@+id/smartRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

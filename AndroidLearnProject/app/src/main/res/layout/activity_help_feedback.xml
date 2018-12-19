@@ -101,17 +101,11 @@
             android:layout_marginLeft="10dp"
             android:textSize="14sp" />
     </LinearLayout>
-
     <TextView
         android:id="@+id/send_btn"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="20dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/btn_bg_selector"
-        skin:enable="true"
-        android:gravity="center"
+        style="@style/btn_selector_match_style"
         android:text="@string/send"
-        android:textColor="#ffffff"
-        android:textSize="18sp" />
+        android:background="@drawable/btn_bg_selector"
+        skin:enable="true" />
+
 </LinearLayout>

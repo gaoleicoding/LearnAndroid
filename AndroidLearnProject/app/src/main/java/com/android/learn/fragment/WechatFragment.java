@@ -9,9 +9,11 @@ import android.view.View;
 
 import com.android.learn.R;
 import com.android.learn.base.fragment.BaseMvpFragment;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.view.colortabdemo.ColorClipTabLayout;
-import com.android.learn.base.view.colortabdemo.TestFragment;
+import com.android.learn.base.mmodel.FeedArticleListData;
+import com.android.learn.base.mmodel.WxArticle;
+import com.android.learn.base.view.colorfultab.ColorClipTabLayout;
+import com.android.learn.mcontract.WechatContract;
+import com.android.learn.mpresenter.WechatPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,34 +21,24 @@ import java.util.List;
 import butterknife.BindView;
 
 
-/**
- * @author quchao
- * @date 2018/2/11
- */
-
-public class WechatFragment extends BaseMvpFragment {
+public class WechatFragment extends BaseMvpFragment<WechatPresenter> implements WechatContract.View {
 
     @BindView(R.id.tab_layout)
     ColorClipTabLayout tab_layout;
     @BindView(R.id.view_pager)
     ViewPager view_pager;
 
-    List<Fragment> list= new ArrayList();
-    List<String> list2= new ArrayList();
+    List<Fragment> fragmentList = new ArrayList();
+    List<String> titleList = new ArrayList();
+
     @Override
     protected void loadData() {
-
+        mPresenter.getWxArticle();
     }
 
     @Override
     public void initData(Bundle bundle) {
-        for (int i=0;i<9;i++) {
-            list.add(TestFragment.newInstance(i));
-            list2.add("栏目" + i);
-        }
-        CustomPagerAdapter adapter = new CustomPagerAdapter(getFragmentManager(),list);
-        view_pager.setAdapter(adapter);
-        tab_layout.setupWithViewPager(view_pager);
+
     }
 
     @Override
@@ -64,9 +56,34 @@ public class WechatFragment extends BaseMvpFragment {
     }
 
     @Override
-    public BasePresenter initPresenter() {
-        return null;
+    public WechatPresenter initPresenter() {
+        return new WechatPresenter();
     }
+
+    @Override
+    public void showWxArticle(List<WxArticle> list) {
+        WechatSubFragment firstSubFragment = null;
+        int firstId = 0;
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            WxArticle wxArticle = list.get(i);
+            titleList.add(wxArticle.getName());
+            WechatSubFragment wechatSubFragment = WechatSubFragment.newInstance(wxArticle.getId(), wxArticle.getName());
+            fragmentList.add(wechatSubFragment);
+            if (i == 0) {
+                firstId = wxArticle.getId();
+                firstSubFragment = wechatSubFragment;
+            }
+        }
+        CustomPagerAdapter adapter = new CustomPagerAdapter(getFragmentManager(), fragmentList);
+        view_pager.setAdapter(adapter);
+        view_pager.setOffscreenPageLimit(list.size());
+        tab_layout.setupWithViewPager(view_pager);
+        firstSubFragment.userId = firstId;
+        firstSubFragment.loadData();
+    }
+
+
     public class CustomPagerAdapter extends FragmentPagerAdapter {
 
         private List<Fragment> mFragments;
@@ -91,9 +108,10 @@ public class WechatFragment extends BaseMvpFragment {
         public long getItemId(int position) {
             return position;
         }
+
         @Override
         public CharSequence getPageTitle(int position) {
-            return list2.get(position);
+            return titleList.get(position);
         }
     }
 }

@@ -12,6 +12,7 @@ import android.view.View;
 import com.android.learn.base.application.CustomApplication;
 import com.android.learn.base.utils.ExitAppUtils;
 import com.android.learn.base.utils.LanguageUtil;
+import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.StatusBarUtil;
 import com.gaolei.basemodule.R;
 import com.umeng.analytics.MobclickAgent;
@@ -44,7 +45,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
 
         ExitAppUtils.getInstance().addActivity(this);
 
-//        context = this;
+
 //        setStatusBarColor(R.color.status_bar_color);
         SkinManager.get().setWindowStatusBarColor(this.getWindow(), R.color.status_bar_color);
 
@@ -96,7 +97,8 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
     protected void onResume() {
         super.onResume();
         MobclickAgent.onResume(this);
-
+//        context = this;
+        LogUtil.d(TAG,"BaseActivity ----onResume："+getClass().getName().toString());
     }
 
 
@@ -120,7 +122,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         super.onDestroy();
 //        context = null;
         ExitAppUtils.getInstance().delActivity(this);
-
+        LogUtil.d(TAG,"BaseActivity ----onDestroy："+getClass().getName().toString());
     }
 
     public void useNightMode(boolean isNight) {

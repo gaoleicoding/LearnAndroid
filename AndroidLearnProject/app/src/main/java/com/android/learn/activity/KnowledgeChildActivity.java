@@ -18,6 +18,7 @@ import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.Utils;
+import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.KnowledgeChildContract;
 import com.android.learn.mpresenter.KnowledgeChildPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -35,8 +36,6 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
     ImageView iv_back;
     @BindView(R.id.title)
     TextView title;
-    public static final String ID = "page";
-    public static final String TITLE = "TITLE";
     @BindView(R.id.article_recyclerview)
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
@@ -46,7 +45,8 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
     int cid;
     String titleStr;
     String TAG = "KnowledgeChildActivity";
-
+    public static final String ID = "page";
+    public static final String TITLE = "TITLE";
 
     public static void startTreeChildrenActivity(Context context, int id, String name) {
         Intent intent = new Intent(context, KnowledgeChildActivity.class);
@@ -80,6 +80,7 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
 
     @Override
     protected void loadData() {
+        CustomProgressDialog.show(this);
         mPresenter.getKnowledgeArticleList(0, cid);
     }
 

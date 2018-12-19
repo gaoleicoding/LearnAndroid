@@ -51,13 +51,14 @@ public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> imple
 
     @Override
     protected void loadData() {
-        CustomProgressDialog.show(getActivity());
 
+        CustomProgressDialog.show(getActivity());
         mPresenter.getKnowledge();
     }
 
     @Override
     public void showKnowledge(List<TreeBean> datas) {
+        CustomProgressDialog.show(getActivity());
         mPagerAdapter = new HorizontalPagerAdapter(getContext(), datas);
         horizontalInfiniteCycleViewPager.setAdapter(mPagerAdapter);
         if (horizontalInfiniteCycleViewPager != null && datas.size() > 1)
