@@ -16,7 +16,7 @@ import io.reactivex.Observable;
 
 public class HomePresenter extends BasePresenter<HomeContract.View> implements HomeContract.Presenter {
     private boolean isRefresh = true;
-    private int mCurrentPage = 0;
+    public int mCurrentPage = 0;
 
     @Override
     public void onRefreshMore() {

@@ -13,6 +13,6 @@
 
     <TextView
         style="@style/main_bottom_tab_txt"
-        android:text="@string/navigation"
+        android:text="@string/public_account"
          />
 </LinearLayout>

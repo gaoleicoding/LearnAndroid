@@ -48,7 +48,7 @@ import com.android.learn.base.utils.Utils;
 import com.android.learn.base.view.TitleView;
 import com.android.learn.fragment.HomeFragment;
 import com.android.learn.fragment.KnowledgeFragment;
-import com.android.learn.fragment.NavigationFragment;
+import com.android.learn.fragment.WechatFragment;
 import com.android.learn.fragment.ProjectFragment;
 import com.android.learn.fragment.UserFragment;
 import com.android.learn.mcontract.MainActivityContract;
@@ -136,14 +136,14 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         mFragments.add(homeFragment);
         mFragments.add(projectFragment);
         mFragments.add(new KnowledgeFragment());
-        mFragments.add(new NavigationFragment());
+        mFragments.add(new WechatFragment());
         mFragments.add(new UserFragment());
 
         titles = new ArrayList<String>();
         titles.add(getResources().getString(R.string.home));
         titles.add(getResources().getString(R.string.project));
         titles.add(getResources().getString(R.string.knowledge));
-        titles.add(getResources().getString(R.string.navigation));
+        titles.add(getResources().getString(R.string.public_account));
         titles.add(getResources().getString(R.string.mine));
 
         MainTabAdapter adapter = new MainTabAdapter(getSupportFragmentManager(), mFragments);

@@ -3,26 +3,25 @@ package com.android.learn.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Debug;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.android.learn.adapter.ArticleQuickAdapter;
-import com.android.learn.base.event.CancelCollectEvent;
-import com.android.learn.base.event.LogoutEvent;
-import com.android.learn.base.mmodel.FeedArticleListData;
-import com.bumptech.glide.Glide;
 import com.android.learn.R;
 import com.android.learn.activity.ArticleDetailActivity;
+import com.android.learn.adapter.ArticleQuickAdapter;
 import com.android.learn.adapter.DividerItemDecoration;
+import com.android.learn.base.event.CancelCollectEvent;
+import com.android.learn.base.event.LoginEvent;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.BannerListData;
+import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.mcontract.HomeContract;
 import com.android.learn.mpresenter.HomePresenter;
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -249,6 +248,13 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(CancelCollectEvent event) {
         mPresenter.cancelCollectArticle(event.id);
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(LoginEvent accountEvent) {
+        feedArticleAdapter.getData().clear();
+        feedArticleAdapter.notifyDataSetChanged();
+        mPresenter.getFeedArticleList(0);
+        mPresenter.mCurrentPage=0;
     }
 
     public void onDestroy() {

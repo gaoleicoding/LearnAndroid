@@ -12,4 +12,31 @@
         <attr name="titleTextColor" format="color"/>
         <attr name="titleTextSize" format="dimension"/>
     </declare-styleable>
+
+    <attr name="text" format="string" />
+    <attr name="text_size" format="dimension" />
+    <attr name="text_unselected_color" format="color|reference" />
+    <attr name="text_selected_color" format="color|reference" />
+    <attr name="progress" format="float" />
+    <attr name="direction">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+        <enum name="top" value="2" />
+        <enum name="bottom" value="3" />
+    </attr>
+
+    <declare-styleable name="ColorClipView">
+        <attr name="text" />
+        <attr name="text_size" />
+        <attr name="text_unselected_color" />
+        <attr name="text_selected_color" />
+        <attr name="progress" />
+        <attr name="direction" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorClipTabLayout">
+        <attr name="text_size" />
+        <attr name="text_unselected_color" />
+        <attr name="text_selected_color" />
+    </declare-styleable>
 </resources>
