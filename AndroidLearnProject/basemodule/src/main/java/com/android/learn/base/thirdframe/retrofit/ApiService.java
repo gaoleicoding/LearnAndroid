@@ -8,10 +8,12 @@ import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.mmodel.RegisterLoginData;
 import com.android.learn.base.mmodel.ProjectListData;
+import com.android.learn.base.mmodel.TodoData;
 import com.android.learn.base.mmodel.TreeBean;
 import com.android.learn.base.mmodel.WxArticle;
 
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
@@ -20,6 +22,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 
 public interface ApiService {
@@ -73,4 +76,26 @@ public interface ApiService {
     @POST("article/query/{num}/json")
     @FormUrlEncoded
     Observable<BaseResponse<FeedArticleListData>> search(@Path("num") int num, @Field("k") String key);
+
+    @GET("lg/todo/list/{type}/json")
+    Observable<BaseResponse<TodoData>> getTodoList(@Path("type") int type);
+
+    @POST("lg/todo/listnotdo/{type}/json/{page}")
+    Observable<BaseResponse<TodoData>> getListNotDone(@Path("type") int type, @Path("page") int page);
+
+    @POST("lg/todo/listdone/{type}/json/{page}")
+    Observable<BaseResponse<TodoData>> getListDone(@Path("type") int type, @Path("page") int page);
+
+    @POST("lg/todo/add/json")
+    Observable<BaseResponse> addTodo(@QueryMap Map<String, String> map);
+
+    @POST("lg/todo/update/{id}/json")
+    Observable<BaseResponse> updateTodo(@Path("id") int id, @QueryMap Map<String, String> map);
+
+    @POST("lg/todo/delete/{id}/json")
+    Observable<BaseResponse> deleteTodo(@Path("id") int id);
+
+    //status: 0或1，传1代表未完成到已完成，反之则反之。
+    @POST("lg/todo/done/{id}/json")
+    Observable<BaseResponse> updateTodoStatus(@Path("id") int id, @Query("status") int status);
 }

@@ -24,6 +24,7 @@
     <string name="register_password_too_short">no less than 6 digits，please reset</string>
     <string name="user_not_login">Please login first</string>
     <string name="collect">Collect</string>
+    <string name="todo">Todo</string>
     <string name="email_title">Title</string>
     <string name="email_content">Content</string>
     <string name="email_info_hint">please input contnet</string>

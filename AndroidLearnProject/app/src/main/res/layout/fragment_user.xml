@@ -32,18 +32,20 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:text="@string/login_register"
-            skin:enable="true"
             android:textColor="@color/text_color_white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            skin:enable="true" />
 
     </LinearLayout>
+
     <View
         style="@style/horizontal_divider_setting"
         skin:enable="true" />
+
     <LinearLayout
         android:id="@+id/my_collect_layout"
-        skin:enable="true"
-        style="@style/user_info_layout">
+        style="@style/user_info_layout"
+        skin:enable="true">
 
         <ImageView
             style="@style/user_info_icon"
@@ -52,6 +54,25 @@
         <TextView
             style="@style/user_info_txt"
             android:text="@string/collect"
+            skin:enable="true" />
+    </LinearLayout>
+
+    <View
+        style="@style/horizontal_divider_setting"
+        skin:enable="true" />
+
+    <LinearLayout
+        android:id="@+id/my_todo_layout"
+        style="@style/user_info_layout"
+        skin:enable="true">
+
+        <ImageView
+            style="@style/user_info_icon"
+            android:src="@drawable/icon_todo_list" />
+
+        <TextView
+            style="@style/user_info_txt"
+            android:text="@string/todo"
             skin:enable="true" />
     </LinearLayout>
 

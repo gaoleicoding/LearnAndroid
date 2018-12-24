@@ -24,6 +24,7 @@
     <string name="register_password_too_short">密码不能少于6位，请重新设置</string>
     <string name="user_not_login">你还没有登录,请登录</string>
     <string name="collect">收藏</string>
+    <string name="todo">待办</string>
     <string name="email_title">标题</string>
     <string name="email_content">内容</string>
     <string name="email_info_hint">请输入你要发送的邮件信息</string>

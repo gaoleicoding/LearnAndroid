@@ -97,8 +97,8 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
 
     @Override
     public void showCollectList(FeedArticleListData feedArticleListData) {
+        smartRefreshLayout.finishLoadMore();
         final List<FeedArticleData> newDataList = feedArticleListData.getDatas();
-
         feedArticleAdapter.addData(newDataList);
         feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -117,7 +117,6 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
     @Override
     public void showCancelCollectArticle(int position, int id) {
         feedArticleAdapter.remove(position);
-        feedArticleAdapter.getData().remove(position);
         EventBus.getDefault().post(new CancelCollectEvent(id));
     }
 
@@ -128,6 +127,7 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
             @Override
             public void onLoadMore(RefreshLayout refreshLayout) {
                 mPresenter.getCollectList();
+
             }
 
 

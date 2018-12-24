@@ -15,8 +15,11 @@ import com.android.learn.base.event.LoginEvent;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.learn.base.mmodel.TodoData;
 import com.android.learn.base.view.CustomProgressDialog;
+import com.android.learn.mcontract.TodoContract;
 import com.android.learn.mcontract.WechatSubContract;
+import com.android.learn.mpresenter.TodoPresenter;
 import com.android.learn.mpresenter.WechatSubPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -33,7 +36,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> implements WechatSubContract.View {
+public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements TodoContract.View {
     @BindView(R.id.article_recyclerview)
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
@@ -41,14 +44,10 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
     private List<FeedArticleData> articleDataList;
     private ArticleQuickAdapter feedArticleAdapter;
 
-    int userId;
-    String userName;
+    int position;
 
-    public static WechatSubFragment newInstance(int id, String name) {
-        WechatSubFragment testFragment = new WechatSubFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt("id", id);
-        bundle.putString("name", name);
+    public static TodoFragment newInstance(Bundle bundle) {
+        TodoFragment testFragment = new TodoFragment();
         testFragment.setArguments(bundle);
         return testFragment;
     }
@@ -56,8 +55,7 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
 
     @Override
     public void initData(Bundle bundle) {
-        userId = bundle.getInt("id", 408);
-        userName = bundle.getString("name");
+        position = bundle.getInt("position", 0);
         initSmartRefreshLayout();
         initRecyclerView();
     }
@@ -78,41 +76,17 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
     }
 
     @Override
-    public WechatSubPresenter initPresenter() {
-        return new WechatSubPresenter();
+    public TodoPresenter initPresenter() {
+        return new TodoPresenter();
     }
 
     @Override
     protected void loadData() {
         CustomProgressDialog.show(getActivity());
-        if (userId != 0)
-            mPresenter.getWxArtileById(userId);
-    }
-
-    @Override
-    public void showWxArticleById(FeedArticleListData datas) {
-        final List<FeedArticleData> newDataList = datas.getDatas();
-        feedArticleAdapter.addData(newDataList);
-        smartRefreshLayout.finishLoadMore();
-    }
-
-    @Override
-    public void showCollectArticleData(int position, FeedArticleListData.FeedArticleData feedArticleData) {
-        feedArticleAdapter.setData(position, feedArticleData);
-    }
-
-    @Override
-    public void showCancelCollectArticleData(int position, FeedArticleListData.FeedArticleData feedArticleData) {
-        feedArticleAdapter.setData(position, feedArticleData);
-    }
-
-    @Override
-    public void showCancelCollectArticleData(int id) {
-        int position = feedArticleAdapter.getPosById(id);
-        if (position == -1) return;
-        FeedArticleData feedArticleData = articleDataList.get(position);
-        feedArticleData.setCollect(false);
-        feedArticleAdapter.setData(position, feedArticleData);
+        if (position == 0)
+            mPresenter.getListNotDone(0);
+        if (position == 1)
+            mPresenter.getListDone(0);
     }
 
 
@@ -138,16 +112,7 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
             }
 
         });
-        feedArticleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                if (feedArticleAdapter.getData().get(position).isCollect()) {
-                    mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
-                } else {
-                    mPresenter.addCollectArticle(position, feedArticleAdapter.getData().get(position));
-                }
-            }
-        });
+
     }
 
     //初始化下拉刷新控件
@@ -157,28 +122,28 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
         smartRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(RefreshLayout refreshLayout) {
-                mPresenter.getWxArtileById(userId);
+                if (position == 0)
+                    mPresenter.getListNotDone(0);
+                if (position == 1)
+                    mPresenter.getListDone(0);
             }
 
 
         });
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(CancelCollectEvent event) {
-        mPresenter.cancelCollectArticle(event.id);
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(LoginEvent accountEvent) {
-        feedArticleAdapter.getData().clear();
-        feedArticleAdapter.notifyDataSetChanged();
-        mPresenter.getWxArtileById(userId);
-        mPresenter.num = 0;
-    }
 
     public void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    public void showListNotDone(TodoData todoData) {
+
+    }
+
+    @Override
+    public void showListDone(TodoData todoData) {
+
     }
 }

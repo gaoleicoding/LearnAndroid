@@ -242,6 +242,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     @Override
     public void showCancelCollectArticleData(int id) {
         int position = feedArticleAdapter.getPosById(id);
+        if(position==-1)return;
         FeedArticleData feedArticleData = articleDataList.get(position);
         feedArticleData.setCollect(false);
         feedArticleAdapter.setData(position, feedArticleData);
