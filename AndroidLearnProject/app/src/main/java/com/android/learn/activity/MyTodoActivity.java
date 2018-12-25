@@ -7,13 +7,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.view.Window;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
-import com.android.learn.base.utils.StatusBarUtil;
 import com.android.learn.fragment.TodoFragment;
 import com.android.learn.view.CustomViewPager;
 
@@ -21,10 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MyTodoActivity extends BaseActivity {
-
+    @BindView(R.id.iv_back)
+    ImageView iv_back;
+    @BindView(R.id.iv_search)
+    ImageView iv_search;
     @BindView(R.id.title)
     TextView tv_title;
     @BindView(R.id.tabLayout)
@@ -51,6 +54,11 @@ public class MyTodoActivity extends BaseActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 //                title.setText(titles.get(tab.getPosition()));
+                if (tab.getPosition() == 0)
+                    iv_search.setVisibility(View.VISIBLE);
+                if (tab.getPosition() == 1)
+                    iv_search.setVisibility(View.GONE);
+
             }
 
             //标签没选中
@@ -76,6 +84,9 @@ public class MyTodoActivity extends BaseActivity {
     @Override
     protected void initData(Bundle bundle) {
         tv_title.setText(getResources().getString(R.string.todo));
+        iv_back.setVisibility(View.VISIBLE);
+        iv_search.setVisibility(View.VISIBLE);
+        iv_search.setImageResource(R.drawable.add_todo);
         Bundle bundle1 = new Bundle();
         bundle1.putInt("position", 0);
         todoFragment = TodoFragment.newInstance(bundle1);
@@ -92,6 +103,17 @@ public class MyTodoActivity extends BaseActivity {
         //将TabLayout和ViewPager关联起来
         tabLayout.setupWithViewPager(viewPager);
         initTab();
+    }
+
+    @OnClick({R.id.iv_search})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.iv_search:
+                TodoAddActivity.startActivity(MyTodoActivity.this, null);
+                break;
+
+        }
+
     }
 
     public class CourseDiscussAdapter extends FragmentPagerAdapter {

@@ -28,6 +28,8 @@ public final class RetrofitProvider {
     private ApiService restService;
     public static String netCachePath;
     public final String BASE_URL = "http://www.wanandroid.com/";
+    public PersistentCookieJar persistentCookieJar;
+    public SharedPrefsCookiePersistor sharedPrefsCookiePersistor;
 
     private RetrofitProvider() {
     }
@@ -36,6 +38,8 @@ public final class RetrofitProvider {
     public RetrofitProvider builder() {
         netCachePath = CustomApplication.context.getExternalFilesDir("net_cache").getAbsolutePath();
         if (mOkHttpClient == null) {
+            sharedPrefsCookiePersistor=new SharedPrefsCookiePersistor(CustomApplication.context);
+            persistentCookieJar=new PersistentCookieJar(new SetCookieCache(), sharedPrefsCookiePersistor);
             mOkHttpClient = new OkHttpClient.Builder()
                     .addNetworkInterceptor(new HttpLoggingInterceptor())
                     .addNetworkInterceptor(new OnlineCacheInterceptor())//有网缓存拦截器
@@ -49,7 +53,7 @@ public final class RetrofitProvider {
 //                    .addInterceptor(new TokenInterceptor())//token过期，自动刷新Token
 //                    .addInterceptor(new SignInterceptor())//所有的接口，默认需要带上sign,timestamp2个参数
 //                    .addNetworkInterceptor(new ParamsEncryptInterceptor())//参数加密,一般针对表单中的字段和值进行加密，防止中途第三方进行窥探和篡改
-                    .cookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(CustomApplication.context)))
+                    .cookieJar(persistentCookieJar)
                     .connectTimeout(5, TimeUnit.SECONDS)
                     .readTimeout(5, TimeUnit.SECONDS)
                     .writeTimeout(5, TimeUnit.SECONDS)
@@ -60,7 +64,7 @@ public final class RetrofitProvider {
             mRetrofit = new Retrofit.Builder()
                     .client(mOkHttpClient)
                     .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(CustomizeGsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
         }

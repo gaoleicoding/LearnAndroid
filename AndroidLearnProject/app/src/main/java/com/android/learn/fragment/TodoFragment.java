@@ -1,17 +1,20 @@
 package com.android.learn.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.android.learn.R;
-import com.android.learn.activity.ArticleDetailActivity;
+import com.android.learn.activity.TodoEditActivity;
 import com.android.learn.adapter.DividerItemDecoration;
 import com.android.learn.adapter.TodoQuickAdapter;
+import com.android.learn.base.event.UpdateDoneEvent;
+import com.android.learn.base.event.UpdateTodoEvent;
 import com.android.learn.base.fragment.BaseMvpFragment;
+import com.android.learn.base.mmodel.BaseData;
 import com.android.learn.base.mmodel.TodoData;
+import com.android.learn.base.mmodel.TodoData.DatasBean;
 import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.TodoContract;
 import com.android.learn.mpresenter.TodoPresenter;
@@ -19,6 +22,10 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +41,7 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
     private List<TodoData.DatasBean> todoList;
     private TodoQuickAdapter todoAdapter;
 
-    int position;
+    int fragmentPosition, clickId;
 
     public static TodoFragment newInstance(Bundle bundle) {
         TodoFragment testFragment = new TodoFragment();
@@ -45,18 +52,19 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
 
     @Override
     public void initData(Bundle bundle) {
-        position = bundle.getInt("position", 0);
+        fragmentPosition = bundle.getInt("position", 0);
         initSmartRefreshLayout();
         initRecyclerView();
     }
 
     @Override
     public void initView(View view) {
+        EventBus.getDefault().register(this);
     }
 
     @Override
     public int setContentLayout() {
-        return R.layout.fragment_wechat_sub;
+        return R.layout.fragment_todo;
     }
 
     @Override
@@ -72,16 +80,16 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
     @Override
     protected void loadData() {
         CustomProgressDialog.show(getActivity());
-        if (position == 0)
+        if (fragmentPosition == 0)
             mPresenter.getListNotDone(0);
-        if (position == 1)
+        if (fragmentPosition == 1)
             mPresenter.getListDone(0);
     }
 
 
     private void initRecyclerView() {
         todoList = new ArrayList<>();
-        todoAdapter = new TodoQuickAdapter(getActivity(), todoList, position);
+        todoAdapter = new TodoQuickAdapter(getActivity(), todoList, fragmentPosition);
         article_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL_LIST));
         article_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -93,14 +101,42 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
         todoAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-//                Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
-//                Bundle bundle = new Bundle();
-//                intent.putExtras(bundle);
-//                startActivity(intent);
+                DatasBean datasBean = null;
+                if (fragmentPosition == 0) {
+                    datasBean = todoAdapter.getData().get(position);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("todo_item", datasBean);
+                    TodoEditActivity.startActivity(getActivity(), bundle);
+                }
             }
 
         });
+        todoAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
 
+                DatasBean datasBean = todoAdapter.getData().get(position);
+                switch (view.getId()) {
+                    case R.id.iv_item_todo:
+                        if (fragmentPosition == 0) {
+                            clickId = datasBean.getId();
+                            mPresenter.updateTodoStatus(clickId, 1);
+                            todoAdapter.remove(position);
+                        }
+                        if (fragmentPosition == 1) {
+                            clickId = datasBean.getId();
+                            mPresenter.updateTodoStatus(clickId, 0);
+                            todoAdapter.remove(position);
+                        }
+
+                        break;
+                    case R.id.iv_item_delete:
+                        mPresenter.deleteTodo(datasBean.getId());
+                        todoAdapter.remove(position);
+                        break;
+                }
+            }
+        });
     }
 
     //初始化下拉刷新控件
@@ -110,9 +146,9 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
         smartRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(RefreshLayout refreshLayout) {
-                if (position == 0)
+                if (fragmentPosition == 0)
                     mPresenter.getListNotDone(0);
-                if (position == 1)
+                if (fragmentPosition == 1)
                     mPresenter.getListDone(0);
             }
 
@@ -120,9 +156,9 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
         });
     }
 
-
     public void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -142,5 +178,33 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
         todoAdapter.addData(newDataList);
 
         smartRefreshLayout.finishLoadMore();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(UpdateDoneEvent event) {
+        if (fragmentPosition == 1) {
+            todoAdapter.getData().clear();
+            mPresenter.donePage = 1;
+            mPresenter.getListDone(0);
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(UpdateTodoEvent event) {
+        if (fragmentPosition == 0) {
+            todoAdapter.getData().clear();
+            mPresenter.notDonePage = 1;
+            mPresenter.getListNotDone(0);
+        }
+    }
+
+    @Override
+    public void showUpdateTodoStatus(BaseData baseData) {
+        if (fragmentPosition == 0) {
+            EventBus.getDefault().post(new UpdateDoneEvent());
+        }
+        if (fragmentPosition == 1) {
+            EventBus.getDefault().post(new UpdateTodoEvent());
+        }
     }
 }

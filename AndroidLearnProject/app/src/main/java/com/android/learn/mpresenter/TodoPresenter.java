@@ -15,7 +15,7 @@ import io.reactivex.Observable;
 
 
 public class TodoPresenter extends BasePresenter<TodoContract.View> implements TodoContract.Presenter {
-    int notDonePage = 1, donePage = 1;
+    public int notDonePage = 1, donePage = 1;
 
     @Override
     public void getListNotDone(int type) {
@@ -50,34 +50,6 @@ public class TodoPresenter extends BasePresenter<TodoContract.View> implements T
     }
 
     @Override
-    public void addTodo(Map<String, String> map) {
-        Observable observable = mRestService.addTodo(map);
-
-        addSubscribe(observable, new BaseObserver<BaseData>(false) {
-
-            @Override
-            public void onNext(BaseData data) {
-                if (data.errorCode == BaseData.SUCCESS) {
-                } else ResponseStatusUtil.handleResponseStatus(data);
-            }
-        });
-    }
-
-    @Override
-    public void updateTodo(int id, Map<String, String> map) {
-        Observable observable = mRestService.updateTodo(id, map);
-
-        addSubscribe(observable, new BaseObserver<BaseData>(false) {
-
-            @Override
-            public void onNext(BaseData data) {
-                if (data.errorCode == BaseData.SUCCESS) {
-                } else ResponseStatusUtil.handleResponseStatus(data);
-            }
-        });
-    }
-
-    @Override
     public void deleteTodo(int id) {
         Observable observable = mRestService.deleteTodo(id);
 
@@ -90,7 +62,7 @@ public class TodoPresenter extends BasePresenter<TodoContract.View> implements T
             }
         });
     }
-
+    //status: 0或1，传1代表未完成到已完成
     @Override
     public void updateTodoStatus(int id, int status) {
         Observable observable = mRestService.updateTodoStatus(id, status);
@@ -100,6 +72,7 @@ public class TodoPresenter extends BasePresenter<TodoContract.View> implements T
             @Override
             public void onNext(BaseData data) {
                 if (data.errorCode == BaseData.SUCCESS) {
+                    mView.showUpdateTodoStatus(data);
                 } else ResponseStatusUtil.handleResponseStatus(data);
             }
         });

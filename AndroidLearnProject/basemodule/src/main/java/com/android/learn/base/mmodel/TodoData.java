@@ -1,5 +1,6 @@
 package com.android.learn.base.mmodel;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class TodoData {
@@ -79,7 +80,7 @@ public class TodoData {
         this.datas = datas;
     }
 
-    public static class DatasBean {
+    public static class DatasBean implements Serializable{
         /**
          * completeDate : null
          * completeDateStr :

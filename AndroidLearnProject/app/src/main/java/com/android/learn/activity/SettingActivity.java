@@ -17,6 +17,7 @@ import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.event.ChangeNightEvent;
 import com.android.learn.base.event.LogoutEvent;
 import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.thirdframe.retrofit.RetrofitProvider;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
@@ -81,11 +82,13 @@ public class SettingActivity extends BaseActivity {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
                 if (isChecked)
                     SPUtils.setParam(SettingActivity.this, "nightMode", new Boolean(true));
                 else SPUtils.setParam(SettingActivity.this, "nightMode", new Boolean(false));
                 useNightMode(isChecked);
                 EventBus.getDefault().post(new ChangeNightEvent());
+
             }
         });
         EventBus.getDefault().register(this);
@@ -110,7 +113,9 @@ public class SettingActivity extends BaseActivity {
                     RegisterLoginActivity.startActivity(this);
                     return;
                 }
+                UserUtil.setLogined(false);
                 EventBus.getDefault().post(new LogoutEvent());
+                RetrofitProvider.getInstance().sharedPrefsCookiePersistor.clear();
                 finish();
                 break;
         }

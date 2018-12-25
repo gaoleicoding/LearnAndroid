@@ -87,15 +87,15 @@ public interface ApiService {
     Observable<BaseResponse<TodoData>> getListDone(@Path("type") int type, @Path("page") int page);
 
     @POST("lg/todo/add/json")
-    Observable<BaseResponse> addTodo(@QueryMap Map<String, String> map);
+    Observable<BaseData> addTodo(@QueryMap Map<String, Object> map);
 
     @POST("lg/todo/update/{id}/json")
-    Observable<BaseResponse> updateTodo(@Path("id") int id, @QueryMap Map<String, String> map);
+    Observable<BaseData> updateTodo(@Path("id") int id, @QueryMap Map<String, Object> map);
 
     @POST("lg/todo/delete/{id}/json")
-    Observable<BaseResponse> deleteTodo(@Path("id") int id);
+    Observable<BaseData> deleteTodo(@Path("id") int id);
 
     //status: 0或1，传1代表未完成到已完成，反之则反之。
     @POST("lg/todo/done/{id}/json")
-    Observable<BaseResponse> updateTodoStatus(@Path("id") int id, @Query("status") int status);
+    Observable<BaseData> updateTodoStatus(@Path("id") int id, @Query("status") int status);
 }

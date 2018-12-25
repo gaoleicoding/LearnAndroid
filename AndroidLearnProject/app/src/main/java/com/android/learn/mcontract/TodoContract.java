@@ -1,5 +1,6 @@
 package com.android.learn.mcontract;
 
+import com.android.learn.base.mmodel.BaseData;
 import com.android.learn.base.mmodel.TodoData;
 
 import java.util.Map;
@@ -13,13 +14,9 @@ public class TodoContract {
     public interface Presenter {
 
 
-        void getListNotDone(int type );
+        void getListNotDone(int type);
 
         void getListDone(int type);
-
-        void addTodo(Map<String, String> map);
-
-        void updateTodo(int id, Map<String, String> map);
 
         void deleteTodo(int id);
 
@@ -32,5 +29,6 @@ public class TodoContract {
         void showListNotDone(TodoData todoData);
 
         void showListDone(TodoData todoData);
+        void showUpdateTodoStatus(BaseData todoData);
     }
 }

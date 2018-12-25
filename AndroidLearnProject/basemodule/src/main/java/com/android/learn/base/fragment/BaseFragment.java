@@ -23,7 +23,6 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
     private FrameLayout mLlContent;
     View subFragmentView;
-    private RelativeLayout mLlLoading;
     private Button bt_error_refresh;
     public LinearLayout mErrorPageView;
     private Unbinder mBinder;
@@ -54,7 +53,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         mLlContent = view.findViewById(R.id.base_fragment_content);
         mErrorPageView = view.findViewById(R.id.ll_base_error_content);
         bt_error_refresh = view.findViewById(R.id.bt_error_refresh);
-        mLlLoading = view.findViewById(R.id.ll_loading);
 //        if (!NetworkUtil.isNetworkAvailable(getActivity()))
 //            showErrorPage(true);
         bt_error_refresh.setOnClickListener(this);
@@ -77,14 +75,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     }
 
-    /**
-     * 显示加载进度条
-     *
-     * @param isShow
-     */
-    public void setLoading(boolean isShow) {
-        mLlLoading.setVisibility(isShow ? View.VISIBLE : View.GONE);
-    }
 
 
     /**

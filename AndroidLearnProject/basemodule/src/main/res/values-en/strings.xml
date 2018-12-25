@@ -26,8 +26,8 @@
     <string name="collect">Collect</string>
     <string name="todo">Todo</string>
     <string name="done">Done</string>
-    <string name="title">Title</string>
-    <string name="content">Content</string>
+    <string name="title">Title：</string>
+    <string name="content">Content：</string>
     <string name="email_info_hint">please input contnet</string>
     <string name="help_feedback">Feedback</string>
     <string name="add_attachment">Add attachment</string>
@@ -53,4 +53,12 @@
     <string name="welcome_learn_android">Welcome learn android</string>
     <string name="press_exit">Press again to exit the program</string>
     <string name="search_content_no">no search key word</string>
+    <string name="save">save</string>
+    <string name="detail">Detail</string>
+    <string name="todo_finish_time">finish time：</string>
+    <string name="operate_success">successful operation</string>
+    <string name="operate_failure">failed operation</string>
+    <string name="add">Add</string>
+    <string name="data_empty">data is empty</string>
+    <string name="select_time">select time</string>
 </resources>

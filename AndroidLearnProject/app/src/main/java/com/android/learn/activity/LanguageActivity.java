@@ -77,6 +77,8 @@ public class LanguageActivity extends BaseActivity {
         cb_system.setChecked(false);
         cb_chinese.setChecked(false);
         cb_english.setChecked(false);
+
+
         switch (view.getId()) {
             case R.id.cb_system:
                 selectLanguage(0);

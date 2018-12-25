@@ -144,11 +144,18 @@
 -dontwarn javax.annotation.Nullable
 -dontwarn javax.annotation.ParametersAreNonnullByDefault
 
+#retrofit2  混淆
+-dontwarn javax.annotation.**
+-dontwarn javax.inject.**
+# OkHttp3
+-dontwarn okhttp3.logging.**
+-keep class okhttp3.internal.**{*;}
+-dontwarn okio.**
 # Retrofit
 -dontwarn retrofit2.**
 -keep class retrofit2.** { *; }
-#-keepattributes Signature-keepattributes Exceptions
-
+-keepattributes Signature
+-keepattributes Exceptions
 # RxJava RxAndroid
 -dontwarn sun.misc.**
 -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
@@ -161,11 +168,13 @@
 -keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
     rx.internal.util.atomic.LinkedQueueNode consumerNode;
 }
--dontnote rx.internal.util.PlatformDependent
+
 # Gson
 -keep class com.google.gson.stream.** { *; }
 -keepattributes EnclosingMethod
--keep class org.xz_sale.entity.**{*;}
+#改成自己的实体类包
+-keep class com.android.learn.base.mmodel.**{*;}
+
 
 # ButterKnife
 -keep class butterknife.** { *;}
@@ -192,15 +201,13 @@
 
 #greendao3.2.0,此是针对3.2.0，如果是之前的，可能需要更换下包名
 # # -------------------------------------------
--keep class freemarker.** { *; }
--dontwarn freemarker.**
-
 -keep class org.greenrobot.greendao.**{*;}
--dontwarn org.greenrobot.greendao.**
-
 -keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
 public static java.lang.String TABLENAME;
 }
+-keep class **$Properties
+
+
 #友盟
 -keep class com.umeng.** {*;}
 -keepclassmembers class * {

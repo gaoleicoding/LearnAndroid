@@ -30,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.learn.activity.LanguageActivity;
 import com.android.learn.activity.SearchResultActivity;
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.adapter.SearchRecordAdapter;
@@ -41,6 +42,7 @@ import com.android.learn.base.event.RestartMainEvent;
 import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.utils.KeyboardUtils;
 import com.android.learn.base.utils.LanguageUtil;
+import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.PermissionUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.ScreenUtils;
@@ -116,6 +118,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     ProjectFragment projectFragment;
     boolean isSearching;
     SearchRecordAdapter searchRecordAdapter;
+    String TAG="MainActivity";
 
     @Override
     protected int getLayoutId() {
@@ -154,7 +157,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         //将TabLayout和ViewPager关联起来
         tabLayout.setupWithViewPager(viewPager);
         initTab();
-        loadAnimation();
         initSearchRecord();
         iv_search.setVisibility(View.VISIBLE);
         Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
@@ -240,8 +242,19 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
             }
         });
-        //默认选中的Tab
-        tabLayout.getTabAt(0).getCustomView().setSelected(true);
+        Boolean isRestartMain = (Boolean) SPUtils.getParam(this, "isRestartMain", new Boolean(false));
+        LogUtil.d(TAG,"isRestartMain："+isRestartMain);
+        if (isRestartMain) {
+            //切换语言或切换字体大小，重启MainActivity则会走这里
+            tabLayout.getTabAt(4).getCustomView().setSelected(true);
+            SPUtils.setParam(MainActivity.this, "isRestartMain", new Boolean(false));
+        } else {
+            //默认选中的Tab
+            tabLayout.getTabAt(0).getCustomView().setSelected(true);
+            loadSVGAAnimation();
+
+        }
+
     }
 
     @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search, R.id.tv_search_clear})
@@ -329,7 +342,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     }
 
 
-    private void loadAnimation() {
+    private void loadSVGAAnimation() {
         SVGAParser parser = new SVGAParser(this);
         resetDownloader(parser);
         try {
@@ -442,7 +455,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         overridePendingTransition(0, 0);
         startActivity(intent);
         event.activity.finish();
-
+        SPUtils.setParam(MainActivity.this, "isRestartMain", new Boolean(true));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

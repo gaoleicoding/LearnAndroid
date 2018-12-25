@@ -1,6 +1,7 @@
 package com.android.learn.adapter;
 
 import android.content.Context;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.android.learn.R;
@@ -49,5 +50,6 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseV
         if ("MyCollectActivity".equals(fromWhere)) {
             helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select);
         }
+
     }
 }

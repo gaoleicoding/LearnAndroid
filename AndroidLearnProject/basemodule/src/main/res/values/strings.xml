@@ -26,8 +26,8 @@
     <string name="collect">收藏</string>
     <string name="todo">待办</string>
     <string name="done">已完成</string>
-    <string name="title">标题</string>
-    <string name="content">内容</string>
+    <string name="title">标题：</string>
+    <string name="content">内容：</string>
     <string name="email_info_hint">请输入你要发送的邮件信息</string>
     <string name="help_feedback">反馈与建议</string>
     <string name="add_attachment">添加附件</string>
@@ -53,6 +53,14 @@
     <string name="welcome_learn_android">欢迎来到 学Android</string>
     <string name="press_exit">再按一次退出程序</string>
     <string name="search_content_no">请输入搜索关键字</string>
+    <string name="save">保存</string>
+    <string name="detail">详情</string>
+    <string name="todo_finish_time">完成时间：</string>
+    <string name="operate_success">操作成功</string>
+    <string name="operate_failure">操作失败</string>
+    <string name="add">添加</string>
+    <string name="data_empty">数据为空</string>
+    <string name="select_time">请选择时间</string>
 
 
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">程序出错了，抱歉给您带来不便\n为了尽快解决此问题，您可以点击错误详情，并复制错误代码或截图，发邮件反馈到技术支持邮箱：gaoleiandroid@163.com</string>
