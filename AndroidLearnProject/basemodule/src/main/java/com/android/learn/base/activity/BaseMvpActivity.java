@@ -1,11 +1,11 @@
 package com.android.learn.base.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.android.learn.base.mpresenter.BasePresenter;
-
-
+import com.android.learn.base.utils.LanguageUtil;
 
 
 public abstract class BaseMvpActivity< P extends BasePresenter> extends BaseActivity {
@@ -27,7 +27,11 @@ public abstract class BaseMvpActivity< P extends BasePresenter> extends BaseActi
         mPresenter.dettach();
         super.onDestroy();
     }
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //语言切换
+        super.attachBaseContext(LanguageUtil.setLocal(newBase));
+    }
     //实例presenter
     public abstract P initPresenter();
     //加载数据

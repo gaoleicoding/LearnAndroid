@@ -14,9 +14,11 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.ChangeNightEvent;
 import com.android.learn.base.event.LogoutEvent;
 import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.thirdframe.retrofit.RetrofitProvider;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.SPUtils;
@@ -31,7 +33,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class SettingActivity extends BaseActivity {
+public class SettingActivity extends BaseMvpActivity {
     @BindView(R.id.iv_back)
     ImageView iv_back;
     @BindView(R.id.title)
@@ -122,9 +124,12 @@ public class SettingActivity extends BaseActivity {
     }
 
     @Override
-    protected void attachBaseContext(Context newBase) {
-        //语言切换
-        super.attachBaseContext(LanguageUtil.setLocal(newBase));
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    protected void loadData() {
 
     }
 

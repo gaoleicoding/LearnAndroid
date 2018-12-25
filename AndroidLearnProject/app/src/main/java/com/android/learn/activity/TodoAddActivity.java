@@ -45,9 +45,6 @@ public class TodoAddActivity extends BaseMvpActivity<TodoAddPresenter> implement
     TextInputEditText et_content;
     @BindView(R.id.todo_date)
     TextView mTodoDate;
-    @BindView(R.id.save_todo)
-    Button mSaveTodo;
-    DatasBean datasBean;
 
     public static void startActivity(Context context, Bundle bundle) {
         Intent intent = new Intent(context, TodoAddActivity.class);
@@ -111,11 +108,6 @@ public class TodoAddActivity extends BaseMvpActivity<TodoAddPresenter> implement
     @Override
     protected void loadData() {
 
-    }
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        //语言切换
-        super.attachBaseContext(LanguageUtil.setLocal(newBase));
     }
 
     @Override

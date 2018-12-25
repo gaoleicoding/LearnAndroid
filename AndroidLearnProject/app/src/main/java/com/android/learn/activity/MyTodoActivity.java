@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.activity.BaseMvpActivity;
+import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.fragment.TodoFragment;
 import com.android.learn.view.CustomViewPager;
 
@@ -23,7 +25,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class MyTodoActivity extends BaseActivity {
+public class MyTodoActivity extends BaseMvpActivity {
     @BindView(R.id.iv_back)
     ImageView iv_back;
     @BindView(R.id.iv_search)
@@ -113,6 +115,16 @@ public class MyTodoActivity extends BaseActivity {
                 break;
 
         }
+
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    protected void loadData() {
 
     }
 

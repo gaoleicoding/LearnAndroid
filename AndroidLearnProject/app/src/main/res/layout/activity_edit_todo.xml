@@ -31,8 +31,8 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:background="@null"
-            android:textColor="@android:color/black"
-            android:textColorHint="#B5B3B5"
+            android:textColor="@color/text_color"
+            skin:enable="true"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -64,8 +64,8 @@
             android:background="@null"
             android:gravity="left|top"
             android:minLines="8"
-            android:textColor="@android:color/black"
-            android:textColorHint="#B5B3B5"
+            android:textColor="@color/text_color"
+            skin:enable="true"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -83,7 +83,8 @@
         android:drawablePadding="5dp"
         android:padding="@dimen/dp_10"
         android:text="@string/select_time"
-        android:textColor="@android:color/black"
+        android:textColor="@color/text_color"
+        skin:enable="true"
         android:textSize="16sp" />
 
     <View
@@ -93,7 +94,7 @@
         android:background="#B5B3B5" />
 
 
-    <Button
+    <TextView
         android:id="@+id/save_todo"
         style="@style/btn_selector_match_style"
         android:text="@string/save"

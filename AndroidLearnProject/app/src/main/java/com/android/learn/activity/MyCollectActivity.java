@@ -134,12 +134,6 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
         });
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        //语言切换
-        super.attachBaseContext(LanguageUtil.setLocal(newBase));
-
-    }
 
 
 }

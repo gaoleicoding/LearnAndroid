@@ -10,13 +10,15 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.activity.BaseMvpActivity;
+import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.view.Html5Webview;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class ArticleDetailActivity extends BaseActivity {
+public class ArticleDetailActivity extends BaseMvpActivity {
 
     @BindView(R.id.webview_article)
     Html5Webview webview_article;
@@ -49,12 +51,7 @@ public class ArticleDetailActivity extends BaseActivity {
         iv_search.setImageResource(R.drawable.icon_share);
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        //语言切换
-        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
-    }
 
     @OnClick({R.id.iv_search})
     public void click(View view) {
@@ -73,5 +70,15 @@ public class ArticleDetailActivity extends BaseActivity {
         //创建分享的Dialog
         share_intent = Intent.createChooser(share_intent, "分享");
         startActivity(share_intent);
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    protected void loadData() {
+
     }
 }

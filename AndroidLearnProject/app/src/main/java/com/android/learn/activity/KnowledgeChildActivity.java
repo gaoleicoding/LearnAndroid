@@ -166,10 +166,5 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
             }
         });
     }
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        //语言切换
-        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
-    }
 }

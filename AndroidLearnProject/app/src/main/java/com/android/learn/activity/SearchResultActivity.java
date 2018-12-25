@@ -148,11 +148,6 @@ public class SearchResultActivity extends BaseMvpActivity<SearchPresenter> imple
         });
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        //语言切换
-        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 
-    }
 
 }

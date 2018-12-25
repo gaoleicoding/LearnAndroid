@@ -16,7 +16,8 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/white"
+        android:background="@color/activity_bg_color"
+        skin:enable="true"
         app:tabIndicatorColor="@color/app_color"
         app:tabIndicatorHeight="1dp" />
 
