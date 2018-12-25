@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.activity.MyCollectActivity;
+import com.android.learn.activity.MyTodoActivity;
 import com.android.learn.activity.RegisterLoginActivity;
 import com.android.learn.activity.SettingActivity;
 import com.android.learn.base.event.LoginEvent;
@@ -47,7 +48,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
 
     }
 
-    @OnClick({R.id.iv_user_photo, R.id.my_setting_layout, R.id.my_collect_layout})
+    @OnClick({R.id.iv_user_photo, R.id.my_setting_layout, R.id.my_collect_layout,R.id.my_todo_layout})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.my_collect_layout:
@@ -57,6 +58,9 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
                     return;
                 }
                 MyCollectActivity.startActivity(getActivity());
+                break;
+            case R.id.my_todo_layout:
+                MyTodoActivity.startActivity(getActivity());
                 break;
             case R.id.my_setting_layout:
                 SettingActivity.startActivity(getActivity());

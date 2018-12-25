@@ -25,8 +25,9 @@
     <string name="user_not_login">你还没有登录,请登录</string>
     <string name="collect">收藏</string>
     <string name="todo">待办</string>
-    <string name="email_title">标题</string>
-    <string name="email_content">内容</string>
+    <string name="done">已完成</string>
+    <string name="title">标题</string>
+    <string name="content">内容</string>
     <string name="email_info_hint">请输入你要发送的邮件信息</string>
     <string name="help_feedback">反馈与建议</string>
     <string name="add_attachment">添加附件</string>

@@ -8,27 +8,17 @@ import android.view.View;
 
 import com.android.learn.R;
 import com.android.learn.activity.ArticleDetailActivity;
-import com.android.learn.adapter.ArticleQuickAdapter;
 import com.android.learn.adapter.DividerItemDecoration;
-import com.android.learn.base.event.CancelCollectEvent;
-import com.android.learn.base.event.LoginEvent;
+import com.android.learn.adapter.TodoQuickAdapter;
 import com.android.learn.base.fragment.BaseMvpFragment;
-import com.android.learn.base.mmodel.FeedArticleListData;
-import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.mmodel.TodoData;
 import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.TodoContract;
-import com.android.learn.mcontract.WechatSubContract;
 import com.android.learn.mpresenter.TodoPresenter;
-import com.android.learn.mpresenter.WechatSubPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +31,8 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
     SmartRefreshLayout smartRefreshLayout;
-    private List<FeedArticleData> articleDataList;
-    private ArticleQuickAdapter feedArticleAdapter;
+    private List<TodoData.DatasBean> todoList;
+    private TodoQuickAdapter todoAdapter;
 
     int position;
 
@@ -62,7 +52,6 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
 
     @Override
     public void initView(View view) {
-        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -91,24 +80,23 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
 
 
     private void initRecyclerView() {
-        articleDataList = new ArrayList<>();
-        feedArticleAdapter = new ArticleQuickAdapter(getActivity(), articleDataList, "WechatSubFragment");
+        todoList = new ArrayList<>();
+        todoAdapter = new TodoQuickAdapter(getActivity(), todoList, position);
         article_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL_LIST));
         article_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         //解决数据加载完成后, 没有停留在顶部的问题
         article_recyclerview.setFocusable(false);
-        article_recyclerview.setAdapter(feedArticleAdapter);
+        article_recyclerview.setAdapter(todoAdapter);
 
-        feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        todoAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("url", feedArticleAdapter.getData().get(position).getLink());
-                intent.putExtras(bundle);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
+//                Bundle bundle = new Bundle();
+//                intent.putExtras(bundle);
+//                startActivity(intent);
             }
 
         });
@@ -139,11 +127,20 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
 
     @Override
     public void showListNotDone(TodoData todoData) {
+        final List<TodoData.DatasBean> newDataList = todoData.getDatas();
+
+        todoAdapter.addData(newDataList);
+
+        smartRefreshLayout.finishLoadMore();
 
     }
 
     @Override
     public void showListDone(TodoData todoData) {
+        final List<TodoData.DatasBean> newDataList = todoData.getDatas();
 
+        todoAdapter.addData(newDataList);
+
+        smartRefreshLayout.finishLoadMore();
     }
 }

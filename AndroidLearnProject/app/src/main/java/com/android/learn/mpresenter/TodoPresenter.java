@@ -15,7 +15,7 @@ import io.reactivex.Observable;
 
 
 public class TodoPresenter extends BasePresenter<TodoContract.View> implements TodoContract.Presenter {
-    int notDonePage = 0, donePage = 0;
+    int notDonePage = 1, donePage = 1;
 
     @Override
     public void getListNotDone(int type) {

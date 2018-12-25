@@ -25,8 +25,9 @@
     <string name="user_not_login">Please login first</string>
     <string name="collect">Collect</string>
     <string name="todo">Todo</string>
-    <string name="email_title">Title</string>
-    <string name="email_content">Content</string>
+    <string name="done">Done</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
     <string name="email_info_hint">please input contnet</string>
     <string name="help_feedback">Feedback</string>
     <string name="add_attachment">Add attachment</string>

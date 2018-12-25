@@ -1,12 +1,8 @@
 package com.android.learn.mcontract;
 
-import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.TodoData;
 
 import java.util.Map;
-
-import retrofit2.http.Path;
-import retrofit2.http.QueryMap;
 
 /**
  * Created by gaolei on 2018/6/18.

@@ -1,63 +1,133 @@
 package com.android.learn.base.mmodel;
 
-import com.google.gson.Gson;
-
 import java.util.List;
 
 public class TodoData {
 
 
     /**
-     * doneList : [{"date":1532793600000,"todoList":[{"completeDate":1533052800000,"completeDateStr":"2018-08-01","content":"这里可以记录笔记，备忘信息等。","date":1532793600000,"dateStr":"2018-07-29","id":82,"status":1,"title":"已经完成的事情","type":0,"userId":2}]}]
-     * todoList : [{"date":1532016000000,"todoList":[{"completeDate":null,"completeDateStr":"","content":"","date":1532016000000,"dateStr":"2018-07-20","id":73,"status":0,"title":"第一件未完成的事情","type":0,"userId":2}]},{"date":1532448000000,"todoList":[{"completeDate":null,"completeDateStr":"","content":"","date":1532448000000,"dateStr":"2018-07-25","id":80,"status":0,"title":"第二件未完成的事情","type":0,"userId":2}]}]
-     * type : 0
+     * curPage : 1
+     * datas : [{"completeDate":null,"completeDateStr":"","content":"圣诞节快乐","date":1545667200000,"dateStr":"2018-12-25","id":5566,"priority":0,"status":0,"title":"圣诞节","type":0,"userId":13479},{"completeDate":null,"completeDateStr":"","content":"圣诞夜快乐","date":1545580800000,"dateStr":"2018-12-24","id":5564,"priority":0,"status":0,"title":"圣诞夜","type":0,"userId":13479}]
+     * offset : 0
+     * over : true
+     * pageCount : 1
+     * size : 20
+     * total : 2
      */
 
-    private int type;
-    private List<DoneListBean> doneList;
-    private List<TodoListBeanXX> todoList;
+    private int curPage;
+    private int offset;
+    private boolean over;
+    private int pageCount;
+    private int size;
+    private int total;
+    private List<DatasBean> datas;
 
-    public static TodoData objectFromData(String str) {
-
-        return new Gson().fromJson(str, TodoData.class);
+    public int getCurPage() {
+        return curPage;
     }
 
-    public int getType() {
-        return type;
+    public void setCurPage(int curPage) {
+        this.curPage = curPage;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public int getOffset() {
+        return offset;
     }
 
-    public List<DoneListBean> getDoneList() {
-        return doneList;
+    public void setOffset(int offset) {
+        this.offset = offset;
     }
 
-    public void setDoneList(List<DoneListBean> doneList) {
-        this.doneList = doneList;
+    public boolean isOver() {
+        return over;
     }
 
-    public List<TodoListBeanXX> getTodoList() {
-        return todoList;
+    public void setOver(boolean over) {
+        this.over = over;
     }
 
-    public void setTodoList(List<TodoListBeanXX> todoList) {
-        this.todoList = todoList;
+    public int getPageCount() {
+        return pageCount;
     }
 
-    public static class DoneListBean {
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public List<DatasBean> getDatas() {
+        return datas;
+    }
+
+    public void setDatas(List<DatasBean> datas) {
+        this.datas = datas;
+    }
+
+    public static class DatasBean {
         /**
-         * date : 1532793600000
-         * todoList : [{"completeDate":1533052800000,"completeDateStr":"2018-08-01","content":"这里可以记录笔记，备忘信息等。","date":1532793600000,"dateStr":"2018-07-29","id":82,"status":1,"title":"已经完成的事情","type":0,"userId":2}]
+         * completeDate : null
+         * completeDateStr :
+         * content : 圣诞节快乐
+         * date : 1545667200000
+         * dateStr : 2018-12-25
+         * id : 5566
+         * priority : 0
+         * status : 0
+         * title : 圣诞节
+         * type : 0
+         * userId : 13479
          */
 
+        private Object completeDate;
+        private String completeDateStr;
+        private String content;
         private long date;
-        private List<TodoListBean> todoList;
+        private String dateStr;
+        private int id;
+        private int priority;
+        private int status;
+        private String title;
+        private int type;
+        private int userId;
 
-        public static DoneListBean objectFromData(String str) {
+        public Object getCompleteDate() {
+            return completeDate;
+        }
 
-            return new Gson().fromJson(str, DoneListBean.class);
+        public void setCompleteDate(Object completeDate) {
+            this.completeDate = completeDate;
+        }
+
+        public String getCompleteDateStr() {
+            return completeDateStr;
+        }
+
+        public void setCompleteDateStr(String completeDateStr) {
+            this.completeDateStr = completeDateStr;
+        }
+
+        public String getContent() {
+            return content;
+        }
+
+        public void setContent(String content) {
+            this.content = content;
         }
 
         public long getDate() {
@@ -68,265 +138,60 @@ public class TodoData {
             this.date = date;
         }
 
-        public List<TodoListBean> getTodoList() {
-            return todoList;
+        public String getDateStr() {
+            return dateStr;
         }
 
-        public void setTodoList(List<TodoListBean> todoList) {
-            this.todoList = todoList;
+        public void setDateStr(String dateStr) {
+            this.dateStr = dateStr;
         }
 
-        public static class TodoListBean {
-            /**
-             * completeDate : 1533052800000
-             * completeDateStr : 2018-08-01
-             * content : 这里可以记录笔记，备忘信息等。
-             * date : 1532793600000
-             * dateStr : 2018-07-29
-             * id : 82
-             * status : 1
-             * title : 已经完成的事情
-             * type : 0
-             * userId : 2
-             */
-
-            private long completeDate;
-            private String completeDateStr;
-            private String content;
-            private long date;
-            private String dateStr;
-            private int id;
-            private int status;
-            private String title;
-            private int type;
-            private int userId;
-
-            public static TodoListBean objectFromData(String str) {
-
-                return new Gson().fromJson(str, TodoListBean.class);
-            }
-
-            public long getCompleteDate() {
-                return completeDate;
-            }
-
-            public void setCompleteDate(long completeDate) {
-                this.completeDate = completeDate;
-            }
-
-            public String getCompleteDateStr() {
-                return completeDateStr;
-            }
-
-            public void setCompleteDateStr(String completeDateStr) {
-                this.completeDateStr = completeDateStr;
-            }
-
-            public String getContent() {
-                return content;
-            }
-
-            public void setContent(String content) {
-                this.content = content;
-            }
-
-            public long getDate() {
-                return date;
-            }
-
-            public void setDate(long date) {
-                this.date = date;
-            }
-
-            public String getDateStr() {
-                return dateStr;
-            }
-
-            public void setDateStr(String dateStr) {
-                this.dateStr = dateStr;
-            }
-
-            public int getId() {
-                return id;
-            }
-
-            public void setId(int id) {
-                this.id = id;
-            }
-
-            public int getStatus() {
-                return status;
-            }
-
-            public void setStatus(int status) {
-                this.status = status;
-            }
-
-            public String getTitle() {
-                return title;
-            }
-
-            public void setTitle(String title) {
-                this.title = title;
-            }
-
-            public int getType() {
-                return type;
-            }
-
-            public void setType(int type) {
-                this.type = type;
-            }
-
-            public int getUserId() {
-                return userId;
-            }
-
-            public void setUserId(int userId) {
-                this.userId = userId;
-            }
-        }
-    }
-
-    public static class TodoListBeanXX {
-        /**
-         * date : 1532016000000
-         * todoList : [{"completeDate":null,"completeDateStr":"","content":"","date":1532016000000,"dateStr":"2018-07-20","id":73,"status":0,"title":"第一件未完成的事情","type":0,"userId":2}]
-         */
-
-        private long date;
-        private List<TodoListBeanX> todoList;
-
-        public static TodoListBeanXX objectFromData(String str) {
-
-            return new Gson().fromJson(str, TodoListBeanXX.class);
+        public int getId() {
+            return id;
         }
 
-        public long getDate() {
-            return date;
+        public void setId(int id) {
+            this.id = id;
         }
 
-        public void setDate(long date) {
-            this.date = date;
+        public int getPriority() {
+            return priority;
         }
 
-        public List<TodoListBeanX> getTodoList() {
-            return todoList;
+        public void setPriority(int priority) {
+            this.priority = priority;
         }
 
-        public void setTodoList(List<TodoListBeanX> todoList) {
-            this.todoList = todoList;
+        public int getStatus() {
+            return status;
         }
 
-        public static class TodoListBeanX {
-            /**
-             * completeDate : null
-             * completeDateStr :
-             * content :
-             * date : 1532016000000
-             * dateStr : 2018-07-20
-             * id : 73
-             * status : 0
-             * title : 第一件未完成的事情
-             * type : 0
-             * userId : 2
-             */
+        public void setStatus(int status) {
+            this.status = status;
+        }
 
-            private Object completeDate;
-            private String completeDateStr;
-            private String content;
-            private long date;
-            private String dateStr;
-            private int id;
-            private int status;
-            private String title;
-            private int type;
-            private int userId;
+        public String getTitle() {
+            return title;
+        }
 
-            public static TodoListBeanX objectFromData(String str) {
+        public void setTitle(String title) {
+            this.title = title;
+        }
 
-                return new Gson().fromJson(str, TodoListBeanX.class);
-            }
+        public int getType() {
+            return type;
+        }
 
-            public Object getCompleteDate() {
-                return completeDate;
-            }
+        public void setType(int type) {
+            this.type = type;
+        }
 
-            public void setCompleteDate(Object completeDate) {
-                this.completeDate = completeDate;
-            }
+        public int getUserId() {
+            return userId;
+        }
 
-            public String getCompleteDateStr() {
-                return completeDateStr;
-            }
-
-            public void setCompleteDateStr(String completeDateStr) {
-                this.completeDateStr = completeDateStr;
-            }
-
-            public String getContent() {
-                return content;
-            }
-
-            public void setContent(String content) {
-                this.content = content;
-            }
-
-            public long getDate() {
-                return date;
-            }
-
-            public void setDate(long date) {
-                this.date = date;
-            }
-
-            public String getDateStr() {
-                return dateStr;
-            }
-
-            public void setDateStr(String dateStr) {
-                this.dateStr = dateStr;
-            }
-
-            public int getId() {
-                return id;
-            }
-
-            public void setId(int id) {
-                this.id = id;
-            }
-
-            public int getStatus() {
-                return status;
-            }
-
-            public void setStatus(int status) {
-                this.status = status;
-            }
-
-            public String getTitle() {
-                return title;
-            }
-
-            public void setTitle(String title) {
-                this.title = title;
-            }
-
-            public int getType() {
-                return type;
-            }
-
-            public void setType(int type) {
-                this.type = type;
-            }
-
-            public int getUserId() {
-                return userId;
-            }
-
-            public void setUserId(int userId) {
-                this.userId = userId;
-            }
+        public void setUserId(int userId) {
+            this.userId = userId;
         }
     }
 }

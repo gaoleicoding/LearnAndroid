@@ -25,51 +25,25 @@ import butterknife.ButterKnife;
 
 public class MyTodoActivity extends BaseActivity {
 
-    @BindView(R.id.tv_title)
+    @BindView(R.id.title)
     TextView tv_title;
     @BindView(R.id.tabLayout)
     TabLayout tabLayout;
     @BindView(R.id.viewPager)
     CustomViewPager viewPager;
-    TodoFragment commentFragment;
+    TodoFragment todoFragment, doneFragment;
 
-    private List<Fragment> mFragments=new ArrayList<>();
+    private List<Fragment> mFragments = new ArrayList<>();
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, MyTodoActivity.class);
         context.startActivity(intent);
     }
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_my_course_discuss);
-        ButterKnife.bind(this);
-        StatusBarUtil.setWindowStatusBarColor(this, R.color.blue, true);
-        initView();
-    }
-
-    @Override
-    public void initView() {
-        tv_title.setText(getString(R.string.course_discuss));
-        discussFragment=new TodoFragment();
-        mFragments.add(discussFragment);
-        mFragments.add(commentFragment);
-        CourseDiscussAdapter adapter = new CourseDiscussAdapter(getSupportFragmentManager(), mFragments);
-        viewPager.setOffscreenPageLimit(mFragments.size());
-        viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
-        //将TabLayout和ViewPager关联起来
-        tabLayout.setupWithViewPager(viewPager);
-        initTab();
-
-    }
-
     private void initTab() {
 
-        tabLayout.getTabAt(0).setCustomView(R.layout.tab_my_publish);
-        tabLayout.getTabAt(1).setCustomView(R.layout.tab_my_praise_comment);
+        tabLayout.getTabAt(0).setCustomView(R.layout.tab_todo);
+        tabLayout.getTabAt(1).setCustomView(R.layout.tab_done);
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -93,15 +67,33 @@ public class MyTodoActivity extends BaseActivity {
         //默认选中的Tab
         tabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
-    @Override
-    public void initData() {
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_my_course_discuss;
     }
 
     @Override
-    public void initListener() {
-
+    protected void initData(Bundle bundle) {
+        tv_title.setText(getResources().getString(R.string.todo));
+        Bundle bundle1 = new Bundle();
+        bundle1.putInt("position", 0);
+        todoFragment = TodoFragment.newInstance(bundle1);
+        Bundle bundle2 = new Bundle();
+        bundle2.putInt("position", 1);
+        doneFragment = TodoFragment.newInstance(bundle2);
+        mFragments.add(todoFragment);
+        mFragments.add(doneFragment);
+        CourseDiscussAdapter adapter = new CourseDiscussAdapter(getSupportFragmentManager(), mFragments);
+        viewPager.setOffscreenPageLimit(mFragments.size());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
+        //将TabLayout和ViewPager关联起来
+        tabLayout.setupWithViewPager(viewPager);
+        initTab();
     }
+
     public class CourseDiscussAdapter extends FragmentPagerAdapter {
 
         List<Fragment> fragments;
@@ -116,9 +108,7 @@ public class MyTodoActivity extends BaseActivity {
         @Override
         public Fragment getItem(int position) {
             Fragment fragment = fragments.get(position);
-//        Bundle bundle=new Bundle();
-//        bundle.putString("title",titles[position]);
-//        fragment.setArguments(bundle);
+
             return fragment;
         }
 
