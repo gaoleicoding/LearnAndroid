@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.xskin.ExtraAttrRegister;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.wind.me.xskinloader.SkinInflaterFactory;
@@ -35,6 +37,8 @@ public class CustomApplication extends Application {
         ExtraAttrRegister.init();
         SkinInflaterFactory.setFactory(LayoutInflater.from(this));  // for skin change
         SkinManager.get().init(this);
+        SpeechUtility.createUtility(this, "appid="+ "5c22ed2f");
+
     }
     public static CustomApplication getInstance() {
         return instance;

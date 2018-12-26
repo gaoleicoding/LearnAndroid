@@ -1,12 +1,14 @@
 package com.android.learn;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -19,6 +21,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -34,6 +37,7 @@ import com.android.learn.activity.LanguageActivity;
 import com.android.learn.activity.SearchResultActivity;
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.adapter.SearchRecordAdapter;
+import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.db.DBManager;
 import com.android.learn.base.db.SearchRecord;
@@ -57,7 +61,21 @@ import com.android.learn.mcontract.MainActivityContract;
 import com.android.learn.mpresenter.MainActivityPresenter;
 import com.android.learn.view.CustomViewPager;
 import com.android.learn.view.SearchViewUtils;
+import com.android.speechdemo.bean.TalkBackVo;
+import com.android.speechdemo.xf.JsonParser;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.iflytek.cloud.ErrorCode;
+import com.iflytek.cloud.InitListener;
+import com.iflytek.cloud.RecognizerResult;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechError;
+import com.iflytek.cloud.SpeechRecognizer;
+import com.iflytek.cloud.SpeechUtility;
+import com.iflytek.cloud.ui.RecognizerDialog;
+import com.iflytek.cloud.ui.RecognizerDialogListener;
+import com.iflytek.sunflower.FlowerCollector;
 import com.opensource.svgaplayer.SVGADrawable;
 import com.opensource.svgaplayer.SVGADynamicEntity;
 import com.opensource.svgaplayer.SVGAImageView;
@@ -68,11 +86,16 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -118,7 +141,14 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     ProjectFragment projectFragment;
     boolean isSearching;
     SearchRecordAdapter searchRecordAdapter;
-    String TAG="MainActivity";
+    String TAG = "MainActivity";
+    private SpeechRecognizer mIat;
+    private RecognizerDialog mIatDialog;
+    private Toast mToast;
+    // 用HashMap存储听写结果
+    private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
+    // 引擎类型 这里我只考虑了一种引擎类型 :云端的
+    private String mCLOUDType = SpeechConstant.TYPE_CLOUD;
 
     @Override
     protected int getLayoutId() {
@@ -189,7 +219,8 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 return false;
             }
         });
-
+        mIat = SpeechRecognizer.createRecognizer(MainActivity.this, mInitListener);
+        mIatDialog = new RecognizerDialog(MainActivity.this, mInitListener);
     }
 
 
@@ -243,21 +274,23 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             }
         });
         Boolean isRestartMain = (Boolean) SPUtils.getParam(this, "isRestartMain", new Boolean(false));
-        LogUtil.d(TAG,"isRestartMain："+isRestartMain);
+        LogUtil.d(TAG, "isRestartMain：" + isRestartMain);
         if (isRestartMain) {
             //切换语言或切换字体大小，重启MainActivity则会走这里
-            tabLayout.getTabAt(4).getCustomView().setSelected(true);
+            viewPager.setCurrentItem(4);
+//            tabLayout.getTabAt(4).getCustomView().setSelected(true);
             SPUtils.setParam(MainActivity.this, "isRestartMain", new Boolean(false));
         } else {
             //默认选中的Tab
-            tabLayout.getTabAt(0).getCustomView().setSelected(true);
+            viewPager.setCurrentItem(0);
+//            tabLayout.getTabAt(0).getCustomView().setSelected(true);
             loadSVGAAnimation();
 
         }
 
     }
 
-    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search, R.id.tv_search_clear})
+    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search, R.id.tv_search_clear, R.id.iv_speech_search})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.title:
@@ -283,6 +316,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 searchRecordAdapter.getData().clear();
                 searchRecordAdapter.notifyDataSetChanged();
                 DBManager.getInstance(this).deleteAll();
+                break;
+            case R.id.iv_speech_search:
+                KeyboardUtils.hideKeyboard(et_search);
+                requestRecordAudioPermission();
                 break;
         }
 
@@ -523,4 +560,159 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         }
         flowlayout.relayoutToAlign();
     }
+
+    public void requestRecordAudioPermission() {
+        requestPermission(this, new PermissionUtil.RequestPermissionCallBack() {
+            @Override
+            public void granted() {
+
+                // 使用SpeechRecognizer对象，可根据回调消息自定义界面；这种方式主要是考虑到了，没有听写Dialog的时候，进行的听写监听
+//                mIat = SpeechRecognizer.createRecognizer(MainActivity.this, mInitListener);
+                Log.i(TAG, "onCreate: mIat == null ?"+mIat);
+                //SpeechRecognizer对象 null 的原因：一、 so 文件放错了位置 二、so文件与自己的SDK不匹配
+                // 初始化听写Dialog，如果只使用有UI听写功能，无需创建SpeechRecognizer
+                // 使用UI听写功能，请根据sdk文件目录下的notice.txt,放置显示RecognizerDialog需要的布局文件和图片资源
+//                mIatDialog = new RecognizerDialog(MainActivity.this, mInitListener);
+                // 移动数据分析，收集开始听写事件
+                FlowerCollector.onEvent(MainActivity.this, "iat_recognize");
+
+                et_search.setText("");// 清空显示内容
+                mIatResults.clear();
+                // 设置参数
+                setParam();
+
+//                boolean isShowDialog = mSharedPreferences.getBoolean(getString(R.string.pref_key_iat_show), true);
+//                if (isShowDialog) {
+                   // 显示听写对话框
+                    mIatDialog.setListener(mRecognizerDialogListener);
+                    mIatDialog.show();
+                    Utils.showToast(getResources().getString(R.string.begin_speech),false,Gravity.BOTTOM);
+//                } else {
+//                    // 不显示听写对话框
+//                    ret = mIat.startListening(mRecognizerListener);
+//                    if (ret != ErrorCode.SUCCESS) {
+//                        showTip("听写失败,错误码：" + ret);
+//                    } else {
+//                        showTip(getString(R.string.text_begin));
+//                    }
+//                }
+
+            }
+
+            @Override
+            public void denied() {
+            }
+        }, new String[]{Manifest.permission.RECORD_AUDIO});
+    }
+
+    public void setParam() {
+        // 清空参数
+        mIat.setParameter(SpeechConstant.PARAMS, null);
+
+        // 设置听写引擎  注意：这里我只设置云端的方式！后面再考虑本地和混合的类型
+        mIat.setParameter(SpeechConstant.ENGINE_TYPE, mCLOUDType);
+        // 设置返回结果格式
+        mIat.setParameter(SpeechConstant.RESULT_TYPE, "json");
+
+        // 设置语言
+        mIat.setParameter(SpeechConstant.LANGUAGE, "cn");
+        mIat.setParameter(SpeechConstant.ACCENT, "mandarin");
+
+//            if( mTranslateEnable ){
+//                mIat.setParameter( SpeechConstant.ORI_LANG, "en" );
+//                mIat.setParameter( SpeechConstant.TRANS_LANG, "cn" );
+//            }
+
+        // 设置语音前端点:静音超时时间，即用户多长时间不说话则当做超时处理
+        mIat.setParameter(SpeechConstant.VAD_BOS, "4000");
+
+        // 设置语音后端点:后端点静音检测时间，即用户停止说话多长时间内即认为不再输入， 自动停止录音
+        mIat.setParameter(SpeechConstant.VAD_EOS, "1000");
+
+        // 设置标点符号,设置为"0"返回结果无标点,设置为"1"返回结果有标点
+        mIat.setParameter(SpeechConstant.ASR_PTT, "0");
+
+        // 设置音频保存路径，保存音频格式支持pcm、wav，设置路径为sd卡请注意WRITE_EXTERNAL_STORAGE权限
+        // 注：AUDIO_FORMAT参数语记需要更新版本才能生效
+        mIat.setParameter(SpeechConstant.AUDIO_FORMAT, "wav");
+        mIat.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory() + "/msc/iat.wav");
+    }
+
+    private InitListener mInitListener = new InitListener() {
+        @Override
+        public void onInit(int code) {
+        }
+    };
+    /**
+     * 听写UI监听器
+     */
+    private RecognizerDialogListener mRecognizerDialogListener = new RecognizerDialogListener() {
+        /**
+         * 识别成功时回调数据
+         */
+        public void onResult(RecognizerResult results, boolean isLast) {
+            //这里应该是是否需要翻译，翻译的和不翻译的json解析方式不一样，
+            // 是否翻译，看用户的设置，如若用户没设置，有默认的方式
+//            if( mTranslateEnable){
+//                printTransResult( results );
+//            }else{
+            printResult(results);
+//            }
+
+        }
+
+        /**
+         * 识别回调错误.
+         */
+        public void onError(SpeechError error) {
+//            if(mTranslateEnable && error.getErrorCode() == 14002) {
+//                showTip( error.getPlainDescription(true)+"\n请确认是否已开通翻译功能" );
+//            } else {
+//                showTip(error.getPlainDescription(true));
+//            }
+        }
+
+    };
+//    private void printTransResult (RecognizerResult results) {
+//        String trans  = JsonParser.parseTransResult(results.getResultString(),"dst");
+//        String oris = JsonParser.parseTransResult(results.getResultString(),"src");
+//
+//        if( TextUtils.isEmpty(trans)||TextUtils.isEmpty(oris) ){
+//            showTip( "解析结果失败，请确认是否已开通翻译功能。" );
+//        }else{
+//            tv_show.setText( "原始语言:\n"+oris+"\n目标语言:\n"+trans );
+//        }
+//
+//    }
+
+    /**
+     * 成功时显示说话的文字
+     *
+     * @param results
+     */
+    private void printResult(RecognizerResult results) {
+        String text = JsonParser.parseIatResult(results.getResultString());
+
+        String sn = null;
+        // 读取json结果中的sn字段
+        try {
+            JSONObject resultJson = new JSONObject(results.getResultString());
+            sn = resultJson.optString("sn");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        mIatResults.put(sn, text);
+
+        StringBuffer resultBuffer = new StringBuffer();
+        for (String key : mIatResults.keySet()) {
+            resultBuffer.append(mIatResults.get(key));
+        }
+
+        et_search.setText(resultBuffer.toString());
+        //考虑到TextView只能显示文字 ，后面还要测试文字转语音，所以换EditText控件
+        et_search.setSelection(et_search.length());
+
+    }
+
 }

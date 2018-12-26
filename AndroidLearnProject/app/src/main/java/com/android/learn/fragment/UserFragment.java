@@ -29,8 +29,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-
-
 public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements UserInfoContract.View {
 
     @BindView(R.id.iv_user_photo)
@@ -45,10 +43,10 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
 
     @Override
     public void initView(View view) {
-
+        refreshUserInfo();
     }
 
-    @OnClick({R.id.iv_user_photo, R.id.my_setting_layout, R.id.my_collect_layout,R.id.my_todo_layout})
+    @OnClick({R.id.iv_user_photo, R.id.my_setting_layout, R.id.my_collect_layout, R.id.my_todo_layout})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.my_collect_layout:
@@ -89,7 +87,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
 
     @Override
     protected void loadData() {
-        refreshUserInfo();
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -107,11 +105,12 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
         if (UserUtil.getUserInfo() == null) return;
         if (UserUtil.isLogined()) {
             String username = UserUtil.getUserInfo().data.username;
-
-            tv_user_profile_not_login.setText(username);
+            if (tv_user_profile_not_login != null)
+                tv_user_profile_not_login.setText(username);
             String photoUrl = UserUtil.getUserInfo().data.icon;
             if (photoUrl != null) {
                 RequestOptions options = new RequestOptions().placeholder(R.drawable.user_default_photo);
+                if(iv_user_photo!=null)
                 Glide.with(getActivity()).load(photoUrl).apply(options).into(iv_user_photo);
             }
 

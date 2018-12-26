@@ -77,7 +77,7 @@ public class TodoEditActivity extends BaseMvpActivity<TodoEditPresenter> impleme
                 map.put("title",et_title.getText().toString());
                 map.put("content",et_content.getText().toString());
                 String date=mTodoDate.getText().toString();
-                if(!Utils.isValidDate(date)){
+                if(!date.contains("-")){
                     Utils.showToast(getResources().getString(R.string.select_time),true);
                     return;
                 }

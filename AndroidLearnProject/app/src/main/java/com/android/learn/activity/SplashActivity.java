@@ -7,7 +7,10 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.android.learn.IatDemo;
 import com.android.learn.MainActivity;
+import com.android.learn.MainActivity1;
+import com.android.learn.MainActivity2;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.RegisterLoginData;

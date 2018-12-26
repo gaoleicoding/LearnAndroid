@@ -61,6 +61,7 @@
     <string name="add">添加</string>
     <string name="data_empty">数据为空</string>
     <string name="select_time">请选择时间</string>
+    <string name="begin_speech">开始说话</string>
 
 
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">程序出错了，抱歉给您带来不便\n为了尽快解决此问题，您可以点击错误详情，并复制错误代码或截图，发邮件反馈到技术支持邮箱：gaoleiandroid@163.com</string>

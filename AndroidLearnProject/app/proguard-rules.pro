@@ -219,4 +219,6 @@ public static java.lang.String TABLENAME;
 }
 -keep public class com.android.learn.R$*{
 public static final int *;
-}
+#讯飞
+-keep class com.iflytek.**{*;}
+-keepattributes Signature

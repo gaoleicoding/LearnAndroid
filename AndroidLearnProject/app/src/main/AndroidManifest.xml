@@ -32,6 +32,9 @@
         </activity>
 
         <activity android:name=".MainActivity" ></activity>
+        <activity android:name=".MainActivity1" ></activity>
+        <activity android:name=".MainActivity2" ></activity>
+        <activity android:name=".IatDemo" ></activity>
         <activity android:name=".activity.ArticleDetailActivity"></activity>
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.MyCollectActivity"></activity>
