@@ -8,11 +8,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
+import com.android.learn.base.utils.StatusUtil;
 import com.gaolei.basemodule.R;
 import com.android.learn.base.utils.NetUtils;
-import com.android.learn.base.utils.StatusBarUtil;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -99,7 +98,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * 设置状态栏颜色
      */
     public void setStatusBarColor(int resColor) {
-        StatusBarUtil.setWindowStatusBarColor(getActivity(), resColor, true);
+        StatusUtil.setWindowStatusBarColor(getActivity(), resColor, true);
     }
 
     public void onDestroyView() {

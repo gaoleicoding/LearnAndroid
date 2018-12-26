@@ -1,6 +1,5 @@
 package com.android.learn.base.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -11,14 +10,14 @@ import android.view.View;
 
 import com.android.learn.base.application.CustomApplication;
 import com.android.learn.base.utils.ExitAppUtils;
-import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.LogUtil;
-import com.android.learn.base.utils.StatusBarUtil;
+import com.android.learn.base.utils.StatusUtil;
 import com.gaolei.basemodule.R;
 import com.umeng.analytics.MobclickAgent;
 import com.wind.me.xskinloader.SkinInflaterFactory;
 import com.wind.me.xskinloader.SkinManager;
 import com.wind.me.xskinloader.util.AssetFileUtils;
+import com.zh.swipebacklib.SwipeBackLayout;
 
 import java.io.File;
 
@@ -34,17 +33,24 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
 //    public static Activity context;
     Boolean isNightMode;
 
+//    private SwipeBackLayout mSwipeBackLayout;
+protected SwipeBackLayout mSwipeBackLayout;
     String TAG = "BaseActivity";
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
 
         SkinInflaterFactory.setFactory(this);
-        setContentView(getLayoutId());
+        super.onCreate(savedInstanceState);
+//        setContentView(getLayoutId());
         ButterKnife.bind(this);
 
         ExitAppUtils.getInstance().addActivity(this);
-
+        mSwipeBackLayout = getSwipeBackLayout();
+        mSwipeBackLayout.setDirectionMode(SwipeBackLayout.FROM_LEFT);
+//        //设置滑动方向，可设置EDGE_LEFT, EDGE_RIGHT, EDGE_ALL, EDGE_BOTTOM
+//        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+        //mSwipeBackLayout.setEdgeSize(200);//滑动删除的效果只能从边界滑动才有效果，如果要扩大touch的范围，可以调用这个方法
 
 //        setStatusBarColor(R.color.status_bar_color);
         SkinManager.get().setWindowStatusBarColor(this.getWindow(), R.color.status_bar_color);
@@ -72,7 +78,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         }
     }
 
-    protected abstract int getLayoutId();
+//    protected abstract int getLayoutId();
 
     protected abstract void initData(Bundle bundle);
 
@@ -87,7 +93,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
      * 设置状态栏颜色
      */
     public void setStatusBarColor(int resColor) {
-        StatusBarUtil.setWindowStatusBarColor(this, resColor, true);
+        StatusUtil.setWindowStatusBarColor(this, resColor, true);
     }
 
     protected void onRestart() {

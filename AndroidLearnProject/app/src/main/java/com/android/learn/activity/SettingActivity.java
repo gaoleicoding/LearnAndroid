@@ -64,10 +64,7 @@ public class SettingActivity extends BaseMvpActivity {
         return R.layout.activity_setting;
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
 
-    }
 
     @Override
     protected void initData(Bundle bundle) {

@@ -15,6 +15,7 @@ import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.wind.me.xskinloader.SkinInflaterFactory;
 import com.wind.me.xskinloader.SkinManager;
+import com.zh.swipebacklib.SlideFinishManager;
 
 
 public class CustomApplication extends Application {
@@ -37,7 +38,10 @@ public class CustomApplication extends Application {
         ExtraAttrRegister.init();
         SkinInflaterFactory.setFactory(LayoutInflater.from(this));  // for skin change
         SkinManager.get().init(this);
+        //初始化讯飞语言识别
         SpeechUtility.createUtility(this, "appid="+ "5c22ed2f");
+        //初始化Activity滑动退出，会有动画效果，不加没有
+        SlideFinishManager.getInstance().init(this);
 
     }
     public static CustomApplication getInstance() {

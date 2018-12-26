@@ -1,1 +1,1 @@
-include ':app', ':basemodule',':xskinloader-lib'
+include ':app', ':basemodule',':xskinloader-lib','swipebacklib'

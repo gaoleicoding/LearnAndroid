@@ -4,13 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.android.learn.IatDemo;
 import com.android.learn.MainActivity;
-import com.android.learn.MainActivity1;
-import com.android.learn.MainActivity2;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.RegisterLoginData;
@@ -29,11 +25,6 @@ public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter> implem
             finish();
         }
     };
-
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     protected int getLayoutId() {

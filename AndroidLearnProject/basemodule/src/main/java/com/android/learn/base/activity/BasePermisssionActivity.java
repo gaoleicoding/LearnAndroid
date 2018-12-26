@@ -3,26 +3,12 @@ package com.android.learn.base.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.gaolei.basemodule.R;
 import com.android.learn.base.utils.PermissionUtil;
-import com.android.learn.base.utils.StatusBarUtil;
-import com.umeng.analytics.MobclickAgent;
-
-import butterknife.ButterKnife;
+import com.zh.swipebacklib.BaseSwipeBackActivity;
 
 import static com.android.learn.base.utils.PermissionUtil.PERMISSION_CODE;
 
@@ -31,7 +17,7 @@ import static com.android.learn.base.utils.PermissionUtil.PERMISSION_CODE;
  * Created by gaolei on 2018/4/26.
  */
 
-public class BasePermisssionActivity extends FragmentActivity {
+public class BasePermisssionActivity extends BaseSwipeActivity {
     private PermissionUtil.RequestPermissionCallBack mRequestPermissionCallBack;
 
 
@@ -98,4 +84,8 @@ public class BasePermisssionActivity extends FragmentActivity {
     }
 
 
+    @Override
+    protected int getLayoutId() {
+        return 0;
+    }
 }
