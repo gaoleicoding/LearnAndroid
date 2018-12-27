@@ -5,10 +5,10 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 
 import com.android.learn.base.utils.PermissionUtil;
-import com.zh.swipebacklib.BaseSwipeBackActivity;
 
 import static com.android.learn.base.utils.PermissionUtil.PERMISSION_CODE;
 
@@ -17,7 +17,7 @@ import static com.android.learn.base.utils.PermissionUtil.PERMISSION_CODE;
  * Created by gaolei on 2018/4/26.
  */
 
-public class BasePermisssionActivity extends BaseSwipeActivity {
+public class BasePermisssionActivity extends FragmentActivity {
     private PermissionUtil.RequestPermissionCallBack mRequestPermissionCallBack;
 
 
@@ -84,8 +84,5 @@ public class BasePermisssionActivity extends BaseSwipeActivity {
     }
 
 
-    @Override
-    protected int getLayoutId() {
-        return 0;
-    }
+
 }

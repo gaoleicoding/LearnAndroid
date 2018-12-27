@@ -18,9 +18,11 @@
         <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
         <item name="android:backgroundDimEnabled">false</item><!--模糊-->
     </style>
+
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
+
     <style name="AppTheme5" parent="@style/AppBaseTheme">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -28,9 +30,16 @@
         <item name="android:windowAnimationStyle">@style/activityAnimation1</item>
     </style>
     <!-- Activity全屏 -->
-    <style name="FullScreenStyle" parent="@style/AppBaseTheme">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
+    <style name="FullScreenStyle" parent="@style/AppTheme">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
     <!-- activity界面切换动画 -->
     <style name="activityAnimation1" parent="@android:style/Animation">
@@ -153,7 +162,8 @@
         <item name="android:padding">10dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:singleLine">true</item>
-        <item name="android:digits">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ </item>
+        <item name="android:digits">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+        </item>
         <item name="android:background">@drawable/code_edit_bg</item>
         <item name="android:textColor">@color/text_color</item>
         <item name="android:layout_marginLeft">30dp</item>
@@ -187,6 +197,7 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/divider_color</item>
     </style>
+
     <style name="main_bottom_tab_txt">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

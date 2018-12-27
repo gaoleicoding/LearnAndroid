@@ -15,7 +15,8 @@ import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.wind.me.xskinloader.SkinInflaterFactory;
 import com.wind.me.xskinloader.SkinManager;
-import com.zh.swipebacklib.SlideFinishManager;
+
+import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 
 
 public class CustomApplication extends Application {
@@ -40,8 +41,12 @@ public class CustomApplication extends Application {
         SkinManager.get().init(this);
         //初始化讯飞语言识别
         SpeechUtility.createUtility(this, "appid="+ "5c22ed2f");
-        //初始化Activity滑动退出，会有动画效果，不加没有
-        SlideFinishManager.getInstance().init(this);
+        /**
+         * 必须在 Application 的 onCreate 方法中执行 BGASwipeBackHelper.init 来初始化滑动返回
+         * 第一个参数：应用程序上下文
+         * 第二个参数：如果发现滑动返回后立即触摸界面时应用崩溃，请把该界面里比较特殊的 View 的 class 添加到该集合中，目前在库中已经添加了 WebView 和 SurfaceView
+         */
+        BGASwipeBackHelper.init(this, null);
 
     }
     public static CustomApplication getInstance() {

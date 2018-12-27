@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidLearnProject.iml" filepath="$PROJECT_DIR$/AndroidLearnProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/basemodule/basemodule.iml" filepath="$PROJECT_DIR$/basemodule/basemodule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/swipebacklib/swipebacklib.iml" filepath="$PROJECT_DIR$/swipebacklib/swipebacklib.iml" />
       <module fileurl="file://$PROJECT_DIR$/xskinloader-lib/xskinloader-lib.iml" filepath="$PROJECT_DIR$/xskinloader-lib/xskinloader-lib.iml" />
     </modules>
   </component>

@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/app_icon2"
         android:supportsRtl="true"
 
-        android:theme="@style/AppTheme5">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/FullScreenStyle">

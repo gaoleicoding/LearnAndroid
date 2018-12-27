@@ -29,8 +29,8 @@ public class ActivityStatusBarColorResDeployer implements ISkinResDeployer {
         if (window == null) {
             throw new IllegalArgumentException("view is not a DecorView, cannot get the window");
         }
-        if (SkinConfig.RES_TYPE_NAME_COLOR.equals(skinAttr.attrValueTypeName)) {
-            window.setStatusBarColor(resource.getColor(skinAttr.attrValueRefId));
-        }
+//        if (SkinConfig.RES_TYPE_NAME_COLOR.equals(skinAttr.attrValueTypeName)) {
+//            window.setStatusBarColor(resource.getColor(skinAttr.attrValueRefId));
+//        }
     }
 }

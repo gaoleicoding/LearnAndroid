@@ -30,6 +30,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -124,7 +125,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     @BindView(R.id.iv_svga)
     SVGAImageView iv_svga;
     @BindView(R.id.cardview_search)
-    CardView cardview_search;
+    LinearLayout cardview_search;
     @BindView(R.id.et_search)
     EditText et_search;
     @BindView(R.id.iv_search)
@@ -219,8 +220,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 return false;
             }
         });
-        mIat = SpeechRecognizer.createRecognizer(MainActivity.this, mInitListener);
-        mIatDialog = new RecognizerDialog(MainActivity.this, mInitListener);
+
     }
 
 
@@ -318,7 +318,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 DBManager.getInstance(this).deleteAll();
                 break;
             case R.id.iv_speech_search:
-                KeyboardUtils.hideKeyboard(et_search);
                 requestRecordAudioPermission();
                 break;
         }
@@ -554,7 +553,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                     SearchRecord searchRecord = new SearchRecord();
                     searchRecord.setName(tv.getText().toString());
                     dbManager.insertUser(searchRecord);
-                    KeyboardUtils.hideKeyboard(et_search);
                 }
             });
         }
@@ -565,14 +563,13 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         requestPermission(this, new PermissionUtil.RequestPermissionCallBack() {
             @Override
             public void granted() {
-
                 // 使用SpeechRecognizer对象，可根据回调消息自定义界面；这种方式主要是考虑到了，没有听写Dialog的时候，进行的听写监听
-//                mIat = SpeechRecognizer.createRecognizer(MainActivity.this, mInitListener);
-                Log.i(TAG, "onCreate: mIat == null ?"+mIat);
-                //SpeechRecognizer对象 null 的原因：一、 so 文件放错了位置 二、so文件与自己的SDK不匹配
+                mIat = SpeechRecognizer.createRecognizer(MainActivity.this, mInitListener);
+                Log.i(TAG, "onCreate: mIat == null ?" + mIat);
+                //SpeechRecognizer对象 null 的原因：一、 so 文件放错了位置 二、so文件与自己的SDK不匹配 3、Application中没有配置好appid
                 // 初始化听写Dialog，如果只使用有UI听写功能，无需创建SpeechRecognizer
                 // 使用UI听写功能，请根据sdk文件目录下的notice.txt,放置显示RecognizerDialog需要的布局文件和图片资源
-//                mIatDialog = new RecognizerDialog(MainActivity.this, mInitListener);
+                mIatDialog = new RecognizerDialog(MainActivity.this, mInitListener);
                 // 移动数据分析，收集开始听写事件
                 FlowerCollector.onEvent(MainActivity.this, "iat_recognize");
 
@@ -583,10 +580,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
 //                boolean isShowDialog = mSharedPreferences.getBoolean(getString(R.string.pref_key_iat_show), true);
 //                if (isShowDialog) {
-                   // 显示听写对话框
-                    mIatDialog.setListener(mRecognizerDialogListener);
-                    mIatDialog.show();
-                    Utils.showToast(getResources().getString(R.string.begin_speech),false,Gravity.BOTTOM);
+                // 显示听写对话框
+                mIatDialog.setListener(mRecognizerDialogListener);
+                mIatDialog.show();
+                Utils.showToast(getResources().getString(R.string.begin_speech), false, Gravity.BOTTOM);
 //                } else {
 //                    // 不显示听写对话框
 //                    ret = mIat.startListening(mRecognizerListener);
@@ -658,32 +655,15 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 //            }else{
             printResult(results);
 //            }
-
         }
 
         /**
          * 识别回调错误.
          */
         public void onError(SpeechError error) {
-//            if(mTranslateEnable && error.getErrorCode() == 14002) {
-//                showTip( error.getPlainDescription(true)+"\n请确认是否已开通翻译功能" );
-//            } else {
-//                showTip(error.getPlainDescription(true));
-//            }
-        }
 
+        }
     };
-//    private void printTransResult (RecognizerResult results) {
-//        String trans  = JsonParser.parseTransResult(results.getResultString(),"dst");
-//        String oris = JsonParser.parseTransResult(results.getResultString(),"src");
-//
-//        if( TextUtils.isEmpty(trans)||TextUtils.isEmpty(oris) ){
-//            showTip( "解析结果失败，请确认是否已开通翻译功能。" );
-//        }else{
-//            tv_show.setText( "原始语言:\n"+oris+"\n目标语言:\n"+trans );
-//        }
-//
-//    }
 
     /**
      * 成功时显示说话的文字
@@ -712,7 +692,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         et_search.setText(resultBuffer.toString());
         //考虑到TextView只能显示文字 ，后面还要测试文字转语音，所以换EditText控件
         et_search.setSelection(et_search.length());
-
     }
 
 }

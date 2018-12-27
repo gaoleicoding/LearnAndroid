@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.android.learn.MainActivity;
@@ -14,6 +15,7 @@ import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.account.UserUtil;
 import com.android.learn.mcontract.SplashLoginContract;
 import com.android.learn.mpresenter.SplashLoginPresenter;
+import com.jaeger.library.StatusBarUtil;
 
 public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter> implements SplashLoginContract.View {
 
@@ -60,9 +62,13 @@ public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter> implem
     @Override
     public void showLoginResData(RegisterLoginData loginResData) {
         UserUtil.setUserInfo(loginResData);
-        handler.sendEmptyMessageDelayed(0, 500);
+        handler.sendEmptyMessageDelayed(0, 1500);
     }
 
+    @Override
+    protected void setStatusBar() {
+        StatusBarUtil.setTransparent(this);
+    }
 
     public void onDestroy() {
         super.onDestroy();

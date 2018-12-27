@@ -118,6 +118,7 @@ dependencies {
     api ('com.jaeger.statusbarutil:library:1.4.0'){
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
-    api project(':swipebacklib')
+//    api project(':swipebacklib')
     api project(':xskinloader-lib')
+    compile 'cn.bingoogolapple:bga-swipebacklayout:1.2.0'
 }

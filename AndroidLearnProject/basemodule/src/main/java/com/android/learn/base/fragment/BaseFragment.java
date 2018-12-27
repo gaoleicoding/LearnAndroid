@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.android.learn.base.utils.StatusUtil;
 import com.gaolei.basemodule.R;
 import com.android.learn.base.utils.NetUtils;
 
@@ -94,12 +93,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         }
     }
 
-    /**
-     * 设置状态栏颜色
-     */
-    public void setStatusBarColor(int resColor) {
-        StatusUtil.setWindowStatusBarColor(getActivity(), resColor, true);
-    }
 
     public void onDestroyView() {
         super.onDestroyView();

@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 
 public class SearchViewUtils {
-    public static void handleToolBar(final Context context, final CardView search, final EditText editText) {
+    public static void handleToolBar(final Context context, final View search, final EditText editText) {
         //隐藏
         if (search.getVisibility() == View.VISIBLE) {
 
