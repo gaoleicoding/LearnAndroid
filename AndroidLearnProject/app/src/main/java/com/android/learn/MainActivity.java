@@ -201,21 +201,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {//搜索按键action
-                    String content = et_search.getText().toString();
-                    if (TextUtils.isEmpty(content)) {
-                        Utils.showToast(getResources().getString(R.string.search_content_no), true);
-                        return true;
-                    }
-
-                    Bundle bundle = new Bundle();
-                    bundle.putString("key", content);
-                    SearchResultActivity.startActivity(MainActivity.this, bundle);
-                    DBManager dbManager = DBManager.getInstance(MainActivity.this);
-                    SearchRecord searchRecord = new SearchRecord();
-                    searchRecord.setName(content);
-                    dbManager.insertUser(searchRecord);
-                    et_search.setText("");
-                    KeyboardUtils.hideKeyboard(et_search);
+                    beginSearch();
                 }
                 return false;
             }
@@ -223,6 +209,22 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
     }
 
+    private void beginSearch() {
+        String content = et_search.getText().toString();
+        if (TextUtils.isEmpty(content)) {
+            Utils.showToast(getResources().getString(R.string.search_content_no), true);
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putString("key", content);
+        SearchResultActivity.startActivity(MainActivity.this, bundle);
+        DBManager dbManager = DBManager.getInstance(MainActivity.this);
+        SearchRecord searchRecord = new SearchRecord();
+        searchRecord.setName(content);
+        dbManager.insertUser(searchRecord);
+        et_search.setText("");
+        KeyboardUtils.hideKeyboard(et_search);
+    }
 
     private void initSearchRecord() {
         ArrayList<SearchRecord> list = new ArrayList<>();
@@ -318,6 +320,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 DBManager.getInstance(this).deleteAll();
                 break;
             case R.id.iv_speech_search:
+                KeyboardUtils.hideKeyboard(et_search);
                 requestRecordAudioPermission();
                 break;
         }
@@ -578,22 +581,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 // 设置参数
                 setParam();
 
-//                boolean isShowDialog = mSharedPreferences.getBoolean(getString(R.string.pref_key_iat_show), true);
-//                if (isShowDialog) {
                 // 显示听写对话框
                 mIatDialog.setListener(mRecognizerDialogListener);
                 mIatDialog.show();
-                Utils.showToast(getResources().getString(R.string.begin_speech), false, Gravity.BOTTOM);
-//                } else {
-//                    // 不显示听写对话框
-//                    ret = mIat.startListening(mRecognizerListener);
-//                    if (ret != ErrorCode.SUCCESS) {
-//                        showTip("听写失败,错误码：" + ret);
-//                    } else {
-//                        showTip(getString(R.string.text_begin));
-//                    }
-//                }
-
+                Utils.showToast(getResources().getString(R.string.begin_speech), true, Gravity.BOTTOM);
             }
 
             @Override
@@ -614,11 +605,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         // 设置语言
         mIat.setParameter(SpeechConstant.LANGUAGE, "cn");
         mIat.setParameter(SpeechConstant.ACCENT, "mandarin");
-
-//            if( mTranslateEnable ){
-//                mIat.setParameter( SpeechConstant.ORI_LANG, "en" );
-//                mIat.setParameter( SpeechConstant.TRANS_LANG, "cn" );
-//            }
 
         // 设置语音前端点:静音超时时间，即用户多长时间不说话则当做超时处理
         mIat.setParameter(SpeechConstant.VAD_BOS, "4000");
@@ -648,13 +634,8 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
          * 识别成功时回调数据
          */
         public void onResult(RecognizerResult results, boolean isLast) {
-            //这里应该是是否需要翻译，翻译的和不翻译的json解析方式不一样，
-            // 是否翻译，看用户的设置，如若用户没设置，有默认的方式
-//            if( mTranslateEnable){
-//                printTransResult( results );
-//            }else{
+            LogUtil.d(TAG, "printResult(results)------------");
             printResult(results);
-//            }
         }
 
         /**
@@ -692,6 +673,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         et_search.setText(resultBuffer.toString());
         //考虑到TextView只能显示文字 ，后面还要测试文字转语音，所以换EditText控件
         et_search.setSelection(et_search.length());
+        KeyboardUtils.showKeyboard(et_search);
+        LogUtil.d(TAG, "printResult(results)------------resultBuffer.toString():" + resultBuffer.toString());
+        if (!"SearchResultActivity".equals(Utils.getTopActivity(this)))
+            beginSearch();
     }
 
 }
