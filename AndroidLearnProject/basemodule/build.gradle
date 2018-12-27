@@ -110,11 +110,16 @@ dependencies {
 
     //崩溃自定义跳转界面
     api rootProject.ext.dependencies["customactivityoncrash"]
-    api 'com.github.devlight:infinitecycleviewpager:1.0.2'
-    api 'com.github.yyued:SVGAPlayer-Android:2.3.0'
-    api 'cn.lankton:flowlayout:1.0.1'
-    api 'org.greenrobot:greendao:3.2.2'
-
-    compile 'cn.bingoogolapple:bga-swipebacklayout:1.2.0'
+     //    知识点模块的旋转效果
+    api rootProject.ext.dependencies["infinitecycleviewpager"]
+     //    首页欢迎的SVGA动效
+    api rootProject.ext.dependencies["SVGAPlayer-Android"]
+     //    搜索页的flow标签
+    api rootProject.ext.dependencies["flowlayout"]
+    //    搜索历史使用的数据库框架
+    api rootProject.ext.dependencies["greendao"]
+    //    activity滑动消失框架
+    api rootProject.ext.dependencies["bga-swipebacklayout"]
+    //   换肤框架，不必重启应用
     api project(':xskinloader-lib')
 }

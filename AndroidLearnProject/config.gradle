@@ -64,6 +64,11 @@ ext {
             "blockcanary-no-op"            : 'com.github.markzhai:blockcanary-no-op:1.5.0',
             "leakcanary-android"           : 'com.squareup.leakcanary:leakcanary-android:1.6.1',
             "leakcanary-android-no-op"     : 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1',
+            "infinitecycleviewpager"       : 'com.github.devlight:infinitecycleviewpager:1.0.2',
+            "SVGAPlayer-Android"           : 'com.github.yyued:SVGAPlayer-Android:2.3.0',
+            "flowlayout"                   : 'cn.lankton:flowlayout:1.0.1',
+            "greendao"                     : 'org.greenrobot:greendao:3.2.2',
+            "bga-swipebacklayout"          : 'cn.bingoogolapple:bga-swipebacklayout:1.2.0',
 
     ]
 }
