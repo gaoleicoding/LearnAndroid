@@ -495,6 +495,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         startActivity(intent);
         event.activity.finish();
         SPUtils.setParam(MainActivity.this, "isRestartMain", new Boolean(true));
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -675,7 +676,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         et_search.setSelection(et_search.length());
         KeyboardUtils.showKeyboard(et_search);
         LogUtil.d(TAG, "printResult(results)------------resultBuffer.toString():" + resultBuffer.toString());
-        if (!"SearchResultActivity".equals(Utils.getTopActivity(this)))
+        if (et_search.getText().toString().length() > 0 && !"SearchResultActivity".equals(Utils.getTopActivity(this)))
             beginSearch();
     }
 

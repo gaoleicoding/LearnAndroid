@@ -87,6 +87,7 @@ public class SettingActivity extends BaseMvpActivity {
                 else SPUtils.setParam(SettingActivity.this, "nightMode", new Boolean(false));
                 useNightMode(isChecked);
                 EventBus.getDefault().post(new ChangeNightEvent());
+                setStatusBar();
 
             }
         });

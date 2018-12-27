@@ -114,10 +114,7 @@ dependencies {
     api 'com.github.yyued:SVGAPlayer-Android:2.3.0'
     api 'cn.lankton:flowlayout:1.0.1'
     api 'org.greenrobot:greendao:3.2.2'
-    // StatusUtil 沉浸式状态栏
-    api ('com.jaeger.statusbarutil:library:1.4.0'){
-        exclude group: 'com.android.support', module: 'recyclerview-v7'
-    }
-    api project(':xskinloader-lib')
+
     compile 'cn.bingoogolapple:bga-swipebacklayout:1.2.0'
+    api project(':xskinloader-lib')
 }

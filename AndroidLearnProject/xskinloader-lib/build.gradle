@@ -28,4 +28,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    // StatusUtil 沉浸式状态栏
+    api('com.jaeger.statusbarutil:library:1.4.0') {
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
 }

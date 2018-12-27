@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="app_color">#79be37</color>
+    <color name="app_color_night">#3f3f3f</color>
     <color name="app_color_dd">#dd79be37</color>
     <color name="color_9b9b9b">#9b9b9b</color>
     <color name="color_d0d0d0">#d0d0d0</color>

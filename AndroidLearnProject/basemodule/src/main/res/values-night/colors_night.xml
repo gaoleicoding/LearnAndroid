@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--夜间模式开源地址：https://github.com/WindySha/XSkinLoader.git-->
+    <color name="app_color">#3f3f3f</color>
     <color name="activity_bg_color">#3f3f3f</color>
+    <color name="text_color_white">#b8b8b8</color>
     <color name="text_color">#b8b8b8</color>
     <color name="divider_color">#343434</color>
     <color name="status_bar_color">#3f3f3f</color>
     <color name="btn_color">#343434</color>
-    <color name="btn_color_press">#343434</color>
+    <color name="btn_color_press">#dd343434</color>
+    <color name="color_d0d0d0">#d0d0d0</color>
 
 </resources>

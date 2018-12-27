@@ -14,6 +14,7 @@ import android.view.View;
 import com.android.learn.base.application.CustomApplication;
 import com.android.learn.base.utils.ExitAppUtils;
 import com.android.learn.base.utils.LogUtil;
+import com.android.learn.base.utils.SPUtils;
 import com.gaolei.basemodule.R;
 import com.jaeger.library.StatusBarUtil;
 import com.umeng.analytics.MobclickAgent;
@@ -230,6 +231,10 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
     }
 
     protected void setStatusBar() {
+        Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
+        if (isNightMode) {
+            StatusBarUtil.setColorForSwipeBack(this, getResources().getColor(R.color.app_color_night), 0);
+        }else
         StatusBarUtil.setColorForSwipeBack(this, getResources().getColor(R.color.app_color), 0);
     }
 }
