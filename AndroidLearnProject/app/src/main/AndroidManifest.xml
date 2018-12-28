@@ -31,7 +31,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" ></activity>
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
         <activity android:name=".activity.ArticleDetailActivity"></activity>
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.MyCollectActivity"></activity>

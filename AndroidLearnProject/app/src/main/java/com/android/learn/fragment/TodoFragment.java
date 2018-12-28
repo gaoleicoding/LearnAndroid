@@ -141,6 +141,8 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
 
     //初始化下拉刷新控件
     private void initSmartRefreshLayout() {
+        smartRefreshLayout.setEnableLoadMore(true);
+        smartRefreshLayout.setEnableRefresh(false);
         smartRefreshLayout.setEnableScrollContentWhenLoaded(true);//是否在加载完成时滚动列表显示新的内容
         smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true);
         smartRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {

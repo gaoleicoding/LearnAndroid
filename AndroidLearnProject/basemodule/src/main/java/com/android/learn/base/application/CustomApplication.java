@@ -32,6 +32,9 @@ public class CustomApplication extends Application {
         instance=this;
 //        LeakCanary.install(this);
 //        BlockCanary.install(this, new AppContext()).start();
+
+//        我们都会在代码中调用context.getResource().getString()这句代码看起来没什么问题，但是你这个context要是用的是applicationContext那么问题就来了。你会发现当你切换语言后用这样方式设置的string没有改变，所以我们需要改动我们的代码。
+//        解决方法就是，在切换语言后把application的updateConfiguration也要更新了，下面这句话
 //        LanguageUtil.setApplicationLanguage(this);
 
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "");
@@ -93,17 +96,10 @@ public class CustomApplication extends Application {
     }
 
 //    @Override
-//    protected void attachBaseContext(Context base) {
-//        //保存系统选择语言
-//        LanguageUtil.saveSystemCurrentLanguage(base);
-//        super.attachBaseContext(LanguageUtil.setLocal(base));
+//    protected void attachBaseContext(Context newBase) {
+//        //语言切换
+//        super.attachBaseContext(LanguageUtil.setLocal(newBase));
 //    }
-//
-//    @Override
-//    public void onConfigurationChanged(Configuration newConfig) {
-//        super.onConfigurationChanged(newConfig);
-//        //保存系统选择语言
-//        LanguageUtil.onConfigurationChanged(getApplicationContext());
-//    }
+
 
 }

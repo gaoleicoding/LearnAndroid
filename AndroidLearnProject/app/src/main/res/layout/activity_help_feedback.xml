@@ -43,7 +43,7 @@
         <EditText
             android:id="@+id/et_email_title"
             style="@style/code_edit_num_style"
-            android:hint="请输入联系方式"
+            android:hint="@string/please_input_contact"
             skin:enable="true"
             android:inputType="text" />
     </LinearLayout>
@@ -70,7 +70,7 @@
             android:id="@+id/et_email_content"
             style="@style/code_edit_num_style"
             android:layout_height="180dp"
-            android:hint="请输入反馈内容"
+            android:hint="@string/please_inupt_content"
             skin:enable="true"
             android:gravity="top"
             android:inputType="text" />

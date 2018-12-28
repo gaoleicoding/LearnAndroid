@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseActivity;
+import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.RestartMainEvent;
+import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.SPUtils;
@@ -26,7 +28,7 @@ import butterknife.OnClick;
 
 
 
-public class FontSizeActivity extends BaseActivity {
+public class FontSizeActivity extends BaseMvpActivity {
     @BindView(R.id.iv_back)
     ImageView iv_back;
     @BindView(R.id.title)
@@ -137,14 +139,18 @@ public class FontSizeActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        //语言切换
-        super.attachBaseContext(LanguageUtil.setLocal(newBase));
-
-    }
     public void onDestroy(){
         super.onDestroy();
         LogUtil.d(TAG,TAG+"   onDestroy--------");
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    protected void loadData() {
+
     }
 }

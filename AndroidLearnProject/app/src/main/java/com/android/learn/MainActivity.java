@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -478,12 +479,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         });
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        //语言切换
-        super.attachBaseContext(LanguageUtil.setLocal(newBase));
-
-    }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(RestartMainEvent event) {
@@ -679,5 +674,9 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         if (et_search.getText().toString().length() > 0 && !"SearchResultActivity".equals(Utils.getTopActivity(this)))
             beginSearch();
     }
-
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        // 在这里添加屏幕切换后的操作
+    }
 }

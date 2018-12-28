@@ -62,4 +62,6 @@
     <string name="data_empty">Data is empty</string>
     <string name="select_time">please select time</string>
     <string name="begin_speech">Begin speech</string>
+    <string name="please_inupt_content">please input feedback content</string>
+    <string name="please_inupt_contact">please input feedback contact</string>
 </resources>

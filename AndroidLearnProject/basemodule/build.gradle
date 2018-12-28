@@ -120,6 +120,10 @@ dependencies {
     api rootProject.ext.dependencies["greendao"]
     //    activity滑动消失框架
     api rootProject.ext.dependencies["bga-swipebacklayout"]
+    // StatusUtil 沉浸式状态栏
+    api('com.jaeger.statusbarutil:library:1.4.0') {
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
     //   换肤框架，不必重启应用
     api project(':xskinloader-lib')
 }

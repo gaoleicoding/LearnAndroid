@@ -32,7 +32,7 @@ import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
  * Created by gaolei on 2018/4/26.
  */
 
-public abstract class BaseActivity extends BasePermisssionActivity implements View.OnClickListener,BGASwipeBackHelper.Delegate {
+public abstract class BaseActivity extends BasePermisssionActivity implements View.OnClickListener, BGASwipeBackHelper.Delegate {
 
     Boolean isNightMode;
 
@@ -61,19 +61,6 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
 
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        //重写字体缩放比例  api>25
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
-            final Resources res = newBase.getResources();
-            final Configuration config = res.getConfiguration();
-            config.fontScale = CustomApplication.getInstance().getFontScale();//1 设置正常字体大小的倍数
-            final Context newContext = newBase.createConfigurationContext(config);
-            super.attachBaseContext(newContext);
-        } else {
-            super.attachBaseContext(newBase);
-        }
-    }
 
     protected abstract int getLayoutId();
 
@@ -131,6 +118,32 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         }
     }
 
+    //重写字体缩放比例  api>25
+    @Override
+    protected void attachBaseContext(Context newBase) {
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
+            final Resources res = newBase.getResources();
+            final Configuration config = res.getConfiguration();
+            config.fontScale = CustomApplication.getInstance().getFontScale();//1 设置正常字体大小的倍数
+            final Context newContext = newBase.createConfigurationContext(config);
+            super.attachBaseContext(newContext);
+        } else {
+            super.attachBaseContext(newBase);
+        }
+    }
+
+    //重写字体缩放比例 api<25
+    @Override
+    public Resources getResources() {
+        Resources res = super.getResources();
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+            Configuration config = res.getConfiguration();
+            config.fontScale = CustomApplication.getInstance().getFontScale();//1 设置正常字体大小的倍数
+            res.updateConfiguration(config, res.getDisplayMetrics());
+        }
+        return res;
+    }
 
     private void changeSkin() {
         //将assets目录下的皮肤文件拷贝到data/data/.../cache目录下
@@ -148,17 +161,6 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         SkinManager.get().restoreToDefaultSkin();
     }
 
-    //重写字体缩放比例 api<25
-    @Override
-    public Resources getResources() {
-        Resources res = super.getResources();
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
-            Configuration config = res.getConfiguration();
-            config.fontScale = CustomApplication.getInstance().getFontScale();//1 设置正常字体大小的倍数
-            res.updateConfiguration(config, res.getDisplayMetrics());
-        }
-        return res;
-    }
 
     /**
      * 初始化滑动返回。在 super.onCreate(savedInstanceState) 之前调用该方法
@@ -234,7 +236,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
         if (isNightMode) {
             StatusBarUtil.setColorForSwipeBack(this, getResources().getColor(R.color.app_color_night), 0);
-        }else
-        StatusBarUtil.setColorForSwipeBack(this, getResources().getColor(R.color.app_color), 0);
+        } else
+            StatusBarUtil.setColorForSwipeBack(this, getResources().getColor(R.color.app_color), 0);
     }
 }

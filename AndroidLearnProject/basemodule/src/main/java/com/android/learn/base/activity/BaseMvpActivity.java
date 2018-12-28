@@ -27,6 +27,7 @@ public abstract class BaseMvpActivity< P extends BasePresenter> extends BaseActi
         mPresenter.dettach();
         super.onDestroy();
     }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         //语言切换

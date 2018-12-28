@@ -43,6 +43,8 @@
     <string name="slide_change_font_size">滑动下面的滑块调整字体大小</string>x
     <string name="please_input_contact">请输入联系方式</string>
     <string name="please_input_content">请输入内容</string>
+    <string name="please_inupt_content">请输入反馈内容</string>
+    <string name="please_inupt_contact">请输入联系方式</string>
     <string name="feedback_send_success">已经收到您的反馈</string>
     <string name="feedback_send_fail">反馈发送失败</string>
     <string name="send">发送</string>
