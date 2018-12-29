@@ -205,4 +205,13 @@
         <item name="android:textSize">13sp</item>
         <item name="android:singleLine">true</item>
     </style>
+
+    <style name="tv_empty">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
 </resources>

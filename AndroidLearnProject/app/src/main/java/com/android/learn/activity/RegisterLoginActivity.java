@@ -104,15 +104,15 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
                 String confirmPassword = et_register_confirm_password.getText().toString().trim();
 
                 if ("".equals(username)) {
-                    Utils.showToast(getResources().getString(R.string.please_input_account), true);
+                    Utils.showToast(getString(R.string.please_input_account), true);
                     return;
                 }
                 if (password.length() < 6) {
-                    Utils.showToast(getResources().getString(R.string.register_password_too_short), true);
+                    Utils.showToast(getString(R.string.register_password_too_short), true);
                     return;
                 }
                 if (!password.equals(confirmPassword)) {
-                    Utils.showToast(getResources().getString(R.string.password_dismatch), true);
+                    Utils.showToast(getString(R.string.password_dismatch), true);
                     return;
                 }
 
@@ -137,7 +137,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
     private void back() {
         if (isInRegister) {
             layout_register.setVisibility(View.GONE);
-            title.setText(getResources().getString(R.string.login));
+            title.setText(getString(R.string.login));
             isInRegister = false;
         } else {
             finish();

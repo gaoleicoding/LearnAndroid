@@ -26,7 +26,6 @@ import java.util.List;
 import butterknife.BindView;
 
 
-
 public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implements ProjectContract.View {
 
     @BindView(R.id.project_recyclerview)
@@ -72,15 +71,12 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
     @Override
     public void showProjectList(ProjectListData listData, boolean isRefresh) {
         final List<ProjectListData.ProjectData> newDataList = listData.data.getDatas();
-
-        if (isRefresh) {
-            smartRefreshLayout.finishRefresh(true);
-        } else {
-            projectAdapter.addData(newDataList);
-            smartRefreshLayout.finishLoadMore();
+        if (newDataList == null || newDataList.size() == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData();
+            return;
         }
-
-
+        smartRefreshLayout.finishLoadMore();
+        projectAdapter.addData(newDataList);
 
     }
 

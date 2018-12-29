@@ -92,8 +92,13 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
     @Override
     public void showWxArticleById(FeedArticleListData datas) {
         final List<FeedArticleData> newDataList = datas.getDatas();
-        feedArticleAdapter.addData(newDataList);
+        if (newDataList == null || newDataList.size() == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData();
+            return;
+        }
         smartRefreshLayout.finishLoadMore();
+        feedArticleAdapter.addData(newDataList);
+
     }
 
     @Override

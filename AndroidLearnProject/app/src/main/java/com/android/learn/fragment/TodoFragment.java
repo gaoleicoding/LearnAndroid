@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.android.learn.R;
 import com.android.learn.activity.TodoEditActivity;
@@ -38,6 +39,8 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
     SmartRefreshLayout smartRefreshLayout;
+    @BindView(R.id.tv_empty_todo)
+    TextView tv_empty_todo;
     private List<TodoData.DatasBean> todoList;
     private TodoQuickAdapter todoAdapter;
 
@@ -165,21 +168,32 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
 
     @Override
     public void showListNotDone(TodoData todoData) {
+        smartRefreshLayout.finishLoadMore();
         final List<TodoData.DatasBean> newDataList = todoData.getDatas();
-
         todoAdapter.addData(newDataList);
 
-        smartRefreshLayout.finishLoadMore();
-
+        if (todoAdapter.getData().size() == 0) {
+            tv_empty_todo.setVisibility(View.VISIBLE);
+            tv_empty_todo.setText(getString(R.string.empty_done));
+        } else tv_empty_todo.setVisibility(View.GONE);
     }
 
     @Override
     public void showListDone(TodoData todoData) {
         final List<TodoData.DatasBean> newDataList = todoData.getDatas();
+        if (newDataList == null || newDataList.size() == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData();
+            return;
+        }
+        smartRefreshLayout.finishLoadMore();
 
         todoAdapter.addData(newDataList);
 
-        smartRefreshLayout.finishLoadMore();
+        if (todoAdapter.getData().size() == 0) {
+            tv_empty_todo.setVisibility(View.VISIBLE);
+        } else tv_empty_todo.setVisibility(View.GONE);
+
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

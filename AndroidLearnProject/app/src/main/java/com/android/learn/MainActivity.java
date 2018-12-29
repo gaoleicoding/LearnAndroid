@@ -175,11 +175,11 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         mFragments.add(new UserFragment());
 
         titles = new ArrayList<String>();
-        titles.add(getResources().getString(R.string.home));
-        titles.add(getResources().getString(R.string.project));
-        titles.add(getResources().getString(R.string.knowledge));
-        titles.add(getResources().getString(R.string.public_account));
-        titles.add(getResources().getString(R.string.mine));
+        titles.add(getString(R.string.home));
+        titles.add(getString(R.string.project));
+        titles.add(getString(R.string.knowledge));
+        titles.add(getString(R.string.public_account));
+        titles.add(getString(R.string.mine));
 
         MainTabAdapter adapter = new MainTabAdapter(getSupportFragmentManager(), mFragments);
         viewPager.setOffscreenPageLimit(mFragments.size());
@@ -213,7 +213,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     private void beginSearch() {
         String content = et_search.getText().toString();
         if (TextUtils.isEmpty(content)) {
-            Utils.showToast(getResources().getString(R.string.search_content_no), true);
+            Utils.showToast(getString(R.string.search_content_no), true);
         }
 
         Bundle bundle = new Bundle();
@@ -370,7 +370,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             }
             if ((System.currentTimeMillis() - exitTime) > 2000) {
                 //弹出提示，可以有多种方式
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.press_exit), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.press_exit), Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {
                 finish();
@@ -424,7 +424,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
      */
     private SVGADynamicEntity requestDynamicItemWithSpannableText() {
         SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getResources().getString(R.string.welcome_learn_android));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getString(R.string.welcome_learn_android));
         spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         TextPaint textPaint = new TextPaint();
         textPaint.setColor(Color.WHITE);
@@ -580,7 +580,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 // 显示听写对话框
                 mIatDialog.setListener(mRecognizerDialogListener);
                 mIatDialog.show();
-                Utils.showToast(getResources().getString(R.string.begin_speech), true, Gravity.BOTTOM);
+                Utils.showToast(getString(R.string.begin_speech), true, Gravity.BOTTOM);
             }
 
             @Override

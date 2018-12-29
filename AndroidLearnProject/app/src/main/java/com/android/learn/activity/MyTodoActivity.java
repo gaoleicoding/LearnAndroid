@@ -85,7 +85,7 @@ public class MyTodoActivity extends BaseMvpActivity {
 
     @Override
     protected void initData(Bundle bundle) {
-        tv_title.setText(getResources().getString(R.string.todo));
+        tv_title.setText(getString(R.string.todo));
         iv_back.setVisibility(View.VISIBLE);
         iv_search.setVisibility(View.VISIBLE);
         iv_search.setImageResource(R.drawable.add_todo);

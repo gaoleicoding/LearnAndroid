@@ -41,7 +41,6 @@ import java.util.List;
 import butterknife.BindView;
 
 
-
 public class HomeFragment extends BaseMvpFragment<HomePresenter> implements HomeContract.View {
 
     @BindView(R.id.article_recyclerview)
@@ -96,12 +95,13 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     @Override
     public void showArticleList(FeedArticleListData listData, boolean isRefresh) {
         final List<FeedArticleData> newDataList = listData.getDatas();
-        if (isRefresh) {
-            smartRefreshLayout.finishRefresh(true);
-        } else {
-            feedArticleAdapter.addData(newDataList);
-            smartRefreshLayout.finishLoadMore();
+        if (newDataList == null || newDataList.size() == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData();
+            return;
         }
+        smartRefreshLayout.finishLoadMore();
+
+        feedArticleAdapter.addData(newDataList);
 
     }
 
@@ -242,7 +242,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     @Override
     public void showCancelCollectArticleData(int id) {
         int position = feedArticleAdapter.getPosById(id);
-        if(position==-1)return;
+        if (position == -1) return;
         FeedArticleData feedArticleData = articleDataList.get(position);
         feedArticleData.setCollect(false);
         feedArticleAdapter.setData(position, feedArticleData);
@@ -252,12 +252,13 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     public void onEvent(CancelCollectEvent event) {
         mPresenter.cancelCollectArticle(event.id);
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(LoginEvent accountEvent) {
         feedArticleAdapter.getData().clear();
         feedArticleAdapter.notifyDataSetChanged();
         mPresenter.getFeedArticleList(0);
-        mPresenter.mCurrentPage=0;
+        mPresenter.mCurrentPage = 0;
     }
 
     public void onDestroy() {

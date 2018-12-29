@@ -36,6 +36,8 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
     ImageView iv_back;
     @BindView(R.id.title)
     TextView title;
+    @BindView(R.id.tv_empty_knowledge)
+    TextView tv_empty_knowledge;
     @BindView(R.id.article_recyclerview)
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
@@ -87,22 +89,13 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
     @Override
     public void showArticleList(FeedArticleListData listData, boolean isRefresh) {
         final List<FeedArticleData> newDataList = listData.getDatas();
-        LogUtil.d(TAG, "newDataList.size()--------------" + newDataList.size());
-        if (listData.getDatas() == null || listData.getDatas().size() == 0) {
-            Utils.showToast("已经是最后一页了", true);
-            smartRefreshLayout.finishLoadMore();
+        if (newDataList == null || newDataList.size() == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData();
             return;
         }
-        if (isRefresh) {
-            smartRefreshLayout.finishRefresh(true);
-        } else {
-            articleDataList.addAll(newDataList);
-            if (listData.getCurPage() == 1) {
-                feedArticleAdapter.setNewData(listData.getDatas());
-            } else
-                feedArticleAdapter.addData(newDataList);
-            smartRefreshLayout.finishLoadMore();
-        }
+        smartRefreshLayout.finishLoadMore();
+
+        feedArticleAdapter.addData(newDataList);
 
     }
 
@@ -123,7 +116,7 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
                 DividerItemDecoration.VERTICAL_LIST));
         article_recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
-     //解决数据加载完成后, 没有停留在顶部的问题
+        //解决数据加载完成后, 没有停留在顶部的问题
         article_recyclerview.setFocusable(false);
         article_recyclerview.setAdapter(feedArticleAdapter);
 

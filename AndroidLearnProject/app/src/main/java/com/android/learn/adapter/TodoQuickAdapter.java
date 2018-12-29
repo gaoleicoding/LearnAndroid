@@ -40,7 +40,7 @@ public class TodoQuickAdapter extends BaseQuickAdapter<DatasBean, BaseViewHolder
             iv_item_todo.setImageResource(R.drawable.icon_done);
             TextView tv_item_done_time = helper.getView(R.id.tv_item_done_time);
             tv_item_done_time.setVisibility(View.VISIBLE);
-            tv_item_done_time.setText(context.getResources().getString(R.string.todo_finish_time)+bean.getCompleteDateStr());
+            tv_item_done_time.setText(context.getString(R.string.todo_finish_time)+bean.getCompleteDateStr());
         }
         helper.addOnClickListener(R.id.iv_item_todo);
         helper.addOnClickListener(R.id.iv_item_delete);

@@ -61,7 +61,7 @@ public class TodoEditActivity extends BaseMvpActivity<TodoEditPresenter> impleme
 
     @Override
     protected void initData(Bundle bundle) {
-        mTitle.setText(getResources().getString(R.string.detail));
+        mTitle.setText(getString(R.string.detail));
         iv_back.setVisibility(View.VISIBLE);
         datasBean = (DatasBean) bundle.getSerializable("todo_item");
         et_title.setText(datasBean.getTitle());
@@ -78,7 +78,7 @@ public class TodoEditActivity extends BaseMvpActivity<TodoEditPresenter> impleme
                 map.put("content",et_content.getText().toString());
                 String date=mTodoDate.getText().toString();
                 if(!date.contains("-")){
-                    Utils.showToast(getResources().getString(R.string.select_time),true);
+                    Utils.showToast(getString(R.string.select_time),true);
                     return;
                 }
                 map.put("date",date);
@@ -117,7 +117,7 @@ public class TodoEditActivity extends BaseMvpActivity<TodoEditPresenter> impleme
 
     @Override
     public void showUpdateTodo(BaseData todoData) {
-        Utils.showToast(getResources().getString(R.string.operate_success),true);
+        Utils.showToast(getString(R.string.operate_success),true);
         EventBus.getDefault().post(new UpdateTodoEvent());
         finish();
     }

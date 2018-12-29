@@ -44,6 +44,8 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
     RecyclerView article_collect_recyclerview;
     @BindView(R.id.smartRefreshLayout)
     SmartRefreshLayout smartRefreshLayout;
+    @BindView(R.id.tv_empty_collect)
+    TextView tv_empty_collect;
     private List<FeedArticleData> articleDataList;
     private ArticleQuickAdapter feedArticleAdapter;
 
@@ -78,6 +80,30 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
         mPresenter.getCollectList();
     }
 
+
+    @Override
+    public void showCollectList(FeedArticleListData feedArticleListData) {
+        final List<FeedArticleData> newDataList = feedArticleListData.getDatas();
+        if (newDataList == null || newDataList.size() == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData();
+            return;
+        }
+        smartRefreshLayout.finishLoadMore();
+
+        feedArticleAdapter.addData(newDataList);
+
+        if (feedArticleAdapter.getData().size() == 0) {
+            tv_empty_collect.setVisibility(View.VISIBLE);
+        } else tv_empty_collect.setVisibility(View.GONE);
+
+    }
+
+    @Override
+    public void showCancelCollectArticle(int position, int id) {
+        feedArticleAdapter.remove(position);
+        EventBus.getDefault().post(new CancelCollectEvent(id));
+    }
+
     private void initRecyclerView() {
         articleDataList = new ArrayList<>();
         feedArticleAdapter = new ArticleQuickAdapter(this, articleDataList, "MyCollectActivity");
@@ -93,13 +119,6 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
                 mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position).originId);
             }
         });
-    }
-
-    @Override
-    public void showCollectList(FeedArticleListData feedArticleListData) {
-        smartRefreshLayout.finishLoadMore();
-        final List<FeedArticleData> newDataList = feedArticleListData.getDatas();
-        feedArticleAdapter.addData(newDataList);
         feedArticleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -111,16 +130,11 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
             }
 
         });
-
-    }
-
-    @Override
-    public void showCancelCollectArticle(int position, int id) {
-        feedArticleAdapter.remove(position);
-        EventBus.getDefault().post(new CancelCollectEvent(id));
     }
 
     private void initSmartRefreshLayout() {
+        smartRefreshLayout.setEnableLoadMore(true);
+        smartRefreshLayout.setEnableRefresh(false);
         smartRefreshLayout.setEnableScrollContentWhenLoaded(true);//是否在加载完成时滚动列表显示新的内容
         smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true);
         smartRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
@@ -133,7 +147,6 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
 
         });
     }
-
 
 
 }

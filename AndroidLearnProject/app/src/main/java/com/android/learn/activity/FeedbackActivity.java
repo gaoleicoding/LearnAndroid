@@ -88,11 +88,11 @@ public class FeedbackActivity extends BaseMvpActivity {
                 String sendTitle = et_email_title.getText().toString();
                 String sendContent = et_email_content.getText().toString();
                 if ("".equals(sendTitle.trim())) {
-                    Utils.showToast(getResources().getString(R.string.please_input_contact), true);
+                    Utils.showToast(getString(R.string.please_input_contact), true);
                     return;
                 }
                 if ("".equals(sendContent.trim())) {
-                    Utils.showToast(getResources().getString(R.string.please_input_content), true);
+                    Utils.showToast(getString(R.string.please_input_content), true);
                     return;
                 }
                 senderRunnable.setMail(sendTitle, sendContent,
@@ -164,7 +164,7 @@ public class FeedbackActivity extends BaseMvpActivity {
             // TODO Auto-generated method stub
             try {
                 sender.sendMail(subject, body, user, receiver, attachment);
-                Utils.showToast(getResources().getString(R.string.feedback_send_success), false);
+                Utils.showToast(getString(R.string.feedback_send_success), false);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -174,7 +174,7 @@ public class FeedbackActivity extends BaseMvpActivity {
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 if (e.getMessage() != null)
-                    Utils.showToast(getResources().getString(R.string.feedback_send_fail), false);
+                    Utils.showToast(getString(R.string.feedback_send_fail), false);
                 e.printStackTrace();
             } finally {
                 finish();

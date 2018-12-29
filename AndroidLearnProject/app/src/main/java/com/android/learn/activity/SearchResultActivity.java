@@ -15,6 +15,7 @@ import com.android.learn.adapter.DividerItemDecoration;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.learn.base.mmodel.TodoData;
 import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.Utils;
@@ -35,6 +36,8 @@ public class SearchResultActivity extends BaseMvpActivity<SearchPresenter> imple
     ImageView iv_back;
     @BindView(R.id.title)
     TextView title;
+    @BindView(R.id.tv_empty_knowledge)
+    TextView tv_empty_knowledge;
     @BindView(R.id.article_recyclerview)
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
@@ -78,17 +81,17 @@ public class SearchResultActivity extends BaseMvpActivity<SearchPresenter> imple
     @Override
     public void showArticleList(FeedArticleListData listData) {
         final List<FeedArticleData> newDataList = listData.getDatas();
-        LogUtil.d(TAG, "newDataList.size()--------------" + newDataList.size());
-        if (listData.getDatas() == null || listData.getDatas().size() == 0) {
-            Utils.showToast("已经是最后一页了", true);
-            smartRefreshLayout.finishLoadMore();
+        if (newDataList == null || newDataList.size() == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData();
             return;
         }
-
-
-        feedArticleAdapter.addData(newDataList);
         smartRefreshLayout.finishLoadMore();
 
+        feedArticleAdapter.addData(newDataList);
+
+        if (feedArticleAdapter.getData().size() == 0) {
+            tv_empty_knowledge.setVisibility(View.VISIBLE);
+        } else tv_empty_knowledge.setVisibility(View.GONE);
     }
 
     @Override
@@ -149,7 +152,6 @@ public class SearchResultActivity extends BaseMvpActivity<SearchPresenter> imple
 
         });
     }
-
 
 
 }

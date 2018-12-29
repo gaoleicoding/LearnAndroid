@@ -14,10 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.scwang.smartrefresh.layout.header.ClassicsHeader
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
         <android.support.v4.widget.NestedScrollView
             android:id="@+id/scrollview_nested"
             android:layout_width="match_parent"
@@ -72,8 +68,5 @@
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
 
-        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>

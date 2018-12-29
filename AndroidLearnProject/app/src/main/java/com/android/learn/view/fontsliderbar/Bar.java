@@ -106,7 +106,7 @@ public class Bar {
             }
             if (i == 1) {
                 if (context != null)
-                    text = context.getResources().getString(R.string.standrd);
+                    text = context.getString(R.string.standrd);
                 mTextPaint.setTextSize(mtextSize);
             }
             if (i == mSegments) {

@@ -60,7 +60,7 @@ public class TodoAddActivity extends BaseMvpActivity<TodoAddPresenter> implement
 
     @Override
     protected void initData(Bundle bundle) {
-        mTitle.setText(getResources().getString(R.string.add));
+        mTitle.setText(getString(R.string.add));
         iv_back.setVisibility(View.VISIBLE);
     }
 
@@ -73,7 +73,7 @@ public class TodoAddActivity extends BaseMvpActivity<TodoAddPresenter> implement
                 map.put("content",et_content.getText().toString());
                 String date=mTodoDate.getText().toString();
                 if(!date.contains("-")){
-                    Utils.showToast(getResources().getString(R.string.select_time),true);
+                    Utils.showToast(getString(R.string.select_time),true);
                     return;
                 }
                 map.put("date",date);
@@ -112,7 +112,7 @@ public class TodoAddActivity extends BaseMvpActivity<TodoAddPresenter> implement
 
     @Override
     public void showAddTodo(BaseData todoData) {
-        Utils.showToast(getResources().getString(R.string.operate_success),true);
+        Utils.showToast(getString(R.string.operate_success),true);
         EventBus.getDefault().post(new UpdateTodoEvent());
         finish();
     }

@@ -64,4 +64,8 @@
     <string name="begin_speech">Begin speech</string>
     <string name="please_inupt_content">please input feedback content</string>
     <string name="please_inupt_contact">please input feedback contact</string>
+    <string name="empty_collect">No collection</string>
+    <string name="empty_todo">No todo things</string>
+    <string name="empty_done">No done things</string>
+    <string name="empty_search">No search content</string>
 </resources>

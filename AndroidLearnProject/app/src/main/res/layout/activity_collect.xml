@@ -1,11 +1,12 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:skin="http://schemas.android.com/android/skin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activity_bg_color"
-    skin:enable="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    skin:enable="true">
+
 
     <com.android.learn.base.view.TitleView
         android:id="@+id/layout_title"
@@ -15,19 +16,18 @@
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/smartRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.scwang.smartrefresh.layout.header.ClassicsHeader
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_title">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/article_collect_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_empty_collect"
+        style="@style/tv_empty"
+        android:text="@string/empty_collect" />
+</RelativeLayout>
