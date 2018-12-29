@@ -168,13 +168,16 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
 
     @Override
     public void showListNotDone(TodoData todoData) {
-        smartRefreshLayout.finishLoadMore();
         final List<TodoData.DatasBean> newDataList = todoData.getDatas();
+        if (newDataList == null || newDataList.size() == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData();
+        }
+        smartRefreshLayout.finishLoadMore();
         todoAdapter.addData(newDataList);
 
         if (todoAdapter.getData().size() == 0) {
             tv_empty_todo.setVisibility(View.VISIBLE);
-            tv_empty_todo.setText(getString(R.string.empty_done));
+
         } else tv_empty_todo.setVisibility(View.GONE);
     }
 
@@ -183,7 +186,6 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
         final List<TodoData.DatasBean> newDataList = todoData.getDatas();
         if (newDataList == null || newDataList.size() == 0) {
             smartRefreshLayout.finishLoadMoreWithNoMoreData();
-            return;
         }
         smartRefreshLayout.finishLoadMore();
 
@@ -191,6 +193,7 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
 
         if (todoAdapter.getData().size() == 0) {
             tv_empty_todo.setVisibility(View.VISIBLE);
+            tv_empty_todo.setText(getString(R.string.empty_done));
         } else tv_empty_todo.setVisibility(View.GONE);
 
 

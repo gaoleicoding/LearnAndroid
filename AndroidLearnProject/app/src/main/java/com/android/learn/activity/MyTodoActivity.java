@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.fragment.TodoFragment;
@@ -80,7 +79,7 @@ public class MyTodoActivity extends BaseMvpActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_my_course_discuss;
+        return R.layout.activity_my_todo;
     }
 
     @Override

@@ -18,7 +18,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/email_info_hint"
+        android:text="@string/please_input_contact"
         android:visibility="gone"
         android:textSize="14sp" />
 

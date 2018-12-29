@@ -86,7 +86,6 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> impleme
         final List<FeedArticleData> newDataList = feedArticleListData.getDatas();
         if (newDataList == null || newDataList.size() == 0) {
             smartRefreshLayout.finishLoadMoreWithNoMoreData();
-            return;
         }
         smartRefreshLayout.finishLoadMore();
 

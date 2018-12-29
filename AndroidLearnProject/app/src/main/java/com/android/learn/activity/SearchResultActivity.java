@@ -83,7 +83,6 @@ public class SearchResultActivity extends BaseMvpActivity<SearchPresenter> imple
         final List<FeedArticleData> newDataList = listData.getDatas();
         if (newDataList == null || newDataList.size() == 0) {
             smartRefreshLayout.finishLoadMoreWithNoMoreData();
-            return;
         }
         smartRefreshLayout.finishLoadMore();
 
