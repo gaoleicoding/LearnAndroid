@@ -10,14 +10,23 @@ https://github.com/hongyangAndroid/wanandroid
 主要功能
 
 首页：轮播图、文章列表
+
 项目：项目列表
+
 知识体系：开发环境、基础知识、用户交互等知识点
+
 公众号：几个有名的公众号推荐的Android文章
+
 我的：我的收藏、待办、设置
+
 搜索：热门搜索、历史搜索，支持语音搜索
+
 文章详情：跳转到对应的网页
+
 登录、注册、退出登录
+
 收藏：我的收藏、添加收藏、取消收藏
+
 设置：反馈与建议、夜间模式、语言设置、字体大小
  
 
@@ -93,23 +102,23 @@ https://github.com/hongyangAndroid/wanandroid
 
 ![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/2.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic3.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/3.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic4.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/4.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic5.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/5.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic6.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/6.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic7.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/7.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic8.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/8.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic9.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/9.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic10.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/10.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic11.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/11.jpg)
 
 
 
