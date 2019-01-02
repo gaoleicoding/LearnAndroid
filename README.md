@@ -1,11 +1,14 @@
  
 简介
+
 学Android 主要是采用 MVP + RxJava2 + Retrofit + Multimodule 等架构设计。利用开源的api获取有关android知识的数据，非常感谢张鸿洋老师提供的开放api！向开源者致敬！项目中把目前流行的项目框架都集成到了，代码结构清晰并且有详细注释，如有建议或疑问可留言反馈 。
 
 开放API地址
+
 https://github.com/hongyangAndroid/wanandroid
 
 主要功能
+
 首页：轮播图、文章列表
 项目：项目列表
 知识体系：开发环境、基础知识、用户交互等知识点
@@ -19,6 +22,7 @@ https://github.com/hongyangAndroid/wanandroid
  
 
 主要开源框架
+
 //okhttp retrofit
     api rootProject.ext.dependencies["okhttp3"]
     api rootProject.ext.dependencies["retrofit"]
@@ -85,15 +89,27 @@ https://github.com/hongyangAndroid/wanandroid
  
 效果图
 
-https://img-blog.csdnimg.cn/20190102160110640.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2xlaTEyMDE=,size_16,color_FFFFFF,t_70
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic1.jpg)
 
-https://img-blog.csdnimg.cn/20190102160659723.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2xlaTEyMDE=,size_16,color_FFFFFF,t_70
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic2.jpg)
 
-https://img-blog.csdnimg.cn/20190102160726193.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2xlaTEyMDE=,size_16,color_FFFFFF,t_70
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic3.jpg)
 
-https://img-blog.csdnimg.cn/20190102160745394.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2xlaTEyMDE=,size_16,color_FFFFFF,t_70
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic4.jpg)
 
-https://img-blog.csdnimg.cn/20190102162141491.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2xlaTEyMDE=,size_16,color_FFFFFF,t_70
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic5.jpg)
+
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic6.jpg)
+
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic7.jpg)
+
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic8.jpg)
+
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic9.jpg)
+
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic10.jpg)
+
+![image](https://github.com/gaoleiandroid1201/BiuBike/raw/master/material/screenshots/pic11.jpg)
 
 
 
