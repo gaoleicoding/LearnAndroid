@@ -89,9 +89,9 @@ https://github.com/hongyangAndroid/wanandroid
  
 效果图
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic1.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/1.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic2.jpg)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/2.jpg)
 
 ![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/pic3.jpg)
 
