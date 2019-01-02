@@ -32,11 +32,12 @@ https://github.com/hongyangAndroid/wanandroid
 
 主要开源框架
 
-//okhttp retrofit
+    //okhttp retrofit
     api rootProject.ext.dependencies["okhttp3"]
     api rootProject.ext.dependencies["retrofit"]
     api rootProject.ext.dependencies["retrofit-converter-gson"]
  
+    
     //butterknife
     api rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
