@@ -46,7 +46,7 @@
         <activity android:name=".activity.TodoEditActivity"></activity>
         <activity android:name=".activity.TodoAddActivity"></activity>
         <!--value的值填写你在友盟后台申请的应用Appkey-->
-        <meta-data android:value="5b856a95b27b0a712f0000fb" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="5c2cac33f1f556a0bf000159" android:name="UMENG_APPKEY"/>
         <!--value的值填写渠道名称，例如yingyongbao。这里设置动态渠道名称变量-->
         <meta-data android:value="${UMENG_CHANNEL_VALUE}" android:name="UMENG_CHANNEL"/>
     </application>

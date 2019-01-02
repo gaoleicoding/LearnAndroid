@@ -43,16 +43,12 @@ public class CustomApplication extends Application {
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         context = this;
         instance = this;
-//        LeakCanary.install(this);
-//        BlockCanary.install(this, new AppContext()).start();
+        // LeakCanary.install(this);
+        // BlockCanary.install(this, new AppContext()).start();
 
-//        我们都会在代码中调用context.getResource().getString()这句代码看起来没什么问题，但是你这个context要是用的是applicationContext那么问题就来了。你会发现当你切换语言后用这样方式设置的string没有改变，所以我们需要改动我们的代码。
-//        解决方法就是，在切换语言后把application的updateConfiguration也要更新了，下面这句话
-//        LanguageUtil.setApplicationLanguage(this);
-
+        //初始化友盟
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "");
-        MobclickAgent.onEvent(this, "enter", "CustomApplication");//前统计的事件ID
-        ExtraAttrRegister.init();
+        //初始化换肤
         SkinInflaterFactory.setFactory(LayoutInflater.from(this));  // for skin change
         SkinManager.get().init(this);
         //初始化讯飞语言识别
@@ -62,6 +58,7 @@ public class CustomApplication extends Application {
          * 第一个参数：应用程序上下文
          * 第二个参数：如果发现滑动返回后立即触摸界面时应用崩溃，请把该界面里比较特殊的 View 的 class 添加到该集合中，目前在库中已经添加了 WebView 和 SurfaceView
          */
+        //
         BGASwipeBackHelper.init(this, null);
 
     }

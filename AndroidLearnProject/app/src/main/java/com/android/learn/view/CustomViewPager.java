@@ -38,7 +38,8 @@ public class CustomViewPager extends ViewPager {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        getParent().requestDisallowInterceptTouchEvent(true);//让所有父控件不要拦截事件
+       if(getCurrentItem()!=0)
+        getParent().requestDisallowInterceptTouchEvent(true);//如果不是viewpager的第一项让父控件不要拦截事件
         return super.dispatchTouchEvent(ev);
     }
 
