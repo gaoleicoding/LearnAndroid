@@ -51,6 +51,8 @@ public class CustomApplication extends Application {
         //初始化换肤
         SkinInflaterFactory.setFactory(LayoutInflater.from(this));  // for skin change
         SkinManager.get().init(this);
+        //扩展换肤属性和style中的换肤属性
+        ExtraAttrRegister.init();
         //初始化讯飞语言识别
         SpeechUtility.createUtility(this, "appid=" + "5c22ed2f");
         /**

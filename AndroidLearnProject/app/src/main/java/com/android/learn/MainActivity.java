@@ -501,6 +501,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         } else {
             title_view_divider.setVisibility(View.GONE);
         }
+        setStatusBar();
     }
 
     public void onDestroy() {

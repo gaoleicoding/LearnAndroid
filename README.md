@@ -96,6 +96,11 @@ https://github.com/hongyangAndroid/wanandroid
     //   换肤框架，不必重启应用
     api project(':xskinloader-lib')
  
+
+扫码下载体验
+
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/download.png)
+
  
 效果图
 
