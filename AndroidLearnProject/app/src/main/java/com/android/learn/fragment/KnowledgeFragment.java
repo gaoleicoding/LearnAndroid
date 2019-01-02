@@ -2,6 +2,8 @@ package com.android.learn.fragment;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 
 import com.android.learn.R;
@@ -20,12 +22,16 @@ import java.util.List;
 import butterknife.BindView;
 
 
-
-
 public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> implements KnowledgeContract.View {
     @BindView(R.id.hicvp)
     HorizontalInfiniteCycleViewPager horizontalInfiniteCycleViewPager;
     private HorizontalPagerAdapter mPagerAdapter;
+
+    Handler handler = new Handler() {
+        public void handleMessage(Message message) {
+            CustomProgressDialog.show(getActivity());
+        }
+    };
 
     @Override
     public void initData(Bundle bundle) {
@@ -58,11 +64,16 @@ public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> imple
 
     @Override
     public void showKnowledge(List<TreeBean> datas) {
-        CustomProgressDialog.show(getActivity());
         mPagerAdapter = new HorizontalPagerAdapter(getContext(), datas);
         horizontalInfiniteCycleViewPager.setAdapter(mPagerAdapter);
         if (horizontalInfiniteCycleViewPager != null && datas.size() > 1)
             horizontalInfiniteCycleViewPager.setCurrentItem(1);
-        CustomProgressDialog.cancel();
+        horizontalInfiniteCycleViewPager.post(new Runnable() {
+            @Override
+            public void run() {
+                CustomProgressDialog.cancel();
+            }
+        });
+
     }
 }

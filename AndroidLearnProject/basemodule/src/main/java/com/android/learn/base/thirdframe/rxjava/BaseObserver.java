@@ -19,7 +19,7 @@ import retrofit2.HttpException;
 public abstract class BaseObserver<T> extends ResourceObserver<T> {
 
     protected String errMsg = "";
-    private boolean isShowError = true;
+    private boolean isCancelDialog = true;
     private Context context;
 //    public static Dialog prgressDialog;
 
@@ -33,17 +33,22 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
     }
 
     protected BaseObserver(BaseView view, boolean isShowError) {
-        this.isShowError = isShowError;
     }
 
 
+    public void setCancelDialog(boolean cancelDialog) {
+        isCancelDialog = cancelDialog;
+    }
+
     @Override
+
     public void onNext(T t) {
 
     }
 
     @Override
     public void onError(Throwable e) {
+        if(isCancelDialog)
         CustomProgressDialog.cancel();
         if (!NetUtils.isConnected()) {
             errMsg = "网络连接出错,请检查网络";
@@ -53,13 +58,14 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
         } else if (e instanceof IOException) {
             errMsg = "服务器访问异常(IOException)";
         }
-
-        Utils.showToast(errMsg, true);
+        if (!"".equals(errMsg))
+            Utils.showToast(errMsg, true);
 
     }
 
     @Override
     public void onComplete() {
+        if(isCancelDialog)
         CustomProgressDialog.cancel();
     }
 
