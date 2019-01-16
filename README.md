@@ -97,12 +97,12 @@ https://github.com/hongyangAndroid/wanandroid
     api project(':xskinloader-lib')
  
 
-扫码下载体验
+app扫码下载体验
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/download.png)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/KAbY.png)
 
  
-效果图
+app效果图
 
 ![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/1.jpg)
 
