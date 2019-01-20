@@ -2,6 +2,10 @@ apply plugin: 'com.android.library'
 //使用greendao
 apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.jakewharton.butterknife'
+// 使用Kotlin插件
+apply plugin: 'kotlin-android'
+// 使用Kotlin Android扩展插件
+apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -124,6 +128,8 @@ dependencies {
     api('com.jaeger.statusbarutil:library:1.4.0') {
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     //   换肤框架，不必重启应用
     api project(':xskinloader-lib')
 }
