@@ -111,7 +111,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
     private lateinit var titles: ArrayList<String>
 
     @BindView(R.id.viewPager)
-     lateinit var viewPager: CustomViewPager
+    lateinit var viewPager: CustomViewPager
     @BindView(R.id.tabLayout)
     lateinit var tabLayout: TabLayout
     @BindView(R.id.title)
@@ -138,7 +138,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
     lateinit var projectFragment: ProjectFragment
     var isSearching: Boolean = false
     lateinit var searchRecordAdapter: SearchRecordAdapter
-     var TAG = "MainActivity"
+    var TAG = "MainActivity"
     private lateinit var mIat: SpeechRecognizer
     private lateinit var mIatDialog: RecognizerDialog
     // 用HashMap存储听写结果
@@ -150,11 +150,13 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
     private var exitTime: Long = 0
 
     private val mInitListener = InitListener { }
+
     companion object {
         fun launch(context: Context) {
             context.startActivity(Intent(context, MainActivity::class.java))
         }
     }
+
     /**
      * 听写UI监听器
      */
@@ -189,37 +191,37 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
         mFragments = ArrayList()
         homeFragment = HomeFragment()
         projectFragment = ProjectFragment()
-        mFragments!!.add(homeFragment)
-        mFragments!!.add(projectFragment)
-        mFragments!!.add(KnowledgeFragment())
-        mFragments!!.add(WechatFragment())
-        mFragments!!.add(UserFragment())
+        mFragments.add(homeFragment)
+        mFragments.add(projectFragment)
+        mFragments.add(KnowledgeFragment())
+        mFragments.add(WechatFragment())
+        mFragments.add(UserFragment())
 
         titles = ArrayList()
-        titles!!.add(getString(R.string.home))
-        titles!!.add(getString(R.string.project))
-        titles!!.add(getString(R.string.knowledge))
-        titles!!.add(getString(R.string.public_account))
-        titles!!.add(getString(R.string.mine))
+        titles.add(getString(R.string.home))
+        titles.add(getString(R.string.project))
+        titles.add(getString(R.string.knowledge))
+        titles.add(getString(R.string.public_account))
+        titles.add(getString(R.string.mine))
 
         val adapter = MainTabAdapter(supportFragmentManager, mFragments)
-        viewPager!!.offscreenPageLimit = mFragments!!.size
-        viewPager!!.adapter = adapter
-        viewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-        tabLayout!!.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(viewPager))
+        viewPager.offscreenPageLimit = mFragments.size
+        viewPager.adapter = adapter
+        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+        tabLayout.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(viewPager))
         //将TabLayout和ViewPager关联起来
-        tabLayout!!.setupWithViewPager(viewPager)
+        tabLayout.setupWithViewPager(viewPager)
         initTab()
         initSearchRecord()
-        iv_search!!.visibility = View.VISIBLE
+        iv_search.visibility = View.VISIBLE
         val isNightMode = SPUtils.getParam(this, "nightMode", false) as Boolean
         if (isNightMode) {
-            title_view_divider!!.visibility = View.VISIBLE
+            title_view_divider.visibility = View.VISIBLE
         } else {
-            title_view_divider!!.visibility = View.GONE
+            title_view_divider.visibility = View.GONE
         }
 
-        et_search!!.setOnEditorActionListener { v, actionId, event ->
+        et_search.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {//搜索按键action
                 beginSearch()
             }
@@ -229,7 +231,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
     }
 
     private fun beginSearch() {
-        val content = et_search!!.text.toString()
+        val content = et_search.text.toString()
         if (TextUtils.isEmpty(content)) {
             Utils.showToast(getString(R.string.search_content_no), true)
         }
@@ -241,15 +243,15 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
         val searchRecord = SearchRecord()
         searchRecord.name = content
         dbManager.insertUser(searchRecord)
-        et_search!!.setText("")
-        KeyboardUtils.hideKeyboard(et_search!!)
+        et_search.setText("")
+        KeyboardUtils.hideKeyboard(et_search)
     }
 
     private fun initSearchRecord() {
         val list = ArrayList<SearchRecord>()
         searchRecordAdapter = SearchRecordAdapter(this, list)
-        history_recycleview!!.layoutManager = LinearLayoutManager(this)
-        history_recycleview!!.adapter = searchRecordAdapter
+        history_recycleview.layoutManager = LinearLayoutManager(this)
+        history_recycleview.adapter = searchRecordAdapter
         searchRecordAdapter.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             val bundle = Bundle()
             bundle.putString("key", searchRecordAdapter.data[position].name)
@@ -262,23 +264,23 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
      */
     private fun initTab() {
 
-        tabLayout!!.getTabAt(0)!!.setCustomView(R.layout.tab_home)
-        tabLayout!!.getTabAt(1)!!.setCustomView(R.layout.tab_project)
-        tabLayout!!.getTabAt(2)!!.setCustomView(R.layout.tab_knowledge)
-        tabLayout!!.getTabAt(3)!!.setCustomView(R.layout.tab_navigation)
-        tabLayout!!.getTabAt(4)!!.setCustomView(R.layout.tab_mine)
+        tabLayout.getTabAt(0)!!.setCustomView(R.layout.tab_home)
+        tabLayout.getTabAt(1)!!.setCustomView(R.layout.tab_project)
+        tabLayout.getTabAt(2)!!.setCustomView(R.layout.tab_knowledge)
+        tabLayout.getTabAt(3)!!.setCustomView(R.layout.tab_navigation)
+        tabLayout.getTabAt(4)!!.setCustomView(R.layout.tab_mine)
 
 
-        tabLayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             //标签选中之后执行的方法
             override fun onTabSelected(tab: TabLayout.Tab) {
                 val position = tab.position
-                title!!.text = titles!![position]
+                title.text = titles[position]
 
                 if (position == 4)
-                    header_layout!!.visibility = View.GONE
+                    header_layout.visibility = View.GONE
                 else
-                    header_layout!!.visibility = View.VISIBLE
+                    header_layout.visibility = View.VISIBLE
             }
 
             //标签没选中
@@ -294,12 +296,12 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
         LogUtil.d(TAG, "isRestartMain：$isRestartMain")
         if (isRestartMain) {
             //切换语言或切换字体大小，重启MainActivity则会走这里
-            viewPager!!.currentItem = 4
+            viewPager.currentItem = 4
             //            tabLayout.getTabAt(4).getCustomView().setSelected(true);
             SPUtils.setParam(this@MainActivity, "isRestartMain", false)
         } else {
             //默认选中的Tab
-            viewPager!!.currentItem = 0
+            viewPager.currentItem = 0
             //            tabLayout.getTabAt(0).getCustomView().setSelected(true);
             loadSVGAAnimation()
 
@@ -311,7 +313,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
     override fun onClick(view: View) {
         when (view.id) {
             R.id.title -> {
-                val index = viewPager!!.currentItem
+                val index = viewPager.currentItem
                 if (index == 0)
                     homeFragment.scrollToTop()
                 if (index == 1)
@@ -319,12 +321,12 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
             }
 
             R.id.iv_svga -> {
-                iv_svga!!.stopAnimation()
-                iv_svga!!.visibility = View.GONE
+                iv_svga.stopAnimation()
+                iv_svga.visibility = View.GONE
             }
-            R.id.iv_search_back -> SearchViewUtils.handleToolBar(applicationContext, cardview_search!!, et_search)
+            R.id.iv_search_back -> SearchViewUtils.handleToolBar(applicationContext, cardview_search, et_search)
             R.id.iv_search -> {
-                SearchViewUtils.handleToolBar(applicationContext, cardview_search!!, et_search)
+                SearchViewUtils.handleToolBar(applicationContext, cardview_search, et_search)
                 isSearching = true
             }
             R.id.tv_search_clear -> {
@@ -333,7 +335,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
                 DBManager.getInstance(this).deleteAll()
             }
             R.id.iv_speech_search -> {
-                KeyboardUtils.hideKeyboard(et_search!!)
+                KeyboardUtils.hideKeyboard(et_search)
                 requestRecordAudioPermission()
             }
         }
@@ -368,7 +370,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_DOWN) {
             if (isSearching) {
-                SearchViewUtils.handleToolBar(applicationContext, cardview_search!!, et_search)
+                SearchViewUtils.handleToolBar(applicationContext, cardview_search, et_search)
                 isSearching = false
                 return false
             }
@@ -393,8 +395,8 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
             parser.parse(URL("https://github.com/yyued/SVGA-Samples/blob/master/kingset.svga?raw=true"), object : SVGAParser.ParseCompletion {
                 override fun onComplete(videoItem: SVGAVideoEntity) {
                     val drawable = SVGADrawable(videoItem, requestDynamicItemWithSpannableText())
-                    iv_svga!!.setImageDrawable(drawable)
-                    iv_svga!!.startAnimation()
+                    iv_svga.setImageDrawable(drawable)
+                    iv_svga.startAnimation()
 
                     Handler().postDelayed({
                         /**
@@ -403,8 +405,8 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
                         /**
                          * 要执行的操作
                          */
-                        iv_svga!!.stopAnimation()
-                        iv_svga!!.visibility = View.GONE
+                        iv_svga.stopAnimation()
+                        iv_svga.visibility = View.GONE
                     }, 5000)
 
                 }
@@ -493,9 +495,9 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
     fun onEvent(event: ChangeNightEvent) {
         val isNightMode = SPUtils.getParam(this, "nightMode", false) as Boolean
         if (isNightMode) {
-            title_view_divider!!.visibility = View.VISIBLE
+            title_view_divider.visibility = View.VISIBLE
         } else {
-            title_view_divider!!.visibility = View.GONE
+            title_view_divider.visibility = View.GONE
         }
         setStatusBar()
     }
@@ -535,7 +537,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
             tv.gravity = Gravity.CENTER_VERTICAL
             tv.setLines(1)
             tv.setBackgroundResource(R.drawable.bg_tag)
-            flowlayout!!.addView(tv, lp)
+            flowlayout.addView(tv, lp)
             tv.setOnClickListener {
                 val bundle = Bundle()
                 bundle.putString("key", tv.text.toString())
@@ -546,7 +548,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
                 dbManager.insertUser(searchRecord)
             }
         }
-        flowlayout!!.relayoutToAlign()
+        flowlayout.relayoutToAlign()
     }
 
     fun requestRecordAudioPermission() {
@@ -554,7 +556,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
             override fun granted() {
                 // 使用SpeechRecognizer对象，可根据回调消息自定义界面；这种方式主要是考虑到了，没有听写Dialog的时候，进行的听写监听
                 mIat = SpeechRecognizer.createRecognizer(this@MainActivity, mInitListener)
-                Log.i(TAG, "onCreate: mIat == null ?" + mIat!!)
+                Log.i(TAG, "onCreate: mIat == null ?" + mIat)
                 //SpeechRecognizer对象 null 的原因：一、 so 文件放错了位置 二、so文件与自己的SDK不匹配 3、Application中没有配置好appid
                 // 初始化听写Dialog，如果只使用有UI听写功能，无需创建SpeechRecognizer
                 // 使用UI听写功能，请根据sdk文件目录下的notice.txt,放置显示RecognizerDialog需要的布局文件和图片资源
@@ -562,14 +564,14 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
                 // 移动数据分析，收集开始听写事件
                 FlowerCollector.onEvent(this@MainActivity, "iat_recognize")
 
-                et_search!!.setText("")// 清空显示内容
+                et_search.setText("")// 清空显示内容
                 mIatResults.clear()
                 // 设置参数
                 setParam()
 
                 // 显示听写对话框
-                mIatDialog!!.setListener(mRecognizerDialogListener)
-                mIatDialog!!.show()
+                mIatDialog.setListener(mRecognizerDialogListener)
+                mIatDialog.show()
                 Utils.showToast(getString(R.string.begin_speech), true, Gravity.BOTTOM)
             }
 
@@ -579,30 +581,30 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
 
     fun setParam() {
         // 清空参数
-        mIat!!.setParameter(SpeechConstant.PARAMS, null)
+        mIat.setParameter(SpeechConstant.PARAMS, null)
 
         // 设置听写引擎  注意：这里我只设置云端的方式！后面再考虑本地和混合的类型
-        mIat!!.setParameter(SpeechConstant.ENGINE_TYPE, mCLOUDType)
+        mIat.setParameter(SpeechConstant.ENGINE_TYPE, mCLOUDType)
         // 设置返回结果格式
-        mIat!!.setParameter(SpeechConstant.RESULT_TYPE, "json")
+        mIat.setParameter(SpeechConstant.RESULT_TYPE, "json")
 
         // 设置语言
-        mIat!!.setParameter(SpeechConstant.LANGUAGE, "cn")
-        mIat!!.setParameter(SpeechConstant.ACCENT, "mandarin")
+        mIat.setParameter(SpeechConstant.LANGUAGE, "cn")
+        mIat.setParameter(SpeechConstant.ACCENT, "mandarin")
 
         // 设置语音前端点:静音超时时间，即用户多长时间不说话则当做超时处理
-        mIat!!.setParameter(SpeechConstant.VAD_BOS, "4000")
+        mIat.setParameter(SpeechConstant.VAD_BOS, "4000")
 
         // 设置语音后端点:后端点静音检测时间，即用户停止说话多长时间内即认为不再输入， 自动停止录音
-        mIat!!.setParameter(SpeechConstant.VAD_EOS, "1000")
+        mIat.setParameter(SpeechConstant.VAD_EOS, "1000")
 
         // 设置标点符号,设置为"0"返回结果无标点,设置为"1"返回结果有标点
-        mIat!!.setParameter(SpeechConstant.ASR_PTT, "0")
+        mIat.setParameter(SpeechConstant.ASR_PTT, "0")
 
         // 设置音频保存路径，保存音频格式支持pcm、wav，设置路径为sd卡请注意WRITE_EXTERNAL_STORAGE权限
         // 注：AUDIO_FORMAT参数语记需要更新版本才能生效
-        mIat!!.setParameter(SpeechConstant.AUDIO_FORMAT, "wav")
-        mIat!!.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/iat.wav")
+        mIat.setParameter(SpeechConstant.AUDIO_FORMAT, "wav")
+        mIat.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/iat.wav")
     }
 
     /**
@@ -629,12 +631,12 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
             resultBuffer.append(mIatResults[key])
         }
 
-        et_search!!.setText(resultBuffer.toString())
+        et_search.setText(resultBuffer.toString())
         //考虑到TextView只能显示文字 ，后面还要测试文字转语音，所以换EditText控件
-        et_search!!.setSelection(et_search!!.length())
-        KeyboardUtils.showKeyboard(et_search!!)
+        et_search.setSelection(et_search.length())
+        KeyboardUtils.showKeyboard(et_search)
         LogUtil.d(TAG, "printResult(results)------------resultBuffer.toString():" + resultBuffer.toString())
-        if (et_search!!.text.toString().length > 0 && "SearchResultActivity" != Utils.getTopActivity(this))
+        if (et_search.text.toString().length > 0 && "SearchResultActivity" != Utils.getTopActivity(this))
             beginSearch()
     }
 

@@ -1,13 +1,13 @@
 package com.android.learn.base.thirdframe.retrofit.interceptor;
 
 import android.content.Context;
-import android.support.v4.BuildConfig;
 import android.support.v4.util.ArrayMap;
 import android.util.Log;
 import android.util.Pair;
 
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.Utils;
+import com.gaolei.basemodule.BuildConfig;
 
 import org.json.JSONException;
 import org.json.JSONObject;
