@@ -3,6 +3,7 @@ package com.android.learn.mcontract;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.mmodel.WxArticle;
+import com.android.learn.base.mview.BaseView;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class WechatSubContract {
         void cancelCollectArticle(int position, FeedArticleData feedArticleData);
     }
 
-    public interface View {
+    public interface View extends BaseView {
 
 
         void showWxArticleById(FeedArticleListData datas);

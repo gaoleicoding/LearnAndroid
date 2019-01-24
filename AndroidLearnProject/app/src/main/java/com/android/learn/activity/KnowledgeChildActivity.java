@@ -31,7 +31,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresenter> implements KnowledgeChildContract.View {
+public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresenter,KnowledgeChildContract.View> implements KnowledgeChildContract.View {
     @BindView(R.id.iv_back)
     ImageView iv_back;
     @BindView(R.id.title)

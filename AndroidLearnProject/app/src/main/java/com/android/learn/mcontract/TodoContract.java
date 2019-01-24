@@ -2,6 +2,7 @@ package com.android.learn.mcontract;
 
 import com.android.learn.base.mmodel.BaseData;
 import com.android.learn.base.mmodel.TodoData;
+import com.android.learn.base.mview.BaseView;
 
 import java.util.Map;
 
@@ -24,7 +25,7 @@ public class TodoContract {
 
     }
 
-    public interface View {
+    public interface View extends BaseView {
 
         void showListNotDone(TodoData todoData);
 

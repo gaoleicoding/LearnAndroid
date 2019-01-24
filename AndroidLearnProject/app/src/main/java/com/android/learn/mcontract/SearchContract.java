@@ -2,6 +2,7 @@ package com.android.learn.mcontract;
 
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.HotKeyData;
+import com.android.learn.base.mview.BaseView;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class SearchContract {
         void cancelCollectArticle(int position, FeedArticleListData.FeedArticleData feedArticleData);
     }
 
-    public interface View {
+    public interface View extends BaseView {
 
 
         void showArticleList(FeedArticleListData itemBeans);

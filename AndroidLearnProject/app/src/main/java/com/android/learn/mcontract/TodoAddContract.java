@@ -1,6 +1,7 @@
 package com.android.learn.mcontract;
 
 import com.android.learn.base.mmodel.BaseData;
+import com.android.learn.base.mview.BaseView;
 
 import java.util.Map;
 
@@ -16,7 +17,7 @@ public class TodoAddContract {
 
     }
 
-    public interface View {
+    public interface View extends BaseView {
 
 
         void showAddTodo(BaseData todoData);

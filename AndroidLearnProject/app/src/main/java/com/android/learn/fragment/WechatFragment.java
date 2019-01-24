@@ -21,7 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class WechatFragment extends BaseMvpFragment<WechatPresenter> implements WechatContract.View {
+public class WechatFragment extends BaseMvpFragment<WechatPresenter,WechatContract.View > implements WechatContract.View {
 
     @BindView(R.id.tab_layout)
     ColorClipTabLayout tab_layout;
@@ -33,7 +33,7 @@ public class WechatFragment extends BaseMvpFragment<WechatPresenter> implements 
 
     @Override
     protected void loadData() {
-        mPresenter.getWxArticle();
+        getMPresenter().getWxArticle();
     }
 
     @Override

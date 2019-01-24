@@ -13,6 +13,7 @@ import com.android.learn.adapter.ProjectQuickAdapter;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.ProjectListData;
 import com.android.learn.base.view.CustomProgressDialog;
+import com.android.learn.mcontract.MainActivityContract;
 import com.android.learn.mcontract.ProjectContract;
 import com.android.learn.mpresenter.ProjectPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -26,7 +27,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implements ProjectContract.View {
+public class ProjectFragment extends BaseMvpFragment<ProjectPresenter, ProjectContract.View> implements ProjectContract.View {
 
     @BindView(R.id.project_recyclerview)
     RecyclerView project_recyclerview;
@@ -53,7 +54,7 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
 
     @Override
     public void reload() {
-        mPresenter.getProjectInfo(1, 294);
+        getMPresenter().getProjectInfo(1, 294);
     }
 
     @Override
@@ -64,7 +65,7 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
     @Override
     protected void loadData() {
         CustomProgressDialog.show(getActivity());
-        mPresenter.getProjectInfo(1, 294);
+        getMPresenter().getProjectInfo(1, 294);
     }
 
 
@@ -110,12 +111,12 @@ public class ProjectFragment extends BaseMvpFragment<ProjectPresenter> implement
         smartRefreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
             @Override
             public void onLoadMore(RefreshLayout refreshLayout) {
-                mPresenter.onLoadMore(294);
+                getMPresenter().onLoadMore(294);
             }
 
             @Override
             public void onRefresh(RefreshLayout refreshLayout) {
-                mPresenter.onRefreshMore(294);
+                getMPresenter().onRefreshMore(294);
             }
         });
     }

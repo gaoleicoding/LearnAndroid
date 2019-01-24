@@ -102,11 +102,12 @@ import butterknife.BindView
 import butterknife.OnClick
 import cn.lankton.flowlayout.FlowLayout
 import com.android.learn.base.mpresenter.BasePresenter
+import com.android.learn.base.mview.BaseView
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 
-class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContract.View {
+class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract.View>(), MainActivityContract.View {
 
     private lateinit var mFragments: ArrayList<Fragment>
     private lateinit var titles: ArrayList<String>

@@ -41,7 +41,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class HomeFragment extends BaseMvpFragment<HomePresenter> implements HomeContract.View {
+public class HomeFragment extends BaseMvpFragment<HomePresenter,HomeContract.View> implements HomeContract.View {
 
     @BindView(R.id.article_recyclerview)
     RecyclerView article_recyclerview;
@@ -74,8 +74,8 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 
     @Override
     public void reload() {
-        mPresenter.getFeedArticleList(0);
-        mPresenter.getBannerInfo();
+        getMPresenter().getFeedArticleList(0);
+        getMPresenter().getBannerInfo();
     }
 
     @Override
@@ -86,8 +86,8 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     @Override
     protected void loadData() {
         CustomProgressDialog.show(getActivity());
-        mPresenter.getFeedArticleList(0);
-        mPresenter.getBannerInfo();
+        getMPresenter().getFeedArticleList(0);
+        getMPresenter().getBannerInfo();
 
     }
 
@@ -193,9 +193,9 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 if (feedArticleAdapter.getData().get(position).isCollect()) {
-                    mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
+                    getMPresenter().cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
                 } else {
-                    mPresenter.addCollectArticle(position, feedArticleAdapter.getData().get(position));
+                    getMPresenter().addCollectArticle(position, feedArticleAdapter.getData().get(position));
                 }
             }
         });
@@ -210,12 +210,12 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
         smartRefreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
             @Override
             public void onLoadMore(RefreshLayout refreshLayout) {
-                mPresenter.onLoadMore();
+                getMPresenter().onLoadMore();
             }
 
             @Override
             public void onRefresh(RefreshLayout refreshLayout) {
-                mPresenter.onRefreshMore();
+                getMPresenter().onRefreshMore();
             }
         });
     }
@@ -250,15 +250,15 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(CancelCollectEvent event) {
-        mPresenter.cancelCollectArticle(event.id);
+        getMPresenter().cancelCollectArticle(event.id);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(LoginEvent accountEvent) {
         feedArticleAdapter.getData().clear();
         feedArticleAdapter.notifyDataSetChanged();
-        mPresenter.getFeedArticleList(0);
-        mPresenter.mCurrentPage = 0;
+        getMPresenter().getFeedArticleList(0);
+        getMPresenter().mCurrentPage = 0;
     }
 
     public void onDestroy() {

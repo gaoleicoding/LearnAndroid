@@ -3,6 +3,7 @@ package com.android.learn.mcontract;
 import com.android.learn.base.mmodel.BannerListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.mmodel.FeedArticleListData;
+import com.android.learn.base.mview.BaseView;
 
 /**
  * Created by gaolei on 2018/6/18.
@@ -25,7 +26,7 @@ public class HomeContract {
         void cancelCollectArticle(int position, FeedArticleData feedArticleData);
     }
 
-    public interface View {
+    public interface View extends BaseView {
 
         void showArticleList(FeedArticleListData itemBeans, boolean isRefresh);
 

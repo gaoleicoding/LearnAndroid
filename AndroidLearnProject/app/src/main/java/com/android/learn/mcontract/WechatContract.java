@@ -4,6 +4,7 @@ import com.android.learn.base.mmodel.BannerListData;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.mmodel.WxArticle;
+import com.android.learn.base.mview.BaseView;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class WechatContract {
 
     }
 
-    public interface View {
+    public interface View extends BaseView {
 
         void showWxArticle(List<WxArticle> list);
 

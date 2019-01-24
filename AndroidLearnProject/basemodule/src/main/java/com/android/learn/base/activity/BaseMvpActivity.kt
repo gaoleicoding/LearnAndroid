@@ -4,10 +4,11 @@ import android.content.Context
 import android.os.Bundle
 
 import com.android.learn.base.mpresenter.BasePresenter
+import com.android.learn.base.mview.BaseView
 import com.android.learn.base.utils.LanguageUtil
 
 
-abstract class BaseMvpActivity< P : BasePresenter<*>> : BaseActivity() {
+abstract class BaseMvpActivity<P : BasePresenter<V>, V : BaseView> : BaseActivity() {
 
     var mPresenter: P? = null
 
@@ -15,7 +16,7 @@ abstract class BaseMvpActivity< P : BasePresenter<*>> : BaseActivity() {
         super.onCreate(savedInstanceState)
         mPresenter = initPresenter()
         if (mPresenter != null)
-            mPresenter!!.attach(this)
+            mPresenter!!.attach(this  as? V)
         loadData()
     }
 

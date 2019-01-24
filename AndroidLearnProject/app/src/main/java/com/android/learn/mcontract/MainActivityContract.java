@@ -3,6 +3,7 @@ package com.android.learn.mcontract;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.mmodel.HotKeyData;
+import com.android.learn.base.mview.BaseView;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class MainActivityContract {
 
     }
 
-    public interface View {
+    public interface View extends BaseView{
 
         void showHotKey(List<HotKeyData> list);
 

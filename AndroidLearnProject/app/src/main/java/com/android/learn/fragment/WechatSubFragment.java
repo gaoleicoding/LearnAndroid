@@ -33,7 +33,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> implements WechatSubContract.View {
+public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter,WechatSubContract.View> implements WechatSubContract.View {
     @BindView(R.id.article_recyclerview)
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
@@ -86,7 +86,7 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
     protected void loadData() {
         CustomProgressDialog.show(getActivity());
         if (userId != 0)
-            mPresenter.getWxArtileById(userId);
+            getMPresenter().getWxArtileById(userId);
     }
 
     @Override
@@ -147,9 +147,9 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 if (feedArticleAdapter.getData().get(position).isCollect()) {
-                    mPresenter.cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
+                    getMPresenter().cancelCollectArticle(position, feedArticleAdapter.getData().get(position));
                 } else {
-                    mPresenter.addCollectArticle(position, feedArticleAdapter.getData().get(position));
+                    getMPresenter().addCollectArticle(position, feedArticleAdapter.getData().get(position));
                 }
             }
         });
@@ -164,7 +164,7 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
         smartRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(RefreshLayout refreshLayout) {
-                mPresenter.getWxArtileById(userId);
+                getMPresenter().getWxArtileById(userId);
             }
 
 
@@ -173,15 +173,15 @@ public class WechatSubFragment extends BaseMvpFragment<WechatSubPresenter> imple
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(CancelCollectEvent event) {
-        mPresenter.cancelCollectArticle(event.id);
+        getMPresenter().cancelCollectArticle(event.id);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(LoginEvent accountEvent) {
         feedArticleAdapter.getData().clear();
         feedArticleAdapter.notifyDataSetChanged();
-        mPresenter.getWxArtileById(userId);
-        mPresenter.num = 0;
+        getMPresenter().getWxArtileById(userId);
+        getMPresenter().num = 0;
     }
 
     public void onDestroy() {

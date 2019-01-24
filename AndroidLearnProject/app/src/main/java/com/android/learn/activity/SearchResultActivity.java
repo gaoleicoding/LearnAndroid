@@ -31,7 +31,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class SearchResultActivity extends BaseMvpActivity<SearchPresenter> implements SearchContract.View {
+public class SearchResultActivity extends BaseMvpActivity<SearchPresenter, SearchContract.View> implements SearchContract.View {
     @BindView(R.id.iv_back)
     ImageView iv_back;
     @BindView(R.id.title)

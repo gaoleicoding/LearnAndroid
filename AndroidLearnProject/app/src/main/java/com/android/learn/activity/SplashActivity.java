@@ -18,7 +18,7 @@ import com.android.learn.mcontract.SplashLoginContract;
 import com.android.learn.mpresenter.SplashLoginPresenter;
 import com.jaeger.library.StatusBarUtil;
 
-public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter> implements SplashLoginContract.View {
+public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter,SplashLoginContract.View> implements SplashLoginContract.View {
 
 
     Handler handler = new Handler() {

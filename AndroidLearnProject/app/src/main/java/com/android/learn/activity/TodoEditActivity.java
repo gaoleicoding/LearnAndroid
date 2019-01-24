@@ -34,7 +34,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class TodoEditActivity extends BaseMvpActivity<TodoEditPresenter> implements TodoEditContract.View {
+public class TodoEditActivity extends BaseMvpActivity<TodoEditPresenter,TodoEditContract.View> implements TodoEditContract.View {
     @BindView(R.id.title)
     TextView mTitle;
     @BindView(R.id.iv_back)

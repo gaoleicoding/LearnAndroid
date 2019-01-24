@@ -33,7 +33,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class MyCollectActivity extends BaseMvpActivity<CollectPresenter> implements CollectContract.View {
+public class MyCollectActivity extends BaseMvpActivity<CollectPresenter,CollectContract.View> implements CollectContract.View {
 
 
     @BindView(R.id.iv_back)

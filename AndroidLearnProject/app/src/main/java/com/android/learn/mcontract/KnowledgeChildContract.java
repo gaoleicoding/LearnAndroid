@@ -4,6 +4,7 @@ package com.android.learn.mcontract;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.mmodel.TreeBean;
+import com.android.learn.base.mview.BaseView;
 
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class KnowledgeChildContract {
         void cancelCollectArticle(int position, FeedArticleData feedArticleData);
     }
 
-    public interface View {
+    public interface View extends BaseView {
         void showArticleList(FeedArticleListData itemBeans, boolean isRefresh);
         void showCollectArticleData(int position, FeedArticleData feedArticleData);
 

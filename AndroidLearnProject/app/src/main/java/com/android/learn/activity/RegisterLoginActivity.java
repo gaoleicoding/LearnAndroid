@@ -24,7 +24,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresenter> implements RegisterLoginContract.View {
+public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresenter,RegisterLoginContract.View> implements RegisterLoginContract.View {
     @BindView(R.id.iv_back)
     ImageView iv_back;
     @BindView(R.id.title)

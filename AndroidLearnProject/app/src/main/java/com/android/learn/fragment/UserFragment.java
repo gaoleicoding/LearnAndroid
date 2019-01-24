@@ -29,7 +29,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements UserInfoContract.View {
+public class UserFragment extends BaseMvpFragment<UserInfoPresenter, UserInfoContract.View > implements UserInfoContract.View {
 
     @BindView(R.id.iv_user_photo)
     public ImageView iv_user_photo;
@@ -126,7 +126,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
         iv_user_photo.setImageResource(R.drawable.user_default_photo);
         SPUtils.clear(getActivity(), "phone_num");
         SPUtils.clear(getActivity(), "password");
-        mPresenter.getLogoutData();
+        getMPresenter().getLogoutData();
         RegisterLoginActivity.startActivity(getActivity());
         UserUtil.setUserInfo(null);
     }

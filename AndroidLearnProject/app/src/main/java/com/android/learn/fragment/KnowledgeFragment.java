@@ -22,7 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> implements KnowledgeContract.View {
+public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter,KnowledgeContract.View> implements KnowledgeContract.View {
     @BindView(R.id.hicvp)
     HorizontalInfiniteCycleViewPager horizontalInfiniteCycleViewPager;
     private HorizontalPagerAdapter mPagerAdapter;
@@ -59,7 +59,7 @@ public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> imple
     protected void loadData() {
 
         CustomProgressDialog.show(getActivity());
-        mPresenter.getKnowledge();
+        getMPresenter().getKnowledge();
     }
 
     @Override

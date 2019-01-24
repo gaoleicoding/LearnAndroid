@@ -34,7 +34,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements TodoContract.View {
+public class TodoFragment extends BaseMvpFragment<TodoPresenter,TodoContract.View> implements TodoContract.View {
     @BindView(R.id.article_recyclerview)
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
@@ -84,9 +84,9 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
     protected void loadData() {
         CustomProgressDialog.show(getActivity());
         if (fragmentPosition == 0)
-            mPresenter.getListNotDone(0);
+            getMPresenter().getListNotDone(0);
         if (fragmentPosition == 1)
-            mPresenter.getListDone(0);
+            getMPresenter().getListDone(0);
     }
 
 
@@ -123,18 +123,18 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
                     case R.id.iv_item_todo:
                         if (fragmentPosition == 0) {
                             clickId = datasBean.getId();
-                            mPresenter.updateTodoStatus(clickId, 1);
+                            getMPresenter().updateTodoStatus(clickId, 1);
                             todoAdapter.remove(position);
                         }
                         if (fragmentPosition == 1) {
                             clickId = datasBean.getId();
-                            mPresenter.updateTodoStatus(clickId, 0);
+                            getMPresenter().updateTodoStatus(clickId, 0);
                             todoAdapter.remove(position);
                         }
 
                         break;
                     case R.id.iv_item_delete:
-                        mPresenter.deleteTodo(datasBean.getId());
+                        getMPresenter().deleteTodo(datasBean.getId());
                         todoAdapter.remove(position);
                         break;
                 }
@@ -152,9 +152,9 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
             @Override
             public void onLoadMore(RefreshLayout refreshLayout) {
                 if (fragmentPosition == 0)
-                    mPresenter.getListNotDone(0);
+                    getMPresenter().getListNotDone(0);
                 if (fragmentPosition == 1)
-                    mPresenter.getListDone(0);
+                    getMPresenter().getListDone(0);
             }
 
 
@@ -203,8 +203,8 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
     public void onEvent(UpdateDoneEvent event) {
         if (fragmentPosition == 1) {
             todoAdapter.getData().clear();
-            mPresenter.donePage = 1;
-            mPresenter.getListDone(0);
+            getMPresenter().donePage = 1;
+            getMPresenter().getListDone(0);
         }
     }
 
@@ -212,8 +212,8 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter> implements Todo
     public void onEvent(UpdateTodoEvent event) {
         if (fragmentPosition == 0) {
             todoAdapter.getData().clear();
-            mPresenter.notDonePage = 1;
-            mPresenter.getListNotDone(0);
+            getMPresenter().notDonePage = 1;
+            getMPresenter().getListNotDone(0);
         }
     }
 
