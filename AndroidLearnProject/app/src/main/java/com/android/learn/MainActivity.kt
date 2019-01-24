@@ -101,6 +101,7 @@ import java.util.LinkedHashMap
 import butterknife.BindView
 import butterknife.OnClick
 import cn.lankton.flowlayout.FlowLayout
+import com.android.learn.base.mpresenter.BasePresenter
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
@@ -512,7 +513,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter>(), MainActivityContr
     }
 
     override fun loadData() {
-        mPresenter.getHotKey()
+        mPresenter!!.getHotKey()
     }
 
 
