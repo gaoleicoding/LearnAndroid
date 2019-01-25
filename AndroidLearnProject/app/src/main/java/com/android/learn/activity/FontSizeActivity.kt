@@ -64,18 +64,21 @@ class FontSizeActivity : BaseActivity() {
         val size2 = tvContent2!!.textSize
         textsize1 = size1 / textSizef
         textsize2 = size2 / textSizef
+        val listener = object : FontSliderBar.OnSliderBarChangeListener {
+            override fun onIndexChanged(rangeBar: FontSliderBar, index: Int) {
+                var index = index
+                if (index > 5) {
+                    return
+                }
+                index = index - 1
+                val textSizef = 1 + index * 0.1f
+                setTextSize(textSizef)
+            }
+        }
         fontSliderBar!!.setTickCount(6).setTickHeight(ScreenUtils.dp2px(this@FontSizeActivity, 15).toFloat()).setBarColor(Color.GRAY)
                 .setTextColor(Color.BLACK).setTextPadding(ScreenUtils.dp2px(this@FontSizeActivity, 10)).setTextSize(ScreenUtils.dp2px(this@FontSizeActivity, 14))
                 .setThumbRadius(ScreenUtils.dp2px(this@FontSizeActivity, 10).toFloat()).setThumbColorNormal(Color.GRAY).setThumbColorPressed(Color.GRAY)
-                .setOnSliderBarChangeListener(FontSliderBar.OnSliderBarChangeListener { rangeBar, index ->
-                    var index = index
-                    if (index > 5) {
-                        return@OnSliderBarChangeListener
-                    }
-                    index = index - 1
-                    val textSizef = 1 + index * 0.1f
-                    setTextSize(textSizef)
-                }).setThumbIndex(currentIndex).withAnimation(false).applay(this)
+                .setOnSliderBarChangeListener(listener).setThumbIndex(currentIndex).withAnimation(false).applay(this)
 
     }
 
