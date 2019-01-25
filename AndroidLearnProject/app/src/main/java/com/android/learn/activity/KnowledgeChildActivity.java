@@ -58,12 +58,12 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_knowledge_article;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         cid = bundle.getInt(ID);
         titleStr = bundle.getString(TITLE);
         LogUtil.d(TAG, "id--------------" + cid);

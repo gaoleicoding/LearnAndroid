@@ -60,12 +60,12 @@ public class FeedbackActivity extends BaseMvpActivity {
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_help_feedback;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         title.setText(getString(R.string.help_feedback));
         iv_back.setVisibility(View.VISIBLE);
     }

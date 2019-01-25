@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.android.learn.base.mpresenter.BasePresenter
 import com.android.learn.base.mview.BaseView
 import com.android.learn.base.utils.LanguageUtil
+import org.greenrobot.eventbus.EventBus
 
 
 abstract class BaseMvpActivity<P : BasePresenter<V>, V : BaseView> : BaseActivity() {

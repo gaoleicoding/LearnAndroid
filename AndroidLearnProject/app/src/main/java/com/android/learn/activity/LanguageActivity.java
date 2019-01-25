@@ -47,12 +47,12 @@ public class LanguageActivity extends BaseMvpActivity {
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_language;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         title.setText(getString(R.string.language_set));
         iv_back.setVisibility(View.VISIBLE);
 

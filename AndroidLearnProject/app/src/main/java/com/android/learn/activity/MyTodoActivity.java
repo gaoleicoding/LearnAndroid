@@ -78,12 +78,12 @@ public class MyTodoActivity extends BaseMvpActivity {
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_my_todo;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         tv_title.setText(getString(R.string.todo));
         iv_back.setVisibility(View.VISIBLE);
         iv_search.setVisibility(View.VISIBLE);

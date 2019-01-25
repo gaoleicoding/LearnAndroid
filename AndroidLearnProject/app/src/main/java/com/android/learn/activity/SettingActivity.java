@@ -60,14 +60,14 @@ public class SettingActivity extends BaseMvpActivity {
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_setting;
     }
 
 
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         title.setText(getString(R.string.my_setting));
         iv_back.setVisibility(View.VISIBLE);
         tv_versionName.setText(Utils.getVersionName(this));

@@ -55,12 +55,12 @@ public class MyCollectActivity extends BaseMvpActivity<CollectPresenter,CollectC
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_collect;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         title.setText(getString(R.string.collect));
         iv_back.setVisibility(View.VISIBLE);
         initRecyclerView();

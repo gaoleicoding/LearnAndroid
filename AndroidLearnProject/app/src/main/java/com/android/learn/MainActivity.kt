@@ -152,6 +152,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     private var exitTime: Long = 0
 
     private val mInitListener = InitListener { }
+    override val layoutId: Int = R.layout.activity_main
 
     companion object {
         fun launch(context: Context) {
@@ -179,8 +180,12 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         }
     }
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_main
+    //    override fun getLayoutId(): Int {
+//        return R.layout.activity_main
+//    }
+    init {
+        // to do something
+
     }
 
     override fun initData(bundle: Bundle?) {

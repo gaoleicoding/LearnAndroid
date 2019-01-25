@@ -54,12 +54,12 @@ public class TodoAddActivity extends BaseMvpActivity<TodoAddPresenter,TodoAddCon
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_edit_todo;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         mTitle.setText(getString(R.string.add));
         iv_back.setVisibility(View.VISIBLE);
     }

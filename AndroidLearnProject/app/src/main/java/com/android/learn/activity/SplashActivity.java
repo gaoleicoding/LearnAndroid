@@ -30,12 +30,12 @@ public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter,SplashL
     };
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_splash;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
     }
 
     @Override

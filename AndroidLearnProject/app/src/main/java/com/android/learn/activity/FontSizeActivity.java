@@ -53,12 +53,12 @@ public class FontSizeActivity extends BaseMvpActivity {
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_fontsizes;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         title.setText(getString(R.string.font_size));
         iv_back.setVisibility(View.VISIBLE);
         initData();

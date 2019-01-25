@@ -69,12 +69,12 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_login_register;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         title.setText(getString(R.string.login));
         iv_back.setVisibility(View.VISIBLE);
     }

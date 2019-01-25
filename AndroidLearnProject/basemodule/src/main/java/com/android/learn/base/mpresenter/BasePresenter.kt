@@ -38,7 +38,7 @@ abstract class BasePresenter<V : BaseView> {
         }
     }
 
-    fun <T> addSubscribe(observable: Observable<T>, observer: BaseObserver<T>) {
+    fun <K> addSubscribe(observable: Observable<K>, observer: BaseObserver<K>) {
         mCompositeDisposable!!.add(observer)
         observable.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

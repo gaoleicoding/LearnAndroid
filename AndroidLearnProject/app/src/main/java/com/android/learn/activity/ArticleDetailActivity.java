@@ -17,6 +17,7 @@ import com.android.learn.base.view.Html5Webview;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 
 public class ArticleDetailActivity extends BaseMvpActivity {
 
@@ -29,6 +30,7 @@ public class ArticleDetailActivity extends BaseMvpActivity {
     @BindView(R.id.iv_search)
     ImageView iv_search;
     String url;
+
     public static void startActivity(Context context, Bundle bundle) {
         Intent intent = new Intent(context, ArticleDetailActivity.class);
 
@@ -36,13 +38,13 @@ public class ArticleDetailActivity extends BaseMvpActivity {
             intent.putExtras(bundle);
         context.startActivity(intent);
     }
-    @Override
-    protected int getLayoutId() {
+
+    public int getLayoutId() {
         return R.layout.activity_article_detail;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         title.setText(getString(R.string.article_detail));
         iv_back.setVisibility(View.VISIBLE);
         url = bundle.getString("url");
@@ -50,7 +52,6 @@ public class ArticleDetailActivity extends BaseMvpActivity {
         iv_search.setVisibility(View.VISIBLE);
         iv_search.setImageResource(R.drawable.icon_share);
     }
-
 
 
     @OnClick({R.id.iv_search})

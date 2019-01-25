@@ -54,12 +54,12 @@ public class SearchResultActivity extends BaseMvpActivity<SearchPresenter, Searc
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_knowledge_article;
     }
 
     @Override
-    protected void initData(Bundle bundle) {
+    public void initData(Bundle bundle) {
         keyword = bundle.getString("key");
         title.setText(keyword);
         iv_back.setVisibility(View.VISIBLE);
