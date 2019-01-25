@@ -109,7 +109,7 @@ public class TodoFragment extends BaseMvpFragment<TodoPresenter,TodoContract.Vie
                     datasBean = todoAdapter.getData().get(position);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("todo_item", datasBean);
-                    TodoEditActivity.startActivity(getActivity(), bundle);
+                    TodoEditActivity.Companion.startActivity(getActivity(), bundle);
                 }
             }
 

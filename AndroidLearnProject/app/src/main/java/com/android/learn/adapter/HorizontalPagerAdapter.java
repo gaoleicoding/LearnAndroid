@@ -57,7 +57,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                KnowledgeChildActivity.startTreeChildrenActivity(mContext,
+                KnowledgeChildActivity.Companion.startTreeChildrenActivity(mContext,
                         treeBean.getChildren().get(position).getId(),
                         treeBean.getChildren().get(position).getName());
             }

@@ -51,22 +51,22 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter, UserInfoCon
         switch (view.getId()) {
             case R.id.my_collect_layout:
                 if (!UserUtil.isLogined()) {
-                    RegisterLoginActivity.startActivity(getActivity());
+                    RegisterLoginActivity.Companion.startActivity(getActivity());
                     Utils.showToast(getString(R.string.user_not_login), true);
                     return;
                 }
-                MyCollectActivity.startActivity(getActivity());
+                MyCollectActivity.Companion.startActivity(getActivity());
                 break;
             case R.id.my_todo_layout:
-                MyTodoActivity.startActivity(getActivity());
+                MyTodoActivity.Companion.startActivity(getActivity());
                 break;
             case R.id.my_setting_layout:
-                SettingActivity.startActivity(getActivity());
+                SettingActivity.Companion.startActivity(getActivity());
                 break;
 
             case R.id.iv_user_photo:
                 if (!UserUtil.isLogined()) {
-                    RegisterLoginActivity.startActivity(getActivity());
+                    RegisterLoginActivity.Companion.startActivity(getActivity());
                 }
         }
     }
@@ -127,7 +127,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter, UserInfoCon
         SPUtils.clear(getActivity(), "phone_num");
         SPUtils.clear(getActivity(), "password");
         getMPresenter().getLogoutData();
-        RegisterLoginActivity.startActivity(getActivity());
+        RegisterLoginActivity.Companion.startActivity(getActivity());
         UserUtil.setUserInfo(null);
     }
 
