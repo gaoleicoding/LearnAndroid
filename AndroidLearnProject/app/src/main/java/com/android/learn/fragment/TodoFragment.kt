@@ -40,7 +40,7 @@ class TodoFragment : BaseMvpFragment<TodoPresenter, TodoContract.View>(), TodoCo
     lateinit var smartRefreshLayout: SmartRefreshLayout
     @BindView(R.id.tv_empty_todo)
     lateinit var tv_empty_todo: TextView
-    private var todoList: List<TodoData.DatasBean>? = null
+    lateinit var todoList: List<TodoData.DatasBean>
     private var todoAdapter: TodoQuickAdapter? = null
 
     internal var fragmentPosition: Int = 0

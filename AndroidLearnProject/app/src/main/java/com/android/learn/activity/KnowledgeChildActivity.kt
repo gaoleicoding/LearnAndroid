@@ -41,7 +41,7 @@ class KnowledgeChildActivity : BaseMvpActivity<KnowledgeChildPresenter, Knowledg
     lateinit var article_recyclerview: RecyclerView
     @BindView(R.id.smartRefreshLayout)
     lateinit var smartRefreshLayout: SmartRefreshLayout
-    private var articleDataList: List<FeedArticleData>? = null
+    lateinit var articleDataList: List<FeedArticleData>
     private var feedArticleAdapter: ArticleQuickAdapter? = null
     internal var cid: Int = 0
     internal var titleStr: String? = null
@@ -139,11 +139,11 @@ class KnowledgeChildActivity : BaseMvpActivity<KnowledgeChildPresenter, Knowledg
         val ID = "page"
         val TITLE = "TITLE"
 
-        fun startTreeChildrenActivity(context: Context, id: Int, name: String) {
+        fun startTreeChildrenActivity(context: Context?, id: Int, name: String) {
             val intent = Intent(context, KnowledgeChildActivity::class.java)
             intent.putExtra(ID, id)
             intent.putExtra(TITLE, name)
-            context.startActivity(intent)
+            context?.startActivity(intent)
         }
     }
 

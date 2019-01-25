@@ -51,7 +51,7 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
     @BindView(R.id.smartRefreshLayout_home)
     lateinit var smartRefreshLayout: SmartRefreshLayout
 
-    private var articleDataList: List<FeedArticleData>? = null
+    lateinit var articleDataList: List<FeedArticleData>
     private var feedArticleAdapter: ArticleQuickAdapter? = null
 
     override fun initData(bundle: Bundle?) {

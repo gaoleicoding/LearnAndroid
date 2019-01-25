@@ -37,7 +37,7 @@ class WechatSubFragment : BaseMvpFragment<WechatSubPresenter, WechatSubContract.
     lateinit var article_recyclerview: RecyclerView
     @BindView(R.id.smartRefreshLayout)
     lateinit var smartRefreshLayout: SmartRefreshLayout
-    private var articleDataList: List<FeedArticleData>? = null
+    lateinit var articleDataList: List<FeedArticleData>
     private var feedArticleAdapter: ArticleQuickAdapter? = null
 
     internal var userId: Int = 0

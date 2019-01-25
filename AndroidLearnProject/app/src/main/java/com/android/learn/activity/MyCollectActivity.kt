@@ -45,7 +45,7 @@ class MyCollectActivity : BaseMvpActivity<CollectPresenter, CollectContract.View
     lateinit var smartRefreshLayout: SmartRefreshLayout
     @BindView(R.id.tv_empty_collect)
     lateinit var tv_empty_collect: TextView
-    private var articleDataList: List<FeedArticleData>? = null
+    lateinit var articleDataList: List<FeedArticleData>
     private var feedArticleAdapter: ArticleQuickAdapter? = null
 
     override val layoutId: Int

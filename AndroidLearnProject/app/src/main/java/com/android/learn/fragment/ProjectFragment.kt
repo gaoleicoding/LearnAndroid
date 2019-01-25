@@ -33,7 +33,7 @@ class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(
     @BindView(R.id.smartRefreshLayout_home)
     lateinit var smartRefreshLayout: SmartRefreshLayout
     lateinit var projectAdapter: ProjectQuickAdapter
-    private var projectDataList: List<ProjectListData.ProjectData>? = null
+    lateinit var projectDataList: List<ProjectListData.ProjectData>
 
     override fun initData(bundle: Bundle?) {
 
