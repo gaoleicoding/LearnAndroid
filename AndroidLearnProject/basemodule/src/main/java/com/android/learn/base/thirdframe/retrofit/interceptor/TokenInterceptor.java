@@ -15,10 +15,10 @@ public class TokenInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         Response response = chain.proceed(request);
-        LogUtil.d(TAG,response.code()+"");
+        LogUtil.INSTANCE.d(TAG,response.code()+"");
 
         if (isTokenExpired(response)) {//根据和服务端的约定判断token过期
-            LogUtil.d(TAG,"静默自动刷新Token,然后重新请求数据");
+            LogUtil.INSTANCE.d(TAG,"静默自动刷新Token,然后重新请求数据");
             //同步请求方式，获取最新的Token
             String newSession = getNewToken();
             //使用新的Token，创建新的请求

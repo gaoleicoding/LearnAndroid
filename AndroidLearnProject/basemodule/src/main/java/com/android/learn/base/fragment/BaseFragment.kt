@@ -83,7 +83,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View) {
         if (v.id == R.id.bt_error_refresh) {
-            if (NetUtils.isConnected())
+            if (NetUtils.isConnected)
                 mErrorPageView.visibility = View.GONE
             reload()
         }

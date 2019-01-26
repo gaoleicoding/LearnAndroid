@@ -246,7 +246,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         val bundle = Bundle()
         bundle.putString("key", content)
         SearchResultActivity.startActivity(this@MainActivity, bundle)
-        val dbManager = DBManager.getInstance(this@MainActivity)
+        val dbManager = DBManager.getInstance()
         val searchRecord = SearchRecord()
         searchRecord.name = content
         dbManager.insertUser(searchRecord)
@@ -339,7 +339,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
             R.id.tv_search_clear -> {
                 searchRecordAdapter.data.clear()
                 searchRecordAdapter.notifyDataSetChanged()
-                DBManager.getInstance(this).deleteAll()
+                DBManager.getInstance().deleteAll()
             }
             R.id.iv_speech_search -> {
                 KeyboardUtils.hideKeyboard(et_search)
@@ -368,7 +368,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
 
     public override fun onStart() {
         super.onStart()
-        val recordList = DBManager.getInstance(this).queryUserList()
+        val recordList = DBManager.getInstance().queryUserList()
         searchRecordAdapter.data.clear()
         searchRecordAdapter.addData(recordList)
 
@@ -549,7 +549,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
                 val bundle = Bundle()
                 bundle.putString("key", tv.text.toString())
                 SearchResultActivity.startActivity(this@MainActivity, bundle)
-                val dbManager = DBManager.getInstance(this@MainActivity)
+                val dbManager = DBManager.getInstance()
                 val searchRecord = SearchRecord()
                 searchRecord.name = tv.text.toString()
                 dbManager.insertUser(searchRecord)

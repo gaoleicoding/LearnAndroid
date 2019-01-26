@@ -15,7 +15,7 @@ public class OfflineCacheInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-        if (!NetUtils.isConnected()) {
+        if (!NetUtils.Companion.isConnected()) {
             int offlineCacheTime = Integer.MAX_VALUE;//离线的时候的缓存的过期时间
             request = request.newBuilder()
 //                        .cacheControl(new CacheControl

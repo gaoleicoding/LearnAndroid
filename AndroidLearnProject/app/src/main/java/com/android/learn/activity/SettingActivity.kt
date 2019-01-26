@@ -127,11 +127,11 @@ class SettingActivity : BaseActivity() {
             R.id.language_switch_layout -> LanguageActivity.startActivity(this@SettingActivity)
             R.id.font_size_layout -> FontSizeActivity.startActivity(this@SettingActivity)
             R.id.my_logout_layout -> {
-                if (!UserUtil.isLogined()) {
+                if (!UserUtil.isLogined) {
                     RegisterLoginActivity.startActivity(this)
                     return
                 }
-                UserUtil.setLogined(false)
+                UserUtil.isLogined = false
                 EventBus.getDefault().post(LogoutEvent())
                 RetrofitProvider.getInstance().sharedPrefsCookiePersistor.clear()
                 finish()

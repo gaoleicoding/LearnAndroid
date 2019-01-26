@@ -143,7 +143,7 @@ class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLo
     }
 
     override fun showLoginResData(data: RegisterLoginData) {
-        UserUtil.setUserInfo(data)
+        UserUtil.assignUserInfo(data)
         SPUtils.setParam(this@RegisterLoginActivity, "username", et_login_phone_num!!.text.toString())
         SPUtils.setParam(this@RegisterLoginActivity, "password", et_login_password!!.text.toString())
         finish()

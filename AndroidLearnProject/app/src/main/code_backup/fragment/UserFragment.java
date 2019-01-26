@@ -107,7 +107,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
             String username = UserUtil.getUserInfo().data.username;
             if (tv_user_profile_not_login != null)
                 tv_user_profile_not_login.setText(username);
-            String photoUrl = UserUtil.getUserInfo().data.icon;
+            String photoUrl = UserUtil.gainUserInfo().data.icon;
             if (photoUrl != null) {
                 RequestOptions options = new RequestOptions().placeholder(R.drawable.user_default_photo);
                 if(iv_user_photo!=null)

@@ -36,9 +36,9 @@ public final class RetrofitProvider {
 
 
     public RetrofitProvider builder() {
-        netCachePath = CustomApplication.context.getExternalFilesDir("net_cache").getAbsolutePath();
+        netCachePath = CustomApplication.Companion.getContext().getExternalFilesDir("net_cache").getAbsolutePath();
         if (mOkHttpClient == null) {
-            sharedPrefsCookiePersistor=new SharedPrefsCookiePersistor(CustomApplication.context);
+            sharedPrefsCookiePersistor=new SharedPrefsCookiePersistor(CustomApplication.Companion.getContext());
             persistentCookieJar=new PersistentCookieJar(new SetCookieCache(), sharedPrefsCookiePersistor);
             mOkHttpClient = new OkHttpClient.Builder()
                     .addNetworkInterceptor(new HttpLoggingInterceptor())

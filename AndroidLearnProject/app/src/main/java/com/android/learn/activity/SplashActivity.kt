@@ -55,7 +55,7 @@ class SplashActivity : BaseMvpActivity<SplashLoginPresenter, SplashLoginContract
 
 
     override fun showLoginResData(loginResData: RegisterLoginData) {
-        UserUtil.setUserInfo(loginResData)
+        UserUtil.assignUserInfo(loginResData)
         handler.sendEmptyMessageDelayed(0, 1500)
     }
 

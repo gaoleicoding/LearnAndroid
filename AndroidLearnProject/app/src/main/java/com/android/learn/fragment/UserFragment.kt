@@ -48,7 +48,7 @@ class UserFragment : BaseMvpFragment<UserInfoPresenter, UserInfoContract.View>()
     fun click(view: View) {
         when (view.id) {
             R.id.my_collect_layout -> {
-                if (!UserUtil.isLogined()) {
+                if (!UserUtil.isLogined) {
                     RegisterLoginActivity.startActivity(activity!!)
                     Utils.showToast(getString(R.string.user_not_login), true)
                     return
@@ -58,7 +58,7 @@ class UserFragment : BaseMvpFragment<UserInfoPresenter, UserInfoContract.View>()
             R.id.my_todo_layout -> MyTodoActivity.startActivity(activity!!)
             R.id.my_setting_layout -> SettingActivity.startActivity(activity!!)
 
-            R.id.iv_user_photo -> if (!UserUtil.isLogined()) {
+            R.id.iv_user_photo -> if (!UserUtil.isLogined) {
                 RegisterLoginActivity.startActivity(activity!!)
             }
         }
@@ -90,12 +90,12 @@ class UserFragment : BaseMvpFragment<UserInfoPresenter, UserInfoContract.View>()
 
 
     fun refreshUserInfo() {
-        if (UserUtil.getUserInfo() == null) return
-        if (UserUtil.isLogined()) {
-            val username = UserUtil.getUserInfo().data.username
+        if (UserUtil.gainUserInfo() == null) return
+        if (UserUtil.isLogined) {
+            val username = UserUtil.gainUserInfo()?.data?.username
             if (tv_user_profile_not_login != null)
                 tv_user_profile_not_login!!.text = username
-            val photoUrl = UserUtil.getUserInfo().data.icon
+            val photoUrl = UserUtil.gainUserInfo()?.data?.icon
             if (photoUrl != null) {
                 val options = RequestOptions().placeholder(R.drawable.user_default_photo)
                 if (iv_user_photo != null)
@@ -116,7 +116,7 @@ class UserFragment : BaseMvpFragment<UserInfoPresenter, UserInfoContract.View>()
         SPUtils.clear(activity!!, "password")
         mPresenter!!.getLogoutData()
         RegisterLoginActivity.startActivity(activity!!)
-        UserUtil.setUserInfo(null)
+        UserUtil.assignUserInfo(null)
     }
 
     override fun onDestroy() {

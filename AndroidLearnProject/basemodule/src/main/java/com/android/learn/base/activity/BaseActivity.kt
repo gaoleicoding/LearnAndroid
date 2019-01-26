@@ -51,7 +51,7 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         setContentView(layoutId)
         ButterKnife.bind(this)
         setStatusBar()
-        ExitAppUtils.getInstance().addActivity(this)
+        ExitAppUtils.instance.addActivity(this)
 
         SkinManager.get().setWindowStatusBarColor(this.window, R.color.status_bar_color)
 
@@ -99,7 +99,7 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
 
     override fun onDestroy() {
         super.onDestroy()
-        ExitAppUtils.getInstance().delActivity(this)
+        ExitAppUtils.instance.delActivity(this)
         LogUtil.d(TAG, "BaseActivity ----onDestroy：" + javaClass.name.toString())
     }
 
@@ -120,7 +120,7 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
             val res = newBase.resources
             val config = res.configuration
-            config.fontScale = CustomApplication.getInstance().fontScale//1 设置正常字体大小的倍数
+            config.fontScale = CustomApplication.instance.fontScale//1 设置正常字体大小的倍数
             val newContext = newBase.createConfigurationContext(config)
             super.attachBaseContext(newContext)
         } else {
@@ -133,7 +133,7 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         val res = super.getResources()
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
             val config = res.configuration
-            config.fontScale = CustomApplication.getInstance().fontScale//1 设置正常字体大小的倍数
+            config.fontScale = CustomApplication.instance.fontScale//1 设置正常字体大小的倍数
             res.updateConfiguration(config, res.displayMetrics)
         }
         return res

@@ -34,7 +34,7 @@ public class CustomizeGsonResponseBodyConverter<T> implements Converter<Response
     public T convert(ResponseBody value) throws IOException {
 
         String responseBodyStr = value.string();
-        LogUtil.d(TAG,"responseBodyStr---------------"+responseBodyStr);
+        LogUtil.INSTANCE.d(TAG,"responseBodyStr---------------"+responseBodyStr);
 
 
         return adapter.fromJson(responseBodyStr);

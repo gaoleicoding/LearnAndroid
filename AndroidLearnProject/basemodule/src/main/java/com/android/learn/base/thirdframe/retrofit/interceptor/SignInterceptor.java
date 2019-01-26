@@ -89,7 +89,7 @@ public final class SignInterceptor implements Interceptor {
                 try {
                     bodyJson = new JSONObject(paramsStr);
                 } catch (JSONException e) {
-                    LogUtil.e("JSON", "JsonObject err");
+                    LogUtil.INSTANCE.e("JSON", "JsonObject err");
                 }
 
                 if (bodyJson != null) {
@@ -100,7 +100,7 @@ public final class SignInterceptor implements Interceptor {
                         try {
                             value = bodyJson.get(key);
                         } catch (JSONException e) {
-                            LogUtil.e("JSON", "JsonObject get err");
+                            LogUtil.INSTANCE.e("JSON", "JsonObject get err");
                         }
                         if (key.equals("token")) {
                             arrayMap.put("token", String.valueOf(value));
@@ -135,7 +135,7 @@ public final class SignInterceptor implements Interceptor {
             }
         }
 
-        String sign = Utils.md5Encode(sb.toString());
+        String sign = Utils.INSTANCE.md5Encode(sb.toString());
         params.add(new Pair<>("sign", sign));
 
         for (Pair<String, String> pair : params) {
@@ -143,7 +143,7 @@ public final class SignInterceptor implements Interceptor {
                 try {
                     bodyJson.put(pair.first, pair.second);
                 } catch (JSONException e) {
-                    LogUtil.e("JSON", "JsonObject put err");
+                    LogUtil.INSTANCE.e("JSON", "JsonObject put err");
                 }
             }
         }

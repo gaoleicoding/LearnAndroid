@@ -19,7 +19,7 @@ public class HttpLoggingInterceptor implements Interceptor {
         Request request = chain.request();
 
         long t1 = System.nanoTime();//请求发起的时间
-        LogUtil.d("HttpLoggingInterceptor",String.format("发送请求 %s on %s%n%s",
+        LogUtil.INSTANCE.d("HttpLoggingInterceptor",String.format("发送请求 %s on %s%n%s",
                 request.url(), chain.connection(), request.headers()));
 
         Response response = chain.proceed(request);
@@ -31,7 +31,7 @@ public class HttpLoggingInterceptor implements Interceptor {
         //个新的response给应用层处理
         ResponseBody responseBody = response.peekBody(1024 * 1024);
 
-        LogUtil.d("HttpLoggingInterceptor",String.format("接收响应: [%s] %n返回json:【%s】 %.1fms%n%s",
+        LogUtil.INSTANCE.d("HttpLoggingInterceptor",String.format("接收响应: [%s] %n返回json:【%s】 %.1fms%n%s",
                 response.request().url(),
                 responseBody.string(),
                 (t2 - t1) / 1e6d,

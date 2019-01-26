@@ -50,7 +50,7 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
     public void onError(Throwable e) {
         if(isCancelDialog)
         CustomProgressDialog.cancel();
-        if (!NetUtils.isConnected()) {
+        if (!NetUtils.Companion.isConnected()) {
             errMsg = "网络连接出错,请检查网络";
 
         } else if (e instanceof HttpException) {
@@ -59,7 +59,7 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
             errMsg = "服务器访问异常(IOException)";
         }
         if (!"".equals(errMsg))
-            Utils.showToast(errMsg, true);
+            Utils.INSTANCE.showToast(errMsg, true);
 
     }
 

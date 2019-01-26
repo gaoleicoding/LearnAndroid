@@ -30,7 +30,7 @@ public final class RetrofitDynamicProvider {
 
 
     public RetrofitDynamicProvider builder(String BASE_URL) {
-        netCachePath = CustomApplication.context.getExternalFilesDir("net_cache").getAbsolutePath();
+        netCachePath = CustomApplication.Companion.getContext().getExternalFilesDir("net_cache").getAbsolutePath();
         if (mOkHttpClient == null) {
             mOkHttpClient = new OkHttpClient.Builder()
                     .addNetworkInterceptor(new HttpLoggingInterceptor())
@@ -46,7 +46,7 @@ public final class RetrofitDynamicProvider {
 //                    .addInterceptor(new TokenInterceptor())//token过期，自动刷新Token
 //                    .addInterceptor(new SignInterceptor())//所有的接口，默认需要带上sign,timestamp2个参数
 //                    .addNetworkInterceptor(new ParamsEncryptInterceptor())//参数加密,一般针对表单中的字段和值进行加密，防止中途第三方进行窥探和篡改
-                    .cookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(CustomApplication.context)))
+                    .cookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(CustomApplication.Companion.getContext())))
                     .connectTimeout(30, TimeUnit.SECONDS)
                     .readTimeout(30, TimeUnit.SECONDS)
                     .writeTimeout(30, TimeUnit.SECONDS)

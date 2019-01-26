@@ -139,7 +139,7 @@ class FeedbackActivity : BaseActivity() {
         override fun run() {
             // TODO Auto-generated method stub
             try {
-                sender.sendMail(subject, body, user, receiver, attachment)
+                sender.sendMail(subject, body, user, receiver!!, attachment)
                 Utils.showToast(getString(R.string.feedback_send_success), false)
                 runOnUiThread { finish() }
             } catch (e: Exception) {
