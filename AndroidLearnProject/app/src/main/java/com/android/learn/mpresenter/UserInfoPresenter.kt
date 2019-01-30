@@ -13,7 +13,7 @@ class UserInfoPresenter : BasePresenter<UserInfoContract.View>(), UserInfoContra
 
     override fun getLogoutData() {
 
-        val observable = RetrofitProvider.getInstance().createService(ApiService::class.java).logout()
+        val observable = RetrofitProvider.instance.createService(ApiService::class.java).logout()
         addSubscribe(observable, object : BaseObserver<BaseData>(false) {
             override fun onNext(baseData: BaseData) {}
         })

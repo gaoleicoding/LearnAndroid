@@ -20,6 +20,6 @@ class ProjectQuickAdapter(internal var context: Context?, list: List<ProjectData
                 .setText(R.id.item_project_list_time_tv, projectInfo.getNiceDate())
                 .setText(R.id.item_project_list_author_tv, projectInfo.getAuthor())
 
-        ImageLoader.getInstance().load(context, projectInfo.getEnvelopePic(), helper.getView<View>(R.id.item_project_list_iv) as ImageView)
+        ImageLoader.instance.load(context!!, projectInfo.getEnvelopePic(), helper.getView<View>(R.id.item_project_list_iv) as ImageView)
     }
 }

@@ -133,7 +133,7 @@ class SettingActivity : BaseActivity() {
                 }
                 UserUtil.isLogined = false
                 EventBus.getDefault().post(LogoutEvent())
-                RetrofitProvider.getInstance().sharedPrefsCookiePersistor.clear()
+                RetrofitProvider.instance.sharedPrefsCookiePersistor.clear()
                 finish()
             }
         }

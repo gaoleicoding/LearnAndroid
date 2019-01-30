@@ -15,7 +15,7 @@ import io.reactivex.Observable
 class SplashLoginPresenter : BasePresenter<SplashLoginContract.View>(), SplashLoginContract.Presenter {
 
     override fun login(account: String, password: String) {
-        val observable = RetrofitProvider.getInstance().createService(ApiService::class.java).login(account, password)
+        val observable = RetrofitProvider.instance.createService(ApiService::class.java).login(account, password)
         addSubscribe(observable, object : BaseObserver<RegisterLoginData>(false) {
             override fun onNext(data: RegisterLoginData) {
                 mView!!.showLoginResData(data)

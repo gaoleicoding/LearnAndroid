@@ -13,7 +13,7 @@ abstract class BasePresenter<V : BaseView> {
 
     var mView: V? = null
     //    public Observable observable;
-    var mRestService = RetrofitProvider.getInstance().builder().apiService
+    var mRestService = RetrofitProvider.instance.builder()!!.apiService!!
     internal var mCompositeDisposable: CompositeDisposable? = null
 
     /**
