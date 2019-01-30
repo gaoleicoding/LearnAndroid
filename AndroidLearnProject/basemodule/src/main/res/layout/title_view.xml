@@ -13,7 +13,6 @@
         android:layout_height="24dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
-        android:src="@drawable/icon_back"
         android:clickable="true"
         android:visibility="gone" />
 
