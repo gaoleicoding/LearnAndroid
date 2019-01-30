@@ -49,7 +49,7 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
     @Override
     public void onError(Throwable e) {
         if(isCancelDialog)
-        CustomProgressDialog.cancel();
+        CustomProgressDialog.INSTANCE.cancel();
         if (!NetUtils.Companion.isConnected()) {
             errMsg = "网络连接出错,请检查网络";
 
@@ -66,7 +66,7 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
     @Override
     public void onComplete() {
         if(isCancelDialog)
-        CustomProgressDialog.cancel();
+        CustomProgressDialog.INSTANCE.cancel();
     }
 
 }
