@@ -4,14 +4,12 @@ package com.android.learn.mpresenter
 import com.android.learn.base.mmodel.BannerListData
 import com.android.learn.base.mmodel.BaseData
 import com.android.learn.base.mmodel.BaseResponse
-import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
 import com.android.learn.base.mmodel.FeedArticleListData
+import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
 import com.android.learn.base.mpresenter.BasePresenter
 import com.android.learn.base.thirdframe.rxjava.BaseObserver
 import com.android.learn.base.utils.ResponseStatusUtil
 import com.android.learn.mcontract.HomeContract
-
-import io.reactivex.Observable
 
 
 class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter {

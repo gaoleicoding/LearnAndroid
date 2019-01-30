@@ -1,15 +1,12 @@
 package com.android.learn.base.activity
 
 import android.content.Context
-import android.content.res.Configuration
 import android.content.res.Resources
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
-import android.support.annotation.ColorInt
-import android.support.annotation.IntRange
 import android.view.View
-
+import butterknife.ButterKnife
+import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper
 import com.android.learn.base.application.CustomApplication
 import com.android.learn.base.utils.ExitAppUtils
 import com.android.learn.base.utils.LogUtil
@@ -20,11 +17,7 @@ import com.umeng.analytics.MobclickAgent
 import com.wind.me.xskinloader.SkinInflaterFactory
 import com.wind.me.xskinloader.SkinManager
 import com.wind.me.xskinloader.util.AssetFileUtils
-
 import java.io.File
-
-import butterknife.ButterKnife
-import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper
 
 
 /**

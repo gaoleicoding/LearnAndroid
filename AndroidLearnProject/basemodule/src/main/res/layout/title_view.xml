@@ -14,6 +14,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
         android:clickable="true"
+        android:src="@drawable/icon_back"
         android:visibility="gone" />
 
     <TextView

@@ -1,5 +1,6 @@
 package com.android.learn.activity
 
+
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentUris
@@ -17,18 +18,12 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-
-
-import com.android.learn.R
-import com.android.learn.base.activity.BaseMvpActivity
-import com.android.learn.base.email.MailSender
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.base.utils.LanguageUtil
-import com.android.learn.base.utils.Utils
-
 import butterknife.BindView
 import butterknife.OnClick
+import com.android.learn.R
 import com.android.learn.base.activity.BaseActivity
+import com.android.learn.base.email.MailSender
+import com.android.learn.base.utils.Utils
 
 
 class FeedbackActivity : BaseActivity() {
