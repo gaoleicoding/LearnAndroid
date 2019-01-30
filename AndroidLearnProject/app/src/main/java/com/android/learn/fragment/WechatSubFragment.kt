@@ -74,7 +74,7 @@ class WechatSubFragment : BaseMvpFragment<WechatSubPresenter, WechatSubContract.
     }
 
     override fun showWxArticleById(datas: FeedArticleListData) {
-        val newDataList = datas.getDatas()
+        val newDataList = datas.datas
         if (newDataList == null || newDataList.size == 0) {
             smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
             return
@@ -115,7 +115,7 @@ class WechatSubFragment : BaseMvpFragment<WechatSubPresenter, WechatSubContract.
         feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             val intent = Intent(activity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
-            bundle.putString("url", feedArticleAdapter!!.data[position].getLink())
+            bundle.putString("url", feedArticleAdapter!!.data[position].link)
             intent.putExtras(bundle)
             startActivity(intent)
         }

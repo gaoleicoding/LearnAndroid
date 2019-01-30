@@ -1,16 +1,7 @@
 package com.android.learn.base.thirdframe.retrofit
 
 
-import com.android.learn.base.mmodel.BannerListData
-import com.android.learn.base.mmodel.BaseData
-import com.android.learn.base.mmodel.BaseResponse
-import com.android.learn.base.mmodel.FeedArticleListData
-import com.android.learn.base.mmodel.HotKeyData
-import com.android.learn.base.mmodel.RegisterLoginData
-import com.android.learn.base.mmodel.ProjectListData
-import com.android.learn.base.mmodel.TodoData
-import com.android.learn.base.mmodel.TreeBean
-import com.android.learn.base.mmodel.WxArticle
+import com.android.learn.base.mmodel.*
 
 import io.reactivex.Observable
 import retrofit2.http.Field
@@ -28,13 +19,13 @@ interface ApiService {
     val bannerListData: Observable<BannerListData>
 
     @get:GET("tree/json")
-    val knowledgeTree: Observable<BaseResponse<List<TreeBean>>>
+    val knowledgeTree: Observable<BaseListResponse<List<TreeBean>>>
 
     @get:GET("hotkey/json")
-    val hotKey: Observable<BaseResponse<List<HotKeyData>>>
+    val hotKey: Observable<BaseListResponse<List<HotKeyData>>>
 
     @get:GET("wxarticle/chapters/json")
-    val wxArticle: Observable<BaseResponse<List<WxArticle>>>
+    val wxArticle: Observable<BaseListResponse<List<WxArticle>>>
 
 
     @GET("project/list/{page}/json")

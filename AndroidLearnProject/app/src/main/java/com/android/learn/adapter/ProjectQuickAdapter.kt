@@ -15,11 +15,11 @@ import com.chad.library.adapter.base.BaseViewHolder
 class ProjectQuickAdapter(internal var context: Context?, list: List<ProjectData>) : BaseQuickAdapter<ProjectData, BaseViewHolder>(R.layout.item_project_list, list) {
 
     override fun convert(helper: BaseViewHolder, projectInfo: ProjectData) {
-        helper.setText(R.id.item_project_list_title_tv, projectInfo.getTitle())
-                .setText(R.id.item_project_list_content_tv, projectInfo.getDesc())
-                .setText(R.id.item_project_list_time_tv, projectInfo.getNiceDate())
-                .setText(R.id.item_project_list_author_tv, projectInfo.getAuthor())
+        helper.setText(R.id.item_project_list_title_tv, projectInfo.title)
+                .setText(R.id.item_project_list_content_tv, projectInfo.desc)
+                .setText(R.id.item_project_list_time_tv, projectInfo.niceDate)
+                .setText(R.id.item_project_list_author_tv, projectInfo.author)
 
-        ImageLoader.instance.load(context!!, projectInfo.getEnvelopePic(), helper.getView<View>(R.id.item_project_list_iv) as ImageView)
+        ImageLoader.instance.load(context!!, projectInfo.envelopePic, helper.getView<View>(R.id.item_project_list_iv) as ImageView)
     }
 }

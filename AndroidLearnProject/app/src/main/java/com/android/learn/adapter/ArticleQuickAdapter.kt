@@ -22,9 +22,9 @@ class ArticleQuickAdapter( val context: Context?, internal var list: List<FeedAr
     }
 
     override fun convert(helper: BaseViewHolder, articleData: FeedArticleData) {
-        helper.setText(R.id.tv_item_title, articleData.getTitle())
-                .setText(R.id.tv_item_time, articleData.getNiceDate())
-                .setText(R.id.tv_item_author, articleData.getAuthor())
+        helper.setText(R.id.tv_item_title, articleData.title)
+                .setText(R.id.tv_item_time, articleData.niceDate)
+                .setText(R.id.tv_item_author, articleData.author)
         helper.addOnClickListener(R.id.iv_item_collect)
         if ("HomeFragment" == fromWhere || "KnowledgeChildActivity" == fromWhere || "WechatSubFragment" == fromWhere) {
             if (articleData.isCollect) {

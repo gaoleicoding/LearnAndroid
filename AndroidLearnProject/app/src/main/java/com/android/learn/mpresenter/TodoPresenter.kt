@@ -22,7 +22,7 @@ class TodoPresenter : BasePresenter<TodoContract.View>(), TodoContract.Presenter
 
             override fun onNext(data: BaseResponse<TodoData>) {
                 if (data.errorCode == BaseData.SUCCESS) {
-                    mView!!.showListNotDone(data.getData())
+                    mView!!.showListNotDone(data.data)
                 } else
                     ResponseStatusUtil.handleResponseStatus(data)
             }
@@ -37,7 +37,7 @@ class TodoPresenter : BasePresenter<TodoContract.View>(), TodoContract.Presenter
 
             override fun onNext(data: BaseResponse<TodoData>) {
                 if (data.errorCode == BaseData.SUCCESS) {
-                    mView!!.showListDone(data.getData())
+                    mView!!.showListDone(data.data)
                 } else
                     ResponseStatusUtil.handleResponseStatus(data)
             }

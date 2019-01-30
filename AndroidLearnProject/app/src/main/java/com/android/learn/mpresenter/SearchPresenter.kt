@@ -20,7 +20,7 @@ class SearchPresenter : BasePresenter<SearchContract.View>(), SearchContract.Pre
         val observable = mRestService.search(mCurrentPage, key)
         addSubscribe(observable, object : BaseObserver<BaseResponse<FeedArticleListData>>(true) {
             override fun onNext(feedArticleListData: BaseResponse<FeedArticleListData>) {
-                mView!!.showArticleList(feedArticleListData.getData())
+                mView!!.showArticleList(feedArticleListData.data)
             }
         })
     }
@@ -30,13 +30,13 @@ class SearchPresenter : BasePresenter<SearchContract.View>(), SearchContract.Pre
         val observable = mRestService.search(mCurrentPage, key)
         addSubscribe(observable, object : BaseObserver<BaseResponse<FeedArticleListData>>(true) {
             override fun onNext(feedArticleListData: BaseResponse<FeedArticleListData>) {
-                mView!!.showArticleList(feedArticleListData.getData())
+                mView!!.showArticleList(feedArticleListData.data)
             }
         })
     }
 
     override fun addCollectArticle(position: Int, feedArticleData: FeedArticleListData.FeedArticleData) {
-        val observable = mRestService.addCollectArticle(feedArticleData.getId())
+        val observable = mRestService.addCollectArticle(feedArticleData.id)
         addSubscribe(observable, object : BaseObserver<BaseData>(true) {
 
             override fun onNext(data: BaseData) {
@@ -52,7 +52,7 @@ class SearchPresenter : BasePresenter<SearchContract.View>(), SearchContract.Pre
     }
 
     override fun cancelCollectArticle(position: Int, feedArticleData: FeedArticleListData.FeedArticleData) {
-        val observable = mRestService.cancelCollectArticle(feedArticleData.getId(), -1)
+        val observable = mRestService.cancelCollectArticle(feedArticleData.id, -1)
         addSubscribe(observable, object : BaseObserver<BaseData>(true) {
 
             override fun onNext(data: BaseData) {

@@ -86,7 +86,7 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
 
 
     override fun showArticleList(listData: FeedArticleListData, isRefresh: Boolean) {
-        val newDataList = listData.getDatas()
+        val newDataList = listData.datas
         if (newDataList == null || newDataList.size == 0) {
             smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
             return
@@ -168,7 +168,7 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
         feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             val intent = Intent(activity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
-            bundle.putString("url", articleDataList!![position].getLink())
+            bundle.putString("url", articleDataList!![position].link)
             intent.putExtras(bundle)
             startActivity(intent)
         }

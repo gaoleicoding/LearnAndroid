@@ -71,7 +71,7 @@ class MyCollectActivity : BaseMvpActivity<CollectPresenter, CollectContract.View
 
 
     override fun showCollectList(feedArticleListData: FeedArticleListData) {
-        val newDataList = feedArticleListData.getDatas()
+        val newDataList = feedArticleListData.datas
         if (newDataList == null || newDataList.size == 0) {
             smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
         }
@@ -104,7 +104,7 @@ class MyCollectActivity : BaseMvpActivity<CollectPresenter, CollectContract.View
         feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             val intent = Intent(this@MyCollectActivity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
-            bundle.putString("url", articleDataList!![position].getLink())
+            bundle.putString("url", articleDataList!![position].link)
             intent.putExtras(bundle)
             startActivity(intent)
         }

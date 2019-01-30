@@ -24,7 +24,7 @@ class CollectPresenter : BasePresenter<CollectContract.View>(), CollectContract.
 
             override fun onNext(data: BaseResponse<FeedArticleListData>) {
                 if (data.errorCode == BaseData.SUCCESS) {
-                    mView!!.showCollectList(data.getData())
+                    mView!!.showCollectList(data.data)
                 } else
                     ResponseStatusUtil.handleResponseStatus(data)
             }

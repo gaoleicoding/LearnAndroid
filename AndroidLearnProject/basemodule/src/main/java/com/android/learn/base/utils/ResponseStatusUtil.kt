@@ -1,12 +1,18 @@
 package com.android.learn.base.utils
 
 import com.android.learn.base.mmodel.BaseData
+import com.android.learn.base.mmodel.BaseListResponse
 import com.android.learn.base.mmodel.BaseResponse
 
 object ResponseStatusUtil {
 
 
     fun handleResponseStatus(baseData: BaseResponse<*>?) {
+        if (baseData == null) return
+        Utils.showToast(baseData.errorMsg, true)
+    }
+
+    fun handleListResponseStatus( baseData: BaseListResponse<List<BaseData>>) {
         if (baseData == null) return
         Utils.showToast(baseData.errorMsg, true)
     }

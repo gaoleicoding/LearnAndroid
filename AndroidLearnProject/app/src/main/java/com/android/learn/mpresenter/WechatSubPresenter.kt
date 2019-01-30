@@ -21,7 +21,7 @@ class WechatSubPresenter : BasePresenter<WechatSubContract.View>(), WechatSubCon
         addSubscribe(observable, object : BaseObserver<BaseResponse<FeedArticleListData>>(true) {
 
             override fun onNext(listData: BaseResponse<FeedArticleListData>) {
-                mView!!.showWxArticleById(listData.getData())
+                mView!!.showWxArticleById(listData.data)
             }
 
         })
@@ -29,7 +29,7 @@ class WechatSubPresenter : BasePresenter<WechatSubContract.View>(), WechatSubCon
     }
 
     override fun addCollectArticle(position: Int, feedArticleData: FeedArticleData) {
-        val observable = mRestService.addCollectArticle(feedArticleData.getId())
+        val observable = mRestService.addCollectArticle(feedArticleData.id)
         addSubscribe(observable, object : BaseObserver<BaseData>(true) {
 
             override fun onNext(data: BaseData) {
@@ -45,7 +45,7 @@ class WechatSubPresenter : BasePresenter<WechatSubContract.View>(), WechatSubCon
     }
 
     override fun cancelCollectArticle(position: Int, feedArticleData: FeedArticleData) {
-        val observable = mRestService.cancelCollectArticle(feedArticleData.getId(), -1)
+        val observable = mRestService.cancelCollectArticle(feedArticleData.id, -1)
         addSubscribe(observable, object : BaseObserver<BaseData>(true) {
 
             override fun onNext(data: BaseData) {

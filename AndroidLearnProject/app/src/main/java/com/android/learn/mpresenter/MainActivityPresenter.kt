@@ -1,12 +1,8 @@
 package com.android.learn.mpresenter
 
 
-import com.android.learn.base.mmodel.BaseData
-import com.android.learn.base.mmodel.BaseResponse
-import com.android.learn.base.mmodel.FeedArticleListData
+import com.android.learn.base.mmodel.*
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
-import com.android.learn.base.mmodel.HotKeyData
-import com.android.learn.base.mmodel.TreeBean
 import com.android.learn.base.mpresenter.BasePresenter
 import com.android.learn.base.thirdframe.rxjava.BaseObserver
 import com.android.learn.base.utils.ResponseStatusUtil
@@ -22,13 +18,13 @@ class MainActivityPresenter : BasePresenter<MainActivityContract.View>(), MainAc
 
     override fun getHotKey() {
         val observable = mRestService.hotKey
-        addSubscribe(observable, object : BaseObserver<BaseResponse<List<HotKeyData>>>(true) {
+        addSubscribe(observable, object : BaseObserver<BaseListResponse<List<HotKeyData>>>(true) {
 
-            override fun onNext(datas: BaseResponse<List<HotKeyData>>) {
+            override fun onNext(datas: BaseListResponse<List<HotKeyData>>) {
                 if (datas.errorCode == BaseData.SUCCESS) {
                     mView!!.showHotKey(datas.data)
                 } else
-                    ResponseStatusUtil.handleResponseStatus(datas)
+                    ResponseStatusUtil.handleListResponseStatus(datas as BaseListResponse<List<BaseData>>)
             }
 
         })

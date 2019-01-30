@@ -63,7 +63,7 @@ class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(
 
 
     override fun showProjectList(listData: ProjectListData, isRefresh: Boolean) {
-        val newDataList = listData.data.getDatas()
+        val newDataList = listData.data.datas
         if (newDataList == null || newDataList.size == 0) {
             smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
             return
@@ -84,7 +84,7 @@ class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(
         projectAdapter.setOnItemClickListener { adapter, view, position ->
             val intent = Intent(activity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
-            bundle.putString("url", projectDataList!![position].getLink())
+            bundle.putString("url", projectDataList!![position].link)
             intent.putExtras(bundle)
             startActivity(intent)
         }

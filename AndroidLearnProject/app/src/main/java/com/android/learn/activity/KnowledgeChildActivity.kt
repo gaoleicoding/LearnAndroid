@@ -72,7 +72,7 @@ class KnowledgeChildActivity : BaseMvpActivity<KnowledgeChildPresenter, Knowledg
     }
 
     override fun showArticleList(listData: FeedArticleListData, isRefresh: Boolean) {
-        val newDataList = listData.getDatas()
+        val newDataList = listData.datas
         if (newDataList == null || newDataList.size == 0) {
             smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
             return
@@ -105,7 +105,7 @@ class KnowledgeChildActivity : BaseMvpActivity<KnowledgeChildPresenter, Knowledg
         feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             val intent = Intent(this@KnowledgeChildActivity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
-            bundle.putString("url", feedArticleAdapter!!.data[position].getLink())
+            bundle.putString("url", feedArticleAdapter!!.data[position].link)
             intent.putExtras(bundle)
             startActivity(intent)
         }

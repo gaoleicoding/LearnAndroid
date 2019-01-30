@@ -22,7 +22,7 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
         val observable = mRestService.getFeedArticleList(-1)
         addSubscribe(observable, object : BaseObserver<BaseResponse<FeedArticleListData>>(false) {
             override fun onNext(feedArticleListData: BaseResponse<FeedArticleListData>) {
-                mView!!.showArticleList(feedArticleListData.getData(), true)
+                mView!!.showArticleList(feedArticleListData.data, true)
             }
         })
 
@@ -34,7 +34,7 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
         val observable = mRestService.getFeedArticleList(mCurrentPage)
         addSubscribe(observable, object : BaseObserver<BaseResponse<FeedArticleListData>>(false) {
             override fun onNext(feedArticleListData: BaseResponse<FeedArticleListData>) {
-                mView!!.showArticleList(feedArticleListData.getData(), false)
+                mView!!.showArticleList(feedArticleListData.data, false)
             }
         })
     }
@@ -43,7 +43,7 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
         val observable = mRestService.getFeedArticleList(num)
         addSubscribe(observable, object : BaseObserver<BaseResponse<FeedArticleListData>>(true) {
             override fun onNext(feedArticleListData: BaseResponse<FeedArticleListData>) {
-                mView!!.showArticleList(feedArticleListData.getData(), false)
+                mView!!.showArticleList(feedArticleListData.data, false)
             }
         })
     }
@@ -63,7 +63,7 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
 
 
     override fun addCollectArticle(position: Int, feedArticleData: FeedArticleData) {
-        val observable = mRestService.addCollectArticle(feedArticleData.getId())
+        val observable = mRestService.addCollectArticle(feedArticleData.id)
         addSubscribe(observable, object : BaseObserver<BaseData>(true) {
 
             override fun onNext(data: BaseData) {
@@ -79,7 +79,7 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
     }
 
     override fun cancelCollectArticle(position: Int, feedArticleData: FeedArticleData) {
-        val observable = mRestService.cancelCollectArticle(feedArticleData.getId(), -1)
+        val observable = mRestService.cancelCollectArticle(feedArticleData.id, -1)
         addSubscribe(observable, object : BaseObserver<BaseData>(true) {
 
             override fun onNext(data: BaseData) {

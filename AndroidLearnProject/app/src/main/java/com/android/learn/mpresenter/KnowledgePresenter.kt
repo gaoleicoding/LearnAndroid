@@ -1,5 +1,6 @@
 package com.android.learn.mpresenter
 
+import com.android.learn.base.mmodel.BaseListResponse
 import com.android.learn.base.mmodel.BaseResponse
 import com.android.learn.base.mmodel.TreeBean
 import com.android.learn.base.mpresenter.BasePresenter
@@ -24,8 +25,8 @@ class KnowledgePresenter : BasePresenter<KnowledgeContract.View>(), KnowledgeCon
     override fun getKnowledge() {
 
         val observable = mRestService.knowledgeTree
-        val baseObserver = object : BaseObserver<BaseResponse<List<TreeBean>>>(false) {
-            override fun onNext(datas: BaseResponse<List<TreeBean>>) {
+        val baseObserver = object : BaseObserver<BaseListResponse<List<TreeBean>>>(false) {
+            override fun onNext(datas: BaseListResponse<List<TreeBean>>) {
                 mView!!.showKnowledge(datas.data)
             }
         }

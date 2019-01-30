@@ -66,7 +66,7 @@ class SearchResultActivity : BaseMvpActivity<SearchPresenter, SearchContract.Vie
     }
 
     override fun showArticleList(listData: FeedArticleListData) {
-        val newDataList = listData.getDatas()
+        val newDataList = listData.datas
         if (newDataList == null || newDataList.size == 0) {
             smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
         }
@@ -101,7 +101,7 @@ class SearchResultActivity : BaseMvpActivity<SearchPresenter, SearchContract.Vie
         feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             val intent = Intent(this@SearchResultActivity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
-            bundle.putString("url", feedArticleAdapter!!.data[position].getLink())
+            bundle.putString("url", feedArticleAdapter!!.data[position].link)
             intent.putExtras(bundle)
             startActivity(intent)
         }
