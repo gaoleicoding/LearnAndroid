@@ -29,6 +29,8 @@ https://github.com/hongyangAndroid/wanandroid
 
 设置：反馈与建议、夜间模式、语言设置、字体大小
  
+java版本：https://github.com/gaoleicoding/AndroidLearnProject
+kotlin版本：https://github.com/gaoleicoding/AndroidLearnProject/tree/kotlin  
 
 主要开源框架
 
