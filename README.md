@@ -1,7 +1,7 @@
  
 简介
 
-学Android 主要是采用 MVP + RxJava2 + Retrofit + Multimodule 等架构设计。利用开源的api获取有关android知识的数据，非常感谢张鸿洋老师提供的开放api！向开源者致敬！项目中把目前流行的项目框架都集成到了，代码结构清晰并且有详细注释，如有建议或疑问可留言反馈 。
+学Android 主要是采用 MVP + RxJava2 + Retrofit + Multimodule 等架构设计。利用开源的api获取有关android知识的数据，非常感谢张鸿洋老师提供的开放api！向开源者致敬！项目中把目前流行的项目框架都集成到了，代码结构清晰并且有详细注释，如有建议或疑问可留言反馈 。喜欢的话留下你的Star让我知道^_^。
 
 开放API地址
 
