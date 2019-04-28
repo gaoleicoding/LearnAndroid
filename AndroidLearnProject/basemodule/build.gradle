@@ -3,11 +3,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.jakewharton.butterknife'
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
 
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -42,84 +42,68 @@ android {
 }
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api rootProject.ext.dependencies.appcompatV7
-    api rootProject.ext.dependencies.design
-    api rootProject.ext.dependencies["constraint-layout"]
-    api 'com.android.support:cardview-v7:26+'
+    api rootProject.appcompat_v7
+    api rootProject.constraint_layout
+    api rootProject.support_design
+    api rootProject.support_cardview
     testImplementation 'junit:junit:4.12'
     api fileTree(include: ['*.jar'], dir: 'libs')
 
     //okhttp retrofit
-    api rootProject.ext.dependencies["okhttp3"]
-    api rootProject.ext.dependencies["retrofit"]
-    api rootProject.ext.dependencies["retrofit-converter-gson"]
+    api rootProject.okhttp3
+    api rootProject.retrofit
+    api rootProject.retrofit_converter_gson
 
     //butterknife
-    api rootProject.ext.dependencies["butterknife"]
-    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    api rootProject.butterknife
+    annotationProcessor rootProject.butterknife_compiler
 
     // glide
-    api rootProject.ext.dependencies["glide"]
-    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    api rootProject.glide
+    annotationProcessor rootProject.glide_compiler
 
     // banner
-    api rootProject.ext.dependencies["banner"]
+    api rootProject.banner
 
     // rxjava
-    api rootProject.ext.dependencies["rxjava"]
-    api rootProject.ext.dependencies["rxandroid"]
-    api rootProject.ext.dependencies["retrofit2:adapter-rxjava2"]
+    api rootProject.rxjava
+    api rootProject.rxandroid
+    api rootProject.adapter_rxjava2
 
     // dagger2
-    api rootProject.ext.dependencies["dagger"]
-    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    api rootProject.dagger
+    annotationProcessor rootProject.dagger_compiler
 
     // eventbus
-    api rootProject.ext.dependencies["event-bus"]
-    annotationProcessor rootProject.ext.dependencies["eventbus-annotation-processor"]
-
-    // BlockCanary进行卡顿监控和提示
-
-    //        debugImplementation rootProject.ext.dependencies["blockcanary-android"]
-
-    //        releaseImplementation rootProject.ext.dependencies["blockcanary-no-op"]
-
-    //        //LeakCanary
-
-    //        debugImplementation rootProject.ext.dependencies["leakcanary-android"]
-
-    //        releaseImplementation rootProject.ext.dependencies["leakcanary-android-no-op"]
-
-    // Optional, if you use support library fragments:
-
-    //        debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.1'
+    api rootProject.event_bus
+    annotationProcessor rootProject.eventbus_annotation_processor
 
     //okhttp保存cookie
-    api rootProject.ext.dependencies["PersistentCookieJar"]
+    api rootProject.PersistentCookieJar
 
     //下拉刷新框架
-    api rootProject.ext.dependencies["SmartRefreshLayout"]
-    api rootProject.ext.dependencies["SmartRefreshHeader"]
+    api rootProject.SmartRefreshLayout
+    api rootProject.SmartRefreshHeader
 
     //RecyclerView万能适配器
-    compile rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    compile rootProject.BaseRecyclerViewAdapterHelper
 
     //友盟统计
-    api rootProject.ext.dependencies["umeng-common"]
-    api rootProject.ext.dependencies["umeng-analytics"]
+    api rootProject.umeng_common
+    api rootProject.umeng_analytics
 
     //崩溃自定义跳转界面
-    api rootProject.ext.dependencies["customactivityoncrash"]
-     //    知识点模块的旋转效果
-    api rootProject.ext.dependencies["infinitecycleviewpager"]
-     //    首页欢迎的SVGA动效
-    api rootProject.ext.dependencies["SVGAPlayer-Android"]
-     //    搜索页的flow标签
-    api rootProject.ext.dependencies["flowlayout"]
+    api rootProject.customactivityoncrash
+    //    知识点模块的旋转效果
+    api rootProject.infinitecycleviewpager
+    //    首页欢迎的SVGA动效
+    api rootProject.SVGAPlayer_Android
+    //    搜索页的flow标签
+    api rootProject.flowlayout
     //    搜索历史使用的数据库框架
-    api rootProject.ext.dependencies["greendao"]
+    api rootProject.greendao
     //    activity滑动消失框架
-    api rootProject.ext.dependencies["bga-swipebacklayout"]
+    api rootProject.bga_swipebacklayout
     // StatusUtil 沉浸式状态栏
     api('com.jaeger.statusbarutil:library:1.4.0') {
         exclude group: 'com.android.support', module: 'recyclerview-v7'

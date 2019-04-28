@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.franmontiel:PersistentCookieJar:v1.0.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/PersistentCookieJar-v1.0.1.aar/ddbfa76653ab5f9d35b85f5832fc989c/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/PersistentCookieJar-v1.0.1.aar/ddbfa76653ab5f9d35b85f5832fc989c/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.franmontiel/PersistentCookieJar/v1.0.1/24a030ec223d00ebb92e199709ccddb0ed66b949/PersistentCookieJar-v1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

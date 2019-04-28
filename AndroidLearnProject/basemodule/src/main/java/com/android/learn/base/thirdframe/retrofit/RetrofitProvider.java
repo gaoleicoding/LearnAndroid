@@ -27,7 +27,7 @@ public final class RetrofitProvider {
     private static volatile RetrofitProvider sInstance;
     private ApiService restService;
     public static String netCachePath;
-    public final String BASE_URL = "http://www.wanandroid.com/";
+    public final String BASE_URL = "https://www.wanandroid.com/";
     public PersistentCookieJar persistentCookieJar;
     public SharedPrefsCookiePersistor sharedPrefsCookiePersistor;
 
