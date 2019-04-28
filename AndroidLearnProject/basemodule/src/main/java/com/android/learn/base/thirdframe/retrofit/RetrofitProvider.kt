@@ -25,7 +25,7 @@ class RetrofitProvider private constructor() {
     private var mRetrofit: Retrofit? = null
     private var mOkHttpClient: OkHttpClient? = null
     private var restService: ApiService? = null
-    val BASE_URL = "http://www.wanandroid.com/"
+    val BASE_URL = "https://www.wanandroid.com/"
     lateinit var persistentCookieJar: PersistentCookieJar
     lateinit var sharedPrefsCookiePersistor: SharedPrefsCookiePersistor
 
@@ -49,7 +49,6 @@ class RetrofitProvider private constructor() {
                     .cache(Cache(File(netCachePath), (50 * 10240 * 1024).toLong()))//缓存路径和空间设置
                     .addInterceptor(RetryIntercepter(4))//重试
                     //                    .addInterceptor(new GzipRequestInterceptor())//开启Gzip压缩
-
                     //                    .addInterceptor(new DefaultHeaderInterceptor())//请求连接中添加头信息
                     //                    .addInterceptor(new ProgressInterceptor())//请求url的进度
                     //                    .addInterceptor(new TokenInterceptor())//token过期，自动刷新Token
