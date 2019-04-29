@@ -35,6 +35,7 @@ android {
             minifyEnabled false //是否启用Proguard
             shrinkResources false //是否清理无用资源,依赖于minifyEnabled
             zipAlignEnabled false //是否启用zipAlign压缩
+            debuggable true
             signingConfig signingConfigs.release
         }
         //执行lint检查，有任何的错误或者警告提示，都会终止构建
@@ -46,6 +47,7 @@ android {
             shrinkResources true //是否清理无用资源,依赖于minifyEnabled
             zipAlignEnabled true //是否启用zipAlign压缩
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
             signingConfig signingConfigs.release
             //def date = new Date().format('yy-MM-dd-HH');
             applicationVariants.all { variant ->
