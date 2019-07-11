@@ -2,10 +2,14 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+        <!--    your app's branding color (for the app bar)-->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <!--    darker variant of colorPrimary (for status bar, contextual app bars)-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <!--    theme UI controls like checkboxes and text fields-->
+        <item name="colorAccent">@color/app_color</item>
+        <!--    标题栏中的字体颜色-->
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
 
     </style>
 

@@ -164,7 +164,7 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
         feedArticleAdapter = new ArticleQuickAdapter(getActivity(), articleDataList, "HomeFragment");
         article_recyclerview.addItemDecoration(new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL_LIST));
-        article_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        article_recyclerview.setItemAnimator(null);
         article_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()) {
             public boolean canScrollVertically() {
                 //解决ScrollView里存在多个RecyclerView时滑动卡顿的问题

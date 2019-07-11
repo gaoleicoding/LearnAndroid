@@ -81,4 +81,14 @@ public class ArticleDetailActivity extends BaseMvpActivity {
     protected void loadData() {
 
     }
+
+    @Override
+    public void onBackPressed() {
+
+        if(webview_article.canGoBack()){
+            webview_article.goBack();
+        }else {
+            super.onBackPressed();
+        }
+    }
 }
