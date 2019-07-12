@@ -151,7 +151,7 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
         feedArticleAdapter = ArticleQuickAdapter(activity, articleDataList, "HomeFragment")
         article_recyclerview!!.addItemDecoration(DividerItemDecoration(activity!!,
                 DividerItemDecoration.VERTICAL_LIST))
-        article_recyclerview!!.layoutManager = LinearLayoutManager(activity)
+        article_recyclerview!!.itemAnimator = null
         article_recyclerview!!.layoutManager = object : LinearLayoutManager(activity) {
             override fun canScrollVertically(): Boolean {
                 //解决ScrollView里存在多个RecyclerView时滑动卡顿的问题

@@ -1,13 +1,18 @@
 package com.android.learn.base.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class Html5Webview extends WebView {
     private ProgressView progressView;//进度条
@@ -38,6 +43,7 @@ public class Html5Webview extends WebView {
         //初始化设置
         initWebSettings();
         setWebChromeClient(new MyWebCromeClient());
+        setWebViewClient(new MyWebviewClient());
     }
     private void initWebSettings() {
         WebSettings settings = getSettings();
@@ -74,7 +80,30 @@ public class Html5Webview extends WebView {
             super.onProgressChanged(view, newProgress);
         }
     }
+    private class MyWebviewClient extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            Uri uri = Uri.parse(url);
+            String scheme = uri.getScheme();
+            if (scheme.equals("http") || scheme.equals("https")) {
 
+            } else {
+                //跳转外部浏览器
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                if (getContext().getPackageManager().queryIntentActivities(intent, 0).size() > 0) {
+                    context.startActivity(intent);
+                }
+                return true;
+            }
+            return super.shouldOverrideUrlLoading(view, url);
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            Log.e("TTT", "shouldOverrideUrlLoading 1");
+            return super.shouldOverrideUrlLoading(view, request);
+        }
+    }
     /**
      * dp转换成px
      *
