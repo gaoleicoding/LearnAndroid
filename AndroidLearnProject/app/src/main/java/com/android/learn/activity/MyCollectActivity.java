@@ -16,7 +16,6 @@ import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.event.CancelCollectEvent;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
-import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.CollectContract;
 import com.android.learn.mpresenter.CollectPresenter;

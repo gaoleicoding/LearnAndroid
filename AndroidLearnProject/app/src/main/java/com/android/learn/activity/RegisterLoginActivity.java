@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.RegisterLoginData;
-import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
 import com.android.learn.base.utils.account.UserUtil;
@@ -57,10 +56,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
     @BindView(R.id.et_login_password)
     EditText et_login_password;
 
-    TextView tv_register_contract_content;
-    boolean isInContract;
-
-    boolean isInRegister = false, isInForgetPwd = false;
+    boolean isInRegister = false;
     String registerFlag;
 
     public static void startActivity(Context context) {

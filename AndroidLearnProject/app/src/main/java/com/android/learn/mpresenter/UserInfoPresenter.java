@@ -15,7 +15,7 @@ public class UserInfoPresenter extends BasePresenter<UserInfoContract.View> impl
     public void getLogoutData() {
 
         Observable observable = RetrofitProvider.getInstance().createService(ApiService.class).logout();
-        addSubscribe(observable, new BaseObserver<BaseData>(false) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
             @Override
             public void onNext(BaseData baseData) {
             }

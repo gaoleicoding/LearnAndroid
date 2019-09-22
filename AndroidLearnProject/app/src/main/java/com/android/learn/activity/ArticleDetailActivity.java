@@ -3,16 +3,13 @@ package com.android.learn.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.view.Html5Webview;
 
 import butterknife.BindView;
@@ -55,17 +52,16 @@ public class ArticleDetailActivity extends BaseMvpActivity {
 
     @OnClick({R.id.iv_search})
     public void click(View view) {
-        switch (view.getId()) {
-            case R.id.iv_search:
-                share("分享地址", url);
+        if (view.getId() == R.id.iv_search) {
+            share(url);
         }
     }
 
-    private void share(String title, String content) {
+    private void share(String content) {
         Intent share_intent = new Intent();
         share_intent.setAction(Intent.ACTION_SEND);//设置分享行为
         share_intent.setType("text/plain");//设置分享内容的类型
-        share_intent.putExtra(Intent.EXTRA_SUBJECT, title);//添加分享内容标题
+        share_intent.putExtra(Intent.EXTRA_SUBJECT, "分享地址");//添加分享内容标题
         share_intent.putExtra(Intent.EXTRA_TEXT, content);//添加分享内容
         //创建分享的Dialog
         share_intent = Intent.createChooser(share_intent, "分享");

@@ -16,7 +16,7 @@ public class ProjectPresenter extends BasePresenter<ProjectContract.View> implem
     @Override
     public void getProjectInfo(int page, int cid) {
         Observable observable = mRestService.getProjectListData(page, cid);
-        addSubscribe(observable, new BaseObserver<ProjectListData>(true) {
+        addSubscribe(observable, new BaseObserver<ProjectListData>() {
             @Override
             public void onNext(ProjectListData projectListData) {
                 mView.showProjectList(projectListData, false);
@@ -27,7 +27,7 @@ public class ProjectPresenter extends BasePresenter<ProjectContract.View> implem
     @Override
     public void onRefreshMore(int cid) {
         Observable observable = mRestService.getProjectListData(-1, cid);
-        addSubscribe(observable, new BaseObserver<ProjectListData>(false) {
+        addSubscribe(observable, new BaseObserver<ProjectListData>() {
             @Override
             public void onNext(ProjectListData projectListData) {
                 mView.showProjectList(projectListData, true);
@@ -39,7 +39,7 @@ public class ProjectPresenter extends BasePresenter<ProjectContract.View> implem
     public void onLoadMore(int cid) {
         ++mCurrentPage;
         Observable observable = mRestService.getProjectListData(mCurrentPage, cid);
-        addSubscribe(observable, new BaseObserver<ProjectListData>(false) {
+        addSubscribe(observable, new BaseObserver<ProjectListData>() {
             @Override
             public void onNext(ProjectListData projectListData) {
                 mView.showProjectList(projectListData, false);

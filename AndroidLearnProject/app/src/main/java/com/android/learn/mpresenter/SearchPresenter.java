@@ -19,7 +19,7 @@ public class SearchPresenter extends BasePresenter<SearchContract.View> implemen
     @Override
     public void getFeedArticleList( String key) {
         Observable observable = mRestService.search(mCurrentPage, key);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
             @Override
             public void onNext(BaseResponse<FeedArticleListData> feedArticleListData) {
                 mView.showArticleList(feedArticleListData.getData());
@@ -31,7 +31,7 @@ public class SearchPresenter extends BasePresenter<SearchContract.View> implemen
     public void onLoadMore(String key) {
         ++mCurrentPage;
         Observable observable = mRestService.search(mCurrentPage, key);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
             @Override
             public void onNext(BaseResponse<FeedArticleListData> feedArticleListData) {
                 mView.showArticleList(feedArticleListData.getData());
@@ -41,7 +41,7 @@ public class SearchPresenter extends BasePresenter<SearchContract.View> implemen
     @Override
     public void addCollectArticle(final int position, final FeedArticleListData.FeedArticleData feedArticleData) {
         Observable observable = mRestService.addCollectArticle(feedArticleData.getId());
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {
@@ -58,7 +58,7 @@ public class SearchPresenter extends BasePresenter<SearchContract.View> implemen
     @Override
     public void cancelCollectArticle(final int position, final FeedArticleListData.FeedArticleData feedArticleData) {
         Observable observable = mRestService.cancelCollectArticle(feedArticleData.getId(), -1);
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {

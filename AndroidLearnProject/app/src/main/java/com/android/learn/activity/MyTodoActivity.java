@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mpresenter.BasePresenter;
@@ -20,6 +19,7 @@ import com.android.learn.view.CustomViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -46,8 +46,8 @@ public class MyTodoActivity extends BaseMvpActivity {
 
     private void initTab() {
 
-        tabLayout.getTabAt(0).setCustomView(R.layout.tab_todo);
-        tabLayout.getTabAt(1).setCustomView(R.layout.tab_done);
+        Objects.requireNonNull(tabLayout.getTabAt(0)).setCustomView(R.layout.tab_todo);
+        Objects.requireNonNull(tabLayout.getTabAt(1)).setCustomView(R.layout.tab_done);
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -131,7 +131,7 @@ public class MyTodoActivity extends BaseMvpActivity {
 
         List<Fragment> fragments;
 
-        public CourseDiscussAdapter(FragmentManager fm, List<Fragment> fragments) {
+        CourseDiscussAdapter(FragmentManager fm, List<Fragment> fragments) {
             super(fm);
             this.fragments = fragments;
 
@@ -140,9 +140,8 @@ public class MyTodoActivity extends BaseMvpActivity {
 
         @Override
         public Fragment getItem(int position) {
-            Fragment fragment = fragments.get(position);
 
-            return fragment;
+            return fragments.get(position);
         }
 
         @Override

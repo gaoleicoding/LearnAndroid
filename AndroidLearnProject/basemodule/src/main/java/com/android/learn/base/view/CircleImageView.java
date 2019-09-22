@@ -12,13 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
-/**
- * 功能描述：一个简洁而高效的圆形ImageView
- *
- * @author (作者) edward（冯丰枫）
- * @link http://www.jianshu.com/u/f7176d6d53d2
- * 创建时间： 2018/4/17 0017
- */
+
 public class CircleImageView extends AppCompatImageView {
     private float width;
     private float height;

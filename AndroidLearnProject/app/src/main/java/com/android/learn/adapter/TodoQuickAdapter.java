@@ -15,9 +15,9 @@ import java.util.List;
 
 public class TodoQuickAdapter extends BaseQuickAdapter<DatasBean, BaseViewHolder> {
 
-    Context context;
-    List<DatasBean> list;
-    int position;
+    private Context context;
+    private List<DatasBean> list;
+    private int position;
 
     public TodoQuickAdapter(Context context, List<DatasBean> list, int position) {
         super(R.layout.todo_item_view, list);

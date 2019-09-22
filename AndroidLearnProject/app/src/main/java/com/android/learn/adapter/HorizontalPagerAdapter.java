@@ -83,7 +83,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
 
     private class ChildrenAdapter extends BaseQuickAdapter<TreeBean.ChildrenBean, BaseViewHolder> {
 
-        public ChildrenAdapter(@Nullable List<TreeBean.ChildrenBean> data) {
+        ChildrenAdapter(@Nullable List<TreeBean.ChildrenBean> data) {
             super(R.layout.item_tree_children, data);
         }
 

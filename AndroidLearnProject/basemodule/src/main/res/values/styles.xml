@@ -3,13 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--    your app's branding color (for the app bar)-->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/white</item>
         <!--    darker variant of colorPrimary (for status bar, contextual app bars)-->
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/app_color</item>
         <!--    theme UI controls like checkboxes and text fields-->
         <item name="colorAccent">@color/app_color</item>
-        <!--    标题栏中的字体颜色-->
-        <item name="android:textColorPrimary">@color/colorPrimary</item>
 
     </style>
 
@@ -22,26 +20,19 @@
         <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
         <item name="android:backgroundDimEnabled">false</item><!--模糊-->
     </style>
-
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Activity状态栏透明 -->
+    <style name="TranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
-    </style>
-
-    <style name="AppTheme5" parent="@style/AppBaseTheme">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@style/activityAnimation1</item>
+    </style>
+    <!-- SplashActivity主题 -->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@drawable/splash</item>
     </style>
     <!-- Activity全屏 -->
     <style name="FullScreenStyle" parent="@style/AppTheme">
-        <item name="android:textAllCaps">false</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>

@@ -9,7 +9,6 @@ import com.android.learn.mcontract.KnowledgeContract;
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 
 
 /**
@@ -27,7 +26,7 @@ public class KnowledgePresenter extends BasePresenter<KnowledgeContract.View> im
     public void getKnowledge() {
 
         Observable observable = mRestService.getKnowledgeTree();
-        BaseObserver baseObserver=new BaseObserver<BaseResponse<List<TreeBean>>>(false) {
+        BaseObserver baseObserver=new BaseObserver<BaseResponse<List<TreeBean>>>() {
             @Override
             public void onNext(BaseResponse<List<TreeBean>> datas) {
                 mView.showKnowledge(datas.data);

@@ -18,7 +18,7 @@ public class RegisterLoginPresenter extends BasePresenter<RegisterLoginContract.
     @Override
     public void login(String account, String password) {
         Observable observable = RetrofitProvider.getInstance().createService(ApiService.class).login(account, password);
-        addSubscribe(observable, new BaseObserver<RegisterLoginData>(false) {
+        addSubscribe(observable, new BaseObserver<RegisterLoginData>() {
             @Override
             public void onNext(RegisterLoginData data) {
                 if (data.errorCode == BaseData.SUCCESS) {
@@ -32,7 +32,7 @@ public class RegisterLoginPresenter extends BasePresenter<RegisterLoginContract.
     @Override
     public void register(String account, String password, String repassword) {
         Observable observable = RetrofitProvider.getInstance().createService(ApiService.class).register(account, password, repassword);
-        addSubscribe(observable, new BaseObserver<RegisterLoginData>(false) {
+        addSubscribe(observable, new BaseObserver<RegisterLoginData>() {
             @Override
             public void onNext(RegisterLoginData data) {
                 if (data.errorCode == BaseData.SUCCESS) {

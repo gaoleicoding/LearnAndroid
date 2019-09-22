@@ -1,11 +1,5 @@
 package com.android.learn.base.thirdframe.rxjava;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
-
-import com.android.learn.base.activity.BaseActivity;
-import com.android.learn.base.application.CustomApplication;
 import com.android.learn.base.mview.BaseView;
 import com.android.learn.base.utils.NetUtils;
 import com.android.learn.base.utils.Utils;
@@ -18,23 +12,12 @@ import retrofit2.HttpException;
 
 public abstract class BaseObserver<T> extends ResourceObserver<T> {
 
-    protected String errMsg = "";
+    private String errMsg = "";
     private boolean isCancelDialog = true;
-    private Context context;
-//    public static Dialog prgressDialog;
 
-    protected BaseObserver(boolean isShowDialog) {
-        // context在CustomProgressDialog中用到
-//        this.context = context;
-//        if (isShowDialog) {
-//            Activity activity=BaseActivity.context;
-//            CustomProgressDialog.show(activity);
-//        }
+    protected BaseObserver() {
+
     }
-
-    protected BaseObserver(BaseView view, boolean isShowError) {
-    }
-
 
     public void setCancelDialog(boolean cancelDialog) {
         isCancelDialog = cancelDialog;

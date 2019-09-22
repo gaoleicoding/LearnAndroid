@@ -21,7 +21,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
     @Override
     public void onRefreshMore() {
         Observable observable = mRestService.getFeedArticleList(-1);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(false) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
             @Override
             public void onNext(BaseResponse<FeedArticleListData> feedArticleListData) {
                 mView.showArticleList(feedArticleListData.getData(), true);
@@ -35,7 +35,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
     public void onLoadMore() {
         ++mCurrentPage;
         Observable observable = mRestService.getFeedArticleList(mCurrentPage);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(false) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
             @Override
             public void onNext(BaseResponse<FeedArticleListData> feedArticleListData) {
                 mView.showArticleList(feedArticleListData.getData(), false);
@@ -46,7 +46,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
     @Override
     public void getFeedArticleList(int num) {
         Observable observable = mRestService.getFeedArticleList(num);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
             @Override
             public void onNext(BaseResponse<FeedArticleListData> feedArticleListData) {
                 mView.showArticleList(feedArticleListData.getData(), false);
@@ -57,7 +57,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
     @Override
     public void getBannerInfo() {
         Observable observable = mRestService.getBannerListData();
-        addSubscribe(observable, new BaseObserver<BannerListData>(true) {
+        addSubscribe(observable, new BaseObserver<BannerListData>() {
 
             @Override
             public void onNext(BannerListData bannerListData) {
@@ -73,7 +73,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
     @Override
     public void addCollectArticle(final int position, final FeedArticleData feedArticleData) {
         Observable observable = mRestService.addCollectArticle(feedArticleData.getId());
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {
@@ -90,7 +90,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
     @Override
     public void cancelCollectArticle(final int position, final FeedArticleData feedArticleData) {
         Observable observable = mRestService.cancelCollectArticle(feedArticleData.getId(), -1);
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {
@@ -105,7 +105,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
 
     public void cancelCollectArticle(final int id) {
         Observable observable = mRestService.cancelCollectArticle(id, -1);
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {

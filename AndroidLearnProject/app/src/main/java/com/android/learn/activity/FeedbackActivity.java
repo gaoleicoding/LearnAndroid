@@ -18,12 +18,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.email.MailSender;
 import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.Utils;
 
 import butterknife.BindView;
@@ -47,9 +45,6 @@ public class FeedbackActivity extends BaseMvpActivity {
     EditText et_email_title;
     @BindView(R.id.et_email_content)
     EditText et_email_content;
-    private final int FILECHOOSER_RESULTCODE = 1;
-    private String sendEmail = "gaoleiemail@163.com";//发送方邮件
-    private String sendEmaiPassword = "gl1201";//发送方邮箱密码(或授权码)
     private String receiveEmail = "gaoleiandroid@163.com";//接收方邮件
     private String file_path = null;
 
@@ -82,6 +77,10 @@ public class FeedbackActivity extends BaseMvpActivity {
 
     @OnClick({R.id.send_btn, R.id.add_attachment})
     public void click(View view) {
+        //发送方邮件
+        String sendEmail = "gaoleiemail@163.com";
+        //发送方邮箱密码(或授权码)
+        String sendEmaiPassword = "gl1201";
         switch (view.getId()) {
             case R.id.send_btn:
                 SenderRunnable senderRunnable = new SenderRunnable(sendEmail, sendEmaiPassword);
@@ -111,6 +110,7 @@ public class FeedbackActivity extends BaseMvpActivity {
         Intent i = new Intent(Intent.ACTION_GET_CONTENT);
         i.addCategory(Intent.CATEGORY_OPENABLE);
         i.setType("image/*");
+        int FILECHOOSER_RESULTCODE = 1;
         startActivityForResult(Intent.createChooser(i, "File Chooser"),
                 FILECHOOSER_RESULTCODE);
     }
@@ -132,16 +132,14 @@ public class FeedbackActivity extends BaseMvpActivity {
     class SenderRunnable implements Runnable {
 
         private String user;
-        private String password;
         private String subject;
         private String body;
         private String receiver;
         private MailSender sender;
         private String attachment;
 
-        public SenderRunnable(String user, String password) {
+        SenderRunnable(String user, String password) {
             this.user = user;
-            this.password = password;
             sender = new MailSender(user, password);
             String mailhost = user.substring(user.lastIndexOf("@") + 1,
                     user.lastIndexOf("."));
@@ -152,8 +150,8 @@ public class FeedbackActivity extends BaseMvpActivity {
             }
         }
 
-        public void setMail(String subject, String body, String receiver,
-                            String attachment) {
+        void setMail(String subject, String body, String receiver,
+                     String attachment) {
             this.subject = subject;
             this.body = body;
             this.receiver = receiver;
@@ -235,18 +233,13 @@ public class FeedbackActivity extends BaseMvpActivity {
      * @return The value of the _data column, which is typically a file path.
      */
     public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
-        Cursor cursor = null;
         final String column = "_data";
         final String[] projection = {column};
-        try {
-            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, null);
+        try (Cursor cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, null)) {
             if (cursor != null && cursor.moveToFirst()) {
                 final int column_index = cursor.getColumnIndexOrThrow(column);
                 return cursor.getString(column_index);
             }
-        } finally {
-            if (cursor != null)
-                cursor.close();
         }
         return null;
     }
@@ -273,25 +266,6 @@ public class FeedbackActivity extends BaseMvpActivity {
      */
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
-    }
-
-    private void sendEmail() {
-        Intent email = new Intent(Intent.ACTION_SENDTO);
-        /*不带附件发送邮件*/
-//        email.setType("plain/text");
-        email.setData(Uri.parse(receiveEmail));
-
-        /*设置邮件默认地址，多个收件人，String数组*/
-        //    email.putExtra(android.content.Intent.EXTRA_EMAIL, (String[])mMailReceivers.toArray(new String[mMailReceivers.size()]));
-        /*多个抄送人，String数组*/
-//        email.putExtra(android.content.Intent.EXTRA_CC, (String[])mMailCopyTos.toArray(new String[mMailCopyTos.size()]));
-        /*邮件标题*/
-        email.putExtra(Intent.EXTRA_SUBJECT, et_email_title.getText().toString());
-        /*邮件正文*/
-        email.putExtra(Intent.EXTRA_TEXT, et_email_content.getText().toString());
-//调用系统的邮件系统
-        startActivity(Intent.createChooser(email, "请选择邮件发送软件"));
-
     }
 
 }

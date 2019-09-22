@@ -1,6 +1,5 @@
 package com.android.learn.fragment;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,10 +7,8 @@ import android.view.View;
 
 import com.android.learn.R;
 import com.android.learn.adapter.HorizontalPagerAdapter;
-import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.mmodel.TreeBean;
-import com.android.learn.base.thirdframe.rxjava.BaseObserver;
 import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.KnowledgeContract;
 import com.android.learn.mpresenter.KnowledgePresenter;
@@ -26,12 +23,6 @@ public class KnowledgeFragment extends BaseMvpFragment<KnowledgePresenter> imple
     @BindView(R.id.hicvp)
     HorizontalInfiniteCycleViewPager horizontalInfiniteCycleViewPager;
     private HorizontalPagerAdapter mPagerAdapter;
-
-    Handler handler = new Handler() {
-        public void handleMessage(Message message) {
-            CustomProgressDialog.show(getActivity());
-        }
-    };
 
     @Override
     public void initData(Bundle bundle) {

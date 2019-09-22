@@ -2,28 +2,20 @@ package com.android.learn.base.application;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.res.Configuration;
 import android.net.ConnectivityManager;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 
-import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.xskin.ExtraAttrRegister;
-import com.gaolei.basemodule.R;
-import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreater;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
-import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreater;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
 import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.wind.me.xskinloader.SkinInflaterFactory;
 import com.wind.me.xskinloader.SkinManager;
@@ -68,37 +60,7 @@ public class CustomApplication extends Application {
     public static CustomApplication getInstance() {
         return instance;
     }
-//    public class AppContext extends BlockCanaryContext {
-//        private static final String TAG = "AppContext";
-//
-//        @Override
-//        public String provideQualifier() {
-//            String qualifier = "";
-//            try {
-//                PackageInfo info = getApplicationContext().getPackageManager()
-//                        .getPackageInfo(getApplicationContext().getPackageName(), 0);
-//                qualifier += info.versionCode + "_" + info.versionName + "_YYB";
-//            } catch (PackageManager.NameNotFoundException e) {
-//                Log.e(TAG, "provideQualifier exception", e);
-//            }
-//            return qualifier;
-//        }
-//
-//        @Override
-//        public int provideBlockThreshold() {
-//            return 1000;
-//        }
-//
-//        @Override
-//        public boolean displayNotification() {
-//            return BuildConfig.DEBUG;
-//        }
-//
-//        @Override
-//        public boolean stopWhenDebugging() {
-//            return false;
-//        }
-//    }
+
 
     /**
      * @return 获取字体缩放比例

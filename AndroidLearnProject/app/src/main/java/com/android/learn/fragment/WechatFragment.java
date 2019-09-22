@@ -9,7 +9,6 @@ import android.view.View;
 
 import com.android.learn.R;
 import com.android.learn.base.fragment.BaseMvpFragment;
-import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.WxArticle;
 import com.android.learn.base.view.colorfultab.ColorClipTabLayout;
 import com.android.learn.mcontract.WechatContract;
@@ -28,8 +27,8 @@ public class WechatFragment extends BaseMvpFragment<WechatPresenter> implements 
     @BindView(R.id.view_pager)
     ViewPager view_pager;
 
-    List<Fragment> fragmentList = new ArrayList();
-    List<String> titleList = new ArrayList();
+    List<Fragment> fragmentList = new ArrayList<>();
+    List<String> titleList = new ArrayList<>();
 
     @Override
     protected void loadData() {
@@ -88,7 +87,7 @@ public class WechatFragment extends BaseMvpFragment<WechatPresenter> implements 
 
         private List<Fragment> mFragments;
 
-        public CustomPagerAdapter(FragmentManager fm, List<Fragment> fragments) {
+        CustomPagerAdapter(FragmentManager fm, List<Fragment> fragments) {
             super(fm);
             this.mFragments = fragments;
             fm.beginTransaction().commitAllowingStateLoss();

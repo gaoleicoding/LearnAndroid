@@ -3,14 +3,10 @@ package com.android.learn.mpresenter;
 
 import com.android.learn.base.mmodel.BaseData;
 import com.android.learn.base.mmodel.BaseResponse;
-import com.android.learn.base.mmodel.FeedArticleListData;
-import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.mmodel.HotKeyData;
-import com.android.learn.base.mmodel.TreeBean;
 import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.thirdframe.rxjava.BaseObserver;
 import com.android.learn.base.utils.ResponseStatusUtil;
-import com.android.learn.mcontract.CollectContract;
 import com.android.learn.mcontract.MainActivityContract;
 
 import java.util.List;
@@ -25,7 +21,7 @@ public class MainActivityPresenter extends BasePresenter<MainActivityContract.Vi
     @Override
     public void getHotKey() {
         Observable observable = mRestService.getHotKey();
-        addSubscribe(observable, new BaseObserver<BaseResponse<List<HotKeyData>>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<List<HotKeyData>>>() {
 
             @Override
             public void onNext(BaseResponse<List<HotKeyData>> datas) {

@@ -19,7 +19,7 @@ public class WechatSubPresenter extends BasePresenter<WechatSubContract.View> im
     @Override
     public void getWxArtileById(int id) {
         Observable observable = mRestService.getWxArtileById(id, num);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
 
             @Override
             public void onNext(BaseResponse<FeedArticleListData> listData) {
@@ -33,7 +33,7 @@ public class WechatSubPresenter extends BasePresenter<WechatSubContract.View> im
     @Override
     public void addCollectArticle(final int position, final FeedArticleData feedArticleData) {
         Observable observable = mRestService.addCollectArticle(feedArticleData.getId());
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {
@@ -50,7 +50,7 @@ public class WechatSubPresenter extends BasePresenter<WechatSubContract.View> im
     @Override
     public void cancelCollectArticle(final int position, final FeedArticleData feedArticleData) {
         Observable observable = mRestService.cancelCollectArticle(feedArticleData.getId(), -1);
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {
@@ -65,7 +65,7 @@ public class WechatSubPresenter extends BasePresenter<WechatSubContract.View> im
 
     public void cancelCollectArticle(final int id) {
         Observable observable = mRestService.cancelCollectArticle(id, -1);
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {

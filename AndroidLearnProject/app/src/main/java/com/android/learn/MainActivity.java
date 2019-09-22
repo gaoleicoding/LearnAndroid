@@ -1,8 +1,6 @@
 package com.android.learn;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
@@ -13,7 +11,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
@@ -35,11 +32,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.learn.activity.LanguageActivity;
 import com.android.learn.activity.SearchResultActivity;
 import com.android.learn.adapter.MainTabAdapter;
 import com.android.learn.adapter.SearchRecordAdapter;
-import com.android.learn.base.activity.BaseActivity;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.db.DBManager;
 import com.android.learn.base.db.SearchRecord;
@@ -47,7 +42,6 @@ import com.android.learn.base.event.ChangeNightEvent;
 import com.android.learn.base.event.RestartMainEvent;
 import com.android.learn.base.mmodel.HotKeyData;
 import com.android.learn.base.utils.KeyboardUtils;
-import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.PermissionUtil;
 import com.android.learn.base.utils.SPUtils;
@@ -56,25 +50,20 @@ import com.android.learn.base.utils.Utils;
 import com.android.learn.base.view.TitleView;
 import com.android.learn.fragment.HomeFragment;
 import com.android.learn.fragment.KnowledgeFragment;
-import com.android.learn.fragment.WechatFragment;
 import com.android.learn.fragment.ProjectFragment;
 import com.android.learn.fragment.UserFragment;
+import com.android.learn.fragment.WechatFragment;
 import com.android.learn.mcontract.MainActivityContract;
 import com.android.learn.mpresenter.MainActivityPresenter;
 import com.android.learn.view.CustomViewPager;
 import com.android.learn.view.SearchViewUtils;
-import com.android.speechdemo.bean.TalkBackVo;
 import com.android.speechdemo.xf.JsonParser;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechRecognizer;
-import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
 import com.iflytek.sunflower.FlowerCollector;
@@ -93,7 +82,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -135,8 +123,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     ImageView iv_search_back;
     @BindView(R.id.history_recycleview)
     RecyclerView history_recycleview;
-    @BindView(R.id.title_view_divider)
-    View title_view_divider;
     @BindView(R.id.flowlayout)
     FlowLayout flowlayout;
     HomeFragment homeFragment;
@@ -191,12 +177,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         initTab();
         initSearchRecord();
         iv_search.setVisibility(View.VISIBLE);
-        Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
-        if (isNightMode) {
-            title_view_divider.setVisibility(View.VISIBLE);
-        } else {
-            title_view_divider.setVisibility(View.GONE);
-        }
 
         et_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -495,12 +475,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(ChangeNightEvent event) {
-        Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", new Boolean(false));
-        if (isNightMode) {
-            title_view_divider.setVisibility(View.VISIBLE);
-        } else {
-            title_view_divider.setVisibility(View.GONE);
-        }
         setStatusBar();
     }
 
@@ -675,6 +649,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         if (et_search.getText().toString().length() > 0 && !"SearchResultActivity".equals(Utils.getTopActivity(this)))
             beginSearch();
     }
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);

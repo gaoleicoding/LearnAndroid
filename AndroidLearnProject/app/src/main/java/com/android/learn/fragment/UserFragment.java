@@ -114,8 +114,6 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
                 Glide.with(getActivity()).load(photoUrl).apply(options).into(iv_user_photo);
             }
 
-        } else {
-
         }
 
     }

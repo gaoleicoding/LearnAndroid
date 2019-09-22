@@ -9,8 +9,6 @@ import com.android.learn.base.thirdframe.rxjava.BaseObserver;
 import com.android.learn.base.utils.ResponseStatusUtil;
 import com.android.learn.mcontract.TodoContract;
 
-import java.util.Map;
-
 import io.reactivex.Observable;
 
 
@@ -20,7 +18,7 @@ public class TodoPresenter extends BasePresenter<TodoContract.View> implements T
     @Override
     public void getListNotDone(int type) {
         Observable observable = mRestService.getListNotDone(type, notDonePage);
-        addSubscribe(observable, new BaseObserver<BaseResponse<TodoData>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<TodoData>>() {
 
             @Override
             public void onNext(BaseResponse<TodoData> data) {
@@ -36,7 +34,7 @@ public class TodoPresenter extends BasePresenter<TodoContract.View> implements T
     @Override
     public void getListDone(int type) {
         Observable observable = mRestService.getListDone(type, donePage);
-        addSubscribe(observable, new BaseObserver<BaseResponse<TodoData>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<TodoData>>() {
 
             @Override
             public void onNext(BaseResponse<TodoData> data) {
@@ -53,7 +51,7 @@ public class TodoPresenter extends BasePresenter<TodoContract.View> implements T
     public void deleteTodo(int id) {
         Observable observable = mRestService.deleteTodo(id);
 
-        addSubscribe(observable, new BaseObserver<BaseData>(false) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {
@@ -67,7 +65,7 @@ public class TodoPresenter extends BasePresenter<TodoContract.View> implements T
     public void updateTodoStatus(int id, int status) {
         Observable observable = mRestService.updateTodoStatus(id, status);
 
-        addSubscribe(observable, new BaseObserver<BaseData>(false) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {

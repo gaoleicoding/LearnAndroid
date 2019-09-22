@@ -6,7 +6,6 @@ import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.thirdframe.rxjava.BaseObserver;
 import com.android.learn.base.utils.ResponseStatusUtil;
 import com.android.learn.mcontract.TodoAddContract;
-import com.android.learn.mcontract.TodoEditContract;
 
 import java.util.Map;
 
@@ -19,7 +18,7 @@ public class TodoAddPresenter extends BasePresenter<TodoAddContract.View> implem
     public void addTodo( Map<String, Object> map) {
         Observable observable = mRestService.addTodo(map);
 
-        addSubscribe(observable, new BaseObserver<BaseData>(false) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {

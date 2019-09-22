@@ -15,9 +15,7 @@ import com.android.learn.adapter.DividerItemDecoration;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.FeedArticleListData;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
-import com.android.learn.base.utils.LanguageUtil;
 import com.android.learn.base.utils.LogUtil;
-import com.android.learn.base.utils.Utils;
 import com.android.learn.base.view.CustomProgressDialog;
 import com.android.learn.mcontract.KnowledgeChildContract;
 import com.android.learn.mpresenter.KnowledgeChildPresenter;
@@ -42,7 +40,6 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
     RecyclerView article_recyclerview;
     @BindView(R.id.smartRefreshLayout)
     SmartRefreshLayout smartRefreshLayout;
-    private List<FeedArticleData> articleDataList;
     private ArticleQuickAdapter feedArticleAdapter;
     int cid;
     String titleStr;
@@ -110,7 +107,7 @@ public class KnowledgeChildActivity extends BaseMvpActivity<KnowledgeChildPresen
     }
 
     private void initRecyclerView() {
-        articleDataList = new ArrayList<>();
+        List<FeedArticleData> articleDataList = new ArrayList<>();
         feedArticleAdapter = new ArticleQuickAdapter(this, articleDataList, "KnowledgeChildActivity");
         article_recyclerview.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL_LIST));

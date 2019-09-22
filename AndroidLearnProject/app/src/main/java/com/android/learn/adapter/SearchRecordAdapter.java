@@ -14,8 +14,8 @@ import java.util.List;
  */
 
 public class SearchRecordAdapter extends BaseQuickAdapter<SearchRecord, BaseViewHolder> {
-    Context context;
-    List<SearchRecord> list;
+    private Context context;
+    private List<SearchRecord> list;
 
     public SearchRecordAdapter(Context context, List<SearchRecord> list) {
         super(R.layout.item_search_record, list);

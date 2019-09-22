@@ -18,7 +18,7 @@ public class KnowledgeChildPresenter extends BasePresenter<KnowledgeChildContrac
     @Override
     public void getKnowledgeArticleList(int num, int cid) {
         Observable observable = mRestService.getKnowledgeArticleList(num, cid);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
             @Override
             public void onNext(BaseResponse<FeedArticleListData> feedArticleListData) {
                 mView.showArticleList(feedArticleListData.getData(), false);
@@ -29,7 +29,7 @@ public class KnowledgeChildPresenter extends BasePresenter<KnowledgeChildContrac
     @Override
     public void onRefreshMore(int cid) {
         Observable observable = mRestService.getKnowledgeArticleList(-1, cid);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(false) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
             @Override
             public void onNext(BaseResponse<FeedArticleListData> feedArticleListData) {
                 mView.showArticleList(feedArticleListData.getData(), true);
@@ -43,7 +43,7 @@ public class KnowledgeChildPresenter extends BasePresenter<KnowledgeChildContrac
     public void onLoadMore(int cid) {
         ++mCurrentPage;
         Observable observable = mRestService.getKnowledgeArticleList(mCurrentPage, cid);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(false) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
             @Override
             public void onNext(BaseResponse<FeedArticleListData> feedArticleListData) {
                 mView.showArticleList(feedArticleListData.getData(), false);
@@ -54,7 +54,7 @@ public class KnowledgeChildPresenter extends BasePresenter<KnowledgeChildContrac
     @Override
     public void addCollectArticle(final int position, final FeedArticleData feedArticleData) {
         Observable observable = mRestService.addCollectArticle(feedArticleData.getId());
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {
@@ -71,7 +71,7 @@ public class KnowledgeChildPresenter extends BasePresenter<KnowledgeChildContrac
     @Override
     public void cancelCollectArticle(final int position, final FeedArticleData feedArticleData) {
         Observable observable = mRestService.cancelCollectArticle(feedArticleData.getId(), -1);
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {

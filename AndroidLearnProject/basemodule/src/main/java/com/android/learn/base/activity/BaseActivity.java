@@ -3,11 +3,8 @@ package com.android.learn.base.activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
-import android.support.annotation.IntRange;
 import android.support.annotation.Nullable;
 import android.view.View;
 
@@ -50,8 +47,6 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         ButterKnife.bind(this);
         setStatusBar();
         ExitAppUtils.getInstance().addActivity(this);
-
-        SkinManager.get().setWindowStatusBarColor(this.getWindow(), R.color.status_bar_color);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle == null) {
@@ -154,7 +149,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
 //        if (!file.exists()) {
         AssetFileUtils.copyAssetFile(this, asset_dir, saveDir, savefileName);
 //        }
-        SkinManager.get().loadNewSkin(file.getAbsolutePath());
+        SkinManager.get().loadSkin(file.getAbsolutePath());
     }
 
     private void restoreDefaultSkin() {

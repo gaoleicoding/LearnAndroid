@@ -1,12 +1,9 @@
 package com.android.learn.adapter;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.android.learn.R;
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
-import com.android.learn.base.thirdframe.glide.ImageLoader;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -14,13 +11,11 @@ import java.util.List;
 
 public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseViewHolder> {
 
-    Context context;
-    List<FeedArticleData> list;
-    String fromWhere;
+    private List<FeedArticleData> list;
+    private String fromWhere;
 
     public ArticleQuickAdapter(Context context, List<FeedArticleData> list, String fromWhere) {
         super(R.layout.item_article_list, list);
-        this.context = context;
         this.list = list;
         this.fromWhere = fromWhere;
     }

@@ -4,7 +4,6 @@ package com.android.learn.mpresenter;
 import com.android.learn.base.mmodel.BaseData;
 import com.android.learn.base.mmodel.BaseResponse;
 import com.android.learn.base.mmodel.FeedArticleListData;
-import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.thirdframe.rxjava.BaseObserver;
 import com.android.learn.base.utils.ResponseStatusUtil;
@@ -21,7 +20,7 @@ public class CollectPresenter extends BasePresenter<CollectContract.View> implem
     public void getCollectList() {
 
         Observable observable = mRestService.getCollectList(page);
-        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>(true) {
+        addSubscribe(observable, new BaseObserver<BaseResponse<FeedArticleListData>>() {
 
             @Override
             public void onNext(BaseResponse<FeedArticleListData> data) {
@@ -38,7 +37,7 @@ public class CollectPresenter extends BasePresenter<CollectContract.View> implem
     public void cancelCollectArticle(final int position, final int id) {
 //        int id = feedArticleData.getId();
         Observable observable = mRestService.cancelCollectArticle(id, -1);
-        addSubscribe(observable, new BaseObserver<BaseData>(true) {
+        addSubscribe(observable, new BaseObserver<BaseData>() {
 
             @Override
             public void onNext(BaseData data) {
