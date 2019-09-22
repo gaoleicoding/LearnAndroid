@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-
+import butterknife.BindView
 import com.android.learn.R
 import com.android.learn.adapter.ArticleQuickAdapter
 import com.android.learn.adapter.DividerItemDecoration
@@ -16,20 +16,13 @@ import com.android.learn.base.activity.BaseMvpActivity
 import com.android.learn.base.event.CancelCollectEvent
 import com.android.learn.base.mmodel.FeedArticleListData
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
-import com.android.learn.base.utils.LanguageUtil
 import com.android.learn.base.view.CustomProgressDialog
 import com.android.learn.mcontract.CollectContract
 import com.android.learn.mpresenter.CollectPresenter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
-import com.scwang.smartrefresh.layout.api.RefreshLayout
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
-
 import org.greenrobot.eventbus.EventBus
-
-import java.util.ArrayList
-
-import butterknife.BindView
+import java.util.*
 
 
 class MyCollectActivity : BaseMvpActivity<CollectPresenter, CollectContract.View>(), CollectContract.View {

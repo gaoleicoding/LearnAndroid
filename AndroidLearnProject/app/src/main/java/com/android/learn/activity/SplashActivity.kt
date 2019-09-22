@@ -1,12 +1,10 @@
 package com.android.learn.activity
 
-import android.app.ListActivity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.view.View
-
 import com.android.learn.MainActivity
 import com.android.learn.R
 import com.android.learn.base.activity.BaseMvpActivity
@@ -15,7 +13,6 @@ import com.android.learn.base.utils.SPUtils
 import com.android.learn.base.utils.account.UserUtil
 import com.android.learn.mcontract.SplashLoginContract
 import com.android.learn.mpresenter.SplashLoginPresenter
-import com.jaeger.library.StatusBarUtil
 
 class SplashActivity : BaseMvpActivity<SplashLoginPresenter, SplashLoginContract.View>(), SplashLoginContract.View {
 
@@ -59,9 +56,6 @@ class SplashActivity : BaseMvpActivity<SplashLoginPresenter, SplashLoginContract
         handler.sendEmptyMessageDelayed(0, 1500)
     }
 
-    override fun setStatusBar() {
-        StatusBarUtil.setTransparent(this)
-    }
 
     public override fun onDestroy() {
         super.onDestroy()

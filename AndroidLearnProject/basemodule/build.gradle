@@ -137,5 +137,6 @@ dependencies {
     }
 
     //   换肤框架，不必重启应用
-    api project(':xskinloader-lib')
+    implementation 'com.windysha.xskinloader:xskinloader:0.1.0'
+
 }

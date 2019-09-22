@@ -3,7 +3,7 @@ ext {
     android = [
             compileSdkVersion: 28,
             buildToolsVersion: "28.0.2",
-            minSdkVersion    : 15,
+            minSdkVersion    : 19,
             targetSdkVersion : 28,
             versionCode      : 102,
             versionName      : "1.0.2"
@@ -69,7 +69,7 @@ ext {
             "SVGAPlayer-Android"           : 'com.github.yyued:SVGAPlayer-Android:2.3.0',
             "flowlayout"                   : 'cn.lankton:flowlayout:1.0.1',
             "greendao"                     : 'org.greenrobot:greendao:3.2.2',
-            "bga-swipebacklayout"          : 'cn.bingoogolapple:bga-swipebacklayout:1.2.0',
+            "bga-swipebacklayout"          : 'cn.bingoogolapple:bga-swipebacklayout:1.2.0@aar',
 
     ]
 }

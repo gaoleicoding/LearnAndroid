@@ -1,5 +1,6 @@
 package com.android.learn.activity
 
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -10,21 +11,13 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-
-
-import com.android.learn.R
-import com.android.learn.base.activity.BaseMvpActivity
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.fragment.TodoFragment
-import com.android.learn.view.CustomViewPager
-
-import java.util.ArrayList
-
 import butterknife.BindView
 import butterknife.OnClick
+import com.android.learn.R
 import com.android.learn.base.activity.BaseActivity
-import com.android.learn.mcontract.MainActivityContract
-import com.android.learn.mpresenter.MainActivityPresenter
+import com.android.learn.fragment.TodoFragment
+import com.android.learn.view.CustomViewPager
+import java.util.*
 
 class MyTodoActivity : BaseActivity() {
     @BindView(R.id.iv_back)

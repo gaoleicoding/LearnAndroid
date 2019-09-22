@@ -8,27 +8,18 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-
+import butterknife.BindView
 import com.android.learn.R
 import com.android.learn.adapter.ArticleQuickAdapter
 import com.android.learn.adapter.DividerItemDecoration
 import com.android.learn.base.activity.BaseMvpActivity
 import com.android.learn.base.mmodel.FeedArticleListData
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
-import com.android.learn.base.mmodel.TodoData
-import com.android.learn.base.utils.LanguageUtil
-import com.android.learn.base.utils.LogUtil
-import com.android.learn.base.utils.Utils
 import com.android.learn.mcontract.SearchContract
 import com.android.learn.mpresenter.SearchPresenter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
-import com.scwang.smartrefresh.layout.api.RefreshLayout
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
-
-import java.util.ArrayList
-
-import butterknife.BindView
+import java.util.*
 
 class SearchResultActivity : BaseMvpActivity<SearchPresenter, SearchContract.View>(), SearchContract.View {
     @BindView(R.id.iv_back)

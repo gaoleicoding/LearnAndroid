@@ -3,7 +3,6 @@ package com.android.learn
 import android.Manifest
 import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Bundle
@@ -134,9 +133,6 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         }
     }
 
-    //    override fun getLayoutId(): Int {
-//        return R.layout.activity_main
-//    }
     init {
         // to do something
 
@@ -460,7 +456,6 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         } else {
             title_view_divider.visibility = View.GONE
         }
-        setStatusBar()
     }
 
     public override fun onDestroy() {
@@ -596,13 +591,9 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         //考虑到TextView只能显示文字 ，后面还要测试文字转语音，所以换EditText控件
         et_search.setSelection(et_search.length())
         KeyboardUtils.showKeyboard(et_search)
-        LogUtil.d(TAG, "printResult(results)------------resultBuffer.toString():" + resultBuffer.toString())
         if (et_search.text.toString().length > 0 && "SearchResultActivity" != Utils.getTopActivity(this))
             beginSearch()
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        // 在这里添加屏幕切换后的操作
-    }
+
 }

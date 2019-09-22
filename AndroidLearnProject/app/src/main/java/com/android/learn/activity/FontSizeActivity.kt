@@ -4,27 +4,20 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
 import android.view.KeyEvent
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-
+import butterknife.BindView
+import butterknife.OnClick
 import com.android.learn.R
 import com.android.learn.base.activity.BaseActivity
-import com.android.learn.base.activity.BaseMvpActivity
 import com.android.learn.base.event.RestartMainEvent
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.base.utils.LanguageUtil
 import com.android.learn.base.utils.LogUtil
 import com.android.learn.base.utils.SPUtils
 import com.android.learn.base.utils.ScreenUtils
 import com.android.learn.view.fontsliderbar.FontSliderBar
-
 import org.greenrobot.eventbus.EventBus
-
-import butterknife.BindView
-import butterknife.OnClick
 
 
 class FontSizeActivity : BaseActivity() {

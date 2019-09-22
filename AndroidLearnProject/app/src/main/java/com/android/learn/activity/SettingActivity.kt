@@ -2,35 +2,27 @@ package com.android.learn.activity
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.AppCompatCheckBox
 import android.view.View
-import android.widget.CompoundButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-
+import butterknife.BindView
+import butterknife.OnClick
 import com.android.learn.R
 import com.android.learn.base.activity.BaseActivity
-import com.android.learn.base.activity.BaseMvpActivity
 import com.android.learn.base.event.ChangeNightEvent
 import com.android.learn.base.event.LogoutEvent
 import com.android.learn.base.event.RestartMainEvent
-import com.android.learn.base.mpresenter.BasePresenter
 import com.android.learn.base.thirdframe.retrofit.RetrofitProvider
-import com.android.learn.base.utils.LanguageUtil
 import com.android.learn.base.utils.SPUtils
 import com.android.learn.base.utils.Utils
 import com.android.learn.base.utils.account.UserUtil
-
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-
-import butterknife.BindView
-import butterknife.OnClick
 
 
 class SettingActivity : BaseActivity() {
@@ -56,43 +48,6 @@ class SettingActivity : BaseActivity() {
     override val layoutId: Int
         get() = R.layout.activity_setting
 
-    //    private void checkUpdate() {
-    //
-    //        if (OnlineParamUtil.getParamResData() != null && OnlineParamUtil.getParamResData().rspBody != null) {
-    //            String android_versionCode = OnlineParamUtil.getParamResData().rspBody.android_versionCode.content.trim();
-    //
-    //            String android_update_content = OnlineParamUtil.getParamResData().rspBody.android_update_content.content.trim();
-    //            String android_must_update = OnlineParamUtil.getParamResData().rspBody.android_must_update.content.trim();
-    //            final String android_app_download_url = OnlineParamUtil.getParamResData().rspBody.android_app_download_url.content.trim();
-    //            if (Utils.stringToInt(android_versionCode) <= Utils.getVersionCode(this)) {
-    //                Utils.showToast("当前是最新版本", true);
-    //                return;
-    //            }
-    //            AlertDialog.Builder builder;
-    //            builder = new AlertDialog.Builder(SettingActivity.this);
-    //            builder.setTitle("升级提醒");
-    //            builder.setIcon(R.drawable.update);
-    //            builder.setMessage(android_update_content);
-    //            builder.setCancelable(false);
-    //            if ("false".equals(android_must_update)) {
-    //                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-    //                    @Override
-    //                    public void onClick(DialogInterface dialog, int which) {
-    //                        dialog.cancel();
-    //
-    //                    }
-    //                });
-    //            }
-    //            builder.setPositiveButton("升级", new DialogInterface.OnClickListener() {
-    //                @Override
-    //                public void onClick(DialogInterface dialog, int which) {
-    //                    dialog.cancel();
-    //                    UpdateApk.downFile(android_app_download_url, SettingActivity.this);
-    //                }
-    //            });
-    //            builder.show();
-    //        }
-    //    }
     internal var yourChoice: Int = 0
 
 
@@ -139,19 +94,6 @@ class SettingActivity : BaseActivity() {
         }
     }
 
-
-    private fun showSingleChoiceDialog() {
-        val items = arrayOf("跟随系统", "简体中文", "English")
-        yourChoice = -1
-        val singleChoiceDialog = AlertDialog.Builder(this@SettingActivity)
-        singleChoiceDialog.setTitle("选择语言")
-        // 第二个参数是默认选项，此处设置为0
-        singleChoiceDialog.setSingleChoiceItems(items, 0
-        ) { dialog, which -> yourChoice = which }
-        singleChoiceDialog.setPositiveButton("确定"
-        ) { dialog, which -> SPUtils.setParam(this@SettingActivity, "languageIndex", which) }
-        singleChoiceDialog.show()
-    }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onEvent(event: RestartMainEvent) {

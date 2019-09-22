@@ -1,12 +1,8 @@
 package com.android.learn.adapter
 
 import android.content.Context
-import android.view.View
-import android.widget.ImageView
-
 import com.android.learn.R
 import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
-import com.android.learn.base.thirdframe.glide.ImageLoader
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 

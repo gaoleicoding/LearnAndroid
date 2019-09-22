@@ -6,31 +6,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TextInputEditText
 import android.view.View
-import android.widget.Button
-import android.widget.DatePicker
 import android.widget.ImageView
 import android.widget.TextView
-
+import butterknife.BindView
+import butterknife.OnClick
 import com.android.learn.R
 import com.android.learn.base.activity.BaseMvpActivity
 import com.android.learn.base.event.UpdateTodoEvent
 import com.android.learn.base.mmodel.BaseData
-import com.android.learn.base.mmodel.TodoData.DatasBean
-import com.android.learn.base.utils.LanguageUtil
 import com.android.learn.base.utils.Utils
 import com.android.learn.mcontract.TodoAddContract
-import com.android.learn.mcontract.TodoEditContract
 import com.android.learn.mpresenter.TodoAddPresenter
-import com.android.learn.mpresenter.TodoEditPresenter
-
 import org.greenrobot.eventbus.EventBus
-
-import java.util.Calendar
-import java.util.Date
-import java.util.HashMap
-
-import butterknife.BindView
-import butterknife.OnClick
+import java.util.*
 
 
 class TodoAddActivity : BaseMvpActivity<TodoAddPresenter, TodoAddContract.View>(), TodoAddContract.View {

@@ -1,31 +1,21 @@
 package com.android.learn.activity
 
-import android.app.LauncherActivity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.widget.AppCompatCheckBox
 import android.view.View
-import android.widget.CompoundButton
 import android.widget.ImageView
 import android.widget.TextView
-
+import butterknife.BindView
+import butterknife.OnClick
 import com.android.learn.R
 import com.android.learn.base.activity.BaseActivity
-import com.android.learn.base.activity.BaseMvpActivity
-import com.android.learn.base.event.LogoutEvent
 import com.android.learn.base.event.RestartMainEvent
-import com.android.learn.base.mpresenter.BasePresenter
 import com.android.learn.base.utils.LanguageUtil
 import com.android.learn.base.utils.LogUtil
 import com.android.learn.base.utils.SPUtils
-import com.android.learn.base.utils.account.UserUtil
-
 import org.greenrobot.eventbus.EventBus
-
-import butterknife.BindView
-import butterknife.OnClick
 
 
 class LanguageActivity : BaseActivity() {

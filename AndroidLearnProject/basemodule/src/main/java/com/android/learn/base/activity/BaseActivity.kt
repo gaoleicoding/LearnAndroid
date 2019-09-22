@@ -43,15 +43,12 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         SkinInflaterFactory.setFactory(this)
         setContentView(layoutId)
         ButterKnife.bind(this)
-        setStatusBar()
         ExitAppUtils.instance.addActivity(this)
 
         SkinManager.get().setWindowStatusBarColor(this.window, R.color.status_bar_color)
 
         var bundle = intent.extras
-//        if (bundle == null) {
-//            bundle = savedInstanceState
-//        }else
+
         initData(bundle)
 
     }
@@ -64,9 +61,6 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         }
     }
 
-    override fun onRestart() {
-        super.onRestart()
-    }
 
     override fun onResume() {
         super.onResume()
@@ -81,14 +75,6 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         MobclickAgent.onPause(this)
     }
 
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -141,7 +127,7 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         //        if (!file.exists()) {
         AssetFileUtils.copyAssetFile(this, asset_dir, saveDir, savefileName)
         //        }
-        SkinManager.get().loadNewSkin(file.absolutePath)
+        SkinManager.get().loadSkin(file.absolutePath)
     }
 
     private fun restoreDefaultSkin() {
