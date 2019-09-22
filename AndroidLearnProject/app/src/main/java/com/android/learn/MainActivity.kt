@@ -47,6 +47,7 @@ import com.iflytek.cloud.*
 import com.iflytek.cloud.ui.RecognizerDialog
 import com.iflytek.cloud.ui.RecognizerDialogListener
 import com.iflytek.sunflower.FlowerCollector
+import com.jaeger.library.StatusBarUtil
 import com.opensource.svgaplayer.*
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -85,8 +86,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     lateinit var iv_search_back: ImageView
     @BindView(R.id.history_recycleview)
     lateinit var history_recycleview: RecyclerView
-    @BindView(R.id.title_view_divider)
-    lateinit var title_view_divider: View
+
     @BindView(R.id.flowlayout)
     lateinit var flowlayout: FlowLayout
     lateinit var homeFragment: HomeFragment
@@ -172,11 +172,6 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         initSearchRecord()
         iv_search.visibility = View.VISIBLE
         val isNightMode = SPUtils.getParam(this, "nightMode", false) as Boolean
-        if (isNightMode) {
-            title_view_divider.visibility = View.VISIBLE
-        } else {
-            title_view_divider.visibility = View.GONE
-        }
 
         et_search.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {//搜索按键action
@@ -452,9 +447,9 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     fun onEvent(event: ChangeNightEvent) {
         val isNightMode = SPUtils.getParam(this, "nightMode", false) as Boolean
         if (isNightMode) {
-            title_view_divider.visibility = View.VISIBLE
+            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(com.gaolei.basemodule.R.color.app_color_night), 0)
         } else {
-            title_view_divider.visibility = View.GONE
+            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(com.gaolei.basemodule.R.color.app_color), 0)
         }
     }
 

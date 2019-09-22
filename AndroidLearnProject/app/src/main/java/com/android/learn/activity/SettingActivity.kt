@@ -1,6 +1,5 @@
 package com.android.learn.activity
 
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -48,8 +47,9 @@ class SettingActivity : BaseActivity() {
     override val layoutId: Int
         get() = R.layout.activity_setting
 
-    internal var yourChoice: Int = 0
-
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun initData(bundle: Bundle?) {
         title!!.text = getString(R.string.my_setting)
@@ -106,7 +106,6 @@ class SettingActivity : BaseActivity() {
     }
 
     companion object {
-
 
         fun startActivity(context: Context) {
             val intent = Intent(context, SettingActivity::class.java)

@@ -11,66 +11,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38d2ecd2-0ade-4dff-9144-561070deca67" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_android_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_26_1_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_windysha_xskinloader_xskinloader_0_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/LanguageActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/LanguageActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyTodoActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyTodoActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/customactivityoncrash_error_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/customactivityoncrash_error_image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/splash4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/splash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ExitAppUtils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/config.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/SkinInflaterFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/SkinManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/SkinResDeployerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/StyleParserFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/entity/SkinAttr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/entity/SkinConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/impl/SkinResourceManagerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/parser/ProgressBarIndeterminateDrawableStyleParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/parser/SkinAttributeParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/parser/TextViewTextColorStyleParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/pluginLoader/PluginInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/pluginLoader/PluginLoadUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinDeployer/ActivityStatusBarColorResDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinDeployer/BackgroundResDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinDeployer/ImageDrawableResDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinDeployer/ListViewDividerResDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinDeployer/ListViewSelectorResDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinDeployer/ProgressBarIndeterminateDrawableDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinDeployer/TextColorHintResDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinDeployer/TextColorResDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinInterface/ISkinResDeployer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinInterface/ISkinResourceManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/skinInterface/ISkinStyleParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/util/AssetFileUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xskinloader-lib/src/main/java/com/wind/me/xskinloader/util/ReflectUtils.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +41,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="9889d5393139585949" />
   <component name="ExternalProjectsData">
@@ -129,66 +90,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basemodule/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="132" selection-start-line="132" selection-end-line="132" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12">
-              <caret line="71" column="93" selection-start-line="71" selection-start-column="93" selection-end-line="71" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="45" column="22" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
           <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-            </state>
-          </provider>
           <provider editor-type-id="android-manifest" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+            <state relative-caret-position="223">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -196,26 +108,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+            <state relative-caret-position="222">
+              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.kt">
+        <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
+            <state relative-caret-position="-51">
+              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/splash.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseMvpActivity.kt">
+        <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="11" column="73" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
+            <state relative-caret-position="393">
+              <caret line="198" selection-start-line="198" selection-end-line="198" />
+              <folding>
+                <element signature="e#41#667#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -226,25 +146,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>companion</find>
-      <find>context</find>
-      <find>instance</find>
-      <find>infos</find>
-      <find>add</find>
-      <find>getUserInfo</find>
-      <find>setUserInfo</find>
-      <find>matrix</find>
-      <find>getChildren</find>
-      <find>null</find>
-      <find>onpages</find>
-      <find>initData</find>
-      <find>favicon</find>
-      <find>webview_article</find>
       <find>setTitleText</find>
       <find>iv_back</find>
       <find>activity</find>
@@ -256,11 +163,25 @@
       <find>FullScreenStyle</find>
       <find>BGA</find>
       <find>statusb</find>
-      <find>setStatusBar</find>
-      <find>statusbu</find>
       <find>override fun setStatusBar()</find>
       <find>AppTheme5</find>
+      <find>setstatusbar</find>
       <find>AppBaseTheme</find>
+      <find>statusbu</find>
+      <find>SettingTextWatcher</find>
+      <find>com.android.learn.base.view.TitleView</find>
+      <find>title_view_divider</find>
+      <find>@subs</find>
+      <find>statusba</find>
+      <find>activityAnimation1</find>
+      <find>fits</find>
+      <find>android:background=&quot;@color/activity_bg_color&quot;</find>
+      <find>StatusBarUtil</find>
+      <find>onSwipeBackLayoutExecuted</find>
+      <find>onCreate</find>
+      <find>public override fun onCreate(savedInstanceState: Bundle?)</find>
+      <find>setStatusBar</find>
+      <find>oncre</find>
     </findStrings>
     <replaceStrings>
       <replace>getString</replace>
@@ -279,23 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/CircleImageView.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/colorfultab/ColorClipTabLayout.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/CustomTitleView.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/ExtraAttrRegister.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/ViewBackgroundStyleParser.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/ViewBackgroundStyleParser.java" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/glide/MyAppGlideModule.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ProjectQuickAdapter.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/glide/ImageLoader.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/util/ProgressResponseBody.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/ProgressInterceptor.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/CustomizeGsonConverterFactory.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/RetrofitDynamicProvider.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mpresenter/BasePresenter.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/BaseData.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/BaseResponse.kt" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/FeedArticleListData.kt" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/HorizontalPagerAdapter.kt" />
@@ -313,11 +217,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/WechatPresenter.kt" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/Html5Webview.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/HomePresenter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_article_detail.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/TitleView.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.kt" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/RetrofitProvider.kt" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/Html5Webview.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.kt" />
@@ -325,18 +225,39 @@
         <option value="$PROJECT_DIR$/basemodule/build.gradle" />
         <option value="$PROJECT_DIR$/config.gradle" />
         <option value="$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/TitleView.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/TodoAddActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/TodoEditActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SearchResultActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/MainTabAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ProjectQuickAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/LanguageActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyTodoActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.kt" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.kt" />
         <option value="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" />
+        <option value="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="786" />
+    <option name="height" value="809" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -374,7 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -416,6 +336,60 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="drawable-xhdpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="mipmap-xhdpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="mipmap-xxhdpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
@@ -473,16 +447,45 @@
               <item name="base" type="462c0819:PsiDirectoryNode" />
               <item name="activity" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="basemodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="basemodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidLearnProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidLearnProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="basemodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_c7000-c8fdc26f" />
+    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_g9550-9889d5393139585949" />
     <property name="DEBUGGABLE_PROCESS" value="com.android.learn" />
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -500,15 +503,14 @@
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.1.4" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/basemodule/src/main" />
+      <recent name="$PROJECT_DIR$/app/src/main" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.android.learn" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base" />
-      <recent name="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/colorfultab" />
-      <recent name="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
-      <recent name="$PROJECT_DIR$/app/src/main" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.android.learn.base.mmodel" />
@@ -520,9 +522,11 @@
       <recent name="" />
       <recent name="com.android.learn.base.thirdframe.retrofit" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/basemodule/src/main" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base" />
+      <recent name="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/colorfultab" />
+      <recent name="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
       <recent name="$PROJECT_DIR$/app/src/main" />
     </key>
   </component>
@@ -754,9 +758,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="786" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="809" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29899856" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26967096" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -766,18 +771,18 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32806325" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14057508" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.20812182" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32708934" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.13976945" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.043227665" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32806325" />
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.3290735" />
       <window_info anchor="bottom" id="Logcat" order="8" weight="0.05922166" />
       <window_info anchor="bottom" id="Statistic" order="9" weight="0.32656515" />
-      <window_info anchor="bottom" id="Build" order="10" sideWeight="0.788269" visible="true" weight="0.04470939" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32806325" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.2539342" weight="0.13263786" />
+      <window_info anchor="bottom" id="Build" order="10" sideWeight="0.788269" weight="0.11959654" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.043227665" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.2539342" weight="0.04470939" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.7460658" side_tool="true" weight="0.22924902" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -786,7 +791,7 @@
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Anko Layout Preview" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Preview" order="6" />
+      <window_info anchor="right" id="Preview" order="6" weight="0.3297568" />
       <window_info anchor="right" id="Gradle" order="7" weight="0.49893504" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
@@ -826,6 +831,30 @@
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -863,7 +892,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/TodoEditActivity.kt</url>
-          <line>51</line>
+          <line>40</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -881,88 +910,176 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.kt</url>
-          <line>39</line>
+          <line>36</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.kt</url>
-          <line>19</line>
+          <line>2</line>
           <properties />
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyTodoActivity.kt</url>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/HorizontalPagerAdapter.kt</url>
+          <line>2</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.kt</url>
+          <line>198</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.kt</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseMvpActivity.kt</url>
+          <line>16</line>
+          <properties />
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/view/fontsliderbar/FontSliderBar.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="272">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding>
+            <element signature="e#46#320#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/code_backup/android/learn/base/view/Html5Webview.java" />
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/ProgressView.kt">
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/speechdemo/xf/SettingTextWatcher.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        <state relative-caret-position="68">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/code_backup/android/learn/base/view/TitleView.java" />
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/webkit/WebView.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2928">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+          <folding>
+            <element signature="e#36#1583#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/basemodule.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1373">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1834">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/iat_setting.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/Html5Webview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-888">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_article_detail.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/TitleView.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        <state relative-caret-position="187">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_back.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/BaseData.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" selection-start-column="37" selection-end-column="37" />
+        <state relative-caret-position="396">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/DividerItemDecoration.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-847" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_knowledge_article.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml">
       <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/LanguageUtil.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        <state relative-caret-position="51">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SearchResultActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding>
+            <element signature="e#36#888#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values-night/colors_night.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/values.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/bga-swipebacklayout-1.2.0.aar/8537add6d370311a888c48f5563f7821/res/drawable/bga_sbl_shadow.9.png">
+      <provider editor-type-id="images" />
+      <provider selected="true" editor-type-id="ninepatcheditor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.windysha.xskinloader/xskinloader/0.1.0/97864885882ad940b7687f7a3a0a88f92df60ceb/xskinloader-0.1.0-sources.jar!/com/wind/me/xskinloader/SkinManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="116" column="20" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -973,267 +1090,208 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        <state relative-caret-position="153">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/CollectContract.kt">
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/ChangeNightEvent.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state relative-caret-position="34">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.umeng.sdk/analytics/7.5.0/a0ccae17355c8fe505a8b2ada8c4b559d672f55/analytics-7.5.0.jar!/com/umeng/analytics/MobclickAgent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaeger.statusbarutil/library/1.4.0/e09e3de4ea75c5b7ca9dbf55afcddefa0ad97c67/library-1.4.0-sources.jar!/com/jaeger/library/StatusBarUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="598" column="76" selection-start-line="598" selection-start-column="53" selection-end-line="598" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
+        <state relative-caret-position="160">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="e#37#775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="e#36#689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/LanguageActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#36#912#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ExitAppUtils.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyTodoActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#37#639#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="30" column="37" selection-start-line="29" selection-start-column="29" selection-end-line="30" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/CollectPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/Html5Webview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/c3c41cc20d1a974fccac0ee223123d80/jars/classes.jar!/android/support/v7/widget/RecyclerView.class" />
-    <entry file="file://$PROJECT_DIR$/app/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.1/6112a58432d62645eca9d0aa77bf6bc7ad75b66a/rxjava-2.1.1-sources.jar!/io/reactivex/Observable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="10830" column="22" selection-start-line="10830" selection-start-column="22" selection-end-line="10830" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseMvpFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/OnlineCacheInterceptor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/RetrofitProvider.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="46" column="65" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="17" selection-start-line="26" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/HomePresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgeChildPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+        <state relative-caret-position="323">
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="31" selection-end-column="5" />
           <folding>
-            <element signature="e#38#524#0" expanded="true" />
+            <element signature="e#36#391#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mpresenter/BasePresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgePresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/OfflineCacheInterceptor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BasePermisssionActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-730">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="127" selection-start-line="127" selection-end-line="132" selection-end-column="11" />
+        <state>
+          <caret line="68" column="32" lean-forward="true" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
           <folding>
             <element signature="e#44#1369#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/build.gradle">
+    <entry file="file://$PROJECT_DIR$/../../../SoftWare/sdk/sources/android-28/android/app/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        <state relative-caret-position="97">
+          <caret line="7328" selection-start-line="7328" selection-end-line="7328" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.gradle">
+    <entry file="file://$PROJECT_DIR$/../../../SoftWare/sdk/sources/android-28/android/content/Intent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="71" column="93" selection-start-line="71" selection-start-column="93" selection-end-line="71" selection-end-column="93" />
+        <state relative-caret-position="17">
+          <caret line="4295" column="31" selection-start-line="4295" selection-start-column="31" selection-end-line="4295" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseMvpActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="11" column="73" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../SoftWare/sdk/sources/android-28/android/content/res/Resources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="1834" column="54" selection-start-line="1834" selection-start-column="54" selection-end-line="1834" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="127">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+        <state relative-caret-position="1037">
+          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+          <folding>
+            <element signature="e#27#2187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_icon2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/customactivityoncrash_error_image.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_icon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
+          <folding>
+            <element signature="e#41#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+        <state relative-caret-position="222">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.kt">
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="22" />
+        <state relative-caret-position="-51">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/splash.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
   <component name="masterDetails">

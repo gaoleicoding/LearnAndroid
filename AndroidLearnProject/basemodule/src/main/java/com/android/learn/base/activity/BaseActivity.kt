@@ -8,10 +8,8 @@ import android.view.View
 import butterknife.ButterKnife
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper
 import com.android.learn.base.application.CustomApplication
-import com.android.learn.base.utils.ExitAppUtils
 import com.android.learn.base.utils.LogUtil
 import com.android.learn.base.utils.SPUtils
-import com.gaolei.basemodule.R
 import com.jaeger.library.StatusBarUtil
 import com.umeng.analytics.MobclickAgent
 import com.wind.me.xskinloader.SkinInflaterFactory
@@ -40,14 +38,13 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         // 在 super.onCreate(savedInstanceState) 之前调用该方法
         initSwipeBackFinish()
         super.onCreate(savedInstanceState)
+
         SkinInflaterFactory.setFactory(this)
         setContentView(layoutId)
         ButterKnife.bind(this)
-        ExitAppUtils.instance.addActivity(this)
+        setStatusBar()
 
-        SkinManager.get().setWindowStatusBarColor(this.window, R.color.status_bar_color)
-
-        var bundle = intent.extras
+        val bundle = intent.extras
 
         initData(bundle)
 
@@ -56,7 +53,7 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
     open fun initData(bundle: Bundle?) {}
 
     override fun onClick(v: View) {
-        if (v.id == R.id.iv_back) {
+        if (v.id == com.gaolei.basemodule.R.id.iv_back) {
             finish()
         }
     }
@@ -78,7 +75,6 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
 
     override fun onDestroy() {
         super.onDestroy()
-        ExitAppUtils.instance.delActivity(this)
         LogUtil.d(TAG, "BaseActivity ----onDestroy：" + javaClass.name.toString())
     }
 
@@ -151,7 +147,7 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
         // 设置是否是微信滑动返回样式。默认值为 true
         mSwipeBackHelper.setIsWeChatStyle(true)
         // 设置阴影资源 id。默认值为 R.drawable.bga_sbl_shadow
-        mSwipeBackHelper.setShadowResId(R.drawable.bga_sbl_shadow)
+        mSwipeBackHelper.setShadowResId(com.gaolei.basemodule.R.drawable.bga_sbl_shadow)
         // 设置是否显示滑动返回的阴影效果。默认值为 true
         mSwipeBackHelper.setIsNeedShowShadow(true)
         // 设置阴影区域的透明度是否根据滑动的距离渐变。默认值为 true
@@ -199,10 +195,12 @@ abstract class BaseActivity : BasePermisssionActivity(), View.OnClickListener, B
     }
 
     protected open fun setStatusBar() {
+
         val isNightMode = SPUtils.getParam(this, "nightMode", false) as Boolean
         if (isNightMode) {
-            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(R.color.app_color_night), 0)
-        } else
-            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(R.color.app_color), 0)
+            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(com.gaolei.basemodule.R.color.app_color_night), 0)
+        } else {
+            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(com.gaolei.basemodule.R.color.app_color), 0)
+        }
     }
 }

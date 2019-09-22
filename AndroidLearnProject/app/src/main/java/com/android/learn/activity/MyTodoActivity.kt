@@ -38,6 +38,10 @@ class MyTodoActivity : BaseActivity() {
     override val layoutId: Int
         get() = R.layout.activity_my_todo
 
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
     private fun initTab() {
 
         tabLayout!!.getTabAt(0)!!.setCustomView(R.layout.tab_todo)

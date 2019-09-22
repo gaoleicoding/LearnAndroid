@@ -44,6 +44,10 @@ class FontSizeActivity : BaseActivity() {
     override val layoutId: Int
         get() = R.layout.activity_fontsizes
 
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
     override fun initData(bundle: Bundle?) {
         title!!.text = getString(R.string.font_size)
         iv_back!!.visibility = View.VISIBLE

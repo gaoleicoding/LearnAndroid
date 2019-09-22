@@ -1,18 +1,24 @@
 package com.android.learn.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
+import android.text.TextUtils
+import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import com.android.learn.MainActivity
 import com.android.learn.R
 import com.android.learn.base.activity.BaseMvpActivity
+import com.android.learn.base.application.CustomApplication.Companion.context
 import com.android.learn.base.mmodel.RegisterLoginData
 import com.android.learn.base.utils.SPUtils
 import com.android.learn.base.utils.account.UserUtil
 import com.android.learn.mcontract.SplashLoginContract
 import com.android.learn.mpresenter.SplashLoginPresenter
+import com.jaeger.library.StatusBarUtil
 
 class SplashActivity : BaseMvpActivity<SplashLoginPresenter, SplashLoginContract.View>(), SplashLoginContract.View {
 
@@ -27,6 +33,11 @@ class SplashActivity : BaseMvpActivity<SplashLoginPresenter, SplashLoginContract
 
     override val layoutId: Int
         get() = R.layout.activity_splash
+
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun initData(bundle: Bundle?) {}
 
@@ -56,6 +67,10 @@ class SplashActivity : BaseMvpActivity<SplashLoginPresenter, SplashLoginContract
         handler.sendEmptyMessageDelayed(0, 1500)
     }
 
+    override fun setStatusBar() {
+        StatusBarUtil.setTranslucent(this,0)
+        Log.d("gaolei", "setStatusBar")
+    }
 
     public override fun onDestroy() {
         super.onDestroy()

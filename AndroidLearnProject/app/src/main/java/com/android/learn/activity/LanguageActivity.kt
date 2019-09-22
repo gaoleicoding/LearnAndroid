@@ -34,6 +34,10 @@ class LanguageActivity : BaseActivity() {
     override val layoutId: Int
         get() = R.layout.activity_language
 
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
     override fun initData(bundle: Bundle?) {
         title!!.text = getString(R.string.language_set)
         iv_back!!.visibility = View.VISIBLE

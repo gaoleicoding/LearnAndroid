@@ -3,10 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-
+        <item name="colorPrimary">@color/white</item>
+        <!--状态栏颜色-->
+        <item name="colorPrimaryDark">@color/app_color</item>
+        <!--控制各个控件被选中时的颜色-->
+        <item name="colorAccent">@color/app_color</item>
     </style>
 
     <!-- 自定义loading dialog -->
@@ -18,9 +19,18 @@
         <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
         <item name="android:backgroundDimEnabled">false</item><!--模糊-->
     </style>
-
+    <!-- SplashActivity状态栏透明 -->
+    <style name="SplashTheme" parent="@style/AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+    <!-- Activity状态栏透明 -->
+    <style name="TranslucentTheme" parent="@style/AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
     <!-- Activity全屏 -->
-    <style name="FullScreenStyle" parent="@style/AppTheme">
+    <style name="FullScreenTheme" parent="@style/AppTheme">
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowIsTranslucent">true</item>

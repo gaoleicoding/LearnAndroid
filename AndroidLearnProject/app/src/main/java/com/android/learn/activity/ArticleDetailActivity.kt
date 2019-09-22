@@ -6,18 +6,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-
-import com.android.learn.R
-import com.android.learn.base.activity.BaseActivity
-import com.android.learn.base.activity.BaseMvpActivity
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.base.utils.LanguageUtil
-import com.android.learn.base.view.Html5Webview
-
 import butterknife.BindView
 import butterknife.OnClick
-import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper
-import com.android.learn.base.mview.BaseView
+import com.android.learn.R
+import com.android.learn.base.activity.BaseActivity
+import com.android.learn.base.view.Html5Webview
 
 class ArticleDetailActivity : BaseActivity() {
 
@@ -33,6 +26,10 @@ class ArticleDetailActivity : BaseActivity() {
 
     override val layoutId: Int
         get() = R.layout.activity_article_detail
+
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun initData(bundle: Bundle?) {
         title!!.text = getString(R.string.article_detail)
@@ -61,7 +58,6 @@ class ArticleDetailActivity : BaseActivity() {
         share_intent = Intent.createChooser(share_intent, "分享")
         startActivity(share_intent)
     }
-
 
 
     companion object {

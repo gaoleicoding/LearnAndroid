@@ -53,11 +53,14 @@ class FeedbackActivity : BaseActivity() {
     override val layoutId: Int
         get() = R.layout.activity_help_feedback
 
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
     override fun initData(bundle: Bundle?) {
         title!!.text = getString(R.string.help_feedback)
         iv_back!!.visibility = View.VISIBLE
     }
-
 
 
     @OnClick(R.id.send_btn, R.id.add_attachment)
