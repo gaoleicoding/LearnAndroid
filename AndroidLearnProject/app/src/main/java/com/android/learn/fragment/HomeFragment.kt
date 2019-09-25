@@ -8,7 +8,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
-
+import butterknife.BindView
 import com.android.learn.R
 import com.android.learn.activity.ArticleDetailActivity
 import com.android.learn.adapter.ArticleQuickAdapter
@@ -29,15 +29,10 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
 import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
-import com.youth.banner.listener.OnBannerListener
-
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-
-import java.util.ArrayList
-
-import butterknife.BindView
+import java.util.*
 
 
 class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeContract.View {

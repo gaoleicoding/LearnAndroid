@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: cn.lankton:flowlayout:1.0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/flowlayout-1.0.1.aar/35c5698713219ff3388b27f8366ab419/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/flowlayout-1.0.1.aar/35c5698713219ff3388b27f8366ab419/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fdd89b4330000c6c13b0053d570f874e/flowlayout-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fdd89b4330000c6c13b0053d570f874e/flowlayout-1.0.1/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.lankton/flowlayout/1.0.1/f244b933b1da1313783e6d71213744a889d4fdd0/flowlayout-1.0.1-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.lankton/flowlayout/1.0.1/4bee327818a7f91089b00679f93064fcd1a24d4d/flowlayout-1.0.1-sources.jar!/" />
     </SOURCES>

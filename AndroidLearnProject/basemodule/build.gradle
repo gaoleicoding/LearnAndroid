@@ -7,7 +7,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
@@ -137,6 +136,6 @@ dependencies {
     }
 
     //   换肤框架，不必重启应用
-    implementation 'com.windysha.xskinloader:xskinloader:0.1.0'
-
+    api 'com.windysha.xskinloader:xskinloader:0.1.0'
+    api 'com.android.support:multidex:1.0.3'
 }

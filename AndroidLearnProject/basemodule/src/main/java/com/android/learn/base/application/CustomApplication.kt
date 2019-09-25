@@ -4,8 +4,10 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
 import android.net.ConnectivityManager
+import android.support.multidex.MultiDex
 import android.util.TypedValue
 import android.view.LayoutInflater
+import cat.ereza.customactivityoncrash.config.CaocConfig
 
 import com.android.learn.base.utils.LanguageUtil
 import com.android.learn.base.utils.SPUtils
@@ -67,8 +69,24 @@ class CustomApplication : Application() {
          */
         //
         BGASwipeBackHelper.init(this, null)
+        MultiDex.install(this)
+
+//       CaocConfig.Builder.create()
+//        .backgroundMode(CaocConfig.BACKGROUND_MODE_SILENT) //default: CaocConfig.BACKGROUND_MODE_SHOW_CUSTOM
+//        .enabled(false) //default: true
+//        .showErrorDetails(true) //default: true
+//        .showRestartButton(true) //default: true
+//        .logErrorOnRestart(true) //default: true
+//        .trackActivities(true) //default: false
+//        .minTimeBetweenCrashesMs(2000) //default: 3000
+//        .errorDrawable(R.drawable.customactivityoncrash_error_image) //default: bug image
+//        .restartActivity(YourCustomActivity.class) //default: null (your app's launch activity)
+//        .errorActivity(YourCustomErrorActivity.class) //default: null (default error activity)
+//        .eventListener(new YourCustomEventListener()) //default: null
+//        .apply()
 
     }
+
 
     companion object {
         lateinit var connectivityManager: ConnectivityManager

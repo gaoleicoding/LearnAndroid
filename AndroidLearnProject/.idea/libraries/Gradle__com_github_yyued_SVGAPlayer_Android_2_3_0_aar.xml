@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.yyued:SVGAPlayer-Android:2.3.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SVGAPlayer-Android-2.3.0.aar/fec4bae8b0c3f3072c17a1287c5ec687/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SVGAPlayer-Android-2.3.0.aar/fec4bae8b0c3f3072c17a1287c5ec687/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d772f97ff60bab5a1e9f54725d09e9a3/SVGAPlayer-Android-2.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d772f97ff60bab5a1e9f54725d09e9a3/SVGAPlayer-Android-2.3.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.yyued/SVGAPlayer-Android/2.3.0/ed05cef669e8eeffa9155837e143235a4115d94b/SVGAPlayer-Android-2.3.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.yyued/SVGAPlayer-Android/2.3.0/15fb89901b8dc60beee5ca4956dbef948845a903/SVGAPlayer-Android-2.3.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

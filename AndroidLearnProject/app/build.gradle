@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 ext.getCNName = {
-    java.util.HashMap<String, String> map = new HashMap<>();
+    HashMap<String, String> map = new HashMap<>();
     map.put("xiaomi", "xiaomi.apk");
     map.put("oppo", "oppo.apk");
     map.put("Tencent", "Tencent.apk");
@@ -22,7 +22,6 @@ android {
         }
     }
     compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
         applicationId "com.android.learn"
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -30,6 +29,7 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
 
     }
     buildTypes {

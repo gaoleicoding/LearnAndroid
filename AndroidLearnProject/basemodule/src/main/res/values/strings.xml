@@ -69,15 +69,14 @@
     <string name="empty_done">你还没有完成事项</string>
     <string name="empty_search">没搜索到相应内容</string>
 
-
-    <string name="customactivityoncrash_error_activity_error_occurred_explanation">程序出错了，抱歉给您带来不便\n为了尽快解决此问题，您可以点击错误详情，并复制错误代码或截图，发邮件反馈到技术支持邮箱：gaoleiandroid@163.com</string>
-    <string name="customactivityoncrash_error_activity_restart_app">重启</string>
-    <string name="customactivityoncrash_error_activity_close_app">关闭</string>
-    <string name="customactivityoncrash_error_activity_error_details">错误详情</string>
-    <string name="customactivityoncrash_error_activity_error_details_title">错误详情</string>
-    <string name="customactivityoncrash_error_activity_error_details_close">关闭</string>
-    <string name="customactivityoncrash_error_activity_error_details_copy">复制</string>
-    <string name="customactivityoncrash_error_activity_error_details_copied">已复制</string>
-    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">错误信息</string>
+    <string name="customactivityoncrash_error_activity_error_occurred_explanation" translatable="false">程序出错了，抱歉给您带来不便\n为了尽快解决此问题，您可以点击错误详情，并复制错误代码或截图，发邮件反馈到技术支持邮箱：gaoleiandroid@163.com</string>
+    <string name="customactivityoncrash_error_activity_restart_app" translatable="false">重启</string>
+    <string name="customactivityoncrash_error_activity_close_app" translatable="false">关闭</string>
+    <string name="customactivityoncrash_error_activity_error_details" translatable="false">错误详情</string>
+    <string name="customactivityoncrash_error_activity_error_details_title" translatable="false">错误详情</string>
+    <string name="customactivityoncrash_error_activity_error_details_close" translatable="false">关闭</string>
+    <string name="customactivityoncrash_error_activity_error_details_copy" translatable="false">复制</string>
+    <string name="customactivityoncrash_error_activity_error_details_copied" translatable="false">已复制</string>
+    <string name="customactivityoncrash_error_activity_error_details_clipboard_label" translatable="false">错误信息</string>
 
 </resources>
