@@ -26,6 +26,7 @@ public class ArticleDetailActivity extends BaseMvpActivity {
     @BindView(R.id.iv_search)
     ImageView iv_search;
     String url;
+
     public static void startActivity(Context context, Bundle bundle) {
         Intent intent = new Intent(context, ArticleDetailActivity.class);
 
@@ -33,6 +34,7 @@ public class ArticleDetailActivity extends BaseMvpActivity {
             intent.putExtras(bundle);
         context.startActivity(intent);
     }
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_article_detail;
@@ -47,7 +49,6 @@ public class ArticleDetailActivity extends BaseMvpActivity {
         iv_search.setVisibility(View.VISIBLE);
         iv_search.setImageResource(R.drawable.icon_share);
     }
-
 
 
     @OnClick({R.id.iv_search})
@@ -81,9 +82,9 @@ public class ArticleDetailActivity extends BaseMvpActivity {
     @Override
     public void onBackPressed() {
 
-        if(webview_article.canGoBack()){
+        if (webview_article.canGoBack()) {
             webview_article.goBack();
-        }else {
+        } else {
             super.onBackPressed();
         }
     }

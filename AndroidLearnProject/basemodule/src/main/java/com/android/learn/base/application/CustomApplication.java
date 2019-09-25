@@ -3,10 +3,13 @@ package com.android.learn.base.application;
 import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 import android.view.LayoutInflater;
 
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.xskin.ExtraAttrRegister;
+import com.gaolei.basemodule.R;
 import com.iflytek.cloud.SpeechUtility;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
@@ -20,14 +23,21 @@ import com.umeng.commonsdk.UMConfigure;
 import com.wind.me.xskinloader.SkinInflaterFactory;
 import com.wind.me.xskinloader.SkinManager;
 
+import cat.ereza.customactivityoncrash.config.CaocConfig;
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 
 
-public class CustomApplication extends Application {
+public class CustomApplication extends MultiDexApplication {
     public static ConnectivityManager connectivityManager;
     public static Context context;
     private static CustomApplication instance;
 
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
     @Override
     public void onCreate() {
         super.onCreate();
@@ -54,7 +64,9 @@ public class CustomApplication extends Application {
          */
         //
         BGASwipeBackHelper.init(this, null);
-
+        CaocConfig.Builder.create()
+                .errorDrawable(R.drawable.customactivityoncrash_error_image) //default: bug image
+                .apply();
     }
 
     public static CustomApplication getInstance() {

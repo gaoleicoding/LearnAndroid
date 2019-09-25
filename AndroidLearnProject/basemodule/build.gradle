@@ -4,7 +4,6 @@ apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -46,6 +45,7 @@ dependencies {
     api rootProject.constraint_layout
     api rootProject.support_design
     api rootProject.support_cardview
+    api 'com.android.support:multidex:1.0.3'
     testImplementation 'junit:junit:4.12'
     api fileTree(include: ['*.jar'], dir: 'libs')
 
@@ -86,7 +86,7 @@ dependencies {
     api rootProject.SmartRefreshHeader
 
     //RecyclerView万能适配器
-    compile rootProject.BaseRecyclerViewAdapterHelper
+    api rootProject.BaseRecyclerViewAdapterHelper
 
     //友盟统计
     api rootProject.umeng_common
@@ -109,5 +109,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
     //   换肤框架，不必重启应用
-    implementation 'com.windysha.xskinloader:xskinloader:0.1.0'
+    api 'com.windysha.xskinloader:xskinloader:0.1.0'
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -12,6 +12,7 @@
     <com.android.learn.base.view.Html5Webview
         android:id="@+id/webview_article"
         android:layout_width="match_parent"
+        style="?android:attr/webViewStyle"
         android:layout_height="match_parent" />
 
 

@@ -4,8 +4,8 @@ ext {
     buildToolsVersion = '28.0.2'
     minSdkVersion = 19
     targetSdkVersion = 28
-    versionCode = 101
-    versionName = '1.0.1'
+    versionCode = 110
+    versionName = '1.1.0'
 
     appcompat_v7 = 'com.android.support:appcompat-v7:28+'
     support_design = 'com.android.support:design:28+'
@@ -54,7 +54,7 @@ ext {
     leakcanary_android = 'com.squareup.leakcanary:leakcanary-android:1.6.1'
     leakcanary_android_no_op = 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
     infinitecycleviewpager = 'com.github.devlight:infinitecycleviewpager:1.0.2'
-    SVGAPlayer_Android = 'com.github.yyued:SVGAPlayer-Android:2.3.0'
+    SVGAPlayer_Android = 'com.github.yyued:SVGAPlayer-Android:2.4.7'
     flowlayout = 'cn.lankton:flowlayout:1.0.1'
     greendao = 'org.greenrobot:greendao:3.2.2'
     bga_swipebacklayout = 'cn.bingoogolapple:bga-swipebacklayout:1.2.0'

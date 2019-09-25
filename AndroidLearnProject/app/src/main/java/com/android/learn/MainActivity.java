@@ -3,9 +3,7 @@ package com.android.learn;
 import android.Manifest;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -76,12 +74,11 @@ import com.opensource.svgaplayer.SVGAVideoEntity;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import org.jetbrains.annotations.NotNull;
+import org.greenrobot.greendao.annotation.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -91,12 +88,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.lankton.flowlayout.FlowLayout;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class MainActivity extends BaseMvpActivity<MainActivityPresenter> implements MainActivityContract.View {
 
@@ -267,7 +258,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             //默认选中的Tab
             viewPager.setCurrentItem(0);
 //            tabLayout.getTabAt(0).getCustomView().setSelected(true);
-            loadSVGAAnimation();
+            loadAnimation();
 
         }
 
@@ -319,7 +310,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             @Override
             public void denied() {
             }
-        }, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE});
+        }, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE);
     }
 
     public void onRestart() {
@@ -362,14 +353,31 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     }
 
 
-    private void loadSVGAAnimation() {
+    private void loadAnimation() {
         SVGAParser parser = new SVGAParser(this);
-        resetDownloader(parser);
-        try {
-            parser.parse(new URL("https://github.com/yyued/SVGA-Samples/blob/master/kingset.svga?raw=true"), new SVGAParser.ParseCompletion() {
+        try { // new URL needs try catch.
+            parser.decodeFromURL(new URL("https://github.com/yyued/SVGA-Samples/blob/master/kingset.svga?raw=true"), new SVGAParser.ParseCompletion() {
                 @Override
                 public void onComplete(@NotNull SVGAVideoEntity videoItem) {
-                    SVGADrawable drawable = new SVGADrawable(videoItem, requestDynamicItemWithSpannableText());
+                    SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getString(R.string.welcome_learn_android));
+                    spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                    TextPaint textPaint = new TextPaint();
+                    textPaint.setColor(Color.WHITE);
+                    textPaint.setTextSize(28);
+                    dynamicEntity.setDynamicText(new StaticLayout(
+                            spannableStringBuilder,
+                            0,
+                            spannableStringBuilder.length(),
+                            textPaint,
+                            0,
+                            android.text.Layout.Alignment.ALIGN_CENTER,
+                            1.0f,
+                            0.0f,
+                            false
+                    ), "banner");
+//                    dynamicEntity.setDynamicImage("https://github.com/PonyCui/resources/blob/master/svga_replace_avatar.png?raw=true", "99"); // Here is the KEY implementation.
+                    SVGADrawable drawable = new SVGADrawable(videoItem, dynamicEntity);
                     iv_svga.setImageDrawable(drawable);
                     iv_svga.startAnimation();
 
@@ -383,7 +391,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                             iv_svga.setVisibility(View.GONE);
                         }
                     }, 5000);
-
                 }
 
                 @Override
@@ -391,74 +398,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
                 }
             });
-        } catch (Exception e) {
-            System.out.print(true);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
     }
-
-    /**
-     * 你可以设置富文本到 ImageKey 相关的元素上
-     * 富文本是会自动换行的，不要设置过长的文本
-     *
-     * @return
-     */
-    private SVGADynamicEntity requestDynamicItemWithSpannableText() {
-        SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getString(R.string.welcome_learn_android));
-        spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        TextPaint textPaint = new TextPaint();
-        textPaint.setColor(Color.WHITE);
-        textPaint.setTextSize(28);
-        dynamicEntity.setDynamicText(new StaticLayout(
-                spannableStringBuilder,
-                0,
-                spannableStringBuilder.length(),
-                textPaint,
-                0,
-                android.text.Layout.Alignment.ALIGN_CENTER,
-                1.0f,
-                0.0f,
-                false
-        ), "banner");
-        dynamicEntity.setDynamicDrawer(new Function2<Canvas, Integer, Boolean>() {
-            @Override
-            public Boolean invoke(Canvas canvas, Integer frameIndex) {
-                Paint aPaint = new Paint();
-                aPaint.setColor(Color.WHITE);
-                canvas.drawCircle(50, 54, frameIndex % 5, aPaint);
-                return false;
-            }
-        }, "banner");
-        return dynamicEntity;
-    }
-
-    /**
-     * 设置下载器，这是一个可选的配置项。
-     *
-     * @param parser
-     */
-    private void resetDownloader(SVGAParser parser) {
-        parser.setFileDownloader(new SVGAParser.FileDownloader() {
-            @Override
-            public void resume(final URL url, final Function1<? super InputStream, Unit> complete, final Function1<? super Exception, Unit> failure) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        OkHttpClient client = new OkHttpClient();
-                        Request request = new Request.Builder().url(url).get().build();
-                        try {
-                            Response response = client.newCall(request).execute();
-                            complete.invoke(response.body().byteStream());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                            failure.invoke(e);
-                        }
-                    }
-                }).start();
-            }
-        });
-    }
-
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(RestartMainEvent event) {
@@ -466,7 +409,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         overridePendingTransition(0, 0);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         finish();
-        overridePendingTransition(0, 0);
         startActivity(intent);
         event.activity.finish();
         SPUtils.setParam(MainActivity.this, "isRestartMain", new Boolean(true));
