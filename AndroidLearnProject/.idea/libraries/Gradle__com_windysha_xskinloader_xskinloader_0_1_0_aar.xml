@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.windysha.xskinloader:xskinloader:0.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/db4b8d48f09db12dd496c78664879d1b/xskinloader-0.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/db4b8d48f09db12dd496c78664879d1b/xskinloader-0.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.windysha.xskinloader/xskinloader/0.1.0/bbc036e50e1adabaf444121ae3c699b714df8094/xskinloader-0.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.windysha.xskinloader/xskinloader/0.1.0/97864885882ad940b7687f7a3a0a88f92df60ceb/xskinloader-0.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
