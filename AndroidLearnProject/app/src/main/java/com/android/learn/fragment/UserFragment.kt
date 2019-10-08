@@ -93,25 +93,20 @@ class UserFragment : BaseMvpFragment<UserInfoPresenter, UserInfoContract.View>()
         if (UserUtil.gainUserInfo() == null) return
         if (UserUtil.isLogined) {
             val username = UserUtil.gainUserInfo()?.data?.username
-            if (tv_user_profile_not_login != null)
-                tv_user_profile_not_login!!.text = username
+            tv_user_profile_not_login.text = username
             val photoUrl = UserUtil.gainUserInfo()?.data?.icon
             if (photoUrl != null) {
                 val options = RequestOptions().placeholder(R.drawable.user_default_photo)
-                if (iv_user_photo != null)
-                    Glide.with(activity!!).load(photoUrl).apply(options).into(iv_user_photo!!)
+                Glide.with(activity!!).load(photoUrl).apply(options).into(iv_user_photo)
             }
 
-        } else {
-
         }
-
     }
 
     private fun logout() {
 
-        tv_user_profile_not_login!!.text = getString(R.string.login_register)
-        iv_user_photo!!.setImageResource(R.drawable.user_default_photo)
+        tv_user_profile_not_login.text = getString(R.string.login_register)
+        iv_user_photo.setImageResource(R.drawable.user_default_photo)
         SPUtils.clear(activity!!, "phone_num")
         SPUtils.clear(activity!!, "password")
         mPresenter!!.getLogoutData()

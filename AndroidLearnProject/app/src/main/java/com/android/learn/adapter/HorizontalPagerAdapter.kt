@@ -20,7 +20,7 @@ import java.util.ArrayList
 
 class HorizontalPagerAdapter(private val mContext: Context?, mList: List<TreeBean>) : PagerAdapter() {
     private val mLayoutInflater: LayoutInflater
-    private var mList: List<TreeBean> = ArrayList()!!
+    private var mList: List<TreeBean> = ArrayList()
 
     init {
         this.mList = mList
@@ -40,7 +40,7 @@ class HorizontalPagerAdapter(private val mContext: Context?, mList: List<TreeBea
         val page: Int
         view = mLayoutInflater.inflate(R.layout.item_tree, container, false)
         val txt = view.findViewById<View>(R.id.txt_item) as TextView
-        val treeBean = mList[position]!!
+        val treeBean = mList[position]
         txt.text = treeBean.name
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(mContext)

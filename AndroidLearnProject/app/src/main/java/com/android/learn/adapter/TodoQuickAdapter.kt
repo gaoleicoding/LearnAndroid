@@ -1,5 +1,6 @@
 package com.android.learn.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.view.View

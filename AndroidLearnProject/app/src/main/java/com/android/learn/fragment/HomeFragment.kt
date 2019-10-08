@@ -80,13 +80,13 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
     }
 
 
-    override fun showArticleList(listData: FeedArticleListData, isRefresh: Boolean) {
-        val newDataList = listData.datas
-        if (newDataList == null || newDataList.size == 0) {
-            smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
+    override fun showArticleList(itemBeans: FeedArticleListData, isRefresh: Boolean) {
+        val newDataList = itemBeans.datas
+        if (newDataList.size == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData()
             return
         }
-        smartRefreshLayout!!.finishLoadMore()
+        smartRefreshLayout.finishLoadMore()
 
         feedArticleAdapter!!.addData(newDataList)
 
@@ -104,7 +104,7 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
             titleList.add(itemBeans.data[i].title)
             linkList.add(itemBeans.data[i].url)
         }
-        banner!!.setImageLoader(object : com.youth.banner.loader.ImageLoader() {
+        banner.setImageLoader(object : com.youth.banner.loader.ImageLoader() {
             override fun displayImage(context: Context, path: Any, imageView: ImageView) {
                 Glide.with(activity!!).load(path).into(imageView)
             }
@@ -116,7 +116,7 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
         //2. Banner.NUM_INDICATOR   显示数字指示器
         //3. Banner.NUM_INDICATOR_TITLE 显示数字指示器和标题
         //4. Banner.CIRCLE_INDICATOR_TITLE  显示圆形指示器和标题
-        banner!!.setBannerStyle(BannerConfig.CIRCLE_INDICATOR)//设置圆形指示器与标题
+        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR)//设置圆形指示器与标题
         //设置banner动画效果
         //        Tansformer.CubeIn
         //        Transformer.CubeOut
@@ -124,15 +124,15 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
         //        Transformer.FlipHorizontal
         //        Transformer.FlipVertical
         //        banner.setBannerAnimation(Transformer.FlipHorizontal);
-        banner!!.setIndicatorGravity(BannerConfig.CENTER)//设置指示器位置
-        banner!!.setDelayTime(4000)//设置轮播时间
-        banner!!.setImages(imageList)//设置图片源
-        banner!!.setBannerTitles(titleList)//设置标题源
+        banner.setIndicatorGravity(BannerConfig.CENTER)//设置指示器位置
+        banner.setDelayTime(4000)//设置轮播时间
+        banner.setImages(imageList)//设置图片源
+        banner.setBannerTitles(titleList)//设置标题源
 
-        banner!!.start()
+        banner.start()
 
 
-        banner!!.setOnBannerListener { position ->
+        banner.setOnBannerListener { position ->
             val intent = Intent(activity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
             bundle.putString("url", linkList[position])
@@ -144,10 +144,10 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
     private fun initRecyclerView() {
         articleDataList = ArrayList()
         feedArticleAdapter = ArticleQuickAdapter(activity, articleDataList, "HomeFragment")
-        article_recyclerview!!.addItemDecoration(DividerItemDecoration(activity!!,
+        article_recyclerview.addItemDecoration(DividerItemDecoration(activity!!,
                 DividerItemDecoration.VERTICAL_LIST))
-        article_recyclerview!!.itemAnimator = null
-        article_recyclerview!!.layoutManager = object : LinearLayoutManager(activity) {
+        article_recyclerview.itemAnimator = null
+        article_recyclerview.layoutManager = object : LinearLayoutManager(activity) {
             override fun canScrollVertically(): Boolean {
                 //解决ScrollView里存在多个RecyclerView时滑动卡顿的问题
                 //如果你的RecyclerView是水平滑动的话可以重写canScrollHorizontally方法
@@ -158,12 +158,12 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
         //        project_recyclerview.setNestedScrollingEnabled(false);
         //        project_recyclerview.setHasFixedSize(true);
         //        //解决数据加载完成后, 没有停留在顶部的问题
-        article_recyclerview!!.isFocusable = false
-        article_recyclerview!!.adapter = feedArticleAdapter
+        article_recyclerview.isFocusable = false
+        article_recyclerview.adapter = feedArticleAdapter
         feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             val intent = Intent(activity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
-            bundle.putString("url", articleDataList!![position].link)
+            bundle.putString("url", articleDataList[position].link)
             intent.putExtras(bundle)
             startActivity(intent)
         }
@@ -178,11 +178,11 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
 
     //初始化下拉刷新控件
     private fun initSmartRefreshLayout() {
-        smartRefreshLayout!!.isEnableLoadMore = true
-        smartRefreshLayout!!.isEnableRefresh = false
-        smartRefreshLayout!!.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
-        smartRefreshLayout!!.setEnableFooterFollowWhenLoadFinished(true)
-        smartRefreshLayout!!.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
+        smartRefreshLayout.isEnableLoadMore = true
+        smartRefreshLayout.isEnableRefresh = false
+        smartRefreshLayout.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
+        smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true)
+        smartRefreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
             override fun onLoadMore(refreshLayout: RefreshLayout) {
                 mPresenter!!.onLoadMore()
             }
@@ -194,7 +194,7 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
     }
 
     fun scrollToTop() {
-        scrollview_nested!!.scrollTo(0, 0)
+        scrollview_nested.scrollTo(0, 0)
     }
 
     override fun onResume() {
@@ -213,7 +213,7 @@ class HomeFragment : BaseMvpFragment<HomePresenter, HomeContract.View>(), HomeCo
     override fun showCancelCollectArticleData(id: Int) {
         val position = feedArticleAdapter!!.getPosById(id)
         if (position == -1) return
-        val feedArticleData = articleDataList!![position]
+        val feedArticleData = articleDataList[position]
         feedArticleData.isCollect = false
         feedArticleAdapter!!.setData(position, feedArticleData)
     }

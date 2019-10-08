@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
-
+import butterknife.BindView
 import com.android.learn.R
 import com.android.learn.activity.TodoEditActivity
 import com.android.learn.adapter.DividerItemDecoration
@@ -21,16 +21,10 @@ import com.android.learn.mcontract.TodoContract
 import com.android.learn.mpresenter.TodoPresenter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
-import com.scwang.smartrefresh.layout.api.RefreshLayout
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
-
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-
-import java.util.ArrayList
-
-import butterknife.BindView
+import java.util.*
 
 
 class TodoFragment : BaseMvpFragment<TodoPresenter, TodoContract.View>(), TodoContract.View {
@@ -81,13 +75,13 @@ class TodoFragment : BaseMvpFragment<TodoPresenter, TodoContract.View>(), TodoCo
     private fun initRecyclerView() {
         todoList = ArrayList()
         todoAdapter = TodoQuickAdapter(activity, todoList, fragmentPosition)
-        article_recyclerview!!.addItemDecoration(DividerItemDecoration(activity!!,
+        article_recyclerview.addItemDecoration(DividerItemDecoration(activity!!,
                 DividerItemDecoration.VERTICAL_LIST))
-        article_recyclerview!!.layoutManager = LinearLayoutManager(activity)
+        article_recyclerview.layoutManager = LinearLayoutManager(activity)
 
         //解决数据加载完成后, 没有停留在顶部的问题
-        article_recyclerview!!.isFocusable = false
-        article_recyclerview!!.adapter = todoAdapter
+        article_recyclerview.isFocusable = false
+        article_recyclerview.adapter = todoAdapter
 
         todoAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             var datasBean: DatasBean? = null
@@ -123,11 +117,11 @@ class TodoFragment : BaseMvpFragment<TodoPresenter, TodoContract.View>(), TodoCo
 
     //初始化下拉刷新控件
     private fun initSmartRefreshLayout() {
-        smartRefreshLayout!!.isEnableLoadMore = true
-        smartRefreshLayout!!.isEnableRefresh = false
-        smartRefreshLayout!!.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
-        smartRefreshLayout!!.setEnableFooterFollowWhenLoadFinished(true)
-        smartRefreshLayout!!.setOnLoadMoreListener {
+        smartRefreshLayout.isEnableLoadMore = true
+        smartRefreshLayout.isEnableRefresh = false
+        smartRefreshLayout.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
+        smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true)
+        smartRefreshLayout.setOnLoadMoreListener {
             if (fragmentPosition == 0)
                 mPresenter!!.getListNotDone(0)
             if (fragmentPosition == 1)
@@ -142,33 +136,33 @@ class TodoFragment : BaseMvpFragment<TodoPresenter, TodoContract.View>(), TodoCo
 
     override fun showListNotDone(todoData: TodoData) {
         val newDataList = todoData.datas
-        if (newDataList == null || newDataList.size == 0) {
-            smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
+        if (newDataList.size == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData()
         }
-        smartRefreshLayout!!.finishLoadMore()
-        todoAdapter!!.addData(newDataList!!)
+        smartRefreshLayout.finishLoadMore()
+        todoAdapter!!.addData(newDataList)
 
         if (todoAdapter!!.data.size == 0) {
-            tv_empty_todo!!.visibility = View.VISIBLE
+            tv_empty_todo.visibility = View.VISIBLE
 
         } else
-            tv_empty_todo!!.visibility = View.GONE
+            tv_empty_todo.visibility = View.GONE
     }
 
     override fun showListDone(todoData: TodoData) {
         val newDataList = todoData.datas
-        if (newDataList == null || newDataList.size == 0) {
-            smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
+        if (newDataList.size == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData()
         }
-        smartRefreshLayout!!.finishLoadMore()
+        smartRefreshLayout.finishLoadMore()
 
-        todoAdapter!!.addData(newDataList!!)
+        todoAdapter!!.addData(newDataList)
 
         if (todoAdapter!!.data.size == 0) {
-            tv_empty_todo!!.visibility = View.VISIBLE
-            tv_empty_todo!!.text = getString(R.string.empty_done)
+            tv_empty_todo.visibility = View.VISIBLE
+            tv_empty_todo.text = getString(R.string.empty_done)
         } else
-            tv_empty_todo!!.visibility = View.GONE
+            tv_empty_todo.visibility = View.GONE
 
 
     }
@@ -191,7 +185,7 @@ class TodoFragment : BaseMvpFragment<TodoPresenter, TodoContract.View>(), TodoCo
         }
     }
 
-    override fun showUpdateTodoStatus(baseData: BaseData) {
+    override fun showUpdateTodoStatus(todoData: BaseData) {
         if (fragmentPosition == 0) {
             EventBus.getDefault().post(UpdateDoneEvent())
         }

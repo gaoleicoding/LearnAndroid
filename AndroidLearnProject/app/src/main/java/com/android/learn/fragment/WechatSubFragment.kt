@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
-
+import butterknife.BindView
 import com.android.learn.R
 import com.android.learn.activity.ArticleDetailActivity
 import com.android.learn.adapter.ArticleQuickAdapter
@@ -20,16 +20,10 @@ import com.android.learn.mcontract.WechatSubContract
 import com.android.learn.mpresenter.WechatSubPresenter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
-import com.scwang.smartrefresh.layout.api.RefreshLayout
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
-
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-
-import java.util.ArrayList
-
-import butterknife.BindView
+import java.util.*
 
 
 class WechatSubFragment : BaseMvpFragment<WechatSubPresenter, WechatSubContract.View>(), WechatSubContract.View {
@@ -75,11 +69,11 @@ class WechatSubFragment : BaseMvpFragment<WechatSubPresenter, WechatSubContract.
 
     override fun showWxArticleById(datas: FeedArticleListData) {
         val newDataList = datas.datas
-        if (newDataList == null || newDataList.size == 0) {
-            smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
+        if (newDataList.size == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData()
             return
         }
-        smartRefreshLayout!!.finishLoadMore()
+        smartRefreshLayout.finishLoadMore()
         feedArticleAdapter!!.addData(newDataList)
 
     }
@@ -95,7 +89,7 @@ class WechatSubFragment : BaseMvpFragment<WechatSubPresenter, WechatSubContract.
     override fun showCancelCollectArticleData(id: Int) {
         val position = feedArticleAdapter!!.getPosById(id)
         if (position == -1) return
-        val feedArticleData = articleDataList!![position]
+        val feedArticleData = articleDataList[position]
         feedArticleData.isCollect = false
         feedArticleAdapter!!.setData(position, feedArticleData)
     }
@@ -104,13 +98,13 @@ class WechatSubFragment : BaseMvpFragment<WechatSubPresenter, WechatSubContract.
     private fun initRecyclerView() {
         articleDataList = ArrayList()
         feedArticleAdapter = ArticleQuickAdapter(activity, articleDataList, "WechatSubFragment")
-        article_recyclerview!!.addItemDecoration(DividerItemDecoration(activity!!,
+        article_recyclerview.addItemDecoration(DividerItemDecoration(activity!!,
                 DividerItemDecoration.VERTICAL_LIST))
-        article_recyclerview!!.layoutManager = LinearLayoutManager(activity)
+        article_recyclerview.layoutManager = LinearLayoutManager(activity)
 
         //解决数据加载完成后, 没有停留在顶部的问题
-        article_recyclerview!!.isFocusable = false
-        article_recyclerview!!.adapter = feedArticleAdapter
+        article_recyclerview.isFocusable = false
+        article_recyclerview.adapter = feedArticleAdapter
 
         feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
             val intent = Intent(activity, ArticleDetailActivity::class.java)
@@ -130,11 +124,11 @@ class WechatSubFragment : BaseMvpFragment<WechatSubPresenter, WechatSubContract.
 
     //初始化下拉刷新控件
     private fun initSmartRefreshLayout() {
-        smartRefreshLayout!!.isEnableLoadMore = true
-        smartRefreshLayout!!.isEnableRefresh = false
-        smartRefreshLayout!!.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
-        smartRefreshLayout!!.setEnableFooterFollowWhenLoadFinished(true)
-        smartRefreshLayout!!.setOnLoadMoreListener { mPresenter!!.getWxArtileById(userId) }
+        smartRefreshLayout.isEnableLoadMore = true
+        smartRefreshLayout.isEnableRefresh = false
+        smartRefreshLayout.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
+        smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true)
+        smartRefreshLayout.setOnLoadMoreListener { mPresenter!!.getWxArtileById(userId) }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

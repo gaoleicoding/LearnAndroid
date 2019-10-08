@@ -6,18 +6,14 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 import android.view.View
-
+import butterknife.BindView
 import com.android.learn.R
 import com.android.learn.base.fragment.BaseMvpFragment
-import com.android.learn.base.mmodel.FeedArticleListData
 import com.android.learn.base.mmodel.WxArticle
 import com.android.learn.base.view.colorfultab.ColorClipTabLayout
 import com.android.learn.mcontract.WechatContract
 import com.android.learn.mpresenter.WechatPresenter
-
-import java.util.ArrayList
-
-import butterknife.BindView
+import java.util.*
 
 
 class WechatFragment : BaseMvpFragment<WechatPresenter, WechatContract.View>(), WechatContract.View {
@@ -67,9 +63,9 @@ class WechatFragment : BaseMvpFragment<WechatPresenter, WechatContract.View>(), 
             }
         }
         val adapter = CustomPagerAdapter(fragmentManager, fragmentList)
-        view_pager!!.adapter = adapter
-        view_pager!!.offscreenPageLimit = list.size
-        tab_layout!!.setupWithViewPager(view_pager)
+        view_pager.adapter = adapter
+        view_pager.offscreenPageLimit = list.size
+        tab_layout.setupWithViewPager(view_pager)
         firstSubFragment!!.userId = firstId
         firstSubFragment.loadData()
     }
