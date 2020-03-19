@@ -163,7 +163,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
 
     @Override
     public void showLoginResData(RegisterLoginData data) {
-        UserUtil.setUserInfo(data);
+        UserUtil.get().setUserInfo(data);
         SPUtils.setParam(RegisterLoginActivity.this, "username", et_login_phone_num.getText().toString());
         SPUtils.setParam(RegisterLoginActivity.this, "password", et_login_password.getText().toString());
         finish();

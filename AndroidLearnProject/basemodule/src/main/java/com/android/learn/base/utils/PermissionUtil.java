@@ -17,7 +17,7 @@ PermissionUtil {
     private static String foreverDenyRequestContent = "%s权限 为必要权限,开通才可以正常使用相应功能。\n \n 请点击 \"设置\"-\"权限\"-打开所需权限。";
     public static final int PERMISSION_CODE = 10001;
 
-    public static void gotoDetailSettingIntent(Activity context) {
+    private static void gotoDetailSettingIntent(Activity context) {
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (Build.VERSION.SDK_INT >= 9) {
@@ -83,7 +83,7 @@ PermissionUtil {
         builder.show();
     }
 
-    public static String getContent(String ifForeverDeny, String... permissions) {
+    private static String getContent(String ifForeverDeny, String... permissions) {
         String content = "";
 
         if (permissions.length == 1) {

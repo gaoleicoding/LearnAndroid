@@ -30,7 +30,6 @@ import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 public class CustomApplication extends MultiDexApplication {
     public static ConnectivityManager connectivityManager;
     public static Context context;
-    private static CustomApplication instance;
 
 
     @Override
@@ -44,7 +43,6 @@ public class CustomApplication extends MultiDexApplication {
         connectivityManager = (ConnectivityManager) getApplicationContext()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         context = this;
-        instance = this;
         // LeakCanary.install(this);
         // BlockCanary.install(this, new AppContext()).start();
 
@@ -69,18 +67,7 @@ public class CustomApplication extends MultiDexApplication {
                 .apply();
     }
 
-    public static CustomApplication getInstance() {
-        return instance;
-    }
 
-
-    /**
-     * @return 获取字体缩放比例
-     */
-    public float getFontScale() {
-        int currentIndex = (Integer) SPUtils.getParam(this, "currentIndex", 1);
-        return 1 + currentIndex * 0.1f;
-    }
 
     //static 代码段可以防止内存泄露
     static {

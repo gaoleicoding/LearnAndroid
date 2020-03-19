@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidLearnProject.iml" filepath="$PROJECT_DIR$/AndroidLearnProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidLearnProject-AndroidLearnProject.iml" filepath="$PROJECT_DIR$/AndroidLearnProject-AndroidLearnProject.iml" group="AndroidLearnProject" />
+      <module fileurl="file://$PROJECT_DIR$/app/AndroidLearnProject-app.iml" filepath="$PROJECT_DIR$/app/AndroidLearnProject-app.iml" group="AndroidLearnProject/app" />
+      <module fileurl="file://$PROJECT_DIR$/basemodule/AndroidLearnProject-basemodule.iml" filepath="$PROJECT_DIR$/basemodule/AndroidLearnProject-basemodule.iml" group="AndroidLearnProject/basemodule" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/basemodule/basemodule.iml" filepath="$PROJECT_DIR$/basemodule/basemodule.iml" />
     </modules>

@@ -7,26 +7,35 @@ import org.greenrobot.eventbus.EventBus;
 
 public class UserUtil {
 
-    public static boolean logined = false;
-    public static RegisterLoginData userInfo;
+    private static class InstanceHolder {
+        static UserUtil instance = new UserUtil();
+    }
+    public static UserUtil get() {
+        return InstanceHolder.instance;
+    }
 
-    public static boolean isLogined() {
+    private boolean logined = false;
+    private RegisterLoginData userInfo;
+
+    public boolean isLogined() {
         return logined;
     }
 
-    public static void setLogined(boolean logined) {
-        UserUtil.logined = logined;
+    public void setLogined(boolean logined) {
+        this.logined = logined;
     }
 
-    public static RegisterLoginData getUserInfo() {
+    public RegisterLoginData getUserInfo() {
         return userInfo;
     }
 
-    public static void setUserInfo(RegisterLoginData userInfo) {
-        UserUtil.userInfo = userInfo;
+    public void setUserInfo(RegisterLoginData userInfo) {
+        this.userInfo = userInfo;
         if (userInfo != null) {
             setLogined(true);
-        } else setLogined(false);
+        } else {
+            setLogined(false);
+        }
         LoginEvent accountEvent = new LoginEvent();
         EventBus.getDefault().post(accountEvent);
 

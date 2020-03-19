@@ -105,11 +105,11 @@ public class SettingActivity extends BaseMvpActivity {
                 FontSizeActivity.startActivity(SettingActivity.this);
                 break;
             case R.id.my_logout_layout:
-                if (!UserUtil.isLogined()) {
+                if (!UserUtil.get().isLogined()) {
                     RegisterLoginActivity.startActivity(this);
                     return;
                 }
-                UserUtil.setLogined(false);
+                UserUtil.get().setLogined(false);
                 EventBus.getDefault().post(new LogoutEvent());
                 RetrofitProvider.getInstance().sharedPrefsCookiePersistor.clear();
                 finish();

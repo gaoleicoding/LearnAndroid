@@ -60,7 +60,7 @@ public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter> implem
 
     @Override
     public void showLoginResData(RegisterLoginData loginResData) {
-        UserUtil.setUserInfo(loginResData);
+        UserUtil.get().setUserInfo(loginResData);
         handler.sendEmptyMessageDelayed(0, 1500);
     }
 

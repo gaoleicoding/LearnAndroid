@@ -1,21 +1,11 @@
 package com.android.learn.base.utils;
 
-import android.app.AlarmManager;
-import android.app.Dialog;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.os.Looper;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.WindowManager;
 import android.widget.Toast;
-
 
 import com.android.learn.base.application.CustomApplication;
 

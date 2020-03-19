@@ -27,8 +27,8 @@ import java.util.regex.Pattern;
 
 public class Utils {
 
-    public static Pattern intPattern = Pattern.compile("^[-+]?[0-9]");
-    public static Pattern decimalPattern = Pattern.compile("^[-+]?[0-9]+(\\.[0-9]+)?$");
+    private static Pattern intPattern = Pattern.compile("^[-+]?[0-9]");
+    private static Pattern decimalPattern = Pattern.compile("^[-+]?[0-9]+(\\.[0-9]+)?$");
 
     /**
      * md5 加密
@@ -37,13 +37,13 @@ public class Utils {
      * @return
      */
     public static String md5Encode(String str) {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
         try {
             MessageDigest md5 = MessageDigest.getInstance("MD5");
             md5.update(str.getBytes());
             byte[] bytes = md5.digest();
-            for (int i = 0; i < bytes.length; i++) {
-                String s = Integer.toHexString(bytes[i] & 0xff);
+            for (byte aByte : bytes) {
+                String s = Integer.toHexString(aByte & 0xff);
                 if (s.length() == 1) {
                     buf.append("0");
                 }

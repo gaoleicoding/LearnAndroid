@@ -2,16 +2,12 @@ package com.android.learn.base.mmodel;
 
 import java.util.List;
 
-/**
- * @author quchao
- * @date 2018/2/26
- */
 
 public class RegisterLoginData extends BaseData {
 
    public Data data;
 
-    public class Data {
+    public static class Data {
         public String username;
         public String password;
         public String email, icon, token;
