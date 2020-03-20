@@ -15,7 +15,7 @@ import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.RegisterLoginData;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
-import com.android.learn.base.utils.account.UserUtil;
+import com.android.manager.UserInfoManager;
 import com.android.learn.mcontract.RegisterLoginContract;
 import com.android.learn.mpresenter.RegisterLoginPresenter;
 
@@ -163,7 +163,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
 
     @Override
     public void showLoginResData(RegisterLoginData data) {
-        UserUtil.get().setUserInfo(data);
+        UserInfoManager.get().setUserInfo(data);
         SPUtils.setParam(RegisterLoginActivity.this, "username", et_login_phone_num.getText().toString());
         SPUtils.setParam(RegisterLoginActivity.this, "password", et_login_password.getText().toString());
         finish();

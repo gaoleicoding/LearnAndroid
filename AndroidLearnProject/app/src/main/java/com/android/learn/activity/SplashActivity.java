@@ -11,7 +11,7 @@ import com.android.learn.R;
 import com.android.learn.base.activity.BaseMvpActivity;
 import com.android.learn.base.mmodel.RegisterLoginData;
 import com.android.learn.base.utils.SPUtils;
-import com.android.learn.base.utils.account.UserUtil;
+import com.android.manager.UserInfoManager;
 import com.android.learn.mcontract.SplashLoginContract;
 import com.android.learn.mpresenter.SplashLoginPresenter;
 import com.jaeger.library.StatusBarUtil;
@@ -60,7 +60,7 @@ public class SplashActivity extends BaseMvpActivity<SplashLoginPresenter> implem
 
     @Override
     public void showLoginResData(RegisterLoginData loginResData) {
-        UserUtil.get().setUserInfo(loginResData);
+        UserInfoManager.get().setUserInfo(loginResData);
         handler.sendEmptyMessageDelayed(0, 1500);
     }
 

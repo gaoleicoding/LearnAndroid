@@ -1,16 +1,16 @@
-package com.android.learn.base.utils.account;
+package com.android.manager;
 
 import com.android.learn.base.event.LoginEvent;
 import com.android.learn.base.mmodel.RegisterLoginData;
 
 import org.greenrobot.eventbus.EventBus;
 
-public class UserUtil {
+public class UserInfoManager {
 
     private static class InstanceHolder {
-        static UserUtil instance = new UserUtil();
+        static UserInfoManager instance = new UserInfoManager();
     }
-    public static UserUtil get() {
+    public static UserInfoManager get() {
         return InstanceHolder.instance;
     }
 

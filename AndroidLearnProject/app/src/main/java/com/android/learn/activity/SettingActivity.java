@@ -19,7 +19,7 @@ import com.android.learn.base.mpresenter.BasePresenter;
 import com.android.learn.base.thirdframe.retrofit.RetrofitProvider;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
-import com.android.learn.base.utils.account.UserUtil;
+import com.android.manager.UserInfoManager;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -105,11 +105,11 @@ public class SettingActivity extends BaseMvpActivity {
                 FontSizeActivity.startActivity(SettingActivity.this);
                 break;
             case R.id.my_logout_layout:
-                if (!UserUtil.get().isLogined()) {
+                if (!UserInfoManager.get().isLogined()) {
                     RegisterLoginActivity.startActivity(this);
                     return;
                 }
-                UserUtil.get().setLogined(false);
+                UserInfoManager.get().setLogined(false);
                 EventBus.getDefault().post(new LogoutEvent());
                 RetrofitProvider.getInstance().sharedPrefsCookiePersistor.clear();
                 finish();

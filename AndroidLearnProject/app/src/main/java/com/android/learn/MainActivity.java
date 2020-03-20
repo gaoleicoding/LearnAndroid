@@ -578,7 +578,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
         mIatResults.put(sn, text);
 
-        StringBuffer resultBuffer = new StringBuffer();
+        StringBuilder resultBuffer = new StringBuilder();
         for (String key : mIatResults.keySet()) {
             resultBuffer.append(mIatResults.get(key));
         }

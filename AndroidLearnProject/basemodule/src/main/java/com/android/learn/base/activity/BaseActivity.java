@@ -10,7 +10,6 @@ import android.view.View;
 
 import com.android.learn.base.application.CustomApplication;
 import com.android.learn.base.utils.ExitAppUtils;
-import com.android.learn.base.utils.FontUtil;
 import com.android.learn.base.utils.LogUtil;
 import com.android.learn.base.utils.SPUtils;
 import com.gaolei.basemodule.R;
@@ -121,7 +120,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
             final Resources res = newBase.getResources();
             final Configuration config = res.getConfiguration();
-            config.fontScale = FontUtil.getFontScale();//1 设置正常字体大小的倍数
+            config.fontScale = getFontScale();//1 设置正常字体大小的倍数
             final Context newContext = newBase.createConfigurationContext(config);
             super.attachBaseContext(newContext);
         } else {
@@ -135,7 +134,7 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
         Resources res = super.getResources();
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
             Configuration config = res.getConfiguration();
-            config.fontScale = FontUtil.getFontScale();//1 设置正常字体大小的倍数
+            config.fontScale = getFontScale();//1 设置正常字体大小的倍数
             res.updateConfiguration(config, res.getDisplayMetrics());
         }
         return res;
@@ -234,5 +233,10 @@ public abstract class BaseActivity extends BasePermisssionActivity implements Vi
             StatusBarUtil.setColorForSwipeBack(this, getResources().getColor(R.color.app_color_night), 0);
         } else
             StatusBarUtil.setColorForSwipeBack(this, getResources().getColor(R.color.app_color), 0);
+    }
+
+    public  float getFontScale() {
+        int currentIndex = (Integer) SPUtils.getParam(CustomApplication.context, "currentIndex", 1);
+        return 1 + currentIndex * 0.1f;
     }
 }

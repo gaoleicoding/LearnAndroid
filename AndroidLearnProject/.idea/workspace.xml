@@ -11,33 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38d2ecd2-0ade-4dff-9144-561070deca67" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ContextUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/FontUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_gl_gaolei_Android_GitHub_AndroidLearnProject_AndroidLearnProject_basemodule_libs_Msc_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars_____basemodule_libs_Msc_jar_unspecified_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_gl_gaolei_Android_GitHub_AndroidLearnProject_AndroidLearnProject_basemodule_libs_Sunflower_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars_____basemodule_libs_Sunflower_jar_unspecified_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_gl_gaolei_Android_GitHub_AndroidLearnProject_AndroidLearnProject_basemodule_libs_activation_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars_____basemodule_libs_activation_jar_unspecified_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_gl_gaolei_Android_GitHub_AndroidLearnProject_AndroidLearnProject_basemodule_libs_additionnal_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars_____basemodule_libs_additionnal_jar_unspecified_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_gl_gaolei_Android_GitHub_AndroidLearnProject_AndroidLearnProject_basemodule_libs_mail_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars_____basemodule_libs_mail_jar_unspecified_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/RegisterLoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/RegisterLoginData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/CrashHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/CrashHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/CustomCrashHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/DialogUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ErrorLogSave.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/LanguageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/LanguageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/NetUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/NetUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/account/UserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/account/UserUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +20,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="c8fdc26f" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />

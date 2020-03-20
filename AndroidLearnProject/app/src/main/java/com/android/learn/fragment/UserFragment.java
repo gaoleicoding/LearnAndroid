@@ -15,7 +15,7 @@ import com.android.learn.base.event.LogoutEvent;
 import com.android.learn.base.fragment.BaseMvpFragment;
 import com.android.learn.base.utils.SPUtils;
 import com.android.learn.base.utils.Utils;
-import com.android.learn.base.utils.account.UserUtil;
+import com.android.manager.UserInfoManager;
 import com.android.learn.mcontract.UserInfoContract;
 import com.android.learn.mpresenter.UserInfoPresenter;
 import com.bumptech.glide.Glide;
@@ -50,7 +50,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
     public void click(View view) {
         switch (view.getId()) {
             case R.id.my_collect_layout:
-                if (!UserUtil.get().isLogined()) {
+                if (!UserInfoManager.get().isLogined()) {
                     RegisterLoginActivity.startActivity(getActivity());
                     Utils.showToast(getString(R.string.user_not_login), true);
                     return;
@@ -65,7 +65,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
                 break;
 
             case R.id.iv_user_photo:
-                if (!UserUtil.get().isLogined()) {
+                if (!UserInfoManager.get().isLogined()) {
                     RegisterLoginActivity.startActivity(getActivity());
                 }
         }
@@ -102,12 +102,12 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
 
 
     public void refreshUserInfo() {
-        if (UserUtil.get().getUserInfo() == null) return;
-        if (UserUtil.get().isLogined()) {
-            String username = UserUtil.get().getUserInfo().data.username;
+        if (UserInfoManager.get().getUserInfo() == null) return;
+        if (UserInfoManager.get().isLogined()) {
+            String username = UserInfoManager.get().getUserInfo().data.username;
             if (tv_user_profile_not_login != null)
                 tv_user_profile_not_login.setText(username);
-            String photoUrl = UserUtil.get().getUserInfo().data.icon;
+            String photoUrl = UserInfoManager.get().getUserInfo().data.icon;
             if (photoUrl != null) {
                 RequestOptions options = new RequestOptions().placeholder(R.drawable.user_default_photo);
                 if(iv_user_photo!=null)
@@ -126,7 +126,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
         SPUtils.clear(getActivity(), "password");
         mPresenter.getLogoutData();
         RegisterLoginActivity.startActivity(getActivity());
-        UserUtil.get().setUserInfo(null);
+        UserInfoManager.get().setUserInfo(null);
     }
 
     @Override

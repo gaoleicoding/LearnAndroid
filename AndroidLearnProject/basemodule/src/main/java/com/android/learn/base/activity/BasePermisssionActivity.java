@@ -58,27 +58,25 @@ public class BasePermisssionActivity extends FragmentActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         boolean hasAllGranted = true;
 
-        switch (requestCode) {
-            case PERMISSION_CODE: {
-                for (int i = 0; i < grantResults.length; ++i) {
-                    if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                        hasAllGranted = false;
-                        //在用户已经拒绝授权的情况下，如果shouldShowRequestPermissionRationale返回false则
-                        // 可以推断出用户选择了“不在提示”选项，在这种情况下需要引导用户至设置页手动授权
-                        if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
-                            PermissionUtil.requestForeverDenyDialog(BasePermisssionActivity.this, permissions);
+        if (requestCode == PERMISSION_CODE) {
+            for (int i = 0; i < grantResults.length; ++i) {
+                if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
+                    hasAllGranted = false;
+                    //在用户已经拒绝授权的情况下，如果shouldShowRequestPermissionRationale返回false则
+                    // 可以推断出用户选择了“不在提示”选项，在这种情况下需要引导用户至设置页手动授权
+                    if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
+                        PermissionUtil.requestForeverDenyDialog(BasePermisssionActivity.this, permissions);
 
-                        } else {
-                            PermissionUtil.requestDenyDialog(BasePermisssionActivity.this, permissions);
+                    } else {
+                        PermissionUtil.requestDenyDialog(BasePermisssionActivity.this, permissions);
 
-                            //用户拒绝权限请求，但未选中“不再提示”选项
-                        }
-                        mRequestPermissionCallBack.denied();
+                        //用户拒绝权限请求，但未选中“不再提示”选项
                     }
+                    mRequestPermissionCallBack.denied();
                 }
-                if (grantResults.length > 0 && hasAllGranted) {
-                    mRequestPermissionCallBack.granted();
-                }
+            }
+            if (grantResults.length > 0 && hasAllGranted) {
+                mRequestPermissionCallBack.granted();
             }
         }
     }
