@@ -3,6 +3,10 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9466ce955c5d27ff14d581b04311ed3b/SVGAPlayer-Android-2.4.7/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9466ce955c5d27ff14d581b04311ed3b/SVGAPlayer-Android-2.4.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9466ce955c5d27ff14d581b04311ed3b/SVGAPlayer-Android-2.4.7/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9973ee98bf06861f326d3a559443e44b/SVGAPlayer-Android-2.4.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9973ee98bf06861f326d3a559443e44b/SVGAPlayer-Android-2.4.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9973ee98bf06861f326d3a559443e44b/SVGAPlayer-Android-2.4.7/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -35,12 +35,9 @@ ext {
     event_bus = 'org.greenrobot:eventbus:3.1.1'
     eventbus_annotation_processor = 'org.greenrobot:eventbus-annotation-processor:3.1.1'
 
-    greendao = 'org.greenrobot:greendao:3.2.0'
+    greendao = 'org.greenrobot:greendao:3.3.0'
     BaseRecyclerViewAdapterHelper = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     customactivityoncrash = 'cat.ereza:customactivityoncrash:2.2.0'
-
-
-    leakcanary = 'com.squareup.leakcanary:leakcanary-android:1.3'
 
     PersistentCookieJar = 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
     umeng_common = 'com.umeng.sdk:common:1.5.0'
@@ -56,7 +53,6 @@ ext {
     infinitecycleviewpager = 'com.github.devlight:infinitecycleviewpager:1.0.2'
     SVGAPlayer_Android = 'com.github.yyued:SVGAPlayer-Android:2.4.7'
     flowlayout = 'cn.lankton:flowlayout:1.0.1'
-    greendao = 'org.greenrobot:greendao:3.2.2'
     bga_swipebacklayout = 'cn.bingoogolapple:bga-swipebacklayout:1.2.0'
 
 }

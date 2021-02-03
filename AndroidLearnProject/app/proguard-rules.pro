@@ -79,7 +79,7 @@
     native <methods>;
 }
 #所有model类不要混淆。
--keep class com.android.learn.base.mmodel.**{*;}
+-keep class com.android.learn.base.mmodel.*{*;}
 # 保留我们自定义控件（继承自View）不被混淆
 -keep public class * extends android.view.View{
     *** get*();
@@ -114,23 +114,22 @@
 }
 
 # webView处理，项目中没有使用到webView忽略即可
--keepclassmembers class fqcn.of.javascript.interface.for.webview {
-    public *;
-}
--keepclassmembers class * extends android.webkit.webViewClient {
+
+-keepclassmembers class * extends android.webkit.WebViewClient {
     public void *(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
     public boolean *(android.webkit.WebView, java.lang.String);
 }
--keepclassmembers class * extends android.webkit.webViewClient {
-    public void *(android.webkit.webView, jav.lang.String);
+-keepclassmembers class * extends android.webkit.WebViewClient {
+    public void *(android.webkit.WebView, java.lang.String);
 }
 
 # glide
--keep public class * implements com.bumptech.glide.module.GlideModule
--keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public class * implements com.bumptech.glide.module.AppGlideModule
+-keep public class * implements com.bumptech.glide.module.LibraryGlideModule
+-keep class com.bumptech.glide.* { *; }
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
-  **[] $VALUES;
-  public *;
+    **[] $VALUES;
+    public *;
 }
 # for DexGuard only
 #-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
@@ -139,8 +138,8 @@
 
 -dontwarn okio.**
 -dontwarn com.squareup.okhttp3.**
--keep class com.squareup.okhttp3.** { *; }
--keep interface com.squareup.okhttp3.** { *; }
+-keep class com.squareup.okhttp3.* { *; }
+-keep interface com.squareup.okhttp3.* { *; }
 -dontwarn javax.annotation.Nullable
 -dontwarn javax.annotation.ParametersAreNonnullByDefault
 
@@ -149,11 +148,11 @@
 -dontwarn javax.inject.**
 # OkHttp3
 -dontwarn okhttp3.logging.**
--keep class okhttp3.internal.**{*;}
+-keep class okhttp3.internal.*{*;}
 -dontwarn okio.**
 # Retrofit
 -dontwarn retrofit2.**
--keep class retrofit2.** { *; }
+-keep class retrofit2.* { *; }
 -keepattributes Signature
 -keepattributes Exceptions
 # RxJava RxAndroid
@@ -162,22 +161,17 @@
     long producerIndex;
     long consumerIndex;
 }
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode producerNode;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode consumerNode;
-}
+
 
 # Gson
--keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.stream.* { *; }
 -keepattributes EnclosingMethod
 #改成自己的实体类包
--keep class com.android.learn.base.mmodel.**{*;}
+-keep class com.android.learn.base.mmodel.*{*;}
 
 
 # ButterKnife
--keep class butterknife.** { *;}
+-keep class butterknife.* { *;}
 -dontwarn butterknife.internal.**
 -keep class **$$ViewBinder { *;}
 -keepclasseswithmembernames class * {
@@ -201,7 +195,7 @@
 
 #greendao3.2.0,此是针对3.2.0，如果是之前的，可能需要更换下包名
 # # -------------------------------------------
--keep class org.greenrobot.greendao.**{*;}
+-keep class org.greenrobot.greendao.*{*;}
 -keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
 public static java.lang.String TABLENAME;
 }
@@ -209,7 +203,7 @@ public static java.lang.String TABLENAME;
 
 
 #友盟
--keep class com.umeng.** {*;}
+-keep class com.umeng.* {*;}
 -keepclassmembers class * {
    public <init> (org.json.JSONObject);
 }
@@ -221,5 +215,9 @@ public static java.lang.String TABLENAME;
 public static final int *;
 }
 #讯飞
--keep class com.iflytek.**{*;}
+-keep class com.iflytek.*{*;}
 -keepattributes Signature
+#svg动画
+-keep class com.squareup.wire.* { *; }
+-keep class com.opensource.svgaplayer.proto.* { *; }
+

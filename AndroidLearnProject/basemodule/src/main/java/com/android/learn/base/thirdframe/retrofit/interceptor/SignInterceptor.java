@@ -45,7 +45,7 @@ public final class SignInterceptor implements Interceptor {
 
         //header add version
         Request.Builder requestBuilder = request.newBuilder();
-        requestBuilder.addHeader("version", BuildConfig.VERSION_NAME);
+        requestBuilder.addHeader("version", "110");
         requestBuilder.addHeader("platform", "ANDROID");
 
         if (!request.method().equals("POST")) {

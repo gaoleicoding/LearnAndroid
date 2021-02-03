@@ -3,6 +3,10 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/db4b8d48f09db12dd496c78664879d1b/xskinloader-0.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/db4b8d48f09db12dd496c78664879d1b/xskinloader-0.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/db4b8d48f09db12dd496c78664879d1b/xskinloader-0.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3681c47e77c56955be9afb6c1922a51c/xskinloader-0.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3681c47e77c56955be9afb6c1922a51c/xskinloader-0.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3681c47e77c56955be9afb6c1922a51c/xskinloader-0.1.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.windysha.xskinloader/xskinloader/0.1.0/bbc036e50e1adabaf444121ae3c699b714df8094/xskinloader-0.1.0-javadoc.jar!/" />

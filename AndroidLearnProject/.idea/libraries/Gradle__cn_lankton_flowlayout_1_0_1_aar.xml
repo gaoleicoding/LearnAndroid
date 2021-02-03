@@ -3,6 +3,10 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fdd89b4330000c6c13b0053d570f874e/flowlayout-1.0.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fdd89b4330000c6c13b0053d570f874e/flowlayout-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fdd89b4330000c6c13b0053d570f874e/flowlayout-1.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/40f2e03d44de716f938ee4bfe9144869/flowlayout-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/40f2e03d44de716f938ee4bfe9144869/flowlayout-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/40f2e03d44de716f938ee4bfe9144869/flowlayout-1.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.lankton/flowlayout/1.0.1/f244b933b1da1313783e6d71213744a889d4fdd0/flowlayout-1.0.1-javadoc.jar!/" />

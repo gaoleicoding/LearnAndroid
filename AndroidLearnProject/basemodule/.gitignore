@@ -10,4 +10,4 @@ output/
 
 # android studio
 *.iml
-.idea
+.idea/

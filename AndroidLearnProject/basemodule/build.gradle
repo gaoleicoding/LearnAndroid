@@ -8,7 +8,6 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -61,7 +60,7 @@ dependencies {
     // glide
     api rootProject.glide
     annotationProcessor rootProject.glide_compiler
-
+    implementation"com.github.bumptech.glide:okhttp3-integration:4.6.0"
     // banner
     api rootProject.banner
 
@@ -69,10 +68,6 @@ dependencies {
     api rootProject.rxjava
     api rootProject.rxandroid
     api rootProject.adapter_rxjava2
-
-    // dagger2
-    api rootProject.dagger
-    annotationProcessor rootProject.dagger_compiler
 
     // eventbus
     api rootProject.event_bus
@@ -111,4 +106,6 @@ dependencies {
     //   换肤框架，不必重启应用
     api 'com.windysha.xskinloader:xskinloader:0.1.0'
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    api 'jp.wasabeef:glide-transformations:4.0.1'
 }

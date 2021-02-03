@@ -40,19 +40,20 @@ public class CustomProgressDialog {
         return loadingDialog;
 
     }
-
+    //TODO:解决崩溃
     public static void show(Activity activity) {
-        if (loadingDialog != null) return;
-        if (loadingDialog != null && loadingDialog.isShowing()) return;
-        loadingDialog = CustomProgressDialog.createLoadingDialog(activity);
-        loadingDialog.show();//显示
+//        if (activity == null || activity.isFinishing()) return;
+//        if (loadingDialog == null) {
+//            loadingDialog = CustomProgressDialog.createLoadingDialog(activity);
+//        }
+//        loadingDialog.show();//显示
     }
 
     public static void cancel() {
-        if (loadingDialog != null) {
-            loadingDialog.cancel();
-            loadingDialog = null;
-        }
+//        if (loadingDialog != null) {
+//            loadingDialog.cancel();
+//            loadingDialog = null;
+//        }
     }
 }
 

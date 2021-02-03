@@ -3,6 +3,10 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2a6c67acd9b9e7996c3425f50f3d90b9/SmartRefreshLayout-1.0.5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2a6c67acd9b9e7996c3425f50f3d90b9/SmartRefreshLayout-1.0.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2a6c67acd9b9e7996c3425f50f3d90b9/SmartRefreshLayout-1.0.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35ed20be377b6075d7ab6c2e9b594052/SmartRefreshLayout-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35ed20be377b6075d7ab6c2e9b594052/SmartRefreshLayout-1.0.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35ed20be377b6075d7ab6c2e9b594052/SmartRefreshLayout-1.0.5/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scwang.smartrefresh/SmartRefreshLayout/1.0.5/853ff407de3251e9e1b00e39db05c52e96ad912c/SmartRefreshLayout-1.0.5-javadoc.jar!/" />

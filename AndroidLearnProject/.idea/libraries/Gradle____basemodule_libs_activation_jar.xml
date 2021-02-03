@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./basemodule/libs/activation.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/basemodule/libs/activation.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

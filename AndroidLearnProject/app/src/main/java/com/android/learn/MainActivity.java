@@ -258,7 +258,8 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             //默认选中的Tab
             viewPager.setCurrentItem(0);
 //            tabLayout.getTabAt(0).getCustomView().setSelected(true);
-            loadAnimation();
+            //TODO:恢复动画
+//            loadAnimation();
 
         }
 

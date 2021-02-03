@@ -3,9 +3,9 @@ package com.android.learn.base.thirdframe.glide;
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.android.learn.base.thirdframe.glide.transformation.RoundedCornersTransformation;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 
 
@@ -22,6 +22,8 @@ public class ImageLoader {
             options = new RequestOptions()
 //                .placeholder(R.drawable.ic_launcher)// 正在加载中的图片
 //                .error(R.drawable.video_error) // 加载失败的图片
+                    .transform(new RoundedCornersTransformation(1, 0))
+//                    .transform(new GrayscaleTransformation())
                     .diskCacheStrategy(DiskCacheStrategy.ALL); // 磁盘缓存策略
 
         }
@@ -35,9 +37,11 @@ public class ImageLoader {
      * @param url     image url
      * @param iv      imageView
      */
-    public  void load(Context context, String url, ImageView iv) {
+    public void load(Context context, String url, ImageView iv) {
 
-        Glide.with(context).load(url).apply(options).transition(new DrawableTransitionOptions().crossFade(500))
+        Glide.with(context)
+                .load(url)
+                .apply(options)
                 .into(iv);
     }
 }
