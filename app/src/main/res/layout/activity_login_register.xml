@@ -38,12 +38,11 @@
                 skin:enable="true" />
 
             <EditText
-                android:id="@+id/et_login_phone_num"
+                android:id="@+id/et_login_name"
                 style="@style/edit_match_style"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginTop="10dp"
-                android:inputType="number"
                 skin:enable="true" />
         </LinearLayout>
 
@@ -112,10 +111,9 @@
         android:visibility="gone">
 
         <EditText
-            android:id="@+id/et_register_phone_num"
+            android:id="@+id/et_register_name"
             style="@style/edit_match_style"
             android:hint="@string/phone_account"
-            android:inputType="number"
             skin:enable="true"/>
 
         <EditText

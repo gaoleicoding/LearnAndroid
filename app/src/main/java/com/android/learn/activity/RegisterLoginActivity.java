@@ -42,8 +42,8 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
     LinearLayout layout_register;
 
 
-    @BindView(R.id.et_register_phone_num)
-    EditText et_register_phone_num;
+    @BindView(R.id.et_register_name)
+    EditText et_register_name;
 
     @BindView(R.id.et_register_password)
     EditText et_register_password;
@@ -51,8 +51,8 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
     EditText et_register_confirm_password;
 
 
-    @BindView(R.id.et_login_phone_num)
-    EditText et_login_phone_num;
+    @BindView(R.id.et_login_name)
+    EditText et_login_name;
     @BindView(R.id.et_login_password)
     EditText et_login_password;
 
@@ -82,7 +82,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
                 back();
                 break;
             case R.id.tv_login:
-                String username = et_login_phone_num.getText().toString();
+                String username = et_login_name.getText().toString();
                 String password = et_login_password.getText().toString();
                 mPresenter.login(username, password);
                 break;
@@ -95,7 +95,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
             case R.id.tv_register:
                 registerFlag = "tv_register";
 
-                username = et_register_phone_num.getText().toString().trim();
+                username = et_register_name.getText().toString().trim();
                 password = et_register_password.getText().toString().trim();
                 String confirmPassword = et_register_confirm_password.getText().toString().trim();
 
@@ -164,7 +164,7 @@ public class RegisterLoginActivity extends BaseMvpActivity<RegisterLoginPresente
     @Override
     public void showLoginResData(RegisterLoginData data) {
         UserInfoManager.get().setUserInfo(data);
-        SPUtils.setParam(RegisterLoginActivity.this, "username", et_login_phone_num.getText().toString());
+        SPUtils.setParam(RegisterLoginActivity.this, "username", et_login_name.getText().toString());
         SPUtils.setParam(RegisterLoginActivity.this, "password", et_login_password.getText().toString());
         finish();
     }
