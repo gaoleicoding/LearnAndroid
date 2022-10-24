@@ -265,7 +265,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
     }
 
-    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search, R.id.tv_search_clear, R.id.iv_speech_search})
+    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search, R.id.cardview_search,R.id.tv_search_clear, R.id.iv_speech_search})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.title:
@@ -280,9 +280,8 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 iv_svga.stopAnimation();
                 iv_svga.setVisibility(View.GONE);
                 break;
+            case R.id.cardview_search:
             case R.id.iv_search_back:
-                SearchViewUtils.handleToolBar(getApplicationContext(), cardview_search, et_search);
-                break;
             case R.id.iv_search:
                 SearchViewUtils.handleToolBar(getApplicationContext(), cardview_search, et_search);
                 isSearching = true;
