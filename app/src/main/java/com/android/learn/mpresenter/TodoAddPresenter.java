@@ -1,10 +1,10 @@
 package com.android.learn.mpresenter;
 
 
-import com.android.learn.base.mmodel.BaseData;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.thirdframe.rxjava.BaseObserver;
-import com.android.learn.base.utils.ResponseStatusUtil;
+import com.android.base.mmodel.BaseData;
+import com.android.base.mpresenter.BasePresenter;
+import com.android.base.thirdframe.rxjava.BaseObserver;
+import com.android.base.utils.ResponseStatusUtil;
 import com.android.learn.mcontract.TodoAddContract;
 
 import java.util.Map;

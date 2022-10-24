@@ -1,8 +1,8 @@
 package com.android.learn.mcontract;
 
-import com.android.learn.base.mmodel.BannerListData;
-import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData;
-import com.android.learn.base.mmodel.FeedArticleListData;
+import com.android.base.mmodel.BannerListData;
+import com.android.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.base.mmodel.FeedArticleListData;
 
 /**
  * Created by gaolei on 2018/6/18.

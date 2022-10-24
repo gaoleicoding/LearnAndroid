@@ -12,8 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.mpresenter.BasePresenter;
+import com.android.base.activity.BaseMvpActivity;
+import com.android.base.mpresenter.BasePresenter;
 import com.android.learn.fragment.TodoFragment;
 import com.android.learn.view.CustomViewPager;
 

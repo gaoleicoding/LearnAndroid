@@ -8,9 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.android.learn.R;
-import com.android.learn.base.fragment.BaseMvpFragment;
-import com.android.learn.base.mmodel.WxArticle;
-import com.android.learn.base.view.colorfultab.ColorClipTabLayout;
+import com.android.base.fragment.BaseMvpFragment;
+import com.android.base.mmodel.WxArticle;
+import com.android.base.view.colorfultab.ColorClipTabLayout;
 import com.android.learn.mcontract.WechatContract;
 import com.android.learn.mpresenter.WechatPresenter;
 

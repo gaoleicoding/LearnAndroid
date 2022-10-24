@@ -6,7 +6,7 @@
 
     <uses-sdk tools:overrideLibrary="cn.lankton.flowlayout" />
     <application
-        android:name=".base.application.CustomApplication"
+        android:name="com.android.base.application.CustomApplication"
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"

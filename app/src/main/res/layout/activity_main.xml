@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.android.learn.base.view.TitleView
+        <com.android.base.view.TitleView
             android:id="@+id/header_layout"
             android:layout_width="match_parent"
             android:layout_height="42dp" />

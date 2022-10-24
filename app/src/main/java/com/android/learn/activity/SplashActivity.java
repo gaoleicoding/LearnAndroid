@@ -8,9 +8,9 @@ import android.view.View;
 
 import com.android.learn.MainActivity;
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.mmodel.RegisterLoginData;
-import com.android.learn.base.utils.SPUtils;
+import com.android.base.activity.BaseMvpActivity;
+import com.android.base.mmodel.RegisterLoginData;
+import com.android.base.utils.SPUtils;
 import com.android.manager.UserInfoManager;
 import com.android.learn.mcontract.SplashLoginContract;
 import com.android.learn.mpresenter.SplashLoginPresenter;

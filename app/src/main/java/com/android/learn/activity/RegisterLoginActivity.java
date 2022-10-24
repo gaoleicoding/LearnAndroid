@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.mmodel.RegisterLoginData;
-import com.android.learn.base.utils.SPUtils;
-import com.android.learn.base.utils.Utils;
+import com.android.base.activity.BaseMvpActivity;
+import com.android.base.mmodel.RegisterLoginData;
+import com.android.base.utils.SPUtils;
+import com.android.base.utils.Utils;
 import com.android.manager.UserInfoManager;
 import com.android.learn.mcontract.RegisterLoginContract;
 import com.android.learn.mpresenter.RegisterLoginPresenter;

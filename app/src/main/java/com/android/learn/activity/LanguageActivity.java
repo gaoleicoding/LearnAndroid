@@ -9,12 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.event.RestartMainEvent;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.utils.LanguageUtil;
-import com.android.learn.base.utils.LogUtil;
-import com.android.learn.base.utils.SPUtils;
+import com.android.base.activity.BaseMvpActivity;
+import com.android.base.event.RestartMainEvent;
+import com.android.base.mpresenter.BasePresenter;
+import com.android.base.utils.LanguageUtil;
+import com.android.base.utils.LogUtil;
+import com.android.base.utils.SPUtils;
 
 import org.greenrobot.eventbus.EventBus;
 

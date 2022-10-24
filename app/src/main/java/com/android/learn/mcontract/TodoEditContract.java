@@ -1,7 +1,6 @@
 package com.android.learn.mcontract;
 
-import com.android.learn.base.mmodel.BaseData;
-import com.android.learn.base.mmodel.TodoData;
+import com.android.base.mmodel.BaseData;
 
 import java.util.Map;
 

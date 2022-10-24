@@ -11,14 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.event.ChangeNightEvent;
-import com.android.learn.base.event.LogoutEvent;
-import com.android.learn.base.event.RestartMainEvent;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.thirdframe.retrofit.RetrofitProvider;
-import com.android.learn.base.utils.SPUtils;
-import com.android.learn.base.utils.Utils;
+import com.android.base.activity.BaseMvpActivity;
+import com.android.base.event.ChangeNightEvent;
+import com.android.base.event.LogoutEvent;
+import com.android.base.event.RestartMainEvent;
+import com.android.base.mpresenter.BasePresenter;
+import com.android.base.thirdframe.retrofit.RetrofitProvider;
+import com.android.base.utils.SPUtils;
+import com.android.base.utils.Utils;
 import com.android.manager.UserInfoManager;
 
 import org.greenrobot.eventbus.EventBus;

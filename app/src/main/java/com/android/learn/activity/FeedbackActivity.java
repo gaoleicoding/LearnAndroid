@@ -19,10 +19,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.email.MailSender;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.utils.Utils;
+import com.android.base.activity.BaseMvpActivity;
+import com.android.base.email.MailSender;
+import com.android.base.mpresenter.BasePresenter;
+import com.android.base.utils.Utils;
 
 import butterknife.BindView;
 import butterknife.OnClick;

@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.view.Html5Webview;
+import com.android.base.activity.BaseMvpActivity;
+import com.android.base.mpresenter.BasePresenter;
+import com.android.base.view.Html5Webview;
 
 import butterknife.BindView;
 import butterknife.OnClick;

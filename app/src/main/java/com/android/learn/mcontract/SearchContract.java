@@ -1,9 +1,6 @@
 package com.android.learn.mcontract;
 
-import com.android.learn.base.mmodel.FeedArticleListData;
-import com.android.learn.base.mmodel.HotKeyData;
-
-import java.util.List;
+import com.android.base.mmodel.FeedArticleListData;
 
 /**
  * Created by gaolei on 2018/6/18.

@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.android.learn.base.view.TitleView
+    <com.android.base.view.TitleView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.android.learn.base.view.Html5Webview
+    <com.android.base.view.Html5Webview
         android:id="@+id/webview_article"
         android:layout_width="match_parent"
         style="?android:attr/webViewStyle"

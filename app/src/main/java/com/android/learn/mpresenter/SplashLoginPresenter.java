@@ -1,10 +1,10 @@
 package com.android.learn.mpresenter;
 
-import com.android.learn.base.mmodel.RegisterLoginData;
-import com.android.learn.base.mpresenter.BasePresenter;
-import com.android.learn.base.thirdframe.retrofit.ApiService;
-import com.android.learn.base.thirdframe.retrofit.RetrofitProvider;
-import com.android.learn.base.thirdframe.rxjava.BaseObserver;
+import com.android.base.mmodel.RegisterLoginData;
+import com.android.base.mpresenter.BasePresenter;
+import com.android.base.thirdframe.retrofit.ApiService;
+import com.android.base.thirdframe.retrofit.RetrofitProvider;
+import com.android.base.thirdframe.rxjava.BaseObserver;
 import com.android.learn.mcontract.SplashLoginContract;
 
 import io.reactivex.Observable;

@@ -79,7 +79,7 @@
     native <methods>;
 }
 #所有model类不要混淆。
--keep class com.android.learn.base.mmodel.*{*;}
+-keep class com.android.base.mmodel.*{*;}
 # 保留我们自定义控件（继承自View）不被混淆
 -keep public class * extends android.view.View{
     *** get*();
@@ -167,7 +167,7 @@
 -keep class com.google.gson.stream.* { *; }
 -keepattributes EnclosingMethod
 #改成自己的实体类包
--keep class com.android.learn.base.mmodel.*{*;}
+-keep class com.android.base.mmodel.*{*;}
 
 
 # ButterKnife

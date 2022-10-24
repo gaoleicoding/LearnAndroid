@@ -1,7 +1,7 @@
 package com.android.manager;
 
-import com.android.learn.base.event.LoginEvent;
-import com.android.learn.base.mmodel.RegisterLoginData;
+import com.android.base.event.LoginEvent;
+import com.android.base.mmodel.RegisterLoginData;
 
 import org.greenrobot.eventbus.EventBus;
 

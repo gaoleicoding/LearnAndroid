@@ -1,6 +1,6 @@
 package com.android.learn.mcontract;
 
-import com.android.learn.base.mmodel.ProjectListData;
+import com.android.base.mmodel.ProjectListData;
 
 /**
  * Created by gaolei on 2018/6/18.

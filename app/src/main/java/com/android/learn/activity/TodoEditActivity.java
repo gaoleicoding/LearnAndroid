@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.learn.R;
-import com.android.learn.base.activity.BaseMvpActivity;
-import com.android.learn.base.event.UpdateTodoEvent;
-import com.android.learn.base.mmodel.BaseData;
-import com.android.learn.base.mmodel.TodoData.DatasBean;
-import com.android.learn.base.utils.Utils;
+import com.android.base.activity.BaseMvpActivity;
+import com.android.base.event.UpdateTodoEvent;
+import com.android.base.mmodel.BaseData;
+import com.android.base.mmodel.TodoData.DatasBean;
+import com.android.base.utils.Utils;
 import com.android.learn.mcontract.TodoEditContract;
 import com.android.learn.mpresenter.TodoEditPresenter;
 
