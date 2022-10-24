@@ -4,8 +4,6 @@ ext {
     buildToolsVersion = '28.0.2'
     minSdkVersion = 19
     targetSdkVersion = 28
-    versionCode = 110
-    versionName = '1.1.0'
 
     appcompat_v7 = 'com.android.support:appcompat-v7:28+'
     support_design = 'com.android.support:design:28+'
