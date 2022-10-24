@@ -259,7 +259,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             viewPager.setCurrentItem(0);
 //            tabLayout.getTabAt(0).getCustomView().setSelected(true);
             //TODO:恢复动画
-//            loadAnimation();
+            loadAnimation();
 
         }
 
@@ -391,7 +391,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                             iv_svga.stopAnimation();
                             iv_svga.setVisibility(View.GONE);
                         }
-                    }, 5000);
+                    }, 3000);
                 }
 
                 @Override
