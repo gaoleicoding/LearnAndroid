@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="38d2ecd2-0ade-4dff-9144-561070deca67" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/LearnAndroid－release-V1.0.1(101)_huawei.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mvpmodel.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/gaolei/mvpmodel/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/skins/xskinloader-skin-apk-debug.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/ArticleDetailActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FeedbackActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/FontSizeActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/KnowledgeChildActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/LanguageActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyCollectActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/MyTodoActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/RegisterLoginActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SearchResultActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SettingActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/SplashActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/TodoAddActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/activity/TodoEditActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ArticleQuickAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/DividerItemDecoration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/HorizontalPagerAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/MainTabAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/ProjectQuickAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/SearchRecordAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/adapter/TodoQuickAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/HomeFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/KnowledgeFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/ProjectFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/TodoFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/UserFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/WechatFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/fragment/WechatSubFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/CollectContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/HomeContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/KnowledgeChildContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/KnowledgeContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/MainActivityContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/ProjectContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/RegisterLoginContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/SearchContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/SplashLoginContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/TodoAddContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/TodoContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/TodoEditContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/UserInfoContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/WechatContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mcontract/WechatSubContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/CollectPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/HomePresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgeChildPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/KnowledgePresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/MainActivityPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/ProjectPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/RegisterLoginPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/SearchPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/SplashLoginPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/TodoAddPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/TodoEditPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/TodoPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/UserInfoPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/WechatPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/mpresenter/WechatSubPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/view/CustomViewPager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/view/SearchViewUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/view/fontsliderbar/Bar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/view/fontsliderbar/FontSliderBar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/learn/view/fontsliderbar/Thumb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/anim_dialog_load.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/color/selector_tab_text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/customactivityoncrash_error_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_home_tab_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_home_tab_unselect.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_knowledge_tab_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_knowledge_tab_unselect.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_mine_tab_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_mine_tab_unselect.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_navigation_tab_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_navigation_tab_unselect.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_project_tab_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_project_tab_unselect.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_public_account_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_public_account_unselect.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/progress_dialog_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/progress_dialog_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/banner_selected_radius.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bt_refresh_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/color_cursor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/common_bg_loading.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_history_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/shape_stroke_state_normal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/shape_stroke_state_press.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tab_selector_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tab_selector_knowledge.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tab_selector_mine.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tab_selector_novagation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tab_selector_project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/unselected_radius.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_article_detail.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_collect.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_todo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fontsizes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_help_feedback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_knowledge_article.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_register.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_todo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_loading.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_knowledge.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_todo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_wechat.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_wechat_sub.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/iatdemo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_article_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_project_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_search_record.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_tree.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_tree_children.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_error_page.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_done.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_knowledge.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_mine.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_navigation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_todo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/todo_item_view.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_item_clear_history.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icon_back_arrow_clicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/icon_comn_back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/pic_android.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-en/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-zh/values-zh.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/iat_setting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/gaolei/mvpmodel/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/libs/Msc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/libs/Sunflower.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/libs/activation.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/libs/additionnal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/libs/mail.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/androidTest/java/com/gaolei/basemodule/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/assets/iflytek/recognize.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/assets/iflytek/voice_bg.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/assets/iflytek/voice_empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/assets/iflytek/voice_full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/assets/iflytek/waiting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/assets/iflytek/warning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BaseMvpActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/activity/BasePermisssionActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/application/CustomApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/colorful/Colorful.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/colorful/setter/TextColorSetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/colorful/setter/ViewBackgroundColorSetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/colorful/setter/ViewBackgroundDrawableSetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/colorful/setter/ViewGroupSetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/colorful/setter/ViewSetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/DBManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/db/SearchRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/email/JSSEProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/email/MailSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/email/ToastUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/CancelCollectEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/ChangeNightEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/LoginEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/LogoutEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/RestartMainEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/UpdateDoneEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/event/UpdateTodoEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseLazyFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/fragment/BaseMvpFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/BannerListData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/BaseData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/BaseResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/FeedArticleListData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/HotKeyData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/ProjectListData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/RegisterLoginData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/TodoData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/TreeBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mmodel/WxArticle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mpresenter/BasePresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/mview/BaseView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/glide/CustomGlideModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/glide/ImageLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/glide/transformation/BlurTransformation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/glide/transformation/CircleTransformation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/glide/transformation/RoundedCornersTransformation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/ApiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/CustomizeGsonConverterFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/CustomizeGsonRequestBodyConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/CustomizeGsonResponseBodyConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/RetrofitDynamicProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/RetrofitProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/DefaultHeaderInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/GzipRequestInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/HttpLoggingInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/OfflineCacheInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/OnlineCacheInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/ParamsEncryptInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/ProgressInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/RetryIntercepter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/SignInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/TokenInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/UrlResetInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/util/ProgressListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/retrofit/interceptor/util/ProgressResponseBody.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/thirdframe/rxjava/BaseObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ContextUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/CrashHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ExitAppUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/JsonUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/KeyboardUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/LanguageUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/LogUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/NetUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/PermissionUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ResponseStatusUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/SPUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/ScreenUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/SystemUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/utils/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/CircleImageView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/CustomProgressDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/Html5Webview.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/ProgressView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/TitleView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/colorfultab/ColorClipTabLayout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/colorfultab/ColorClipTestView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/view/colorfultab/ColorClipView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/CustomTitleView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/CustomViewTextColorResDeployer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/ExtraAttrRegister.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/learn/base/xskin/ViewBackgroundStyleParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/manager/UserInfoManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/speechdemo/bean/TalkBackChineseWordVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/speechdemo/bean/TalkBackVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/speechdemo/bean/TalkBackWordsVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/speechdemo/xf/JsonParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/java/com/android/speechdemo/xf/SettingTextWatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/jniLibs/arm64-v8a/libmsc.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/jniLibs/armeabi-v7a/libmsc.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/activity_close_enter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/activity_close_exit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/activity_in.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/activity_open_enter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/activity_open_exit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/activity_out.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/anim_dialog_load.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/slide_left_in.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/slide_left_out.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/slide_right_in.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/anim/slide_right_out.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/color/selector_tab_text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/add_todo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/back_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/chatfrom_bg_normal.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/chatto_bg_normal.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/date.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/default_page_network.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/delete_todo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_collect_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_collect_unselect.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_done.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_font_switch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_help_feedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_language_switch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_my_logout.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_night_mode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_setting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_share.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_speech.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_todo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_todo_list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/icon_update.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/progress_dialog_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/splash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxhdpi/user_default_photo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable-xxxhdpi/progress_dialog_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/bg_tag.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/bt_refresh_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_select.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/btn_bg_unselect.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/button_corner_bg2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/code_edit_bg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/common_bg_loading.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/et_search_bg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/nav_item_color_state.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/selected_radius.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_item_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_rectangle_state_normal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/setting_rectangle_state_press.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/shape_stroke_state_normal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/shape_stroke_state_press.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/drawable/unselected_radius.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/layout/activity_language.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/layout/dialog_loading.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/layout/fragment_base.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/layout/layout_error_page.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/layout/title_view.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values-cn/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values-en/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values-night/colors_night.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/attrs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basemodule/src/test/java/com/gaolei/basemodule/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/online_params.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@emulator-5554]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AndroidLearnProject" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AndroidLearnProject" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AndroidLearnProject" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AndroidLearnProject" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="kotlin" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="29HxC6Thv4jlftTJCz3zcF3bz1z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="RunManager" selected="Gradle.AndroidLearnProject:app [assemble]">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="AndroidLearnProject.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AndroidLearnProject:app [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.AndroidLearnProject:app [assemble]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1652783682171</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652783682171</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1663900909317">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.689/-2880.11.1920.1050@0.0.1280.689" timestamp="1663900909317" />
+    <state x="338" y="77" width="686" height="536" key="find.popup" timestamp="1663908408917">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="338" y="77" width="686" height="536" key="find.popup/0.0.1280.689/-2880.11.1920.1050@0.0.1280.689" timestamp="1663908408917" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1663908374687">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689/-2880.11.1920.1050@0.0.1280.689" timestamp="1663908374687" />
+  </component>
+</project>

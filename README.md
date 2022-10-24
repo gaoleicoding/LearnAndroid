@@ -103,7 +103,7 @@ kotlin版本：https://github.com/gaoleicoding/AndroidLearnProject/tree/kotlin
 
 app扫码下载体验
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/KAbY.png)
+![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/app.png)
 
  
 app效果图
