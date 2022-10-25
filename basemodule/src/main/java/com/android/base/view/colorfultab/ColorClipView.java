@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -75,6 +76,11 @@ public class ColorClipView extends View {
 
     public void setProgress(float progress) {
         this.progress = progress;
+        if (progress == 1) {
+            paint.setTypeface(Typeface.DEFAULT_BOLD);
+        }else {
+            paint.setTypeface(Typeface.DEFAULT);
+        }
         invalidate();
     }
 

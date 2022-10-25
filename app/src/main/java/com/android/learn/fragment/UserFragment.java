@@ -58,6 +58,11 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
                 MyCollectActivity.startActivity(getActivity());
                 break;
             case R.id.my_todo_layout:
+                if (!UserInfoManager.get().isLogined()) {
+                    RegisterLoginActivity.startActivity(getActivity());
+                    Utils.showToast(getString(R.string.user_not_login), true);
+                    return;
+                }
                 MyTodoActivity.startActivity(getActivity());
                 break;
             case R.id.my_setting_layout:
