@@ -31,11 +31,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="35dp"
+            android:layout_marginRight="@dimen/adapter_item_author_right"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
-            android:textColor="@color/text_color"
+            android:textColor="@color/color_666666"
             tools:text="GcsSloop" />
 
         <TextView
@@ -45,8 +45,9 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/tv_item_author"
+            tools:text="2022"
             android:gravity="center"
-            android:textColor="@color/text_color" />
+            android:textColor="@color/color_666666" />
 
 
         <ImageView

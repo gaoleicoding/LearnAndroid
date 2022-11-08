@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:skin="http://schemas.android.com/android/skin"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="15dp">
 
-
     <ImageView
         android:id="@+id/item_project_list_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="75dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_vertical"
         android:scaleType="fitXY" />
 
@@ -23,55 +21,55 @@
 
         <TextView
             android:id="@+id/item_project_list_title_tv"
-            skin:enable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
             android:textColor="@color/text_color"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            skin:enable="true" />
 
         <TextView
             android:id="@+id/item_project_list_content_tv"
-            skin:enable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/item_project_list_title_tv"
             android:layout_marginTop="10dp"
             android:ellipsize="end"
-            android:maxLines="3"
-            android:textColor="@color/text_color" />
+            android:maxLines="2"
+            android:textColor="@color/text_color"
+            skin:enable="true" />
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_below="@id/item_project_list_content_tv"
+            android:layout_alignParentBottom="true"
             android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/item_project_list_author_tv"
-                skin:enable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="35dp"
+                android:layout_marginRight="@dimen/adapter_item_author_right"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                android:textColor="@color/text_color" />
+                android:textColor="@color/color_666666"
+                skin:enable="true" />
 
             <TextView
                 android:id="@+id/item_project_list_time_tv"
-                skin:enable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/item_project_list_author_tv"
                 android:gravity="center"
-                android:textColor="@color/text_color" />
+                android:textColor="@color/color_666666"
+                skin:enable="true" />
 
 
             <ImageView
@@ -86,7 +84,6 @@
                 android:src="@drawable/icon_collect_unselect"
                 android:visibility="gone" />
         </RelativeLayout>
-
 
     </RelativeLayout>
 </LinearLayout>

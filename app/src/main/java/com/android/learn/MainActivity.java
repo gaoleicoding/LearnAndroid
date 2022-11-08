@@ -395,7 +395,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
                 @Override
                 public void onError() {
-
+                    LogUtil.d("onError");
                 }
             });
         } catch (MalformedURLException e) {

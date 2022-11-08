@@ -1,9 +1,11 @@
 package com.android.learn.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
 
-import com.android.learn.R;
 import com.android.base.mmodel.FeedArticleListData.FeedArticleData;
+import com.android.learn.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -32,10 +34,12 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseV
     @Override
     protected void convert(BaseViewHolder helper, FeedArticleData articleData) {
         helper.setText(R.id.tv_item_title, articleData.getTitle())
-                .setText(R.id.tv_item_time, articleData.getNiceDate())
-                .setText(R.id.tv_item_author, articleData.getAuthor());
+                .setText(R.id.tv_item_author, articleData.getAuthor())
+                .setText(R.id.tv_item_time, articleData.getNiceDate());
         helper.addOnClickListener(R.id.iv_item_collect);
-        if ("HomeFragment".equals(fromWhere)||"KnowledgeChildActivity".equals(fromWhere)||"WechatSubFragment".equals(fromWhere)) {
+        boolean isShowAuthor = !TextUtils.isEmpty(articleData.getAuthor());
+        helper.getView(R.id.tv_item_author).setVisibility(isShowAuthor ? View.VISIBLE : View.GONE);
+        if ("HomeFragment".equals(fromWhere) || "KnowledgeChildActivity".equals(fromWhere) || "WechatSubFragment".equals(fromWhere)) {
             if (articleData.isCollect()) {
                 helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select);
             } else {
