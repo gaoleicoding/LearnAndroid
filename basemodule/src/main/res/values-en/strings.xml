@@ -41,9 +41,10 @@
     <string name="standrd">standrd</string>
     <string name="preview_font_size">preview font size</string>
     <string name="slide_change_font_size">Slide the slider below to adjust the font size</string>
-    <string name="please_input_contact">Please enter your contact information</string>
-    <string name="please_input_content">Please enter content</string>
-    <string name="feedback_send_success">Have received your feedback</string>
+    <string name="please_input_contact">Please enter phone number or email</string>
+    <string name="please_input_right_contact">Please enter right phone number or email</string>
+    <string name="please_input_content">Please enter feedback content</string>
+    <string name="feedback_send_success">Have received your feedback！</string>
     <string name="feedback_send_fail">Feedback failed to send</string>
     <string name="send">Send</string>
     <string name="language_follow_system">跟随系统</string>
@@ -62,8 +63,6 @@
     <string name="data_empty">Data is empty</string>
     <string name="select_time">please select time</string>
     <string name="begin_speech">Begin speech</string>
-    <string name="please_inupt_content">please input feedback content</string>
-    <string name="please_inupt_contact">please input feedback contact</string>
     <string name="empty_collect">No collection</string>
     <string name="empty_todo">No todo things</string>
     <string name="empty_done">No done things</string>
