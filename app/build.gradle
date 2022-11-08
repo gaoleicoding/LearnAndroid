@@ -1,22 +1,24 @@
 apply plugin: 'com.android.application'
 
 ext.getCNName = {
-    java.util.HashMap<String, String> map = new HashMap<>();
-    map.put("xiaomi", "xiaomi.apk");
-    map.put("oppo", "oppo.apk");
+    HashMap<String, String> map = new HashMap<>();
+    map.put("Xiaomi", "Xiaomi.apk");
+    map.put("Oppo", "Oppo.apk");
     map.put("Tencent", "Tencent.apk");
-    map.put("huawei", "huawei.apk");
-    map.put("Qihoo", "360.apk");
+    map.put("Huawei", "Huawei.apk");
+    map.put("Vivo", "Vivo.apk");
     return map;
 }
 
 android {
     signingConfigs {
         release {
-            keyAlias 'mvpmodel'
-            keyPassword 'android1201'
-            storeFile file('mvpmodel.jks')
-            storePassword 'android1201'
+            keyAlias 'learnandroid'
+            keyPassword 'learn2022'
+            storeFile file('learnandroid.jks')
+            storePassword 'learn2022'
+            v1SigningEnabled true
+            v2SigningEnabled true
         }
     }
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -24,10 +26,13 @@ android {
         applicationId "com.android.learn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 111
-        versionName "1.1.1"
+        versionCode 112
+        versionName "1.1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
     }
     buildTypes {
         debug {
@@ -42,20 +47,18 @@ android {
 //            abortOnError false
 //        }
         release {
-            minifyEnabled true //是否启用Proguard
-            shrinkResources true //是否清理无用资源,依赖于minifyEnabled
-            zipAlignEnabled true //是否启用zipAlign压缩
+            minifyEnabled false //是否启用Proguard
+            shrinkResources false //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled false //是否启用zipAlign压缩
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            debuggable true
             signingConfig signingConfigs.release
-            //def date = new Date().format('yy-MM-dd-HH');
             applicationVariants.all { variant ->
                 variant.outputs.all { output ->
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        // 输出apk名称为XuetangXRelease-3.1.0(3100)_Baidu-百度.apk
+                        // LearnAndroid-1.1.2_Baidu.apk
                         def channel = variant.productFlavors[0].name
-                        def releaseFileName = "build/outputs/LearnAndroid－${variant.buildType.name}-V${variant.versionName}(${variant.versionCode})_${getCNName().get(channel)}"
+                        def releaseFileName = "LearnAndroid-${variant.buildType.name}-V${variant.versionName}_${getCNName().get(channel)}"
                         outputFileName = releaseFileName
                     }
                 }
@@ -66,29 +69,28 @@ android {
 
     flavorDimensions("dimension1")
     productFlavors {
-        xiaomi {
+        Xiaomi {
             dimension "dimension1"
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi", SPAM_VALUE: "xiaomi"];
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Xiaomi", SPAM_VALUE: "Xiaomi"];
         }
-
 
         Tencent {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Tencent", SPAM_VALUE: "Tencent"];
             dimension "dimension1"
         }
 
-        huawei {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei", SPAM_VALUE: "huawei"];
-            dimension "dimension1"
-        }
-        Qihoo {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Qihoo", SPAM_VALUE: "Qihoo"];
+        Huawei {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Huawei", SPAM_VALUE: "Huawei"];
             dimension "dimension1"
         }
 
+        Vivo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Vivo", SPAM_VALUE: "Vivo"];
+            dimension "dimension1"
+        }
 
-        oppo {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "oppo", SPAM_VALUE: "oppo"];
+        Oppo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Oppo", SPAM_VALUE: "Oppo"];
             dimension "dimension1"
         }
 
