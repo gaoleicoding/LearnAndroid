@@ -1,11 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:skin="http://schemas.android.com/android/skin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activity_bg_color"
-    skin:enable="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    skin:enable="true">
 
     <com.android.base.view.TitleView
         android:id="@+id/title_layout"
@@ -19,15 +18,15 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/please_input_contact"
-        android:visibility="gone"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
         android:orientation="horizontal">
 
         <TextView
@@ -35,25 +34,26 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="@string/title"
-            android:visibility="gone"
             android:textColor="@color/text_color"
-            skin:enable="true"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:visibility="gone"
+            skin:enable="true" />
 
         <EditText
             android:id="@+id/et_email_title"
-            style="@style/code_edit_num_style"
+            style="@style/et_feedback_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/please_input_contact"
-            skin:enable="true"
-            android:inputType="text" />
+            skin:enable="true" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
         android:orientation="horizontal">
 
         <TextView
@@ -61,34 +61,35 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="@string/content"
-            android:visibility="gone"
             android:textColor="@color/text_color"
-            skin:enable="true"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:visibility="gone"
+            skin:enable="true" />
 
         <EditText
             android:id="@+id/et_email_content"
-            style="@style/code_edit_num_style"
+            style="@style/et_feedback_style"
+            android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:hint="@string/please_inupt_content"
-            skin:enable="true"
             android:gravity="top"
-            android:inputType="text" />
+            android:hint="@string/please_input_content"
+            android:textSize="14sp"
+            skin:enable="true" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:visibility="gone"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/add_attachment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="5dp"
             android:background="@drawable/button_corner_bg2"
+            android:padding="5dp"
             android:text="@string/add_attachment"
             android:textColor="@color/white"
             android:textSize="14sp" />
@@ -101,11 +102,12 @@
             android:layout_marginLeft="10dp"
             android:textSize="14sp" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/send_btn"
         style="@style/btn_selector_match_style"
-        android:text="@string/send"
         android:background="@drawable/btn_bg_selector"
+        android:text="@string/send"
         skin:enable="true" />
 
 </LinearLayout>

@@ -11,7 +11,6 @@ import android.text.TextUtils;
 import android.view.Gravity;
 import android.widget.Toast;
 
-
 import com.android.base.application.CustomApplication;
 
 import java.security.MessageDigest;
@@ -73,14 +72,19 @@ public class Utils {
         String telRegex = "[1][23456789]\\d{9}";//"[1]"代表第1位为数字1，"[35678]"代表第二位可以为23456789中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
 
         if (TextUtils.isEmpty(mobile)) {
-            Utils.showToast("请输入正确的手机号", true);
+//            Utils.showToast("请输入正确的手机号", true);
             return false;
         } else if (!mobile.matches(telRegex)) {
-            Utils.showToast("请输入正确的手机号", true);
+//            Utils.showToast("请输入正确的手机号", true);
             return false;
         }
         return true;
 
+    }
+
+    public static boolean isEmail(String strEmail) {
+        String strPattern = "^[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z\\.]*[a-zA-Z]$";
+        return strEmail.matches(strPattern);
     }
 
     /**
@@ -131,7 +135,8 @@ public class Utils {
         }
 
     }
-    public static void showToast(String content, boolean isShort,int gravity) {
+
+    public static void showToast(String content, boolean isShort, int gravity) {
         try {
             Toast toast = Toast.makeText(CustomApplication.context, content, isShort ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG);
             toast.setGravity(gravity, 0, 0);
@@ -156,7 +161,8 @@ public class Utils {
         ddf1.setMaximumFractionDigits(2);
         return ddf1.format(value);
     }
-    public static void copyTxt(Context context,String content) {
+
+    public static void copyTxt(Context context, String content) {
         ClipboardManager cm = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         // 将文本内容放到系统剪贴板里。
         cm.setText(content);
@@ -190,7 +196,8 @@ public class Utils {
         }
         return Float.parseFloat(value.trim());
     }
-    public static  int getVersionCode(Context context) {
+
+    public static int getVersionCode(Context context) {
         try {
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(
@@ -201,7 +208,8 @@ public class Utils {
         }
         return 0;
     }
-    public static  String getVersionName(Context context) {
+
+    public static String getVersionName(Context context) {
         try {
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(

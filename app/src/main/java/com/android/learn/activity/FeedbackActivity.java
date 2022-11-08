@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -18,11 +19,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.learn.R;
 import com.android.base.activity.BaseMvpActivity;
 import com.android.base.email.MailSender;
 import com.android.base.mpresenter.BasePresenter;
 import com.android.base.utils.Utils;
+import com.android.learn.R;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -94,10 +95,19 @@ public class FeedbackActivity extends BaseMvpActivity {
                     Utils.showToast(getString(R.string.please_input_content), true);
                     return;
                 }
+                if (!Utils.isEmail(sendTitle.trim()) && !Utils.isMobileNO(sendTitle.trim())) {
+                    Utils.showToast(getString(R.string.please_input_right_contact), true);
+                    return;
+                }
                 senderRunnable.setMail(sendTitle, sendContent,
                         receiveEmail, file_path);
                 new Thread(senderRunnable).start();
-//                sendEmail();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        FeedbackActivity.this.finish();
+                    }
+                }, 1000);
                 break;
             case R.id.add_attachment:
                 showFileChooser();
@@ -163,19 +173,11 @@ public class FeedbackActivity extends BaseMvpActivity {
             try {
                 sender.sendMail(subject, body, user, receiver, attachment);
                 Utils.showToast(getString(R.string.feedback_send_success), false);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        finish();
-                    }
-                });
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 if (e.getMessage() != null)
                     Utils.showToast(getString(R.string.feedback_send_fail), false);
                 e.printStackTrace();
-            } finally {
-                finish();
             }
         }
     }
