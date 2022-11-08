@@ -15,28 +15,12 @@ android {
             }
         }
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+
     greendao {
         schemaVersion 1                         //数据库版本号，如果数据库需要升级，直接在此修改版本号即可
         daoPackage 'com.android.base.greendao.gen'      //dao包名，默认是entity所在的包
         targetGenDir 'src/main/java'            //数据库文件的目录
     }
-
-    //执行lint检查，有任何的错误或者警告提示，都会终止构建
-    lintOptions {
-        abortOnError false
-    }
-//    sourceSets {
-//        main {
-//            //jni库的调用会到资源文件夹下libs里面找so文件,对于so文件，android studio理论上是要求放置在一个jniLibs文件夹下的，这样程序才能够找到要所依赖的so文件
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
 }
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')

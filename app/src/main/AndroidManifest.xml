@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.learn">
 
-
     <uses-sdk tools:overrideLibrary="cn.lankton.flowlayout" />
     <application
         android:name="com.android.base.application.CustomApplication"
