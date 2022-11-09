@@ -67,4 +67,18 @@
     <string name="empty_todo">No todo things</string>
     <string name="empty_done">No done things</string>
     <string name="empty_search">No search content</string>
+    <string name="please_input_search_content">Please input search content</string>
+    <string name="hot_search">Hot search</string>
+    <string name="search_history">Search history</string>
+    <string name="clear_all">Clear all</string>
+
+    <string name="customactivityoncrash_error_activity_error_occurred_explanation">A program error occurred. Sorry for the inconvenience. \nTo solve this problem as soon as possible, you can click the error details, copy the error code or screenshot, and send an email to the technical support mailbox：gaoleiandroid@163.com</string>
+    <string name="customactivityoncrash_error_activity_restart_app">Reboot</string>
+    <string name="customactivityoncrash_error_activity_close_app">Close</string>
+    <string name="customactivityoncrash_error_activity_error_details">Error detail</string>
+    <string name="customactivityoncrash_error_activity_error_details_title">Error detail</string>
+    <string name="customactivityoncrash_error_activity_error_details_close">Close</string>
+    <string name="customactivityoncrash_error_activity_error_details_copy">Copy</string>
+    <string name="customactivityoncrash_error_activity_error_details_copied">Copied</string>
+    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">Error info</string>
 </resources>

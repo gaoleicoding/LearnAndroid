@@ -193,6 +193,9 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         dbManager.insertUser(searchRecord);
         mSearchEt.setText("");
         KeyboardUtils.hideKeyboard(mSearchEt);
+        //更新搜索历史
+        searchRecordAdapter.getData().add(searchRecord);
+        searchRecordAdapter.notifyDataSetChanged();
     }
 
     private void initSearchRecord() {

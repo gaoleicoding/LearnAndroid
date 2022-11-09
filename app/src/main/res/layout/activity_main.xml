@@ -97,7 +97,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/et_search_bg"
                     android:gravity="center_vertical"
-                    android:hint="请输入内容"
+                    android:hint="@string/please_input_search_content"
                     android:imeOptions="actionSearch"
                     android:inputType="textCapWords"
                     android:paddingLeft="12dp"
@@ -121,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="热搜"
+                android:text="@string/hot_search"
                 android:textColor="@color/text_color"
                 android:textSize="15sp" />
 
@@ -150,7 +150,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="搜索历史"
+                    android:text="@string/search_history"
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />
 
@@ -158,7 +158,7 @@
                     android:id="@+id/tv_search_clear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="清空"
+                    android:text="@string/clear_all"
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />
             </LinearLayout>
