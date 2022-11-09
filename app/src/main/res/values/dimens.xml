@@ -1,3 +1,3 @@
 <resources>
-    <dimen name="adapter_item_author_right">15dp</dimen>
+    <dimen name="adapter_item_author_right">10dp</dimen>
 </resources>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:skin="http://schemas.android.com/android/skin"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="15dp">
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/item_project_list_iv"
@@ -45,9 +46,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/item_project_list_content_tv"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="15dp">
 
             <TextView
                 android:id="@+id/item_project_list_author_tv"
@@ -59,7 +59,8 @@
                 android:gravity="center"
                 android:maxLines="1"
                 android:textColor="@color/color_666666"
-                skin:enable="true" />
+                skin:enable="true"
+                tools:text="GaoLei" />
 
             <TextView
                 android:id="@+id/item_project_list_time_tv"
@@ -68,8 +69,10 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/item_project_list_author_tv"
                 android:gravity="center"
+                android:maxLines="1"
                 android:textColor="@color/color_666666"
-                skin:enable="true" />
+                skin:enable="true"
+                tools:text="2022" />
 
 
             <ImageView
@@ -82,7 +85,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:src="@drawable/icon_collect_unselect"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:visibility="visible" />
         </RelativeLayout>
 
     </RelativeLayout>
