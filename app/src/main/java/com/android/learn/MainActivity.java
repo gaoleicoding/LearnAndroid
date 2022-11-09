@@ -30,9 +30,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.learn.activity.SearchResultActivity;
-import com.android.learn.adapter.MainTabAdapter;
-import com.android.learn.adapter.SearchRecordAdapter;
 import com.android.base.activity.BaseMvpActivity;
 import com.android.base.db.DBManager;
 import com.android.base.db.SearchRecord;
@@ -46,6 +43,9 @@ import com.android.base.utils.SPUtils;
 import com.android.base.utils.ScreenUtils;
 import com.android.base.utils.Utils;
 import com.android.base.view.TitleView;
+import com.android.learn.activity.SearchResultActivity;
+import com.android.learn.adapter.MainTabAdapter;
+import com.android.learn.adapter.SearchRecordAdapter;
 import com.android.learn.fragment.HomeFragment;
 import com.android.learn.fragment.KnowledgeFragment;
 import com.android.learn.fragment.ProjectFragment;
@@ -104,10 +104,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     TitleView header_layout;
     @BindView(R.id.iv_svga)
     SVGAImageView iv_svga;
-    @BindView(R.id.cardview_search)
-    LinearLayout cardview_search;
+    @BindView(R.id.ll_search)
+    LinearLayout mSearchLl;
     @BindView(R.id.et_search)
-    EditText et_search;
+    EditText mSearchEt;
     @BindView(R.id.iv_search)
     ImageView iv_search;
     @BindView(R.id.iv_search_back)
@@ -118,7 +118,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     FlowLayout flowlayout;
     HomeFragment homeFragment;
     ProjectFragment projectFragment;
-    boolean isSearching;
     SearchRecordAdapter searchRecordAdapter;
     String TAG = "MainActivity";
     private SpeechRecognizer mIat;
@@ -137,7 +136,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     @Override
     protected void initData(Bundle bundle) {
         initView();
-        requestPermission();
         EventBus.getDefault().register(this);
     }
 
@@ -169,7 +167,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         initSearchRecord();
         iv_search.setVisibility(View.VISIBLE);
 
-        et_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mSearchEt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {//搜索按键action
@@ -182,11 +180,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     }
 
     private void beginSearch() {
-        String content = et_search.getText().toString();
+        String content = mSearchEt.getText().toString();
         if (TextUtils.isEmpty(content)) {
             Utils.showToast(getString(R.string.search_content_no), true);
         }
-
         Bundle bundle = new Bundle();
         bundle.putString("key", content);
         SearchResultActivity.startActivity(MainActivity.this, bundle);
@@ -194,8 +191,8 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
         SearchRecord searchRecord = new SearchRecord();
         searchRecord.setName(content);
         dbManager.insertUser(searchRecord);
-        et_search.setText("");
-        KeyboardUtils.hideKeyboard(et_search);
+        mSearchEt.setText("");
+        KeyboardUtils.hideKeyboard(mSearchEt);
     }
 
     private void initSearchRecord() {
@@ -247,13 +244,13 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
             }
         });
-        Boolean isRestartMain = (Boolean) SPUtils.getParam(this, "isRestartMain", new Boolean(false));
+        boolean isRestartMain = (boolean) SPUtils.getParam(this, "isRestartMain", false);
         LogUtil.d(TAG, "isRestartMain：" + isRestartMain);
         if (isRestartMain) {
             //切换语言或切换字体大小，重启MainActivity则会走这里
             viewPager.setCurrentItem(4);
 //            tabLayout.getTabAt(4).getCustomView().setSelected(true);
-            SPUtils.setParam(MainActivity.this, "isRestartMain", new Boolean(false));
+            SPUtils.setParam(MainActivity.this, "isRestartMain", false);
         } else {
             //默认选中的Tab
             viewPager.setCurrentItem(0);
@@ -265,7 +262,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
 
     }
 
-    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search, R.id.cardview_search,R.id.tv_search_clear, R.id.iv_speech_search})
+    @OnClick({R.id.title, R.id.iv_svga, R.id.iv_search, R.id.iv_search_back, R.id.ll_search, R.id.tv_search_clear, R.id.iv_speech_search})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.title:
@@ -280,11 +277,10 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 iv_svga.stopAnimation();
                 iv_svga.setVisibility(View.GONE);
                 break;
-            case R.id.cardview_search:
             case R.id.iv_search_back:
+            case R.id.ll_search:
             case R.id.iv_search:
-                SearchViewUtils.handleToolBar(getApplicationContext(), cardview_search, et_search);
-                isSearching = true;
+                SearchViewUtils.handleSearchView(getApplicationContext(), mSearchLl, mSearchEt);
                 break;
             case R.id.tv_search_clear:
                 searchRecordAdapter.getData().clear();
@@ -292,7 +288,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 DBManager.getInstance(this).deleteAll();
                 break;
             case R.id.iv_speech_search:
-                KeyboardUtils.hideKeyboard(et_search);
+                KeyboardUtils.hideKeyboard(mSearchEt);
                 requestRecordAudioPermission();
                 break;
         }
@@ -310,7 +306,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             @Override
             public void denied() {
             }
-        }, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE);
+        }, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO);
     }
 
     public void onRestart() {
@@ -334,9 +330,8 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK
                 && event.getAction() == KeyEvent.ACTION_DOWN) {
-            if (isSearching) {
-                SearchViewUtils.handleToolBar(getApplicationContext(), cardview_search, et_search);
-                isSearching = false;
+            if (mSearchLl.getVisibility() == View.VISIBLE) {
+                SearchViewUtils.handleSearchView(getApplicationContext(), mSearchLl, mSearchEt);
                 return false;
             }
             if ((System.currentTimeMillis() - exitTime) > 2000) {
@@ -489,7 +484,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 // 移动数据分析，收集开始听写事件
                 FlowerCollector.onEvent(MainActivity.this, "iat_recognize");
 
-                et_search.setText("");// 清空显示内容
+                mSearchEt.setText("");// 清空显示内容
                 mIatResults.clear();
                 // 设置参数
                 setParam();
@@ -503,7 +498,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             @Override
             public void denied() {
             }
-        }, new String[]{Manifest.permission.RECORD_AUDIO});
+        }, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO});
     }
 
     public void setParam() {
@@ -583,12 +578,12 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             resultBuffer.append(mIatResults.get(key));
         }
 
-        et_search.setText(resultBuffer.toString());
+        mSearchEt.setText(resultBuffer.toString());
         //考虑到TextView只能显示文字 ，后面还要测试文字转语音，所以换EditText控件
-        et_search.setSelection(et_search.length());
-        KeyboardUtils.showKeyboard(et_search);
+        mSearchEt.setSelection(mSearchEt.length());
+        KeyboardUtils.showKeyboard(mSearchEt);
         LogUtil.d(TAG, "printResult(results)------------resultBuffer.toString():" + resultBuffer.toString());
-        if (et_search.getText().toString().length() > 0 && !"SearchResultActivity".equals(Utils.getTopActivity(this)))
+        if (mSearchEt.getText().toString().length() > 0 && !"SearchResultActivity".equals(Utils.getTopActivity(this)))
             beginSearch();
     }
 

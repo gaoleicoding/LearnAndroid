@@ -49,11 +49,12 @@
         app:antiAlias="true" />
 
     <LinearLayout
-        android:id="@+id/cardview_search"
+        android:id="@+id/ll_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#55000000"
         android:clickable="true"
+        android:focusable="true"
         android:orientation="vertical"
         android:visibility="gone"
         tools:visibility="visible">
@@ -62,12 +63,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/activity_bg_color"
+            android:clickable="true"
+            android:focusable="true"
             android:orientation="vertical"
             android:paddingLeft="12dp"
             android:paddingTop="6dp"
             android:paddingRight="12dp"
             android:paddingBottom="12dp"
-            android:clickable="true"
             skin:enable="true">
 
             <LinearLayout
@@ -82,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:clickable="true"
+                    android:focusable="true"
                     android:paddingRight="5dp"
                     android:src="@drawable/icon_back"
                     android:tint="@color/colorAccent" />
