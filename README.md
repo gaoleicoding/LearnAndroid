@@ -124,11 +124,6 @@ app效果图
 
 ![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/8.jpg)
 
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/9.jpg)
-
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/10.jpg)
-
-![image](https://github.com/gaoleiandroid1201/AndroidLearnProject/raw/master/material/screenshots/11.jpg)
 
 
 
