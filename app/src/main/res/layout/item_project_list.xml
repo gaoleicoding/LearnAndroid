@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/item_project_list_iv"
-        android:layout_width="75dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
         android:layout_gravity="center_vertical"
         android:scaleType="fitXY" />
 
