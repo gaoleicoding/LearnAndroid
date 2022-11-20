@@ -21,9 +21,9 @@ import android.widget.TextView
 import butterknife.BindView
 import butterknife.OnClick
 import com.android.learn.R
-import com.android.learn.base.activity.BaseActivity
-import com.android.learn.base.email.MailSender
-import com.android.learn.base.utils.Utils
+import com.android.base.activity.BaseActivity
+import com.android.base.email.MailSender
+import com.android.base.utils.Utils
 
 
 class FeedbackActivity : BaseActivity() {
@@ -58,8 +58,8 @@ class FeedbackActivity : BaseActivity() {
     }
 
     override fun initData(bundle: Bundle?) {
-        title!!.text = getString(R.string.help_feedback)
-        iv_back!!.visibility = View.VISIBLE
+        title.text = getString(R.string.help_feedback)
+        iv_back.visibility = View.VISIBLE
     }
 
 
@@ -68,8 +68,8 @@ class FeedbackActivity : BaseActivity() {
         when (view.id) {
             R.id.send_btn -> {
                 val senderRunnable = SenderRunnable(sendEmail, sendEmaiPassword)
-                val sendTitle = et_email_title!!.text.toString()
-                val sendContent = et_email_content!!.text.toString()
+                val sendTitle = et_email_title.text.toString()
+                val sendContent = et_email_content.text.toString()
                 if ("" == sendTitle.trim { it <= ' ' }) {
                     Utils.showToast(getString(R.string.please_input_contact), true)
                     return
@@ -102,7 +102,7 @@ class FeedbackActivity : BaseActivity() {
 
             file_path = getPathByUri4kitkat(this, uri)
             Log.d("gaolei", "file_path---------------" + file_path!!)
-            file_dir!!.text = file_path
+            file_dir.text = file_path
 
         }
         super.onActivityResult(requestCode, resultCode, data)
@@ -162,9 +162,9 @@ class FeedbackActivity : BaseActivity() {
         /*多个抄送人，String数组*/
         //        email.putExtra(android.content.Intent.EXTRA_CC, (String[])mMailCopyTos.toArray(new String[mMailCopyTos.size()]));
         /*邮件标题*/
-        email.putExtra(Intent.EXTRA_SUBJECT, et_email_title!!.text.toString())
+        email.putExtra(Intent.EXTRA_SUBJECT, et_email_title.text.toString())
         /*邮件正文*/
-        email.putExtra(Intent.EXTRA_TEXT, et_email_content!!.text.toString())
+        email.putExtra(Intent.EXTRA_TEXT, et_email_content.text.toString())
         //调用系统的邮件系统
         startActivity(Intent.createChooser(email, "请选择邮件发送软件"))
 
@@ -181,9 +181,8 @@ class FeedbackActivity : BaseActivity() {
         // 专为Android4.4设计的从Uri获取文件绝对路径，以前的方法已不好使了。targetSdkVersion 22；如果targetSdkVersion>=23怎需要动态获取WRITE_EXTERNAL_STORAGE权限；如果targetSdkVersion>=24 则可能需要用到FileProvider
         @SuppressLint("NewApi")
         fun getPathByUri4kitkat(context: Context, uri: Uri?): String? {
-            val isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
             // DocumentProvider
-            if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
+            if (DocumentsContract.isDocumentUri(context, uri)) {
                 if (isExternalStorageDocument(uri!!)) {// ExternalStorageProvider
                     val docId = DocumentsContract.getDocumentId(uri)
                     val split = docId.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()

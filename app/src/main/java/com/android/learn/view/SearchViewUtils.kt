@@ -3,33 +3,35 @@ package com.android.learn.view
 import android.animation.Animator
 import android.content.Context
 import android.os.Build
-import android.support.v7.widget.CardView
 import android.view.View
 import android.view.ViewAnimationUtils
-import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import com.android.base.utils.KeyboardUtils
 
 
 object SearchViewUtils {
-    fun handleToolBar(context: Context, search: View, editText: EditText) {
+
+    fun handleSearchLayout(context: Context, searchView: View, searchEt: EditText) {
         //隐藏
-        if (search.visibility == View.VISIBLE) {
+        if (searchView.visibility == View.VISIBLE) {
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                val animatorHide = ViewAnimationUtils.createCircularReveal(search,
-                        search.width - dip2px(context, 56f),
-                        dip2px(context, 23f),
-                        //确定元的半径（算长宽的斜边长，这样半径不会太短也不会很长效果比较舒服）
-                        Math.hypot(search.width.toDouble(), search.height.toDouble()).toFloat(),
-                        0f)
+                val animatorHide = ViewAnimationUtils.createCircularReveal(
+                    searchView,
+                    searchView.width - dip2px(context, 56f),
+                    dip2px(context, 23f),
+                    //确定元的半径（算长宽的斜边长，这样半径不会太短也不会很长效果比较舒服）
+                    Math.hypot(searchView.width.toDouble(), searchView.height.toDouble()).toFloat(),
+                    0f
+                )
                 animatorHide.addListener(object : Animator.AnimatorListener {
                     override fun onAnimationStart(animation: Animator) {
 
                     }
 
                     override fun onAnimationEnd(animation: Animator) {
-                        search.visibility = View.GONE
-                        (context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(search.windowToken, 0)
+                        searchView.visibility = View.GONE
+                        KeyboardUtils.hideKeyboard(searchEt)
                     }
 
                     override fun onAnimationCancel(animation: Animator) {
@@ -43,24 +45,26 @@ object SearchViewUtils {
                 animatorHide.duration = 300
                 animatorHide.start()
             } else {
-                //                关闭输入法
-                (context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(search.windowToken, 0)
-                search.visibility = View.GONE
+                // 关闭输入法
+                KeyboardUtils.hideKeyboard(searchEt)
+                searchView.visibility = View.GONE
             }
-            editText.setText("")
-            search.isEnabled = false
+            searchEt.setText("")
+            searchView.isEnabled = false
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                val animator = ViewAnimationUtils.createCircularReveal(search,
-                        search.width - dip2px(context, 56f),
-                        dip2px(context, 23f),
-                        0f,
-                        Math.hypot(search.width.toDouble(), search.height.toDouble()).toFloat())
+                val animator = ViewAnimationUtils.createCircularReveal(
+                    searchView,
+                    searchView.width - dip2px(context, 56f),
+                    dip2px(context, 23f),
+                    0f,
+                    Math.hypot(searchView.width.toDouble(), searchView.height.toDouble()).toFloat()
+                )
                 animator.addListener(object : Animator.AnimatorListener {
                     override fun onAnimationStart(animation: Animator) {}
 
                     override fun onAnimationEnd(animation: Animator) {
-                        (context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY)
+                        KeyboardUtils.showKeyboard(searchEt)
                     }
 
                     override fun onAnimationCancel(animation: Animator) {
@@ -71,19 +75,19 @@ object SearchViewUtils {
 
                     }
                 })
-                search.visibility = View.VISIBLE
-                if (search.visibility == View.VISIBLE) {
+                searchView.visibility = View.VISIBLE
+                if (searchView.visibility == View.VISIBLE) {
                     animator.duration = 300
                     animator.start()
-                    search.isEnabled = true
+                    searchView.isEnabled = true
                 }
             } else {
-                search.visibility = View.VISIBLE
-                search.isEnabled = true
-                //                关闭输入法
-                (context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY)
+                searchView.visibility = View.VISIBLE
+                searchView.isEnabled = true
+                //显示输入法
+                KeyboardUtils.showKeyboard(searchEt)
             }
-        }//显示
+        }
     }
 
 

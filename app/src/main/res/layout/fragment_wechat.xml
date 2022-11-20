@@ -8,7 +8,7 @@
     android:orientation="vertical"
     skin:enable="true">
 
-    <com.android.learn.base.view.colorfultab.ColorClipTabLayout
+    <com.android.base.view.colorfultab.ColorClipTabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="40dp"

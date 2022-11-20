@@ -1,8 +1,8 @@
 package com.android.learn.mcontract
 
 
-import com.android.learn.base.mmodel.TreeBean
-import com.android.learn.base.mview.BaseView
+import com.android.base.mmodel.TreeBean
+import com.android.base.mview.BaseView
 
 
 class KnowledgeContract {

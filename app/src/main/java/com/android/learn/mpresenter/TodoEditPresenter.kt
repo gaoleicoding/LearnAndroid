@@ -1,16 +1,11 @@
 package com.android.learn.mpresenter
 
 
-import com.android.learn.base.mmodel.BaseData
-import com.android.learn.base.mmodel.BaseResponse
-import com.android.learn.base.mmodel.TodoData
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.base.thirdframe.rxjava.BaseObserver
-import com.android.learn.base.utils.ResponseStatusUtil
-import com.android.learn.mcontract.TodoContract
+import com.android.base.mmodel.BaseData
+import com.android.base.mpresenter.BasePresenter
+import com.android.base.thirdframe.rxjava.BaseObserver
+import com.android.base.utils.ResponseStatusUtil
 import com.android.learn.mcontract.TodoEditContract
-
-import io.reactivex.Observable
 
 
 class TodoEditPresenter : BasePresenter<TodoEditContract.View>(), TodoEditContract.Presenter {

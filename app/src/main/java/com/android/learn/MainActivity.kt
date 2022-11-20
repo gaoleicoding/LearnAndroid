@@ -25,17 +25,17 @@ import android.widget.*
 import butterknife.BindView
 import butterknife.OnClick
 import cn.lankton.flowlayout.FlowLayout
+import com.android.base.activity.BaseMvpActivity
+import com.android.base.db.DBManager
+import com.android.base.db.SearchRecord
+import com.android.base.event.ChangeNightEvent
+import com.android.base.event.RestartMainEvent
+import com.android.base.mmodel.HotKeyData
+import com.android.base.utils.*
+import com.android.base.view.TitleView
 import com.android.learn.activity.SearchResultActivity
 import com.android.learn.adapter.MainTabAdapter
 import com.android.learn.adapter.SearchRecordAdapter
-import com.android.learn.base.activity.BaseMvpActivity
-import com.android.learn.base.db.DBManager
-import com.android.learn.base.db.SearchRecord
-import com.android.learn.base.event.ChangeNightEvent
-import com.android.learn.base.event.RestartMainEvent
-import com.android.learn.base.mmodel.HotKeyData
-import com.android.learn.base.utils.*
-import com.android.learn.base.view.TitleView
 import com.android.learn.fragment.*
 import com.android.learn.mcontract.MainActivityContract
 import com.android.learn.mpresenter.MainActivityPresenter
@@ -61,29 +61,36 @@ import java.io.InputStream
 import java.net.URL
 import java.util.*
 
-class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract.View>(), MainActivityContract.View {
+class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract.View>(),
+    MainActivityContract.View {
 
     private lateinit var mFragments: ArrayList<Fragment>
     private lateinit var titles: ArrayList<String>
 
     @BindView(R.id.viewPager)
     lateinit var viewPager: CustomViewPager
+
     @BindView(R.id.tabLayout)
     lateinit var tabLayout: TabLayout
+
     @BindView(R.id.title)
     lateinit var title: TextView
+
     @BindView(R.id.header_layout)
     lateinit var header_layout: TitleView
+
     @BindView(R.id.iv_svga)
     lateinit var iv_svga: SVGAImageView
+
     @BindView(R.id.cardview_search)
     lateinit var cardview_search: LinearLayout
+
     @BindView(R.id.et_search)
     lateinit var et_search: EditText
+
     @BindView(R.id.iv_search)
     lateinit var iv_search: ImageView
-    @BindView(R.id.iv_search_back)
-    lateinit var iv_search_back: ImageView
+
     @BindView(R.id.history_recycleview)
     lateinit var history_recycleview: RecyclerView
 
@@ -96,8 +103,10 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     var TAG = "MainActivity"
     private lateinit var mIat: SpeechRecognizer
     private lateinit var mIatDialog: RecognizerDialog
+
     // 用HashMap存储听写结果
     private val mIatResults = LinkedHashMap<String?, String>()
+
     // 引擎类型 这里我只考虑了一种引擎类型 :云端的
     private val mCLOUDType = SpeechConstant.TYPE_CLOUD
 
@@ -140,7 +149,6 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
 
     override fun initData(bundle: Bundle?) {
         initView()
-        requestPermission()
         EventBus.getDefault().register(this)
     }
 
@@ -171,8 +179,6 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         initTab()
         initSearchRecord()
         iv_search.visibility = View.VISIBLE
-        val isNightMode = SPUtils.getParam(this, "nightMode", false) as Boolean
-
         et_search.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {//搜索按键action
                 beginSearch()
@@ -195,6 +201,8 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         val searchRecord = SearchRecord()
         searchRecord.name = content
         dbManager.insertUser(searchRecord)
+        searchRecordAdapter.data.add(searchRecord)
+        searchRecordAdapter.notifyDataSetChanged()
         et_search.setText("")
         KeyboardUtils.hideKeyboard(et_search)
     }
@@ -204,11 +212,12 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         searchRecordAdapter = SearchRecordAdapter(this, list)
         history_recycleview.layoutManager = LinearLayoutManager(this)
         history_recycleview.adapter = searchRecordAdapter
-        searchRecordAdapter.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
-            val bundle = Bundle()
-            bundle.putString("key", searchRecordAdapter.data[position].name)
-            SearchResultActivity.startActivity(this@MainActivity, bundle)
-        }
+        searchRecordAdapter.onItemClickListener =
+            BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
+                val bundle = Bundle()
+                bundle.putString("key", searchRecordAdapter.data[position].name)
+                SearchResultActivity.startActivity(this@MainActivity, bundle)
+            }
     }
 
     /**
@@ -255,13 +264,20 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
             //默认选中的Tab
             viewPager.currentItem = 0
             //            tabLayout.getTabAt(0).getCustomView().setSelected(true);
-            loadSVGAAnimation()
-
+            loadAnimation()
         }
 
     }
 
-    @OnClick(R.id.title, R.id.iv_svga, R.id.iv_search_back, R.id.iv_search, R.id.tv_search_clear, R.id.iv_speech_search)
+    @OnClick(
+        R.id.title,
+        R.id.iv_svga,
+        R.id.iv_search_back,
+        R.id.cardview_search,
+        R.id.iv_search,
+        R.id.tv_search_clear,
+        R.id.iv_speech_search
+    )
     override fun onClick(view: View) {
         when (view.id) {
             R.id.title -> {
@@ -276,9 +292,18 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
                 iv_svga.stopAnimation()
                 iv_svga.visibility = View.GONE
             }
-            R.id.iv_search_back -> SearchViewUtils.handleToolBar(applicationContext, cardview_search, et_search)
+            R.id.iv_search_back -> SearchViewUtils.handleSearchLayout(
+                applicationContext,
+                cardview_search,
+                et_search
+            )
+            R.id.cardview_search -> SearchViewUtils.handleSearchLayout(
+                applicationContext,
+                cardview_search,
+                et_search
+            )
             R.id.iv_search -> {
-                SearchViewUtils.handleToolBar(applicationContext, cardview_search, et_search)
+                SearchViewUtils.handleSearchLayout(applicationContext, cardview_search, et_search)
                 isSearching = true
             }
             R.id.tv_search_clear -> {
@@ -295,14 +320,21 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     }
 
     fun requestPermission() {
-        requestPermission(this, object : PermissionUtil.RequestPermissionCallBack {
+        requestPermission(
+            this,
+            object : PermissionUtil.RequestPermissionCallBack {
 
-            override fun granted() {
+                override fun granted() {
 
-            }
+                }
 
-            override fun denied() {}
-        }, *arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE))
+                override fun denied() {}
+            },
+            arrayOf(
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_PHONE_STATE
+            )
+        )
     }
 
     public override fun onRestart() {
@@ -322,13 +354,17 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_DOWN) {
             if (isSearching) {
-                SearchViewUtils.handleToolBar(applicationContext, cardview_search, et_search)
+                SearchViewUtils.handleSearchLayout(applicationContext, cardview_search, et_search)
                 isSearching = false
                 return false
             }
             if (System.currentTimeMillis() - exitTime > 2000) {
                 //弹出提示，可以有多种方式
-                Toast.makeText(applicationContext, getString(R.string.press_exit), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.press_exit),
+                    Toast.LENGTH_SHORT
+                ).show()
                 exitTime = System.currentTimeMillis()
             } else {
                 finish()
@@ -340,33 +376,30 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     }
 
 
-    private fun loadSVGAAnimation() {
+    private fun loadAnimation() {
         val parser = SVGAParser(this)
-        resetDownloader(parser)
         try {
-            parser.parse(URL("https://github.com/yyued/SVGA-Samples/blob/master/kingset.svga?raw=true"), object : SVGAParser.ParseCompletion {
-                override fun onComplete(videoItem: SVGAVideoEntity) {
-                    val drawable = SVGADrawable(videoItem, requestDynamicItemWithSpannableText())
-                    iv_svga.setImageDrawable(drawable)
-                    iv_svga.startAnimation()
+            parser.parse(
+                URL("https://github.com/yyued/SVGA-Samples/blob/master/kingset.svga?raw=true"),
+                object : SVGAParser.ParseCompletion {
+                    override fun onComplete(videoItem: SVGAVideoEntity) {
+                        val drawable =
+                            SVGADrawable(videoItem, requestDynamicItemWithSpannableText())
+                        iv_svga.setImageDrawable(drawable)
+                        iv_svga.startAnimation()
 
-                    Handler().postDelayed({
-                        /**
-                         * 要执行的操作
-                         */
-                        /**
-                         * 要执行的操作
-                         */
-                        iv_svga.stopAnimation()
-                        iv_svga.visibility = View.GONE
-                    }, 5000)
+                        Handler().postDelayed({
 
-                }
+                            iv_svga.stopAnimation()
+                            iv_svga.visibility = View.GONE
+                        }, 3000)
 
-                override fun onError() {
+                    }
 
-                }
-            })
+                    override fun onError() {
+
+                    }
+                })
         } catch (e: Exception) {
             print(true)
         }
@@ -376,17 +409,23 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     /**
      * 你可以设置富文本到 ImageKey 相关的元素上
      * 富文本是会自动换行的，不要设置过长的文本
-     *
      * @return
      */
     private fun requestDynamicItemWithSpannableText(): SVGADynamicEntity {
         val dynamicEntity = SVGADynamicEntity()
-        val spannableStringBuilder = SpannableStringBuilder(getString(R.string.welcome_learn_android))
-        spannableStringBuilder.setSpan(ForegroundColorSpan(Color.YELLOW), 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+        val spannableStringBuilder =
+            SpannableStringBuilder(getString(R.string.welcome_learn_android))
+        spannableStringBuilder.setSpan(
+            ForegroundColorSpan(Color.YELLOW),
+            0,
+            4,
+            Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
         val textPaint = TextPaint()
         textPaint.color = Color.WHITE
         textPaint.textSize = 28f
-        dynamicEntity.setDynamicText(StaticLayout(
+        dynamicEntity.setDynamicText(
+            StaticLayout(
                 spannableStringBuilder,
                 0,
                 spannableStringBuilder.length,
@@ -396,7 +435,8 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
                 1.0f,
                 0.0f,
                 false
-        ), "banner")
+            ), "banner"
+        )
         dynamicEntity.setDynamicDrawer({ canvas, frameIndex ->
             val aPaint = Paint()
             aPaint.color = Color.WHITE
@@ -413,7 +453,11 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
      */
     private fun resetDownloader(parser: SVGAParser) {
         parser.fileDownloader = object : SVGAParser.FileDownloader() {
-            override fun resume(url: URL, complete: Function1<InputStream, Unit>, failure: Function1<Exception, Unit>) {
+            override fun resume(
+                url: URL,
+                complete: Function1<InputStream, Unit>,
+                failure: Function1<Exception, Unit>
+            ) {
                 Thread(Runnable {
                     val client = OkHttpClient()
                     val request = Request.Builder().url(url).get().build()
@@ -447,9 +491,9 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     fun onEvent(event: ChangeNightEvent) {
         val isNightMode = SPUtils.getParam(this, "nightMode", false) as Boolean
         if (isNightMode) {
-            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(com.gaolei.basemodule.R.color.app_color_night), 0)
+            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(R.color.app_color_night), 0)
         } else {
-            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(com.gaolei.basemodule.R.color.app_color), 0)
+            StatusBarUtil.setColorForSwipeBack(this, resources.getColor(R.color.app_color), 0)
         }
     }
 
@@ -527,7 +571,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
             }
 
             override fun denied() {}
-        }, *arrayOf(Manifest.permission.RECORD_AUDIO))
+        }, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO))
     }
 
     fun setParam() {
@@ -555,7 +599,10 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         // 设置音频保存路径，保存音频格式支持pcm、wav，设置路径为sd卡请注意WRITE_EXTERNAL_STORAGE权限
         // 注：AUDIO_FORMAT参数语记需要更新版本才能生效
         mIat.setParameter(SpeechConstant.AUDIO_FORMAT, "wav")
-        mIat.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/iat.wav")
+        mIat.setParameter(
+            SpeechConstant.ASR_AUDIO_PATH,
+            Environment.getExternalStorageDirectory().toString() + "/msc/iat.wav"
+        )
     }
 
     /**
@@ -586,7 +633,10 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
         //考虑到TextView只能显示文字 ，后面还要测试文字转语音，所以换EditText控件
         et_search.setSelection(et_search.length())
         KeyboardUtils.showKeyboard(et_search)
-        if (et_search.text.toString().length > 0 && "SearchResultActivity" != Utils.getTopActivity(this))
+        if (et_search.text.toString().length > 0 && "SearchResultActivity" != Utils.getTopActivity(
+                this
+            )
+        )
             beginSearch()
     }
 

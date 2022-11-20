@@ -1,10 +1,9 @@
 package com.android.learn.mcontract
 
 
-import com.android.learn.base.mmodel.FeedArticleListData
-import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
-import com.android.learn.base.mmodel.TreeBean
-import com.android.learn.base.mview.BaseView
+import com.android.base.mmodel.FeedArticleListData
+import com.android.base.mmodel.FeedArticleListData.FeedArticleData
+import com.android.base.mview.BaseView
 
 
 class KnowledgeChildContract {

@@ -26,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/img_item"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
                 android:src="@mipmap/pic_android" />
@@ -39,13 +39,13 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColor="@color/colorAccent"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:typeface="sans"
                 tools:text="DeliveryDeliveryDelivery" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"

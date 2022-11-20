@@ -11,7 +11,7 @@ import android.widget.TextView
 
 import com.android.learn.R
 import com.android.learn.activity.KnowledgeChildActivity
-import com.android.learn.base.mmodel.TreeBean
+import com.android.base.mmodel.TreeBean
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 

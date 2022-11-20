@@ -1,15 +1,13 @@
 package com.android.learn.mpresenter
 
 
-import com.android.learn.base.mmodel.*
-import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.base.thirdframe.rxjava.BaseObserver
-import com.android.learn.base.utils.ResponseStatusUtil
-import com.android.learn.mcontract.CollectContract
+import com.android.base.mmodel.BaseData
+import com.android.base.mmodel.BaseListResponse
+import com.android.base.mmodel.HotKeyData
+import com.android.base.mpresenter.BasePresenter
+import com.android.base.thirdframe.rxjava.BaseObserver
+import com.android.base.utils.ResponseStatusUtil
 import com.android.learn.mcontract.MainActivityContract
-
-import io.reactivex.Observable
 
 
 class MainActivityPresenter : BasePresenter<MainActivityContract.View>(), MainActivityContract.Presenter {

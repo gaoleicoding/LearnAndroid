@@ -10,12 +10,12 @@ import com.android.learn.activity.MyCollectActivity
 import com.android.learn.activity.MyTodoActivity
 import com.android.learn.activity.RegisterLoginActivity
 import com.android.learn.activity.SettingActivity
-import com.android.learn.base.event.LoginEvent
-import com.android.learn.base.event.LogoutEvent
-import com.android.learn.base.fragment.BaseMvpFragment
-import com.android.learn.base.utils.SPUtils
-import com.android.learn.base.utils.Utils
-import com.android.learn.base.utils.account.UserUtil
+import com.android.base.event.LoginEvent
+import com.android.base.event.LogoutEvent
+import com.android.base.fragment.BaseMvpFragment
+import com.android.base.utils.SPUtils
+import com.android.base.utils.Utils
+import com.android.base.utils.account.UserUtil
 import com.android.learn.mcontract.UserInfoContract
 import com.android.learn.mpresenter.UserInfoPresenter
 import com.bumptech.glide.Glide
@@ -47,6 +47,7 @@ class UserFragment : BaseMvpFragment<UserInfoPresenter, UserInfoContract.View>()
     @OnClick(R.id.iv_user_photo, R.id.my_setting_layout, R.id.my_collect_layout, R.id.my_todo_layout)
     fun click(view: View) {
         when (view.id) {
+            R.id.my_todo_layout,
             R.id.my_collect_layout -> {
                 if (!UserUtil.isLogined) {
                     RegisterLoginActivity.startActivity(activity!!)
@@ -55,7 +56,6 @@ class UserFragment : BaseMvpFragment<UserInfoPresenter, UserInfoContract.View>()
                 }
                 MyCollectActivity.startActivity(activity!!)
             }
-            R.id.my_todo_layout -> MyTodoActivity.startActivity(activity!!)
             R.id.my_setting_layout -> SettingActivity.startActivity(activity!!)
 
             R.id.iv_user_photo -> if (!UserUtil.isLogined) {

@@ -1,7 +1,7 @@
 .gradle/
 .DS_Store
 local.properties
-/com.android.learn.base.greendao.gen
+/com.android.base.greendao.gen
 # build files
 build/
 bin/

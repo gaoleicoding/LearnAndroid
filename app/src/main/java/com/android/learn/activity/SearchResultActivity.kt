@@ -12,9 +12,9 @@ import butterknife.BindView
 import com.android.learn.R
 import com.android.learn.adapter.ArticleQuickAdapter
 import com.android.learn.adapter.DividerItemDecoration
-import com.android.learn.base.activity.BaseMvpActivity
-import com.android.learn.base.mmodel.FeedArticleListData
-import com.android.learn.base.mmodel.FeedArticleListData.FeedArticleData
+import com.android.base.activity.BaseMvpActivity
+import com.android.base.mmodel.FeedArticleListData
+import com.android.base.mmodel.FeedArticleListData.FeedArticleData
 import com.android.learn.mcontract.SearchContract
 import com.android.learn.mpresenter.SearchPresenter
 import com.chad.library.adapter.base.BaseQuickAdapter

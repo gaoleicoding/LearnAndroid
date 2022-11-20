@@ -7,9 +7,9 @@ import android.view.View
 
 import com.android.learn.R
 import com.android.learn.adapter.HorizontalPagerAdapter
-import com.android.learn.base.fragment.BaseMvpFragment
-import com.android.learn.base.mmodel.TreeBean
-import com.android.learn.base.view.CustomProgressDialog
+import com.android.base.fragment.BaseMvpFragment
+import com.android.base.mmodel.TreeBean
+import com.android.base.view.CustomProgressDialog
 import com.android.learn.mcontract.KnowledgeContract
 import com.android.learn.mpresenter.KnowledgePresenter
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager

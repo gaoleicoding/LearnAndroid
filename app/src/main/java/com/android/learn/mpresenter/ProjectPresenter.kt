@@ -1,12 +1,10 @@
 package com.android.learn.mpresenter
 
 
-import com.android.learn.base.mmodel.ProjectListData
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.base.thirdframe.rxjava.BaseObserver
+import com.android.base.mmodel.ProjectListData
+import com.android.base.mpresenter.BasePresenter
+import com.android.base.thirdframe.rxjava.BaseObserver
 import com.android.learn.mcontract.ProjectContract
-
-import io.reactivex.Observable
 
 
 class ProjectPresenter : BasePresenter<ProjectContract.View>(), ProjectContract.Presenter {

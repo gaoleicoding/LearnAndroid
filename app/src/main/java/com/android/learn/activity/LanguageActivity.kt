@@ -10,11 +10,11 @@ import android.widget.TextView
 import butterknife.BindView
 import butterknife.OnClick
 import com.android.learn.R
-import com.android.learn.base.activity.BaseActivity
-import com.android.learn.base.event.RestartMainEvent
-import com.android.learn.base.utils.LanguageUtil
-import com.android.learn.base.utils.LogUtil
-import com.android.learn.base.utils.SPUtils
+import com.android.base.activity.BaseActivity
+import com.android.base.event.RestartMainEvent
+import com.android.base.utils.LanguageUtil
+import com.android.base.utils.LogUtil
+import com.android.base.utils.SPUtils
 import org.greenrobot.eventbus.EventBus
 
 

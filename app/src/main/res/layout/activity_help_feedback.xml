@@ -7,7 +7,7 @@
     skin:enable="true"
     android:orientation="vertical">
 
-    <com.android.learn.base.view.TitleView
+    <com.android.base.view.TitleView
         android:id="@+id/title_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -73,6 +73,7 @@
             android:hint="@string/please_inupt_content"
             skin:enable="true"
             android:gravity="top"
+            android:textSize="14sp"
             android:inputType="text" />
     </LinearLayout>
 

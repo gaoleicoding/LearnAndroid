@@ -1,14 +1,10 @@
 package com.android.learn.mpresenter
 
-import com.android.learn.base.mmodel.BaseListResponse
-import com.android.learn.base.mmodel.BaseResponse
-import com.android.learn.base.mmodel.TreeBean
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.base.thirdframe.rxjava.BaseObserver
+import com.android.base.mmodel.BaseListResponse
+import com.android.base.mmodel.TreeBean
+import com.android.base.mpresenter.BasePresenter
+import com.android.base.thirdframe.rxjava.BaseObserver
 import com.android.learn.mcontract.KnowledgeContract
-
-import io.reactivex.Observable
-import io.reactivex.disposables.Disposable
 
 
 /**

@@ -14,7 +14,7 @@ import android.widget.TextView
 import butterknife.BindView
 import butterknife.OnClick
 import com.android.learn.R
-import com.android.learn.base.activity.BaseActivity
+import com.android.base.activity.BaseActivity
 import com.android.learn.fragment.TodoFragment
 import com.android.learn.view.CustomViewPager
 import java.util.*

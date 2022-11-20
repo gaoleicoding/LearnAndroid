@@ -1,17 +1,15 @@
 package com.android.learn.mpresenter
 
 
-import com.android.learn.base.mmodel.BaseData
-import com.android.learn.base.mmodel.RegisterLoginData
-import com.android.learn.base.mpresenter.BasePresenter
-import com.android.learn.base.thirdframe.retrofit.ApiService
-import com.android.learn.base.thirdframe.retrofit.RetrofitProvider
-import com.android.learn.base.thirdframe.rxjava.BaseObserver
-import com.android.learn.base.utils.ResponseStatusUtil
-import com.android.learn.base.utils.Utils
+import com.android.base.mmodel.BaseData
+import com.android.base.mmodel.RegisterLoginData
+import com.android.base.mpresenter.BasePresenter
+import com.android.base.thirdframe.retrofit.ApiService
+import com.android.base.thirdframe.retrofit.RetrofitProvider
+import com.android.base.thirdframe.rxjava.BaseObserver
+import com.android.base.utils.ResponseStatusUtil
+import com.android.base.utils.Utils
 import com.android.learn.mcontract.RegisterLoginContract
-
-import io.reactivex.Observable
 
 
 class RegisterLoginPresenter : BasePresenter<RegisterLoginContract.View>(), RegisterLoginContract.Presenter {

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     skin:enable="true">
 
-    <com.android.learn.base.view.TitleView
+    <com.android.base.view.TitleView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

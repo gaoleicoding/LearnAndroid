@@ -10,13 +10,11 @@ import com.android.learn.R
 import com.android.learn.activity.ArticleDetailActivity
 import com.android.learn.adapter.DividerItemDecoration
 import com.android.learn.adapter.ProjectQuickAdapter
-import com.android.learn.base.fragment.BaseMvpFragment
-import com.android.learn.base.mmodel.ProjectListData
-import com.android.learn.base.view.CustomProgressDialog
-import com.android.learn.mcontract.MainActivityContract
+import com.android.base.fragment.BaseMvpFragment
+import com.android.base.mmodel.ProjectListData
+import com.android.base.view.CustomProgressDialog
 import com.android.learn.mcontract.ProjectContract
 import com.android.learn.mpresenter.ProjectPresenter
-import com.chad.library.adapter.base.BaseQuickAdapter
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
