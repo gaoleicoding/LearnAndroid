@@ -47,7 +47,6 @@ ext {
             "event-bus"                    : "org.greenrobot:eventbus:3.1.1",
             "eventbus-annotation-processor": "org.greenrobot:eventbus-annotation-processor:3.1.1",
 
-            "greendao"                     : "org.greenrobot:greendao:3.2.0",
             "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",
             "customactivityoncrash"        : "cat.ereza:customactivityoncrash:2.2.0",
 
@@ -68,7 +67,7 @@ ext {
             "infinitecycleviewpager"       : 'com.github.devlight:infinitecycleviewpager:1.0.2',
             "SVGAPlayer-Android"           : 'com.github.yyued:SVGAPlayer-Android:2.3.0',
             "flowlayout"                   : 'cn.lankton:flowlayout:1.0.1',
-            "greendao"                     : 'org.greenrobot:greendao:3.2.2',
+            "greendao"                     : 'org.greenrobot:greendao:3.3.0',
             "bga-swipebacklayout"          : 'cn.bingoogolapple:bga-swipebacklayout:1.2.0@aar',
 
     ]

@@ -1,14 +1,8 @@
 package com.android.learn.base.db
 
-import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import com.android.learn.base.application.CustomApplication.Companion.context
-
 import com.android.learn.base.greendao.gen.DaoMaster
-import com.android.learn.base.greendao.gen.DaoSession
-import com.android.learn.base.greendao.gen.SearchRecordDao
-
-import org.greenrobot.greendao.query.QueryBuilder
 
 class DBManager private constructor(){
     private var openHelper: DaoMaster.DevOpenHelper? = null
