@@ -105,8 +105,6 @@ app扫码下载体验
 
 ![image](https://github.com/gaoleicoding/LearnAndroid/raw/master/material/screenshots/app.png)
 
-![image](https://github.com/gaoleicoding/LearnAndroid/raw/master/material/screenshots/app.png)
-
  
 app效果图
 
