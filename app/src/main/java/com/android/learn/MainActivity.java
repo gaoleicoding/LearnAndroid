@@ -258,7 +258,6 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
             //默认选中的Tab
             viewPager.setCurrentItem(0);
 //            tabLayout.getTabAt(0).getCustomView().setSelected(true);
-            //TODO:恢复动画
             loadAnimation();
 
         }
@@ -315,7 +314,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     public void onRestart() {
         super.onRestart();
         //跳转到设置界面后返回，重新检查权限
-        requestPermission();
+//        requestPermission();
     }
 
     public void onStart() {
