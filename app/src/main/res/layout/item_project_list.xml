@@ -67,6 +67,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/item_project_list_author_tv"
                 android:gravity="center"
+                android:maxLines="1"
                 android:textColor="@color/color_666666"
                 skin:enable="true" />
 
