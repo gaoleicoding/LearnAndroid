@@ -340,7 +340,7 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
     public override fun onRestart() {
         super.onRestart()
         //跳转到设置界面后返回，重新检查权限
-        requestPermission()
+//        requestPermission()
     }
 
     public override fun onStart() {
