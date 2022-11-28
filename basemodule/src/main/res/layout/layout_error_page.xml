@@ -32,6 +32,5 @@
         android:layout_margin="36dp"
         android:gravity="center"
         android:text="@string/refresh"
-        android:textColor="@color/color_co"
-        android:drawable="@drawable/common_textcolor_states" />
+        android:textColor="@color/color_co" />
 </LinearLayout>
