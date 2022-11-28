@@ -357,7 +357,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 @Override
                 public void onComplete(@NotNull SVGAVideoEntity videoItem) {
                     SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getString(R.string.welcome_learn_android));
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getString(R.string.welcome_learn_android) +" "+ getString(R.string.app_name));
                     spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                     TextPaint textPaint = new TextPaint();
                     textPaint.setColor(Color.WHITE);
