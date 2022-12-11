@@ -1,24 +1,22 @@
 package com.android.learn.adapter
 
 import android.content.Context
-import android.support.v4.view.PagerAdapter
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.PagerAdapter
+import com.android.base.mmodel.TreeBean
 import com.android.learn.R
 import com.android.learn.activity.KnowledgeChildActivity
-import com.android.base.mmodel.TreeBean
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 
-import java.util.ArrayList
 
-
-class HorizontalPagerAdapter(private val mContext: Context?, mList: List<TreeBean>) : PagerAdapter() {
+class HorizontalPagerAdapter(private val mContext: Context?, mList: List<TreeBean>) :
+    PagerAdapter() {
     private val mLayoutInflater: LayoutInflater
     private var mList: List<TreeBean> = ArrayList()
 
@@ -46,11 +44,14 @@ class HorizontalPagerAdapter(private val mContext: Context?, mList: List<TreeBea
         recyclerView.layoutManager = LinearLayoutManager(mContext)
         val adapter = ChildrenAdapter(treeBean.children)
         recyclerView.adapter = adapter
-        adapter.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
-            KnowledgeChildActivity.startTreeChildrenActivity(mContext,
+        adapter.onItemClickListener =
+            BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
+                KnowledgeChildActivity.startTreeChildrenActivity(
+                    mContext,
                     treeBean.children[position].id,
-                    treeBean.children[position].name)
-        }
+                    treeBean.children[position].name
+                )
+            }
         container.addView(view)
         return view
     }
@@ -67,7 +68,8 @@ class HorizontalPagerAdapter(private val mContext: Context?, mList: List<TreeBea
         return PagerAdapter.POSITION_NONE
     }
 
-    private inner class ChildrenAdapter(data: List<TreeBean.ChildrenBean>?) : BaseQuickAdapter<TreeBean.ChildrenBean, BaseViewHolder>(R.layout.item_tree_children, data) {
+    private inner class ChildrenAdapter(data: List<TreeBean.ChildrenBean>?) :
+        BaseQuickAdapter<TreeBean.ChildrenBean, BaseViewHolder>(R.layout.item_tree_children, data) {
 
         override fun convert(helper: BaseViewHolder, item: TreeBean.ChildrenBean) {
             helper.setText(R.id.tv, item.name)

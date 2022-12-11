@@ -3,8 +3,8 @@ package com.android.base.application
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
-import android.support.multidex.MultiDex
 import android.view.LayoutInflater
+import androidx.multidex.MultiDex
 
 import com.android.base.utils.SPUtils
 import com.android.base.xskin.ExtraAttrRegister

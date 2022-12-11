@@ -3,9 +3,8 @@
  */
 package com.android.base.utils
 
-import android.support.multidex.BuildConfig
 import android.util.Log
-
+import androidx.multidex.BuildConfig
 
 
 object LogUtil {

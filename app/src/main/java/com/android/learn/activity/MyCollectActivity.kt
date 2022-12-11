@@ -3,20 +3,20 @@ package com.android.learn.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
-import com.android.learn.R
-import com.android.learn.adapter.ArticleQuickAdapter
-import com.android.learn.adapter.DividerItemDecoration
 import com.android.base.activity.BaseMvpActivity
 import com.android.base.event.CancelCollectEvent
 import com.android.base.mmodel.FeedArticleListData
 import com.android.base.mmodel.FeedArticleListData.FeedArticleData
 import com.android.base.view.CustomProgressDialog
+import com.android.learn.R
+import com.android.learn.adapter.ArticleQuickAdapter
+import com.android.learn.adapter.DividerItemDecoration
 import com.android.learn.mcontract.CollectContract
 import com.android.learn.mpresenter.CollectPresenter
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -25,17 +25,22 @@ import org.greenrobot.eventbus.EventBus
 import java.util.*
 
 
-class MyCollectActivity : BaseMvpActivity<CollectPresenter, CollectContract.View>(), CollectContract.View {
+class MyCollectActivity : BaseMvpActivity<CollectPresenter, CollectContract.View>(),
+    CollectContract.View {
 
 
     @BindView(R.id.iv_back)
     lateinit var iv_back: ImageView
+
     @BindView(R.id.title)
     lateinit var title: TextView
+
     @BindView(R.id.article_collect_recyclerview)
     lateinit var article_collect_recyclerview: RecyclerView
+
     @BindView(R.id.smartRefreshLayout)
     lateinit var smartRefreshLayout: SmartRefreshLayout
+
     @BindView(R.id.tv_empty_collect)
     lateinit var tv_empty_collect: TextView
     lateinit var articleDataList: List<FeedArticleData>
@@ -87,20 +92,31 @@ class MyCollectActivity : BaseMvpActivity<CollectPresenter, CollectContract.View
     private fun initRecyclerView() {
         articleDataList = ArrayList()
         feedArticleAdapter = ArticleQuickAdapter(this, articleDataList, "MyCollectActivity")
-        article_collect_recyclerview!!.addItemDecoration(DividerItemDecoration(this,
-                DividerItemDecoration.VERTICAL_LIST))
+        article_collect_recyclerview!!.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                DividerItemDecoration.VERTICAL_LIST
+            )
+        )
         article_collect_recyclerview!!.layoutManager = LinearLayoutManager(this)
 
         article_collect_recyclerview!!.isFocusable = false
         article_collect_recyclerview!!.adapter = feedArticleAdapter
-        feedArticleAdapter!!.onItemChildClickListener = BaseQuickAdapter.OnItemChildClickListener { adapter, view, position -> mPresenter!!.cancelCollectArticle(position, feedArticleAdapter!!.data[position].originId) }
-        feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
-            val intent = Intent(this@MyCollectActivity, ArticleDetailActivity::class.java)
-            val bundle = Bundle()
-            bundle.putString("url", articleDataList!![position].link)
-            intent.putExtras(bundle)
-            startActivity(intent)
-        }
+        feedArticleAdapter!!.onItemChildClickListener =
+            BaseQuickAdapter.OnItemChildClickListener { adapter, view, position ->
+                mPresenter!!.cancelCollectArticle(
+                    position,
+                    feedArticleAdapter!!.data[position].originId
+                )
+            }
+        feedArticleAdapter!!.onItemClickListener =
+            BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
+                val intent = Intent(this@MyCollectActivity, ArticleDetailActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("url", articleDataList!![position].link)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
     }
 
     private fun initSmartRefreshLayout() {

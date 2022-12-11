@@ -1,10 +1,10 @@
 package com.android.learn.fragment
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import butterknife.BindView
 import com.android.learn.R
 import com.android.learn.activity.TodoEditActivity

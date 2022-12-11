@@ -30,14 +30,13 @@
             android:layout_height="0.5dp"
             skin:enable="true" />
 
-        <android.support.design.widget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             app:tabIndicatorColor="@color/app_color"
-            app:tabIndicatorHeight="0dp">
+            app:tabIndicatorHeight="0dp" />
 
-        </android.support.design.widget.TabLayout>
     </LinearLayout>
 
     <com.opensource.svgaplayer.SVGAImageView
@@ -158,7 +157,7 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/history_recycleview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

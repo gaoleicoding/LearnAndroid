@@ -8,10 +8,6 @@ import android.graphics.Paint
 import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
-import android.support.design.widget.TabLayout
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.text.*
 import android.text.style.ForegroundColorSpan
 import android.util.Log
@@ -22,6 +18,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.*
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.OnClick
 import cn.lankton.flowlayout.FlowLayout
@@ -43,21 +42,18 @@ import com.android.learn.view.CustomViewPager
 import com.android.learn.view.SearchViewUtils
 import com.android.speechdemo.xf.JsonParser
 import com.chad.library.adapter.base.BaseQuickAdapter
+import com.google.android.material.tabs.TabLayout
 import com.iflytek.cloud.*
 import com.iflytek.cloud.ui.RecognizerDialog
 import com.iflytek.cloud.ui.RecognizerDialogListener
 import com.iflytek.sunflower.FlowerCollector
 import com.jaeger.library.StatusBarUtil
 import com.opensource.svgaplayer.*
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import org.json.JSONException
 import org.json.JSONObject
-import java.io.IOException
-import java.io.InputStream
 import java.net.URL
 import java.util.*
 
@@ -444,33 +440,6 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
             false
         }, "banner")
         return dynamicEntity
-    }
-
-    /**
-     * 设置下载器，这是一个可选的配置项。
-     *
-     * @param parser
-     */
-    private fun resetDownloader(parser: SVGAParser) {
-        parser.fileDownloader = object : SVGAParser.FileDownloader() {
-            override fun resume(
-                url: URL,
-                complete: Function1<InputStream, Unit>,
-                failure: Function1<Exception, Unit>
-            ) {
-                Thread(Runnable {
-                    val client = OkHttpClient()
-                    val request = Request.Builder().url(url).get().build()
-                    try {
-                        val response = client.newCall(request).execute()
-                        complete.invoke(response.body()!!.byteStream())
-                    } catch (e: IOException) {
-                        e.printStackTrace()
-                        failure.invoke(e)
-                    }
-                }).start()
-            }
-        }
     }
 
 

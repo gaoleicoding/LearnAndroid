@@ -25,7 +25,7 @@
             android:text="@string/language_follow_system"
             skin:enable="true" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_system"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             android:text="@string/language_chinese"
             skin:enable="true" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_chinese"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             android:text="@string/language_english"
             skin:enable="true" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_english"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

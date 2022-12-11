@@ -1,10 +1,10 @@
 package com.android.base.thirdframe.retrofit.interceptor
 
 import android.content.Context
-import android.support.multidex.BuildConfig
-import android.support.v4.util.ArrayMap
+import android.util.ArrayMap
 import android.util.Log
 import android.util.Pair
+import androidx.multidex.BuildConfig
 import com.android.base.utils.LogUtil
 import com.android.base.utils.Utils
 import okhttp3.*

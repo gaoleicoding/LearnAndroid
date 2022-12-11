@@ -5,10 +5,10 @@ import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 
 class DividerItemDecoration(context: Context, orientation: Int) : RecyclerView.ItemDecoration() {
 
@@ -48,7 +48,7 @@ class DividerItemDecoration(context: Context, orientation: Int) : RecyclerView.I
         val childCount = parent.childCount
         for (i in 0 until childCount) {
             val child = parent.getChildAt(i)
-            val v = android.support.v7.widget.RecyclerView(parent.context)
+            val v = androidx.recyclerview.widget.RecyclerView(parent.context)
             val params = child
                     .layoutParams as RecyclerView.LayoutParams
             val top = child.bottom + params.bottomMargin

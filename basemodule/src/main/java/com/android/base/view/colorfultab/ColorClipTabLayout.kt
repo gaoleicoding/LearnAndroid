@@ -3,14 +3,14 @@ package com.android.base.view.colorfultab
 
 import android.content.Context
 import android.graphics.Color
-import android.support.design.widget.TabLayout
-import android.support.v4.view.ViewPager
-import android.support.v4.view.ViewPager.*
 import android.util.AttributeSet
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.RecyclerView.*
+import androidx.viewpager.widget.ViewPager
 import com.android.base.R
+import com.google.android.material.tabs.TabLayout
 import java.lang.ref.WeakReference
 
 /**

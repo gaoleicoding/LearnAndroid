@@ -4,19 +4,20 @@ package com.android.learn.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import butterknife.BindView
 import butterknife.OnClick
 import com.android.learn.R
 import com.android.base.activity.BaseActivity
 import com.android.learn.fragment.TodoFragment
 import com.android.learn.view.CustomViewPager
+import com.google.android.material.tabs.TabLayout
 import java.util.*
 
 class MyTodoActivity : BaseActivity() {
