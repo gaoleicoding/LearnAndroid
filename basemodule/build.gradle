@@ -8,14 +8,17 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [eventBusIndex: 'com.android.base.MyEventBusIndex']
             }
         }
     }
-
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
     greendao {
         schemaVersion 1                         //数据库版本号，如果数据库需要升级，直接在此修改版本号即可
         daoPackage 'com.android.base.greendao.gen'      //dao包名，默认是entity所在的包
@@ -24,65 +27,56 @@ android {
 }
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api rootProject.appcompat_v7
-    api rootProject.constraint_layout
-    api rootProject.support_design
-    api rootProject.support_cardview
-    api 'com.android.support:multidex:1.0.3'
     testImplementation 'junit:junit:4.12'
-    api fileTree(include: ['*.jar'], dir: 'libs')
-
+    api "androidx.appcompat:appcompat:$rootProject.androidx"
+    api "com.google.android.material:material:$rootProject.design"
+    api "androidx.constraintlayout:constraintlayout:$rootProject.constraint_layout"
+    api "androidx.cardview:cardview:$rootProject.cardview"
+    annotationProcessor 'androidx.annotation:annotation:1.3.0'
+    api 'androidx.multidex:multidex:2.0.0'
     //okhttp retrofit
-    api rootProject.okhttp3
-    api rootProject.retrofit
-    api rootProject.retrofit_converter_gson
-
-    //butterknife
-    api rootProject.butterknife
-    annotationProcessor rootProject.butterknife_compiler
-
-    // glide
-    api rootProject.glide
-    annotationProcessor rootProject.glide_compiler
-    implementation"com.github.bumptech.glide:okhttp3-integration:4.6.0"
-    // banner
-    api rootProject.banner
-
-    // rxjava
-    api rootProject.rxjava
-    api rootProject.rxandroid
-    api rootProject.adapter_rxjava2
-
-    // eventbus
-    api rootProject.event_bus
-    annotationProcessor rootProject.eventbus_annotation_processor
-
+    api "com.squareup.okhttp3:okhttp:$rootProject.okhttp3"
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofit_converter_gson"
     //okhttp保存cookie
-    api rootProject.PersistentCookieJar
-
+    api "com.github.franmontiel:PersistentCookieJar:$rootProject.PersistentCookieJar"
+    //butterknife
+    api "com.jakewharton:butterknife:$rootProject.butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknife_compiler"
+    // glide
+    api "com.github.bumptech.glide:glide:$rootProject.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide_compiler"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.glide"
+    // banner
+    api "com.youth.banner:banner:$rootProject.banner"
+    // rxjava
+    api "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.adapter_rxjava2"
+    // eventbus
+    api "org.greenrobot:eventbus:$rootProject.event_bus"
+    annotationProcessor "org.greenrobot:eventbus-annotation-processor:$rootProject.eventbus_annotation_processor"
     //下拉刷新框架
-    api rootProject.SmartRefreshLayout
-    api rootProject.SmartRefreshHeader
-
+    api "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.SmartRefreshLayout"
+    api "com.scwang.smartrefresh:SmartRefreshHeader:$rootProject.SmartRefreshLayout"
     //RecyclerView万能适配器
-    api rootProject.BaseRecyclerViewAdapterHelper
-
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.BaseRecyclerViewAdapterHelper"
     //友盟统计
-    api rootProject.umeng_common
-    api rootProject.umeng_analytics
+    api "com.umeng.sdk:common:$rootProject.umeng_common"
+    api "com.umeng.sdk:analytics:$rootProject.umeng_analytics"
 
     //崩溃自定义跳转界面
-    api rootProject.customactivityoncrash
-    //    知识点模块的旋转效果
-    api rootProject.infinitecycleviewpager
+    api "cat.ereza:customactivityoncrash:$rootProject.customactivityoncrash"
+    //知识点模块的旋转效果
+    api "com.github.devlight:infinitecycleviewpager:$rootProject.infinitecycleviewpager"
     //    首页欢迎的SVGA动效
-    api rootProject.SVGAPlayer_Android
+    api "com.github.yyued:SVGAPlayer-Android:$rootProject.SVGAPlayer_Android"
     //    搜索页的flow标签
-    api rootProject.flowlayout
+    api "cn.lankton:flowlayout:$rootProject.flowlayout"
     //    搜索历史使用的数据库框架
-    api rootProject.greendao
+    api "org.greenrobot:greendao:$rootProject.greendao"
     //    activity滑动消失框架
-    api rootProject.bga_swipebacklayout
+    api "cn.bingoogolapple:bga-swipebacklayout:$rootProject.bga_swipebacklayout"
     // StatusUtil 沉浸式状态栏
     api('com.jaeger.statusbarutil:library:1.4.0') {
         exclude group: 'com.android.support', module: 'recyclerview-v7'
