@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import android.content.res.Resources.Theme;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;

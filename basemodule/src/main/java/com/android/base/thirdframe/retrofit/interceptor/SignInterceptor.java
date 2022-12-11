@@ -1,7 +1,7 @@
 package com.android.base.thirdframe.retrofit.interceptor;
 
 import android.content.Context;
-import android.support.v4.util.ArrayMap;
+import androidx.collection.ArrayMap;
 import android.util.Log;
 import android.util.Pair;
 

@@ -2,7 +2,7 @@ package com.android.base.thirdframe.glide;
 
 import android.content.Context;
 import android.os.Environment;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.android.base.thirdframe.retrofit.interceptor.ProgressInterceptor;
 import com.bumptech.glide.Glide;

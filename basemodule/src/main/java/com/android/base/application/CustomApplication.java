@@ -2,8 +2,8 @@ package com.android.base.application;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
-import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 import android.view.LayoutInflater;
 
 import com.android.base.xskin.ExtraAttrRegister;

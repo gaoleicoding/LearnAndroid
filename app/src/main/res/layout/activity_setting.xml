@@ -74,7 +74,7 @@
             android:text="@string/night_mode"
             skin:enable="true" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_setting_night"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

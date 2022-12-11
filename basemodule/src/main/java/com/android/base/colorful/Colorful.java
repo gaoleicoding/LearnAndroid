@@ -5,7 +5,7 @@ import java.util.Set;
 
 import android.app.Activity;
 import android.content.res.Resources.Theme;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.View;
 import android.widget.TextView;
 

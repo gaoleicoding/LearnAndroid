@@ -2,7 +2,7 @@ package com.android.base.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.android.base.mpresenter.BasePresenter;
 import com.android.base.utils.LanguageUtil;
