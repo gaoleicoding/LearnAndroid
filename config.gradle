@@ -1,74 +1,46 @@
 ext {
 
-    android = [
-            compileSdkVersion: 28,
-            buildToolsVersion: "28.0.2",
-            minSdkVersion    : 19,
-            targetSdkVersion : 28,
-            versionCode      : 102,
-            versionName      : "1.0.2"
-    ]
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.2'
+    minSdkVersion = 19
+    targetSdkVersion = 28
 
-    version = [
-            androidSupportSdkVersion: "28.+",
-            retrofitSdkVersion      : "2.3.0",
-            glideSdkVersion         : "4.0.0",
-            butterknifeSdkVersion   : "8.4.0",
-    ]
+    androidx = '1.0.0'
+    design = '1.0.0'
+    constraint_layout = '1.1.3'
+    cardview = '1.0.0'
 
+    okhttp3 = '3.10.0'
+    retrofit = '2.4.0'
+    retrofit_converter_gson = '2.0.2'
 
+    butterknife = '10.2.1'
+    butterknife_compiler = '10.2.1'
 
-    dependencies = [
-            appcompatV7                    : "com.android.support:appcompat-v7:28+",
-            design                         : "com.android.support:design:28+",
-            cardview                       : "com.android.support:cardview-v7:28+",
-            "constraint-layout"            : "com.android.support.constraint:constraint-layout:1.1.0",
+    glide = '4.11.0'
+    glide_compiler = '4.11.0'
 
-            "okhttp3"                      : "com.squareup.okhttp3:okhttp:3.10.0",
-            "retrofit"                     : "com.squareup.retrofit2:retrofit:2.4.0",
-            "retrofit-converter-gson"      : "com.squareup.retrofit2:converter-gson:2.0.2",
+    banner = '1.4.10'
 
-            "glide"                        : "com.github.bumptech.glide:glide:4.6.1",
-            "glide-compiler"               : "com.github.bumptech.glide:compiler:4.6.1",
+    rxjava = '2.1.1'
+    rxandroid = '2.0.1'
+    adapter_rxjava2 = '2.3.0'
 
-            "butterknife"                  : "com.jakewharton:butterknife:8.8.1",
-            "butterknife-compiler"         : "com.jakewharton:butterknife-compiler:8.8.1",
+    event_bus = '3.1.1'
+    eventbus_annotation_processor = '3.1.1'
 
-            "rxjava"                       : "io.reactivex.rxjava2:rxjava:2.1.1",
-            "rxandroid"                    : "io.reactivex.rxjava2:rxandroid:2.0.1",
-            "retrofit2:adapter-rxjava2"    : "com.squareup.retrofit2:adapter-rxjava2:2.3.0",
+    BaseRecyclerViewAdapterHelper = '2.9.30'
+    customactivityoncrash = '2.2.0'
+    PersistentCookieJar = 'v1.0.1'
+    umeng_common = '1.5.0'
+    umeng_analytics = '7.5.0'
+    SmartRefreshLayout = '1.0.5'
+    infinitecycleviewpager = '1.0.2'
+    SVGAPlayer_Android = '2.4.7'
+    flowlayout = '1.0.1'
+    greendao = '3.3.0'
 
-            "dagger"                       : "com.google.dagger:dagger:2.0.2",
-            "dagger-compiler"              : "com.google.dagger:dagger-compiler:2.0.2",
-
-            "webview-bridge"               : "com.gzsll.jsbridge:library:1.1.0",
-            "banner"                       : "com.youth.banner:banner:1.4.10",
-
-            "event-bus"                    : "org.greenrobot:eventbus:3.1.1",
-            "eventbus-annotation-processor": "org.greenrobot:eventbus-annotation-processor:3.1.1",
-
-            "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",
-            "customactivityoncrash"        : "cat.ereza:customactivityoncrash:2.2.0",
-
-
-            "leakcanary"                   : "com.squareup.leakcanary:leakcanary-android:1.3",
-
-            "PersistentCookieJar"          : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
-            "umeng-common"                 : 'com.umeng.sdk:common:1.5.0',
-            "umeng-analytics"              : 'com.umeng.sdk:analytics:7.5.0',
-
-            "SmartRefreshLayout"           : 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5',
-            "SmartRefreshHeader"           : 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5',
-
-            "blockcanary-android"          : 'com.github.markzhai:blockcanary-android:1.5.0',
-            "blockcanary-no-op"            : 'com.github.markzhai:blockcanary-no-op:1.5.0',
-            "leakcanary-android"           : 'com.squareup.leakcanary:leakcanary-android:1.6.1',
-            "leakcanary-android-no-op"     : 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1',
-            "infinitecycleviewpager"       : 'com.github.devlight:infinitecycleviewpager:1.0.2',
-            "SVGAPlayer-Android"           : 'com.github.yyued:SVGAPlayer-Android:2.3.0',
-            "flowlayout"                   : 'cn.lankton:flowlayout:1.0.1',
-            "greendao"                     : 'org.greenrobot:greendao:3.3.0',
-            "bga-swipebacklayout"          : 'cn.bingoogolapple:bga-swipebacklayout:1.2.0@aar',
-
-    ]
+    bga_swipebacklayout = '1.2.0'
+    blockcanary_android = '1.5.0'
+    blockcanary_no_op = '1.5.0'
 }

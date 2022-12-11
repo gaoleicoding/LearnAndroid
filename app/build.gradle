@@ -24,14 +24,14 @@ android {
             v2SigningEnabled true
         }
     }
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.android.learn"
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 112
+        versionName "1.1.2"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         multiDexEnabled true
 
     }
@@ -97,12 +97,13 @@ android {
 
     }
     compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
 }
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    kapt rootProject.ext.dependencies["butterknife-compiler"]
+    kapt "com.jakewharton:butterknife-compiler:$rootProject.butterknife_compiler"
     api project(':basemodule')
 }
