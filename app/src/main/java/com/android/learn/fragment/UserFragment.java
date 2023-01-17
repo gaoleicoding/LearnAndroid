@@ -130,7 +130,7 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
         SPUtils.clear(getActivity(), "phone_num");
         SPUtils.clear(getActivity(), "password");
         mPresenter.getLogoutData();
-        RegisterLoginActivity.startActivity(getActivity());
+//        RegisterLoginActivity.startActivity(getActivity());
         UserInfoManager.get().setUserInfo(null);
     }
 

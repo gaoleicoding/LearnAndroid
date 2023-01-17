@@ -102,7 +102,7 @@ public class SettingActivity extends BaseMvpActivity {
                 break;
             case R.id.my_logout_layout:
                 if (!UserInfoManager.get().isLogined()) {
-                    RegisterLoginActivity.startActivity(this);
+                    Utils.showToast(getString(R.string.user_not_login), true);
                     return;
                 }
                 UserInfoManager.get().setLogined(false);
