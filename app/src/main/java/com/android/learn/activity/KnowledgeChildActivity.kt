@@ -29,16 +29,12 @@ class KnowledgeChildActivity :
     KnowledgeChildContract.View {
     @BindView(R.id.iv_back)
     lateinit var iv_back: ImageView
-
     @BindView(R.id.title)
     lateinit var title: TextView
-
     @BindView(R.id.tv_empty_knowledge)
     lateinit var tv_empty_knowledge: TextView
-
     @BindView(R.id.article_recyclerview)
     lateinit var article_recyclerview: RecyclerView
-
     @BindView(R.id.smartRefreshLayout)
     lateinit var smartRefreshLayout: SmartRefreshLayout
     lateinit var articleDataList: List<FeedArticleData>
@@ -55,8 +51,8 @@ class KnowledgeChildActivity :
         titleStr = bundle.getString(TITLE)
         LogUtil.d(TAG, "id--------------$cid")
         LogUtil.d(TAG, "titleStr--------------" + titleStr!!)
-        title!!.text = titleStr
-        iv_back!!.visibility = View.VISIBLE
+        title.text = titleStr
+        iv_back.visibility = View.VISIBLE
         initSmartRefreshLayout()
         initRecyclerView()
     }
@@ -73,11 +69,11 @@ class KnowledgeChildActivity :
 
     override fun showArticleList(listData: FeedArticleListData, isRefresh: Boolean) {
         val newDataList = listData.datas
-        if (newDataList == null || newDataList.size == 0) {
-            smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
+        if (newDataList.size == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData()
             return
         }
-        smartRefreshLayout!!.finishLoadMore()
+        smartRefreshLayout.finishLoadMore()
 
         feedArticleAdapter!!.addData(newDataList)
 
@@ -94,17 +90,17 @@ class KnowledgeChildActivity :
     private fun initRecyclerView() {
         articleDataList = ArrayList()
         feedArticleAdapter = ArticleQuickAdapter(this, articleDataList, "KnowledgeChildActivity")
-        article_recyclerview!!.addItemDecoration(
+        article_recyclerview.addItemDecoration(
             DividerItemDecoration(
                 this,
                 DividerItemDecoration.VERTICAL_LIST
             )
         )
-        article_recyclerview!!.layoutManager = LinearLayoutManager(this)
+        article_recyclerview.layoutManager = LinearLayoutManager(this)
 
         //解决数据加载完成后, 没有停留在顶部的问题
-        article_recyclerview!!.isFocusable = false
-        article_recyclerview!!.adapter = feedArticleAdapter
+        article_recyclerview.isFocusable = false
+        article_recyclerview.adapter = feedArticleAdapter
 
         feedArticleAdapter!!.onItemClickListener =
             BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
@@ -126,11 +122,11 @@ class KnowledgeChildActivity :
 
     //初始化下拉刷新控件
     private fun initSmartRefreshLayout() {
-        smartRefreshLayout!!.isEnableLoadMore = true
-        smartRefreshLayout!!.isEnableRefresh = false
-        smartRefreshLayout!!.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
-        smartRefreshLayout!!.setEnableFooterFollowWhenLoadFinished(true)
-        smartRefreshLayout!!.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
+        smartRefreshLayout.isEnableLoadMore = true
+        smartRefreshLayout.isEnableRefresh = false
+        smartRefreshLayout.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
+        smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true)
+        smartRefreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
             override fun onLoadMore(refreshLayout: RefreshLayout) {
                 mPresenter!!.onLoadMore(cid)
             }

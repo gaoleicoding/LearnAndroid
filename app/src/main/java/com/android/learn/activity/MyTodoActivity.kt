@@ -45,18 +45,18 @@ class MyTodoActivity : BaseActivity() {
 
     private fun initTab() {
 
-        tabLayout!!.getTabAt(0)!!.setCustomView(R.layout.tab_todo)
-        tabLayout!!.getTabAt(1)!!.setCustomView(R.layout.tab_done)
+        tabLayout.getTabAt(0)!!.setCustomView(R.layout.tab_todo)
+        tabLayout.getTabAt(1)!!.setCustomView(R.layout.tab_done)
 
 
-        tabLayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             //标签选中之后执行的方法
             override fun onTabSelected(tab: TabLayout.Tab) {
                 //                title.setText(titles.get(tab.getPosition()));
                 if (tab.position == 0)
-                    iv_search!!.visibility = View.VISIBLE
+                    iv_search.visibility = View.VISIBLE
                 if (tab.position == 1)
-                    iv_search!!.visibility = View.GONE
+                    iv_search.visibility = View.GONE
 
             }
 
@@ -70,14 +70,14 @@ class MyTodoActivity : BaseActivity() {
             }
         })
         //默认选中的Tab
-        tabLayout!!.getTabAt(0)!!.customView!!.isSelected = true
+        tabLayout.getTabAt(0)!!.customView!!.isSelected = true
     }
 
     override fun initData(bundle: Bundle?) {
-        tv_title!!.text = getString(R.string.todo)
-        iv_back!!.visibility = View.VISIBLE
-        iv_search!!.visibility = View.VISIBLE
-        iv_search!!.setImageResource(R.drawable.add_todo)
+        tv_title.text = getString(R.string.todo)
+        iv_back.visibility = View.VISIBLE
+        iv_search.visibility = View.VISIBLE
+        iv_search.setImageResource(R.drawable.add_todo)
         val bundle1 = Bundle()
         bundle1.putInt("position", 0)
         todoFragment = TodoFragment.newInstance(bundle1)
@@ -87,12 +87,12 @@ class MyTodoActivity : BaseActivity() {
         mFragments.add(todoFragment)
         mFragments.add(doneFragment)
         val adapter = CourseDiscussAdapter(supportFragmentManager, mFragments)
-        viewPager!!.offscreenPageLimit = mFragments.size
-        viewPager!!.adapter = adapter
-        viewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-        tabLayout!!.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(viewPager))
+        viewPager.offscreenPageLimit = mFragments.size
+        viewPager.adapter = adapter
+        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+        tabLayout.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(viewPager))
         //将TabLayout和ViewPager关联起来
-        tabLayout!!.setupWithViewPager(viewPager)
+        tabLayout.setupWithViewPager(viewPager)
         initTab()
     }
 
@@ -101,9 +101,7 @@ class MyTodoActivity : BaseActivity() {
         when (view.id) {
             R.id.iv_search -> TodoAddActivity.startActivity(this@MyTodoActivity, null)
         }
-
     }
-
 
     inner class CourseDiscussAdapter(fm: FragmentManager, internal var fragments: List<Fragment>) : FragmentPagerAdapter(fm) {
 

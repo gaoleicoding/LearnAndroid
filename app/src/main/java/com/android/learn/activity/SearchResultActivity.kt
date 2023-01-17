@@ -3,33 +3,39 @@ package com.android.learn.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
-import com.android.learn.R
-import com.android.learn.adapter.ArticleQuickAdapter
-import com.android.learn.adapter.DividerItemDecoration
 import com.android.base.activity.BaseMvpActivity
 import com.android.base.mmodel.FeedArticleListData
 import com.android.base.mmodel.FeedArticleListData.FeedArticleData
+import com.android.learn.R
+import com.android.learn.adapter.ArticleQuickAdapter
+import com.android.learn.adapter.DividerItemDecoration
 import com.android.learn.mcontract.SearchContract
 import com.android.learn.mpresenter.SearchPresenter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import java.util.*
 
-class SearchResultActivity : BaseMvpActivity<SearchPresenter, SearchContract.View>(), SearchContract.View {
+class SearchResultActivity : BaseMvpActivity<SearchPresenter, SearchContract.View>(),
+    SearchContract.View {
+
     @BindView(R.id.iv_back)
     lateinit var iv_back: ImageView
+
     @BindView(R.id.title)
     lateinit var title: TextView
+
     @BindView(R.id.tv_empty_knowledge)
     lateinit var tv_empty_knowledge: TextView
+
     @BindView(R.id.article_recyclerview)
     lateinit var article_recyclerview: RecyclerView
+
     @BindView(R.id.smartRefreshLayout)
     lateinit var smartRefreshLayout: SmartRefreshLayout
     private var feedArticleAdapter: ArticleQuickAdapter? = null
@@ -40,9 +46,9 @@ class SearchResultActivity : BaseMvpActivity<SearchPresenter, SearchContract.Vie
         get() = R.layout.activity_knowledge_article
 
     override fun initData(bundle: Bundle?) {
-        keyword = bundle!!.getString("key")
-        title!!.text = keyword
-        iv_back!!.visibility = View.VISIBLE
+        keyword = bundle!!.getString("key") as String
+        title.text = keyword
+        iv_back.visibility = View.VISIBLE
         initSmartRefreshLayout()
         initRecyclerView()
     }
@@ -58,17 +64,17 @@ class SearchResultActivity : BaseMvpActivity<SearchPresenter, SearchContract.Vie
 
     override fun showArticleList(listData: FeedArticleListData) {
         val newDataList = listData.datas
-        if (newDataList == null || newDataList.size == 0) {
-            smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
+        if (newDataList.size == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData()
         }
-        smartRefreshLayout!!.finishLoadMore()
+        smartRefreshLayout.finishLoadMore()
 
-        feedArticleAdapter!!.addData(newDataList!!)
+        feedArticleAdapter!!.addData(newDataList)
 
         if (feedArticleAdapter!!.data.size == 0) {
-            tv_empty_knowledge!!.visibility = View.VISIBLE
+            tv_empty_knowledge.visibility = View.VISIBLE
         } else
-            tv_empty_knowledge!!.visibility = View.GONE
+            tv_empty_knowledge.visibility = View.GONE
     }
 
     override fun showCollectArticleData(position: Int, feedArticleData: FeedArticleData) {
@@ -82,36 +88,42 @@ class SearchResultActivity : BaseMvpActivity<SearchPresenter, SearchContract.Vie
     private fun initRecyclerView() {
         val articleDataList = ArrayList<FeedArticleData>()
         feedArticleAdapter = ArticleQuickAdapter(this, articleDataList, "KnowledgeChildActivity")
-        article_recyclerview!!.addItemDecoration(DividerItemDecoration(this,
-                DividerItemDecoration.VERTICAL_LIST))
-        article_recyclerview!!.layoutManager = LinearLayoutManager(this)
+        article_recyclerview.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                DividerItemDecoration.VERTICAL_LIST
+            )
+        )
+        article_recyclerview.layoutManager = LinearLayoutManager(this)
 
         //解决数据加载完成后, 没有停留在顶部的问题
-        article_recyclerview!!.isFocusable = false
-        article_recyclerview!!.adapter = feedArticleAdapter
-        feedArticleAdapter!!.onItemClickListener = BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
-            val intent = Intent(this@SearchResultActivity, ArticleDetailActivity::class.java)
-            val bundle = Bundle()
-            bundle.putString("url", feedArticleAdapter!!.data[position].link)
-            intent.putExtras(bundle)
-            startActivity(intent)
-        }
-        feedArticleAdapter!!.onItemChildClickListener = BaseQuickAdapter.OnItemChildClickListener { adapter, view, position ->
-            if (feedArticleAdapter!!.data[position].isCollect) {
-                mPresenter!!.cancelCollectArticle(position, feedArticleAdapter!!.data[position])
-            } else {
-                mPresenter!!.addCollectArticle(position, feedArticleAdapter!!.data[position])
+        article_recyclerview.isFocusable = false
+        article_recyclerview.adapter = feedArticleAdapter
+        feedArticleAdapter!!.onItemClickListener =
+            BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
+                val intent = Intent(this@SearchResultActivity, ArticleDetailActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("url", feedArticleAdapter!!.data[position].link)
+                intent.putExtras(bundle)
+                startActivity(intent)
             }
-        }
+        feedArticleAdapter!!.onItemChildClickListener =
+            BaseQuickAdapter.OnItemChildClickListener { adapter, view, position ->
+                if (feedArticleAdapter!!.data[position].isCollect) {
+                    mPresenter!!.cancelCollectArticle(position, feedArticleAdapter!!.data[position])
+                } else {
+                    mPresenter!!.addCollectArticle(position, feedArticleAdapter!!.data[position])
+                }
+            }
     }
 
     //初始化下拉刷新控件
     private fun initSmartRefreshLayout() {
-        smartRefreshLayout!!.isEnableLoadMore = true
-        smartRefreshLayout!!.isEnableRefresh = false
-        smartRefreshLayout!!.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
-        smartRefreshLayout!!.setEnableFooterFollowWhenLoadFinished(true)
-        smartRefreshLayout!!.setOnLoadMoreListener { mPresenter!!.onLoadMore(keyword) }
+        smartRefreshLayout.isEnableLoadMore = true
+        smartRefreshLayout.isEnableRefresh = false
+        smartRefreshLayout.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
+        smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true)
+        smartRefreshLayout.setOnLoadMoreListener { mPresenter!!.onLoadMore(keyword) }
     }
 
     companion object {

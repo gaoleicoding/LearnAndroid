@@ -52,16 +52,16 @@ class SettingActivity : BaseActivity() {
     }
 
     override fun initData(bundle: Bundle?) {
-        title!!.text = getString(R.string.my_setting)
-        iv_back!!.visibility = View.VISIBLE
-        tv_versionName!!.text = Utils.getVersionName(this)
+        title.text = getString(R.string.my_setting)
+        iv_back.visibility = View.VISIBLE
+        tv_versionName.text = Utils.getVersionName(this)
         val isNightMode = SPUtils.getParam(this, "nightMode", false) as Boolean
         if (isNightMode) {
-            cb_setting_night!!.isChecked = true
+            cb_setting_night.isChecked = true
         } else {
-            cb_setting_night!!.isChecked = false
+            cb_setting_night.isChecked = false
         }
-        cb_setting_night!!.setOnCheckedChangeListener { buttonView, isChecked ->
+        cb_setting_night.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked)
                 SPUtils.setParam(this@SettingActivity, "nightMode", true)
             else

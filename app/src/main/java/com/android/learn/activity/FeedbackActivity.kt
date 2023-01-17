@@ -38,7 +38,6 @@ class FeedbackActivity : BaseActivity() {
     lateinit var add_attachment: TextView
     @BindView(R.id.file_dir)
     lateinit var file_dir: TextView
-
     @BindView(R.id.et_email_title)
     lateinit var et_email_title: EditText
     @BindView(R.id.et_email_content)

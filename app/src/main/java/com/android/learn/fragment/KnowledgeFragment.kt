@@ -17,16 +17,12 @@ import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
 import butterknife.BindView
 
 
-class KnowledgeFragment : BaseMvpFragment<KnowledgePresenter, KnowledgeContract.View>(), KnowledgeContract.View {
+class KnowledgeFragment : BaseMvpFragment<KnowledgePresenter, KnowledgeContract.View>(),
+    KnowledgeContract.View {
+
     @BindView(R.id.hicvp)
     lateinit var horizontalInfiniteCycleViewPager: HorizontalInfiniteCycleViewPager
     private var mPagerAdapter: HorizontalPagerAdapter? = null
-
-    internal var handler: Handler = object : Handler() {
-        override fun handleMessage(message: Message) {
-            CustomProgressDialog.show(activity)
-        }
-    }
 
     override fun initData(bundle: Bundle?) {}
 

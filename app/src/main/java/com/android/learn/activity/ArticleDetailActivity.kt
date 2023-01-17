@@ -32,12 +32,12 @@ class ArticleDetailActivity : BaseActivity() {
     }
 
     override fun initData(bundle: Bundle?) {
-        title!!.text = getString(R.string.article_detail)
-        iv_back!!.visibility = View.VISIBLE
+        title.text = getString(R.string.article_detail)
+        iv_back.visibility = View.VISIBLE
         url = bundle?.getString("url")
-        webview_article!!.loadUrl(url)
-        iv_search!!.visibility = View.VISIBLE
-        iv_search!!.setImageResource(R.drawable.icon_share)
+        webview_article.loadUrl(url)
+        iv_search.visibility = View.VISIBLE
+        iv_search.setImageResource(R.drawable.icon_share)
     }
 
 

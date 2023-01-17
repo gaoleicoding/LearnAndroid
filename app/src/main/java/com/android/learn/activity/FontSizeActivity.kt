@@ -49,16 +49,16 @@ class FontSizeActivity : BaseActivity() {
     }
 
     override fun initData(bundle: Bundle?) {
-        title!!.text = getString(R.string.font_size)
-        iv_back!!.visibility = View.VISIBLE
+        title.text = getString(R.string.font_size)
+        iv_back.visibility = View.VISIBLE
         initData()
     }
 
     private fun initData() {
         currentIndex = SPUtils.getParam(this, "currentIndex", 1) as Int
         textSizef = 1 + currentIndex * 0.1f
-        val size1 = tvContent1!!.textSize
-        val size2 = tvContent2!!.textSize
+        val size1 = tvContent1.textSize
+        val size2 = tvContent2.textSize
         textsize1 = size1 / textSizef
         textsize2 = size2 / textSizef
         val listener = object : FontSliderBar.OnSliderBarChangeListener {
@@ -72,7 +72,7 @@ class FontSizeActivity : BaseActivity() {
                 setTextSize(textSizef)
             }
         }
-        fontSliderBar!!.setTickCount(6).setTickHeight(ScreenUtils.dp2px(this@FontSizeActivity, 15).toFloat()).setBarColor(Color.GRAY)
+        fontSliderBar.setTickCount(6).setTickHeight(ScreenUtils.dp2px(this@FontSizeActivity, 15).toFloat()).setBarColor(Color.GRAY)
                 .setTextColor(Color.BLACK).setTextPadding(ScreenUtils.dp2px(this@FontSizeActivity, 10)).setTextSize(
                 ScreenUtils.dp2px(this@FontSizeActivity, 14))
                 .setThumbRadius(ScreenUtils.dp2px(this@FontSizeActivity, 10).toFloat()).setThumbColorNormal(Color.GRAY).setThumbColorPressed(Color.GRAY)
@@ -84,7 +84,7 @@ class FontSizeActivity : BaseActivity() {
     fun click(view: View) {
 
         when (view.id) {
-            R.id.iv_back -> if (fontSliderBar!!.currentIndex != currentIndex) {
+            R.id.iv_back -> if (fontSliderBar.currentIndex != currentIndex) {
                 if (isClickable) {
                     isClickable = false
                     refresh()
@@ -100,13 +100,13 @@ class FontSizeActivity : BaseActivity() {
         val size1 = textsize1 * textSize
         val size2 = textsize2 * textSize
         val size3 = textsize3 * textSize
-        tvContent1!!.textSize = ScreenUtils.px2sp(this@FontSizeActivity, size1).toFloat()
-        tvContent2!!.textSize = ScreenUtils.px2sp(this@FontSizeActivity, size2).toFloat()
+        tvContent1.textSize = ScreenUtils.px2sp(this@FontSizeActivity, size1).toFloat()
+        tvContent2.textSize = ScreenUtils.px2sp(this@FontSizeActivity, size2).toFloat()
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (currentIndex != fontSliderBar!!.currentIndex) {
+            if (currentIndex != fontSliderBar.currentIndex) {
                 if (isClickable) {
                     isClickable = false
                     refresh()
@@ -121,7 +121,7 @@ class FontSizeActivity : BaseActivity() {
 
     private fun refresh() {
         //存储标尺的下标
-        SPUtils.setParam(this, "currentIndex", fontSliderBar!!.currentIndex)
+        SPUtils.setParam(this, "currentIndex", fontSliderBar.currentIndex)
         //通知主页面重启
         EventBus.getDefault().post(RestartMainEvent(this))
 

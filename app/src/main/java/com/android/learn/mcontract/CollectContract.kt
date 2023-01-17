@@ -11,7 +11,6 @@ class CollectContract {
 
     interface Presenter {
 
-
         fun getCollectList()
 
         fun cancelCollectArticle(position: Int, id: Int)

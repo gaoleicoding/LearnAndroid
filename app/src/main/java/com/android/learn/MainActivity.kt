@@ -609,5 +609,4 @@ class MainActivity : BaseMvpActivity<MainActivityPresenter, MainActivityContract
             beginSearch()
     }
 
-
 }

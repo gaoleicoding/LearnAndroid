@@ -16,7 +16,7 @@ abstract class BaseMvpActivity<P : BasePresenter<V>, V : BaseView> : BaseActivit
         super.onCreate(savedInstanceState)
         mPresenter = initPresenter()
         if (mPresenter != null)
-            mPresenter!!.attach(this  as? V)
+            mPresenter!!.attach(this as? V)
         loadData()
     }
 

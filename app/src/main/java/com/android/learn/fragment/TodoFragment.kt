@@ -36,7 +36,6 @@ class TodoFragment : BaseMvpFragment<TodoPresenter, TodoContract.View>(), TodoCo
     lateinit var tv_empty_todo: TextView
     lateinit var todoList: List<TodoData.DatasBean>
     private var todoAdapter: TodoQuickAdapter? = null
-
     internal var fragmentPosition: Int = 0
     internal var clickId: Int = 0
 

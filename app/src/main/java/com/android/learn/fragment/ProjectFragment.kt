@@ -2,32 +2,30 @@ package com.android.learn.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-
+import androidx.recyclerview.widget.RecyclerView
+import butterknife.BindView
+import com.android.base.fragment.BaseMvpFragment
+import com.android.base.mmodel.ProjectListData
+import com.android.base.view.CustomProgressDialog
 import com.android.learn.R
 import com.android.learn.activity.ArticleDetailActivity
 import com.android.learn.adapter.DividerItemDecoration
 import com.android.learn.adapter.ProjectQuickAdapter
-import com.android.base.fragment.BaseMvpFragment
-import com.android.base.mmodel.ProjectListData
-import com.android.base.view.CustomProgressDialog
 import com.android.learn.mcontract.ProjectContract
 import com.android.learn.mpresenter.ProjectPresenter
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
 
-import java.util.ArrayList
 
-import butterknife.BindView
-
-
-class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(), ProjectContract.View {
+class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(),
+    ProjectContract.View {
 
     @BindView(R.id.project_recyclerview)
     lateinit var project_recyclerview: RecyclerView
+
     @BindView(R.id.smartRefreshLayout_home)
     lateinit var smartRefreshLayout: SmartRefreshLayout
     lateinit var projectAdapter: ProjectQuickAdapter
@@ -62,11 +60,11 @@ class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(
 
     override fun showProjectList(listData: ProjectListData, isRefresh: Boolean) {
         val newDataList = listData.data.datas
-        if (newDataList == null || newDataList.size == 0) {
-            smartRefreshLayout!!.finishLoadMoreWithNoMoreData()
+        if (newDataList.size == 0) {
+            smartRefreshLayout.finishLoadMoreWithNoMoreData()
             return
         }
-        smartRefreshLayout!!.finishLoadMore()
+        smartRefreshLayout.finishLoadMore()
         projectAdapter.addData(newDataList)
 
     }
@@ -74,15 +72,19 @@ class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(
     private fun initRecyclerView() {
         projectDataList = ArrayList<ProjectListData.ProjectData>()
         projectAdapter = ProjectQuickAdapter(activity, projectDataList)
-        project_recyclerview!!.addItemDecoration(DividerItemDecoration(activity!!,
-                DividerItemDecoration.VERTICAL_LIST))
-        project_recyclerview!!.layoutManager = LinearLayoutManager(activity)
-        project_recyclerview!!.adapter = projectAdapter
+        project_recyclerview.addItemDecoration(
+            DividerItemDecoration(
+                activity!!,
+                DividerItemDecoration.VERTICAL_LIST
+            )
+        )
+        project_recyclerview.layoutManager = LinearLayoutManager(activity)
+        project_recyclerview.adapter = projectAdapter
 
         projectAdapter.setOnItemClickListener { adapter, view, position ->
             val intent = Intent(activity, ArticleDetailActivity::class.java)
             val bundle = Bundle()
-            bundle.putString("url", projectDataList!![position].link)
+            bundle.putString("url", projectDataList[position].link)
             intent.putExtras(bundle)
             startActivity(intent)
         }
@@ -90,11 +92,11 @@ class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(
 
     //初始化下拉刷新控件
     private fun initSmartRefreshLayout() {
-        smartRefreshLayout!!.isEnableLoadMore = true
-        smartRefreshLayout!!.isEnableRefresh = false
-        smartRefreshLayout!!.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
-        smartRefreshLayout!!.setEnableFooterFollowWhenLoadFinished(true)
-        smartRefreshLayout!!.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
+        smartRefreshLayout.isEnableLoadMore = true
+        smartRefreshLayout.isEnableRefresh = false
+        smartRefreshLayout.isEnableScrollContentWhenLoaded = true//是否在加载完成时滚动列表显示新的内容
+        smartRefreshLayout.setEnableFooterFollowWhenLoadFinished(true)
+        smartRefreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
             override fun onLoadMore(refreshLayout: RefreshLayout) {
                 mPresenter!!.onLoadMore(294)
             }
@@ -106,6 +108,6 @@ class ProjectFragment : BaseMvpFragment<ProjectPresenter, ProjectContract.View>(
     }
 
     fun scrollToTop() {
-        project_recyclerview!!.scrollToPosition(0)
+        project_recyclerview.scrollToPosition(0)
     }
 }

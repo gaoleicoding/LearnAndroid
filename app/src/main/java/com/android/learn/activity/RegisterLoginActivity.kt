@@ -11,17 +11,18 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.OnClick
-import com.android.learn.R
 import com.android.base.activity.BaseMvpActivity
 import com.android.base.mmodel.RegisterLoginData
 import com.android.base.utils.SPUtils
 import com.android.base.utils.Utils
 import com.android.base.utils.account.UserUtil
+import com.android.learn.R
 import com.android.learn.mcontract.RegisterLoginContract
 import com.android.learn.mpresenter.RegisterLoginPresenter
 
 
-class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLoginContract.View>(), RegisterLoginContract.View {
+class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLoginContract.View>(),
+    RegisterLoginContract.View {
     @BindView(R.id.iv_back)
     lateinit var iv_back: ImageView
     @BindView(R.id.title)
@@ -38,7 +39,6 @@ class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLo
     lateinit var layout_register: LinearLayout
     @BindView(R.id.et_register_phone_num)
     lateinit var et_register_phone_num: EditText
-
     @BindView(R.id.et_register_password)
     lateinit var et_register_password: EditText
     @BindView(R.id.et_register_confirm_password)
@@ -47,8 +47,6 @@ class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLo
     lateinit var et_login_phone_num: EditText
     @BindView(R.id.et_login_password)
     lateinit var et_login_password: EditText
-
-
     internal var isInRegister = false
     lateinit var registerFlag: String
 
@@ -56,8 +54,8 @@ class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLo
         get() = R.layout.activity_login_register
 
     override fun initData(bundle: Bundle?) {
-        title!!.text = getString(R.string.login)
-        iv_back!!.visibility = View.VISIBLE
+        title.text = getString(R.string.login)
+        iv_back.visibility = View.VISIBLE
     }
 
     @OnClick(R.id.iv_back, R.id.tv_login, R.id.tv_register_free, R.id.tv_register)
@@ -65,22 +63,23 @@ class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLo
         when (view.id) {
             R.id.iv_back -> back()
             R.id.tv_login -> {
-                var username = et_login_phone_num!!.text.toString()
-                var password = et_login_password!!.text.toString()
+                val username = et_login_phone_num.text.toString()
+                val password = et_login_password.text.toString()
                 mPresenter!!.login(username, password)
             }
             R.id.tv_register_free -> {
-                layout_register!!.visibility = View.VISIBLE
-                title!!.text = getString(R.string.register)
+                layout_register.visibility = View.VISIBLE
+                title.text = getString(R.string.register)
                 isInRegister = true
             }
 
             R.id.tv_register -> {
                 registerFlag = "tv_register"
 
-                var username = et_register_phone_num!!.text.toString().trim { it <= ' ' }
-                var password = et_register_password!!.text.toString().trim { it <= ' ' }
-                val confirmPassword = et_register_confirm_password!!.text.toString().trim { it <= ' ' }
+                val username = et_register_phone_num.text.toString().trim { it <= ' ' }
+                val password = et_register_password.text.toString().trim { it <= ' ' }
+                val confirmPassword =
+                    et_register_confirm_password.text.toString().trim { it <= ' ' }
 
                 if ("" == username) {
                     Utils.showToast(getString(R.string.please_input_account), true)
@@ -113,8 +112,8 @@ class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLo
 
     private fun back() {
         if (isInRegister) {
-            layout_register!!.visibility = View.GONE
-            title!!.text = getString(R.string.login)
+            layout_register.visibility = View.GONE
+            title.text = getString(R.string.login)
             isInRegister = false
         } else {
             finish()
@@ -141,8 +140,8 @@ class RegisterLoginActivity : BaseMvpActivity<RegisterLoginPresenter, RegisterLo
 
     override fun showLoginResData(data: RegisterLoginData) {
         UserUtil.assignUserInfo(data)
-        SPUtils.setParam(this@RegisterLoginActivity, "username", et_login_phone_num!!.text.toString())
-        SPUtils.setParam(this@RegisterLoginActivity, "password", et_login_password!!.text.toString())
+        SPUtils.setParam(this@RegisterLoginActivity, "username", et_login_phone_num.text.toString())
+        SPUtils.setParam(this@RegisterLoginActivity, "password", et_login_password.text.toString())
         finish()
     }
 

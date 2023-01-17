@@ -37,8 +37,8 @@ class TodoAddActivity : BaseMvpActivity<TodoAddPresenter, TodoAddContract.View>(
         get() = R.layout.activity_edit_todo
 
     override fun initData(bundle: Bundle?) {
-        mTitle!!.text = getString(R.string.add)
-        iv_back!!.visibility = View.VISIBLE
+        mTitle.text = getString(R.string.add)
+        iv_back.visibility = View.VISIBLE
     }
 
     @OnClick(R.id.save_todo, R.id.todo_date)
@@ -46,9 +46,9 @@ class TodoAddActivity : BaseMvpActivity<TodoAddPresenter, TodoAddContract.View>(
         when (view.id) {
             R.id.save_todo -> {
                 val map = HashMap<String, Any>()
-                map["title"] = et_title!!.text!!.toString()
-                map["content"] = et_content!!.text!!.toString()
-                val date = mTodoDate!!.text.toString()
+                map["title"] = et_title.text!!.toString()
+                map["content"] = et_content.text!!.toString()
+                val date = mTodoDate.text.toString()
                 if (!date.contains("-")) {
                     Utils.showToast(getString(R.string.select_time), true)
                     return
@@ -62,7 +62,7 @@ class TodoAddActivity : BaseMvpActivity<TodoAddPresenter, TodoAddContract.View>(
             R.id.todo_date -> {
                 val calendar = Calendar.getInstance()
 
-                val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { datePicker, year, month, dayOfMonth -> mTodoDate!!.text = String.format("%d-%d-%d", year, month + 1, dayOfMonth) }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
+                val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { datePicker, year, month, dayOfMonth -> mTodoDate.text = String.format("%d-%d-%d", year, month + 1, dayOfMonth) }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
                 datePickerDialog.datePicker.minDate = Date().time
                 datePickerDialog.show()
             }

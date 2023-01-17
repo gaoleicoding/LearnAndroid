@@ -33,19 +33,18 @@ class TodoEditActivity : BaseMvpActivity<TodoEditPresenter, TodoEditContract.Vie
     lateinit var et_content: TextInputEditText
     @BindView(R.id.todo_date)
     lateinit var mTodoDate: TextView
-
     lateinit var datasBean: DatasBean
 
     override val layoutId: Int
         get() = R.layout.activity_edit_todo
 
     override fun initData(bundle: Bundle?) {
-        mTitle!!.text = getString(R.string.detail)
-        iv_back!!.visibility = View.VISIBLE
+        mTitle.text = getString(R.string.detail)
+        iv_back.visibility = View.VISIBLE
         datasBean = bundle!!.getSerializable("todo_item") as DatasBean
-        et_title!!.setText(datasBean.title)
-        et_content!!.setText(datasBean.content)
-        mTodoDate!!.text = datasBean.dateStr
+        et_title.setText(datasBean.title)
+        et_content.setText(datasBean.content)
+        mTodoDate.text = datasBean.dateStr
     }
 
     @OnClick(R.id.save_todo, R.id.todo_date)
@@ -53,9 +52,9 @@ class TodoEditActivity : BaseMvpActivity<TodoEditPresenter, TodoEditContract.Vie
         when (view.id) {
             R.id.save_todo -> {
                 val map = HashMap<String, Any>()
-                map["title"] = et_title!!.text!!.toString()
-                map["content"] = et_content!!.text!!.toString()
-                val date = mTodoDate!!.text.toString()
+                map["title"] = et_title.text!!.toString()
+                map["content"] = et_content.text!!.toString()
+                val date = mTodoDate.text.toString()
                 if (!date.contains("-")) {
                     Utils.showToast(getString(R.string.select_time), true)
                     return
@@ -74,9 +73,7 @@ class TodoEditActivity : BaseMvpActivity<TodoEditPresenter, TodoEditContract.Vie
                 datePickerDialog.show()
             }
         }
-
     }
-
 
     override fun initPresenter(): TodoEditPresenter {
         return TodoEditPresenter()
