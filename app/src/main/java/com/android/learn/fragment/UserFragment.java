@@ -5,19 +5,19 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.learn.R;
-import com.android.learn.activity.MyCollectActivity;
-import com.android.learn.activity.MyTodoActivity;
-import com.android.learn.activity.RegisterLoginActivity;
-import com.android.learn.activity.SettingActivity;
 import com.android.base.event.LoginEvent;
 import com.android.base.event.LogoutEvent;
 import com.android.base.fragment.BaseMvpFragment;
 import com.android.base.utils.SPUtils;
 import com.android.base.utils.Utils;
-import com.android.manager.UserInfoManager;
+import com.android.learn.R;
+import com.android.learn.activity.MyCollectActivity;
+import com.android.learn.activity.MyTodoActivity;
+import com.android.learn.activity.RegisterLoginActivity;
+import com.android.learn.activity.SettingActivity;
 import com.android.learn.mcontract.UserInfoContract;
 import com.android.learn.mpresenter.UserInfoPresenter;
+import com.android.manager.UserInfoManager;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
@@ -115,8 +115,8 @@ public class UserFragment extends BaseMvpFragment<UserInfoPresenter> implements 
             String photoUrl = UserInfoManager.get().getUserInfo().data.icon;
             if (photoUrl != null) {
                 RequestOptions options = new RequestOptions().placeholder(R.drawable.user_default_photo);
-                if(iv_user_photo!=null)
-                Glide.with(getActivity()).load(photoUrl).apply(options).into(iv_user_photo);
+                if (iv_user_photo != null)
+                    Glide.with(getActivity()).load(photoUrl).apply(options).into(iv_user_photo);
             }
 
         }

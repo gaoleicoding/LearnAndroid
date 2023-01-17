@@ -3,14 +3,14 @@ package com.android.learn.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.learn.R;
+import androidx.appcompat.widget.AppCompatCheckBox;
+
 import com.android.base.activity.BaseMvpActivity;
 import com.android.base.event.ChangeNightEvent;
 import com.android.base.event.LogoutEvent;
@@ -19,6 +19,7 @@ import com.android.base.mpresenter.BasePresenter;
 import com.android.base.thirdframe.retrofit.RetrofitProvider;
 import com.android.base.utils.SPUtils;
 import com.android.base.utils.Utils;
+import com.android.learn.R;
 import com.android.manager.UserInfoManager;
 
 import org.greenrobot.eventbus.EventBus;
@@ -61,18 +62,13 @@ public class SettingActivity extends BaseMvpActivity {
     }
 
 
-
     @Override
     protected void initData(Bundle bundle) {
         title.setText(getString(R.string.my_setting));
         iv_back.setVisibility(View.VISIBLE);
         tv_versionName.setText(Utils.getVersionName(this));
         Boolean isNightMode = (Boolean) SPUtils.getParam(this, "nightMode", Boolean.FALSE);
-        if (isNightMode) {
-            cb_setting_night.setChecked(true);
-        } else {
-            cb_setting_night.setChecked(false);
-        }
+        cb_setting_night.setChecked(Boolean.TRUE.equals(isNightMode));
         cb_setting_night.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
@@ -133,7 +129,8 @@ public class SettingActivity extends BaseMvpActivity {
     public void onEvent(RestartMainEvent event) {
         finish();
     }
-    public void onDestroy(){
+
+    public void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }

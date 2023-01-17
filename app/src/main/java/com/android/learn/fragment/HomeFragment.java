@@ -109,8 +109,8 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
     public void showBannerList(BannerListData itemBeans) {
 
         final List<String> linkList = new ArrayList<String>();
-        List imageList = new ArrayList();
-        List titleList = new ArrayList();
+        List<String> imageList = new ArrayList<>();
+        List<String> titleList = new ArrayList<>();
         int size = itemBeans.data.size();
 
         for (int i = 0; i < size; i++) {

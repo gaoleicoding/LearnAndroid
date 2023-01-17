@@ -2,20 +2,21 @@ package com.android.learn.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
-import com.android.learn.R;
-import com.android.learn.activity.ArticleDetailActivity;
-import com.android.learn.adapter.ArticleQuickAdapter;
-import com.android.learn.adapter.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.base.event.CancelCollectEvent;
 import com.android.base.event.LoginEvent;
 import com.android.base.fragment.BaseMvpFragment;
 import com.android.base.mmodel.FeedArticleListData;
 import com.android.base.mmodel.FeedArticleListData.FeedArticleData;
 import com.android.base.view.CustomProgressDialog;
+import com.android.learn.R;
+import com.android.learn.activity.ArticleDetailActivity;
+import com.android.learn.adapter.ArticleQuickAdapter;
+import com.android.learn.adapter.DividerItemDecoration;
 import com.android.learn.mcontract.WechatSubContract;
 import com.android.learn.mpresenter.WechatSubPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;

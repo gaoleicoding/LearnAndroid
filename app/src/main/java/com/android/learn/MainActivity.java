@@ -7,10 +7,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import com.google.android.material.tabs.TabLayout;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
@@ -29,6 +25,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.base.activity.BaseMvpActivity;
 import com.android.base.db.DBManager;
@@ -57,6 +57,7 @@ import com.android.learn.view.CustomViewPager;
 import com.android.learn.view.SearchViewUtils;
 import com.android.speechdemo.xf.JsonParser;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.google.android.material.tabs.TabLayout;
 import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
@@ -357,7 +358,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
                 @Override
                 public void onComplete(@NotNull SVGAVideoEntity videoItem) {
                     SVGADynamicEntity dynamicEntity = new SVGADynamicEntity();
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getString(R.string.welcome_learn_android) +" "+ getString(R.string.app_name));
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getString(R.string.welcome_learn_android) + " " + getString(R.string.app_name));
                     spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                     TextPaint textPaint = new TextPaint();
                     textPaint.setColor(Color.WHITE);
@@ -539,7 +540,7 @@ public class MainActivity extends BaseMvpActivity<MainActivityPresenter> impleme
     /**
      * 听写UI监听器
      */
-    private RecognizerDialogListener mRecognizerDialogListener = new RecognizerDialogListener() {
+    private final RecognizerDialogListener mRecognizerDialogListener = new RecognizerDialogListener() {
         /**
          * 识别成功时回调数据
          */
