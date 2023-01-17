@@ -26,23 +26,23 @@ class ArticleQuickAdapter(
 
     override fun convert(helper: BaseViewHolder, articleData: FeedArticleData) {
         helper.setText(R.id.tv_item_title, articleData.title)
-            .setText(R.id.tv_item_time, articleData.niceDate)
-            .setText(R.id.tv_item_author, articleData.author)
-        helper.addOnClickListener(R.id.iv_item_collect)
+            .setText(R.id.tv_article_time, articleData.niceDate)
+            .setText(R.id.tv_article_author, articleData.author)
+        helper.addOnClickListener(R.id.iv_article_collect)
         if ("HomeFragment" == fromWhere || "KnowledgeChildActivity" == fromWhere || "WechatSubFragment" == fromWhere) {
             if (articleData.isCollect) {
-                helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select)
+                helper.setImageResource(R.id.iv_article_collect, R.drawable.icon_collect_select)
             } else {
-                helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_unselect)
+                helper.setImageResource(R.id.iv_article_collect, R.drawable.icon_collect_unselect)
             }
         }
         if ("MyCollectActivity" == fromWhere) {
-            helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select)
+            helper.setImageResource(R.id.iv_article_collect, R.drawable.icon_collect_select)
         }
         if (TextUtils.isEmpty(articleData.author)) {
-            helper.getView<TextView>(R.id.tv_item_author).visibility = View.GONE
+            helper.getView<TextView>(R.id.tv_article_author).visibility = View.GONE
         } else {
-            helper.getView<TextView>(R.id.tv_item_author).visibility = View.VISIBLE
+            helper.getView<TextView>(R.id.tv_article_author).visibility = View.VISIBLE
         }
     }
 }

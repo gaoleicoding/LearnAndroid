@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:skin="http://schemas.android.com/android/skin"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="15dp">
 
-
     <TextView
         android:id="@+id/tv_item_title"
-        skin:enable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="1"
         android:textColor="@color/text_color"
-        android:textSize="16sp" />
-
+        android:textSize="16sp"
+        skin:enable="true" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,11 +23,23 @@
         android:layout_marginTop="15dp">
 
         <TextView
-            android:id="@+id/tv_item_author"
+            android:id="@+id/tv_article_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/color_666666"
+            skin:enable="true"
+            tools:text="2023" />
+
+        <TextView
+            android:id="@+id/tv_article_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/adapter_margin_left"
+            android:layout_toEndOf="@id/tv_article_time"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
@@ -38,23 +47,11 @@
             skin:enable="true"
             tools:text="GcsSloop" />
 
-        <TextView
-            android:id="@+id/tv_item_time"
-            skin:enable="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/tv_item_author"
-            android:maxLines="1"
-            android:gravity="center"
-            android:textColor="@color/color_666666" />
-
-
         <ImageView
-            android:id="@+id/iv_item_collect"
+            android:id="@+id/iv_article_collect"
             android:layout_width="30dp"
             android:layout_height="20dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:contentDescription="@null"
             android:paddingLeft="5dp"

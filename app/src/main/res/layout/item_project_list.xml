@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:skin="http://schemas.android.com/android/skin"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="15dp">
 
-
     <ImageView
-        android:id="@+id/item_project_list_iv"
+        android:id="@+id/iv_project"
         android:layout_width="80dp"
         android:layout_height="120dp"
         android:layout_gravity="center_vertical"
@@ -18,10 +18,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp">
+        android:layout_marginStart="10dp">
 
         <TextView
-            android:id="@+id/item_project_list_title_tv"
+            android:id="@+id/tv_project_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -32,16 +32,15 @@
             skin:enable="true" />
 
         <TextView
-            android:id="@+id/item_project_list_content_tv"
+            android:id="@+id/tv_project_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/item_project_list_title_tv"
+            android:layout_below="@id/tv_project_title"
             android:layout_marginTop="10dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:textColor="@color/text_color"
             skin:enable="true" />
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,34 +48,35 @@
             android:layout_alignParentBottom="true">
 
             <TextView
-                android:id="@+id/item_project_list_author_tv"
+                android:id="@+id/tv_project_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/color_666666"
+                skin:enable="true"
+                tools:text="2024" />
+
+            <TextView
+                android:id="@+id/tv_project_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/adapter_margin_left"
+                android:layout_toEndOf="@id/tv_project_time"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
                 android:textColor="@color/color_666666"
-                skin:enable="true" />
-
-            <TextView
-                android:id="@+id/item_project_list_time_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/item_project_list_author_tv"
-                android:gravity="center"
-                android:maxLines="1"
-                android:textColor="@color/color_666666"
-                skin:enable="true" />
-
+                skin:enable="true"
+                tools:text="success" />
 
             <ImageView
-                android:id="@+id/item_search_pager_like_iv"
+                android:id="@+id/iv_project_collect"
                 android:layout_width="25dp"
                 android:layout_height="15dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:contentDescription="@null"
                 android:paddingLeft="5dp"
@@ -84,7 +84,6 @@
                 android:src="@drawable/icon_collect_unselect"
                 android:visibility="gone" />
         </RelativeLayout>
-
 
     </RelativeLayout>
 </LinearLayout>
