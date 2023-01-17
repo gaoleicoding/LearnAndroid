@@ -23,12 +23,12 @@ public class ProjectQuickAdapter extends BaseQuickAdapter<ProjectData, BaseViewH
 
     @Override
     protected void convert(BaseViewHolder helper, ProjectData projectInfo) {
-        helper.setText(R.id.item_project_list_title_tv, projectInfo.getTitle())
-                .setText(R.id.item_project_list_content_tv, projectInfo.getDesc())
-                .setText(R.id.item_project_list_time_tv, projectInfo.getNiceDate())
-                .setText(R.id.item_project_list_author_tv, projectInfo.getAuthor());
+        helper.setText(R.id.tv_project_title, projectInfo.getTitle())
+                .setText(R.id.tv_project_content, projectInfo.getDesc())
+                .setText(R.id.tv_project_time, projectInfo.getNiceDate())
+                .setText(R.id.tv_project_author, projectInfo.getAuthor());
         boolean isShowAuthor = !TextUtils.isEmpty(projectInfo.getAuthor());
-        helper.getView(R.id.item_project_list_author_tv).setVisibility(isShowAuthor ? View.VISIBLE : View.GONE);
-        ImageLoader.getInstance().load(context, projectInfo.getEnvelopePic(), (ImageView) helper.getView(R.id.item_project_list_iv));
+        helper.getView(R.id.tv_project_author).setVisibility(isShowAuthor ? View.VISIBLE : View.GONE);
+        ImageLoader.getInstance().load(context, projectInfo.getEnvelopePic(), (ImageView) helper.getView(R.id.iv_project));
     }
 }

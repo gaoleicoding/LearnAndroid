@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/tv_item_title"
+        android:id="@+id/tv_article_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -25,11 +25,23 @@
         android:layout_marginTop="15dp">
 
         <TextView
-            android:id="@+id/tv_item_author"
+            android:id="@+id/tv_article_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/adapter_item_author_right"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/color_666666"
+            skin:enable="true"
+            tools:text="2022" />
+
+        <TextView
+            android:id="@+id/tv_article_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/adapter_item_author_right"
+            android:layout_toEndOf="@id/tv_article_time"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
@@ -37,24 +49,12 @@
             skin:enable="true"
             tools:text="GcsSloop" />
 
-        <TextView
-            android:id="@+id/tv_item_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/tv_item_author"
-            android:gravity="center"
-            android:maxLines="1"
-            android:textColor="@color/color_666666"
-            skin:enable="true"
-            tools:text="2022" />
-
 
         <ImageView
-            android:id="@+id/iv_item_collect"
+            android:id="@+id/iv_article_collect"
             android:layout_width="30dp"
             android:layout_height="20dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:contentDescription="@null"
             android:paddingLeft="5dp"

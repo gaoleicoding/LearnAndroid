@@ -33,21 +33,21 @@ public class ArticleQuickAdapter extends BaseQuickAdapter<FeedArticleData, BaseV
 
     @Override
     protected void convert(BaseViewHolder helper, FeedArticleData articleData) {
-        helper.setText(R.id.tv_item_title, articleData.getTitle())
-                .setText(R.id.tv_item_author, articleData.getAuthor())
-                .setText(R.id.tv_item_time, articleData.getNiceDate());
-        helper.addOnClickListener(R.id.iv_item_collect);
+        helper.setText(R.id.tv_article_title, articleData.getTitle())
+                .setText(R.id.tv_article_author, articleData.getAuthor())
+                .setText(R.id.tv_article_time, articleData.getNiceDate());
+        helper.addOnClickListener(R.id.iv_article_collect);
         boolean isShowAuthor = !TextUtils.isEmpty(articleData.getAuthor());
-        helper.getView(R.id.tv_item_author).setVisibility(isShowAuthor ? View.VISIBLE : View.GONE);
+        helper.getView(R.id.tv_article_author).setVisibility(isShowAuthor ? View.VISIBLE : View.GONE);
         if ("HomeFragment".equals(fromWhere) || "KnowledgeChildActivity".equals(fromWhere) || "WechatSubFragment".equals(fromWhere)) {
             if (articleData.isCollect()) {
-                helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select);
+                helper.setImageResource(R.id.iv_article_collect, R.drawable.icon_collect_select);
             } else {
-                helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_unselect);
+                helper.setImageResource(R.id.iv_article_collect, R.drawable.icon_collect_unselect);
             }
         }
         if ("MyCollectActivity".equals(fromWhere)) {
-            helper.setImageResource(R.id.iv_item_collect, R.drawable.icon_collect_select);
+            helper.setImageResource(R.id.iv_article_collect, R.drawable.icon_collect_select);
         }
 
     }
