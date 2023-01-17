@@ -3,14 +3,14 @@ package com.android.learn.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.widget.AppCompatCheckBox
+import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatCheckBox
 import butterknife.BindView
 import butterknife.OnClick
-import com.android.learn.R
 import com.android.base.activity.BaseActivity
 import com.android.base.event.ChangeNightEvent
 import com.android.base.event.LogoutEvent
@@ -19,6 +19,7 @@ import com.android.base.thirdframe.retrofit.RetrofitProvider
 import com.android.base.utils.SPUtils
 import com.android.base.utils.Utils
 import com.android.base.utils.account.UserUtil
+import com.android.learn.R
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -27,20 +28,28 @@ import org.greenrobot.eventbus.ThreadMode
 class SettingActivity : BaseActivity() {
     @BindView(R.id.iv_back)
     lateinit var iv_back: ImageView
+
     @BindView(R.id.title)
     lateinit var title: TextView
+
     @BindView(R.id.tv_versionName)
     lateinit var tv_versionName: TextView
+
     @BindView(R.id.help_feedback_layout)
     lateinit var help_feedback_layout: LinearLayout
+
     @BindView(R.id.version_update_layout)
     lateinit var version_update_layout: LinearLayout
+
     @BindView(R.id.language_switch_layout)
     lateinit var language_switch_layout: LinearLayout
+
     @BindView(R.id.font_size_layout)
     lateinit var font_size_layout: LinearLayout
+
     @BindView(R.id.my_logout_layout)
     lateinit var my_logout_layout: LinearLayout
+
     @BindView(R.id.cb_setting_night)
     lateinit var cb_setting_night: AppCompatCheckBox
 
@@ -74,7 +83,13 @@ class SettingActivity : BaseActivity() {
     }
 
 
-    @OnClick(R.id.help_feedback_layout, R.id.version_update_layout, R.id.language_switch_layout, R.id.font_size_layout, R.id.my_logout_layout)
+    @OnClick(
+        R.id.help_feedback_layout,
+        R.id.version_update_layout,
+        R.id.language_switch_layout,
+        R.id.font_size_layout,
+        R.id.my_logout_layout
+    )
     fun click(view: View) {
 
         when (view.id) {
@@ -83,7 +98,7 @@ class SettingActivity : BaseActivity() {
             R.id.font_size_layout -> FontSizeActivity.startActivity(this@SettingActivity)
             R.id.my_logout_layout -> {
                 if (!UserUtil.isLogined) {
-                    RegisterLoginActivity.startActivity(this)
+                    Utils.showToast(getString(R.string.user_not_login), true, Gravity.BOTTOM)
                     return
                 }
                 UserUtil.isLogined = false
@@ -93,7 +108,6 @@ class SettingActivity : BaseActivity() {
             }
         }
     }
-
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onEvent(event: RestartMainEvent) {

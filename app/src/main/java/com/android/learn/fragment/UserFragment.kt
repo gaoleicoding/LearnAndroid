@@ -110,7 +110,7 @@ class UserFragment : BaseMvpFragment<UserInfoPresenter, UserInfoContract.View>()
         SPUtils.clear(activity!!, "phone_num")
         SPUtils.clear(activity!!, "password")
         mPresenter!!.getLogoutData()
-        RegisterLoginActivity.startActivity(activity!!)
+//        RegisterLoginActivity.startActivity(activity!!)
         UserUtil.assignUserInfo(null)
     }
 
